@@ -15,7 +15,7 @@ JavaScript 개발자에게 Kotlin coroutine 10분만에 이해시키기 - [https
 
 ## Coroutine Basics
 
-[Coroutine의 생명주기, 범위, 흐름 등(code 예제)](https://www.notion.so/Coroutine-code-9e0ed548cf484ee1a84adc5c9d8180f7)
+[Coroutine의 생명주기, 범위, 흐름 등(code 예제)](./coroutineLifecycleFlowAndSoOn.md)
 
 ## Cancellation and Timeouts
 
