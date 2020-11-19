@@ -24,7 +24,7 @@ JavaScript 개발자에게 Kotlin coroutine 10분만에 이해시키기 - [https
     - 부모 scope에서 취소 → 자식 scope에서도 취소.
     - GlobalScope로 생성된 coroutine은 자신이 실행된 스코프가 취소되어도 영향을 받지 않음.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23c9e37d-c4db-4f17-a34b-35c96e7de8d3/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23c9e37d-c4db-4f17-a34b-35c96e7de8d3/Untitled.png)
+![](../images/1.png)
 
 - withTimeout() { ... } → timeout거는 용도
 - 위에서 delay(500L) : suspend 기능. 취소가 가능한 상태.
@@ -33,21 +33,21 @@ JavaScript 개발자에게 Kotlin coroutine 10분만에 이해시키기 - [https
 
 - 순차적 처리
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf2eaf83-aaed-4858-a2c5-47e79a125e3b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf2eaf83-aaed-4858-a2c5-47e79a125e3b/Untitled.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf2eaf83-aaed-4858-a2c5-47e79a125e3b/Untitled.png](../images/2.png)
 
 - async 처리(위 방식보다 두배 빠름)
     - async를 통해 Defferd를 반환받음.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7675e7de-a663-43de-b081-5fec8bee6e2a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7675e7de-a663-43de-b081-5fec8bee6e2a/Untitled.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7675e7de-a663-43de-b081-5fec8bee6e2a/Untitled.png](../images/3.png)
 
 - 두 xxxxAsync()는 suspend가 아님에도 Defered<int>를 반환받는다. 즉, 외부에서 사용될 때 Async로 사용
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e87060-20ae-4a88-a807-1b4afb1aef73/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e87060-20ae-4a88-a807-1b4afb1aef73/Untitled.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e87060-20ae-4a88-a807-1b4afb1aef73/Untitled.png](../images/4.png)
 
 - 바로 위의 async를 사용한 예제
     - 아래와 같이 동시성을 부여하여 사용한다면 외부에서 사용하다가 예외 발생시 범위 내의 모든 코루틴 취소 가능해 보다 안정적.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/479acd71-1ca6-4a63-9a87-ba545b3e1a26/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/479acd71-1ca6-4a63-9a87-ba545b3e1a26/Untitled.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/479acd71-1ca6-4a63-9a87-ba545b3e1a26/Untitled.png](../images/5.png)
 
 ## Coroutine Context and Dispatchers
 
