@@ -2,7 +2,7 @@ Coroutine 공식문서 - [https://kotlinlang.org/docs/reference/coroutines/basic
 
 Thread와 coroutine 비교 - [https://aaronryu.github.io/2019/05/27/coroutine-and-thread/](https://aaronryu.github.io/2019/05/27/coroutine-and-thread/)
 
-JavaScript 개발자에게 Kotlin coroutine 10분만에 이해시키기 - [https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/](https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/)
+**JavaScript 개발자에게 Kotlin coroutine 10분만에 이해시키기(JS와 비교하기 좋은 글)** - [https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/](https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/)
 
 ## 특장점
 
