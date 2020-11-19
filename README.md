@@ -5,5 +5,5 @@
 
 ## 기존 프로젝트(javaScript)에서 Kotlin으로 옮겨과는 과정에서 공부한 것 정리
 
-* [Kotlin + Spring boot 사용 시 MariaDB connection 방법](./SpringbootwithMariaDB.md)
-* [Kotlin에서 비동기 처리 Coroutine](./aboutCoroutine.md)
+* [Kotlin + Spring boot 사용 시 MariaDB connection 방법](./studies/SpringbootwithMariaDB.md)
+* [Kotlin에서 비동기 처리 Coroutine](./studies/aboutCoroutine.md)
