@@ -29,9 +29,9 @@ Data == Stream / event / signal / sequence 로 보며, Asynchronous하게 데이
 <img src = "./images/reactiveflow.png">
 
 1. `Subscriber` 가 `subscribe`를 통해 `Publisher`에게 구독 요청
-2. `Publisher`가 `onSubscribe` 메서드를 통해 `Subscriber`에게 `Subscription` 전달.
-	- 전달이 완료되면, `Subscription`은 양 측을 연결하는 매체가 된다.
-3. `Subscription`을 통해 `Subscriber`는 `Publisher`에게 `request`함수로 요청하고, `Publisher`는 `Publisher`에게 `onNext`로 전달한다.
+2. `Publisher`가 `onSubscribe` 메서드를 통해 `Subscriber`에게 `Subscription` 전달
+	- 전달이 완료되면, `Subscription`은 양 측을 연결하는 매체가 됨
+3. `Subscription`을 통해 `Subscriber`는 `Publisher`에게 `request`함수로 요청하고, `Publisher`는 `Publisher`에게 `onNext`로 전달
 	- 성공 시 `onComplete`, 에러 시 `onError`
 4. 이를 통해 연결을 통해 통신을 주고받는 것이 Backpressure.
 <br><br>
