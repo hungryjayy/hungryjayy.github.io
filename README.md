@@ -7,5 +7,6 @@
 
 * [Kotlin + Spring boot 사용 시 MariaDB connection 방법](./studies/springbootwithMariaDB.md)
 * [Kotlin에서 비동기 처리 Coroutine](./studies/aboutCoroutine.md)
-* [MVC vs Webflux](./studies/mvcvsWebflux.md)
+* [MVC vs Webflux](./studies/mvcvswebflux.md)
 * [Reactive Programming?](./studies/reactive.md)
+* [동기, 비동기, blocking, non-blocking](./studies/syncAsyncBlock.md)
