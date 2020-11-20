@@ -19,13 +19,15 @@ Data == Stream / event / signal / sequence 로 보며, Asynchronous하게 데이
 * subscriber의 상태를 고려하지 않고 보낸다. 때문에 subscriber의 처리 속도가 낮다면, out of memory 발생 우려 있다.
 
 2. pull 방식
-*subscriber가 처리할 수 있는 만큼 publisher에게 요청. 따라서 out of memory 에러 발생하지 않는다.
+* subscriber가 처리할 수 있는 만큼 publisher에게 요청. 따라서 out of memory 에러 발생하지 않는다.
 	- Dynamic pull: subscriber가 8개 처리하고 있고, 2개 더 처리 가능할 때 2개 더 publisher에게 요청
  <br><br>
 
 ### Reactive Streams API 흐름 
 <img src = "./images/reactiveflow.png">
-1. `Subscriber`가 `subscribe`를 통해 `Publisher`에게 구독 요청
+
+1. `Subscriber` 가 `subscribe`를 통해 `Publisher`에게 구독 요청
+
 2. `Publisher`가 `onSubscribe` 메서드를 통해 `Subscriber`에게 `Subscription` 전달.
 	- 전달이 완료되면, `Subscription`은 양 측을 연결하는 매체가 된다.
 3. `Subscription`을 통해 `Subscriber`는 `Publisher`에게 `request`함수로 요청하고, `Publisher`는 `Publisher`에게 `onNext`로 전달한다.
@@ -49,15 +51,15 @@ subscriber가 publisher로부터 stream을 Subscription(구독)받음_
 
 - sequence는 바로 신호를 발생하지 않는다. **구독** 시점에 신호 발생
 
-    <img src = "first.png">
+    <img src = "./images/first.png">
 
 - doOnNext() 메서드는 Flux가 Subscriber에 next 신호 발생할 때 호출 됨
 
-    <img src = "second.png">
+    <img src = "./images/second.png">
 
 ⇒ 따라서 위의 두 결과 모두 "doOnNext: "와 "Received "가 번갈아가며 1, 2, 3 순으로 수행
 
-- subscribe() 시점에 신호가 발생한다.
+- subscribe() 시점에 신호 발생
 
 ### Cold seq vs Hot seq
 
