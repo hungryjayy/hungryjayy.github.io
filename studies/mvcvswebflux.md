@@ -5,7 +5,7 @@
 
 
 ## Spring MVC
-![](./images/mvc.png)
+!<img src = "./images/mvc.png" width = "50%">
 
 * Sync 해당한다.
 * 기본적으로 client로 부터 요청이 들어오면 queue를 통한다.
