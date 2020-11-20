@@ -2,7 +2,7 @@
 
 Data == Stream / event / signal / sequence 로 보며, Asynchronous하게 데이터 전달하는 방식의 Programming
 
-<br><br>
+<br>
 
 ## Reactive Streams
 
@@ -12,6 +12,7 @@ Data == Stream / event / signal / sequence 로 보며, Asynchronous하게 데이
 <br><br>
 
 ### Backpressure란 (→ dynamic pull 방식 이용)
+
 - 상위 컴포넌트에게 본인(컴포넌트) 장애 발생을 알리고 load를 줄인다. → load를 분산처리해 시스템 복원력을 높인다.
 
 1. push 방식
@@ -24,10 +25,10 @@ Data == Stream / event / signal / sequence 로 보며, Asynchronous하게 데이
  <br><br>
 
 ### Reactive Streams API 흐름 
+
 <img src = "./images/reactiveflow.png">
 
 1. `Subscriber` 가 `subscribe`를 통해 `Publisher`에게 구독 요청
-
 2. `Publisher`가 `onSubscribe` 메서드를 통해 `Subscriber`에게 `Subscription` 전달.
 	- 전달이 완료되면, `Subscription`은 양 측을 연결하는 매체가 된다.
 3. `Subscription`을 통해 `Subscriber`는 `Publisher`에게 `request`함수로 요청하고, `Publisher`는 `Publisher`에게 `onNext`로 전달한다.
@@ -69,7 +70,7 @@ subscriber가 publisher로부터 stream을 Subscription(구독)받음_
     - Hot: 구독자가 있건 없건 데이터 생성
         - e.g) 센서 데이터. 계속 데이터는 생성 되고 있음. 구독 후 부터 센서가 받음.
 
-##### References
+#### References
 https://javacan.tistory.com/entry/Reactor-Start-1-RS-Flux-Mono-Subscriber <br>
 https://engineering.linecorp.com/ko/blog/reactive-streams-with-armeria-1/ <br>
 https://www.nurinamu.com/dev/2020/04/09/why-webflux-1/
