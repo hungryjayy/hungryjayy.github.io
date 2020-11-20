@@ -24,6 +24,8 @@
 - thread를 줄였는데 blocking이 걸리는 API에 요청이 몰린다면 결국 I/O작업이 끝날 때까지 기다려야 하기 때문.
 * [reactive Programming](./reactive.md)이 가능해진다. (event driven) 변화에 기민하다.
 
+ _c.f) Event-Driven Programming: 프로그램 실행 흐름이 event(e.g: 마우스 클릭, 키 누르기 등)에 의해 결정되는 프로그래밍 패러다임. 적합한 event handler를 이용해 처리. GUI(graphical user interface) 발전에 따라 event-driven 더욱 많이 쓰임._
+ 
 ## 문제
 그러나, DB connection을 non-blocking으로 지원하는 라이브러리는 아직 잘 사용되지 않고 있다. R2DBC, jasync sql 등. MongoDB, Redis 등 NoSQL은 지원중.
 또한, Event 기반이기에 작업이 엉겨붙어(이리갔다 저리갔다) 처리되기 때문에 Tracking이 다소 복잡할 수 있다.
