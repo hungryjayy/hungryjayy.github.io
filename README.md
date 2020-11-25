@@ -56,8 +56,7 @@ HTTP POST, http://myweb.users
 * 부분 응답: REST api 중 일부만 응답하는 방식. 가독성 높, 부하 낮.<br>
 
 * 검색: GET에 쿼리스트링 사용.
->>> - users?name=cho&region=seoul&offset=20&limit=10
-<br>
-<br>
+>>> - users?name=cho&region=seoul&offset=20&limit=10<br> <br>
+
 ##### Reference
 https://www.slideshare.net/Byungwook/rest-api-60505484
