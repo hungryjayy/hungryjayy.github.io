@@ -14,10 +14,8 @@ HTTP POST, http://myweb.users
 }
 ```
 
-<br>
 * POST 생성, GET 조회, DELETE 삭제, PUT 업데이트
 
-<br>
 >- Idempotent: POST만 NO, 나머진 YES. e.g) f(x) = f(f(x))
 >- 같은 요청(POST)를 계속한다면 계속해서 생긴다. 다른 method는 (한번 실행 == 같은 거 여러번 실행)
 >- GET, HEAD etc.. 은 resource 수정 X → safe하다고 표현
@@ -53,10 +51,10 @@ HTTP POST, http://myweb.users
 * Error stack은 response 메시지에 포함 시키지 말 것.(기술 스택, 파일 위치 등 노출 우려)<br><br>
 
 * 페이징: 많은 도큐먼트 리턴시 잘라서 리턴하는 페이징 처리 필요
->>> /records?offset=100&limit=25 (100번째 record부터 25개 출력) // e.g) 슬라이드 참조
-<br>
-* 부분 응답: REST api 중 일부만 응답하는 방식. 가독성 높, 부하 낮.
-<br>
+>>> /records?offset=100&limit=25 (100번째 record부터 25개 출력) // e.g) 슬라이드 참조<br>
+
+* 부분 응답: REST api 중 일부만 응답하는 방식. 가독성 높, 부하 낮.<br>
+
 * 검색: GET에 쿼리스트링 사용.
 >>> - users?name=cho&region=seoul&offset=20&limit=10
 <br>
