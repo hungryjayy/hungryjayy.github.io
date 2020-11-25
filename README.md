@@ -1,5 +1,5 @@
 # JavaScript to Kotlin Conversion
-기존의 한계를 극복하고자 Kotlin + Spring boot 도입하는 과정에서 학습, 이슈들
+기존(JS + Nodejs)의 한계(?)를 극복하고자 Kotlin + Spring boot 도입하는 과정에서 학습, 이슈들
 
 <br>
 
