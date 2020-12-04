@@ -16,10 +16,6 @@ class Client { // Producer(Sender) role
     private val exchange: DirectExchange? = null // serverConfig(yaml에서 active시켜놓은 config에서의 exchange)
 
     fun send(vararg args: Any, routingKey: String): JSONObject { // callRPC 역할
-        if(template === null) {
-            // error callback
-            return error("Invalid template")
-        }
         val functionNumber = args[0]
 
         println(" [x] Requesting fib(" + functionNumber.toString() + ")")
