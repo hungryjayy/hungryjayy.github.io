@@ -1,5 +1,6 @@
 package developer.rpc
 
+import net.sf.json.JSON
 import org.json.JSONObject
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,28 +13,27 @@ class RpcApplicationTests {
 	private val client: Client ?= null
 
 	@Test
-	fun funcTest(){
-		val num = 5
+	fun firstTest(){
+		val num = 6
 		println("func1")
-		val result :JSONObject = client!!.send(num, "varargVersion", routingKey = "func1")
-		println(result)
+		val result = client!!.send(num, "varargVersion", routingKey = "first")
+		println("1-test: " + result)
 	}
 
 	@Test
-	fun func2Test(){
+	fun secondTest(){
 		val num = 1
 		println("func2")
-		val result :JSONObject = client!!.send(num, routingKey = "func2");
-		println(result)
+		val result = client!!.send(num, routingKey = "second")
+		println("2-test: " + result)
 	}
 
 	@Test
-	fun func3Test(){
-		val num = 5
-		val s: String = "example string"
-		val s2: String = "example second string"
+	fun thirdTest(){
+		val num = 3
 		println("func3")
-		val result :JSONObject = client!!.send(num, s, s2, "template string", routingKey = "func3")
-		println(result)
+		val result = client!!.send(num, "Dd", routingKey = "third")
+		println("3-test: " + result)
 	}
+
 }
