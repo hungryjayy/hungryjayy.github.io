@@ -18,7 +18,8 @@ RabbitMQ를 이용해 메시지 큐 구현하기. RPC 역할 <br><br>
 
 ## 201207 AsyncRabbit, Rabbit 차이 비교
 <br><br><br>
-
+Rabbittemplate만으로도 비동기처리가 가능한건가..
+async를 억지로 우겨넣었지만 아직 비동기적의미가 없음. send와 receive를 분리하고, corrID를 활용하면 좋을 것 같다
 
 
 튜토리얼보다 Stackoverflow 도움을 많이 받은거같다.
