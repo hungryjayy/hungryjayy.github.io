@@ -2,7 +2,7 @@
 
 RabbitMQ를 이용해 메시지 큐 구현하기. RPC 역할 <br><br>
 
-## 201204
+## 201204 only Test #1
 ### RabbitMQ 통신에서의 Kotlin문법, Flux 사용, JSON으로 인한 주 이슈<br>
 
 * Kotlin의 좋은 기능: 가변인수 vararg<br>
@@ -16,7 +16,7 @@ RabbitMQ를 이용해 메시지 큐 구현하기. RPC 역할 <br><br>
 * Flux가 생각보다 공부할게 많다.<br>
 * `RabbitTemplate`가 비동기 처리를 알아서 해주는줄 알았는데 `AsyncRabbitTemplate`이 있는걸보니 아닌가보다.<br>
 
-
+## 201207 AsyncRabbit, Rabbit 차이 비교
 <br><br><br>
 
 
