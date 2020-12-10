@@ -8,5 +8,4 @@ class RpcApplication
 
 fun main(args: Array<String>) {
 	runApplication<RpcApplication>(*args)
-
 }

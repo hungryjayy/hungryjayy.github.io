@@ -1,6 +1,5 @@
 package developer.rpc
 
-import net.sf.json.JSON
 import org.json.JSONObject
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -14,26 +13,35 @@ class RpcApplicationTests {
 
 	@Test
 	fun firstTest(){
-		val num = 6
-		println("func1")
-		val result = client!!.send(num, "varargVersion", routingKey = "first")
-		println("1-test: " + result)
+		val num = 7
+		val jsonObj = JSONObject()
+		jsonObj.put("num", num)
+		jsonObj.put("s", "example")
+		println(" [first-test] ")
+		val result = client!!.send(jsonObj, routingKey = "first")
+		println(" [first-test] $result")
 	}
 
 	@Test
 	fun secondTest(){
-		val num = 1
-		println("func2")
-		val result = client!!.send(num, routingKey = "second")
-		println("2-test: " + result)
+		val num = 6
+		val jsonObj = JSONObject()
+		jsonObj.put("num", num)
+		println(" [second-test] ")
+		val result = client!!.send(jsonObj, routingKey = "second")
+		println(" [second-test] $result")
 	}
 
 	@Test
 	fun thirdTest(){
-		val num = 3
-		println("func3")
-		val result = client!!.send(num, "Dd", routingKey = "third")
-		println("3-test: " + result)
+		val num = 5
+		val str = "third Str"
+		val jsonObj = JSONObject()
+		jsonObj.put("num", num)
+		jsonObj.put("s", str)
+		println(" [third-test]")
+		val result = client!!.send(jsonObj, routingKey = "third")
+		println(" [third-test] $result")
 	}
 
 }
