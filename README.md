@@ -16,13 +16,24 @@ RabbitMQ를 이용해 메시지 큐 구현하기. RPC 역할 <br><br>
 * Flux가 생각보다 공부할게 많다.<br>
 * `RabbitTemplate`가 비동기 처리를 알아서 해주는줄 알았는데 `AsyncRabbitTemplate`이 있는걸보니 아닌가보다.<br>
 
-## 201207 AsyncRabbit, Rabbit 차이 비교
-<br><br><br>
-
-
 
 튜토리얼보다 Stackoverflow 도움을 많이 받은거같다.
 
+
 -----------
 Tutorial https://www.rabbitmq.com/tutorials/tutorial-six-spring-amqp.html
+
+
+## 201207 AsyncRabbit, Rabbit 차이 비교
+<br><br><br>
+Rabbittemplate만으로도 비동기처리가 가능한건가..
+async를 억지로 우겨넣었지만 아직 비동기적의미가 없음. send와 receive를 분리하고, corrID를 활용하면 좋을 것 같다.
+
+예제보고 @RabbiListener 따라하다가 헤맴. Queue name 설정하면 bind 안되는이유는?
+
+좋은 예제 https://reflectoring.io/amqp-request-response/
+
+https://cheese10yun.github.io/spring-rabbitmq/
+
+https://devahea.github.io/2019/04/30/AMQ-%EB%AA%A8%EB%8D%B8%EA%B3%BC-Exchange-Queue-Binding-%EC%97%90-%EB%8C%80%ED%95%B4/
 
