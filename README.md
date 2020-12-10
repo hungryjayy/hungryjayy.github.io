@@ -43,7 +43,7 @@ https://devahea.github.io/2019/04/30/AMQ-%EB%AA%A8%EB%8D%B8%EA%B3%BC-Exchange-Qu
 Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(receiver)에게 String 형태를 주고 Agent가 parsing해 처리한다.<br>
 
 이슈: MQ <--> Agent role 수행하는 convertSendAndReceive()에서는 JSON 전달이 되지 않는다.<br><br>
-JSONObject().toString()형태로 string으로 전달하면 가능하단 것을 아마 언어 숙련도가 높았다면 미리 알았을 것.<br><br>
+ > JSONObject().toString()형태로 string으로 전달하면 가능하단 것을 아마 언어 숙련도가 높았다면 미리 알았을 것.<br><br>
 
 * Test code에 Coroutine을 도입해 비동기 처리를 Test했다.<br><br>
   * RabbitTemplate 또한 Async 처리가 가능하다는 것을 얼핏 듣긴 했지만 MQ와 Agent만 생각했을 때(about Message Queue)의 이야기 같다.<br><br>
