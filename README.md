@@ -53,8 +53,12 @@ Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(recei
  Service단까지 함께 Test를 함으로써 비동기적 차이가 확연히 드러남을 알 수 있었다.<br>
  
  Case 1) RabbitTemplate<br>
- <img src = "./images/rabbitTemplate.png">
- 
+ <img src = "./images/rabbitTemplate.png"><br>
+ - Test단에서의 `[TEST1] Non-blocking in progress #` 와 server단에서 `[SERVER 1] ~~~` 메시지들이 <br>
+ Client에서 `[CLIENT] Waiting response from server` 이전에 모두 수행된다.<br>
+ 따라서 Server로 send를 보낸 시점에 block 되어있다는 것을 알 수 있다.<br>
  
  Case 2) AsyncRabbitTemplate<br>
- <img src = "./images/asyncRabbitTemplate.png">
+ <img src = "./images/asyncRabbitTemplate.png"><br>
+ Test는 Test대로, Client는 Client대로, Server는 Server대로 비동기적으로 쭉 수행된다.
+ 
