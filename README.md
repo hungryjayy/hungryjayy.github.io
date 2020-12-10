@@ -61,5 +61,6 @@ https://devahea.github.io/2019/04/30/AMQ-%EB%AA%A8%EB%8D%B8%EA%B3%BC-Exchange-Qu
  Case 2) AsyncRabbitTemplate<br>
  <img src = "./images/asyncRabbitTemplate.png"><br>
  - Test는 Test대로, Client는 Client대로, Server는 Server대로 비동기적으로 쭉 수행된다.<br>
- 실제 서버에서 이를 수행한다면 Client는 더 많은 일을 할 수 있긴 하다.<br>
+ 실제 서버에서 이를 수행한다면 Client는 더 많은 일을 할 수 있긴 하다.<br><br>
+ 
  *그러나 실제 Client에서는 사실 RPC를 전달하는 일만 수행하면 되는데 이러한 구현이 크게 필요한가 ?*
