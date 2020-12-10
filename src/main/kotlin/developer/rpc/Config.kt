@@ -20,8 +20,8 @@ class Config {
         return Queue("")
     }
 
-    @Bean // 이걸 지우면 NullPointerException (아마도 Client에서 DirectExchange 설정부분인가)
+    @Bean
     fun exchange(): DirectExchange {
-        return DirectExchange("rpc") // 이름이 안맞으면(server에서 명시한 exchange name과) server에 매칭 안됨(got null)
+        return DirectExchange("rpc")
     }
 }
