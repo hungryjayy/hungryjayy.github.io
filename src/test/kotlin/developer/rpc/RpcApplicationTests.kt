@@ -4,6 +4,7 @@ import org.json.JSONObject
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import kotlinx.coroutines.*
 
 @SpringBootTest
 class RpcApplicationTests {
@@ -17,9 +18,21 @@ class RpcApplicationTests {
 		val jsonObj = JSONObject()
 		jsonObj.put("num", num)
 		jsonObj.put("s", "example")
-		println(" [first-test] ")
-		val result = client!!.send(jsonObj, routingKey = "first")
-		println(" [first-test] $result")
+		println(" [TEST1] ")
+		GlobalScope.launch {
+			val result = client!!.send(jsonObj, routingKey = "first")
+			println(" [TEST1] $result")
+		}
+		println(" [TEST1] Non-blocking start")
+		println(" [TEST1] Non-blocking in progress")
+		Thread.sleep(7L)
+		println(" [TEST1] Non-blocking in progress 2")
+		Thread.sleep(7L)
+		println(" [TEST1] Non-blocking in progress 3")
+		Thread.sleep(7L)
+		println(" [TEST1] Non-blocking in progress 4")
+		Thread.sleep(7L)
+		println(" [TEST1] Non-blocking in progress 5")
 	}
 
 	@Test
@@ -27,9 +40,9 @@ class RpcApplicationTests {
 		val num = 6
 		val jsonObj = JSONObject()
 		jsonObj.put("num", num)
-		println(" [second-test] ")
+		println(" [TEST2] ")
 		val result = client!!.send(jsonObj, routingKey = "second")
-		println(" [second-test] $result")
+		println(" [TEST2] $result")
 	}
 
 	@Test
@@ -39,9 +52,9 @@ class RpcApplicationTests {
 		val jsonObj = JSONObject()
 		jsonObj.put("num", num)
 		jsonObj.put("s", str)
-		println(" [third-test]")
+		println(" [TEST3]")
 		val result = client!!.send(jsonObj, routingKey = "third")
-		println(" [third-test] $result")
+		println(" [TEST3] $result")
 	}
 
 }

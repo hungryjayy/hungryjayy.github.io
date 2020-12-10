@@ -16,10 +16,11 @@ class Client { // Producer role
     private val exchange: DirectExchange? = null
 
     fun send(req: JSONObject, routingKey: String): JSONObject { // callRPC role
-        println(" [x] Request JSON object is $req")
+        println(" [CLIENT] Request JSON object is $req")
         val response = template!!.convertSendAndReceive<String>(exchange!!.name, routingKey, req.toString())
+        println(" [CLIENT] Waiting response from server")
         val result = JSONObject(response.get())
-        println(" [x] got $result")
+        println(" [CLIENT] got $result")
         return result
     }
 }

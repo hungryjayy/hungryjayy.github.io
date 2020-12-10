@@ -18,9 +18,9 @@ class Server{ // Consumer(Agent) role
         val req = JSONObject(message)
         val n = req["num"] as Int
         val s = req["s"] as String
-        println(" [1] Received request for $n")
+        println(" [SERVER 1] Received request for $n")
         val value = fib(n)
-        println(" [1] Returned $value")
+        println(" [SERVER 1] Returned $value")
         return """{ "num": $value, "str": "$s" }""".trimIndent()
     }
 
@@ -31,9 +31,9 @@ class Server{ // Consumer(Agent) role
     fun second(message: String): String {
         val req = JSONObject(message)
         val n: Int = req["num"] as Int
-        println(" [2] Received request for $n")
+        println(" [SERVER 2] Received request for $n")
         val value = fib(n)
-        println(" [2] Returned $value")
+        println(" [SERVER 2] Returned $value")
         return """{ "num": $value }""".trimIndent()
     }
 
@@ -45,9 +45,9 @@ class Server{ // Consumer(Agent) role
         val req = JSONObject(message)
         val n = req["num"] as Int
         val s = req["s"] as String
-        println(" [3] Received request for $n")
+        println(" [SERVER 3] Received request for $n")
         val value = fib(n)
-        println(" [3] Returned $value")
+        println(" [SERVER 3] Returned $value")
         return """{ "num": $value, "str": "$s" }""".trimIndent()
     }
 
