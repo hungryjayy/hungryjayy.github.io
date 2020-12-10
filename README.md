@@ -21,7 +21,7 @@ RabbitMQ를 이용해 메시지 큐 구현하기. RPC 역할 <br><br>
 
 
 -----------
-Tutorial https://www.rabbitmq.com/tutorials/tutorial-six-spring-amqp.html
+Tutorial https://www.rabbitmq.com/tutorials/tutorial-six-spring-amqp.html<br><br><br>
 
 
 ## 201207 AsyncRabbit, Rabbit 차이 비교
@@ -37,3 +37,24 @@ https://cheese10yun.github.io/spring-rabbitmq/
 
 https://devahea.github.io/2019/04/30/AMQ-%EB%AA%A8%EB%8D%B8%EA%B3%BC-Exchange-Queue-Binding-%EC%97%90-%EB%8C%80%ED%95%B4/
 
+<br><br><br>
+
+## 201210 rabbitMQ 연구 끝.<br><br>
+Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(receiver)에게 String 형태를 주고 Agent가 parsing해 처리한다.<br>
+
+이슈: MQ <--> Agent role 수행하는 convertSendAndReceive()에서는 JSON 전달이 되지 않는다.<br><br>
+JSONObject().toString()형태로 string으로 전달하면 가능하단 것을 아마 언어 숙련도가 높았다면 미리 알았을 것.<br><br>
+
+* Test code에 Coroutine을 도입해 비동기 처리를 Test했다.<br><br>
+  * RabbitTemplate 또한 Async 처리가 가능하다는 것을 얼핏 듣긴 했지만 MQ와 Agent만 생각했을 때(about Message Queue)의 이야기 같다.<br><br>
+  * 또다른 비동기(Service단에서의)를 가능하게 하기 위해 Test에서 MQ에게 비동기적 Send를 보냈고 차이점을 발견했다.<br><br>
+ 
+ ### 괄목할만한 성과 = RabbitTemplate vs AsyncRabbitTemplate<br>
+ Service단까지 함께 Test를 함으로써 비동기적 차이가 확연히 드러남을 알 수 있었다.<br>
+ 
+ Case 1) RabbitTemplate<br>
+ <img src = "./images/rabbitTemplate.png">
+ 
+ 
+ Case 2) AsyncRabbitTemplate<br>
+ <img src = "./images/asyncRabbitTemplate.png">
