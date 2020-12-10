@@ -40,9 +40,9 @@ https://devahea.github.io/2019/04/30/AMQ-%EB%AA%A8%EB%8D%B8%EA%B3%BC-Exchange-Qu
 <br><br><br>
 
 ## 201210 rabbitMQ 연구 끝.<br><br>
-Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(receiver)에게 String 형태를 주고 Agent가 parsing해 처리한다.<br>
+#### Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(receiver)에게 String 형태를 주고 Agent가 parsing해 처리한다.<br>
 
-이슈: MQ <--> Agent role 수행하는 convertSendAndReceive()에서는 JSON 전달이 되지 않는다.<br><br>
+* 이슈: MQ <--> Agent role 수행하는 convertSendAndReceive()에서는 JSON 전달이 되지 않는다.<br><br>
  > JSONObject().toString()형태로 string으로 전달하면 가능하단 것을 아마 언어 숙련도가 높았다면 미리 알았을 것.<br><br>
 
 * Test code에 Coroutine을 도입해 비동기 처리를 Test했다.<br><br>
@@ -61,6 +61,5 @@ Service와 MQ(producer)간 JSON을 주고 받는다. MQ(producer)는 Agent(recei
  Case 2) AsyncRabbitTemplate<br>
  <img src = "./images/asyncRabbitTemplate.png"><br>
  - Test는 Test대로, Client는 Client대로, Server는 Server대로 비동기적으로 쭉 수행된다.<br>
- 실제 서버에서 이를 수행한다면 Client는 더 많은 일을 할 수 있다.<br>
- *그러나 실제 Client에서는 RPC를 전달하는 일만 수행하면 되기 때문에 큰 성능 차이를 유발하진 않을 것 같다.
- 
+ 실제 서버에서 이를 수행한다면 Client는 더 많은 일을 할 수 있긴 하다.<br>
+ *그러나 실제 Client에서는 사실 RPC를 전달하는 일만 수행하면 되는데 이러한 구현이 크게 필요한가 ?*
