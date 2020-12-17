@@ -22,4 +22,4 @@
 - 상기 특성 덕에 **In memory cache 구현**에 적합
 
 #### Reference
-https://redis.io/topics/quickstart
+Redis 설치 https://redis.io/topics/quickstart
