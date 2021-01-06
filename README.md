@@ -27,9 +27,16 @@ Redis 설치 https://redis.io/topics/quickstart
 
 ## 1/6 정리
 * hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경
+ <img src = "./images/socketIO.png"><br>
 
 * 이 과정에서 promise 활용 비동기 -> 동기식 처리
 * filter, map 이용 코드 cleaning
+ <img src = "./images/asyncPromise.png"><br>
 
 * docker compose 환경설정 변경
+ <img src = "./images/dockercompose.png"><br>
+ 
 *depends_on -> restapi와 frontend가 해당 condition을 먼저 만족해야 해당 환경 실행*
+ <img src = "./images/dependson.png"><br>
+ 
+ 
