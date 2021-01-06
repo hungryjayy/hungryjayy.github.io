@@ -26,12 +26,39 @@ Redis 설치 https://redis.io/topics/quickstart
 
 
 ## redis logic
- <img src = "./images/socketIO.png"><br>
-* hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경<br>
+```
+return Promise.all([
+            client.hset('socketToUser', ~~~, ~~~, () => { resolve(); }),
+            client.hset('socketToRoom', ~~~, ~~~, () => { resolve(); }),
+            client.hset('UserToSocket', ~~~,, ~~~,, () => { 
+              client.hget('UserToSocket', ~~~,, (socket: any) => {
+              
+              });
+              resolve(); 
+            }),
+          ]).then(() => {
+```
+          
+* hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경(위 코드는 psudo code)<br>
 <br>
 
- <img src = "./images/asyncPromise.png"><br>
-* socket 로직을 요청하는 서버에서 promise 활용
+```
+    return new Promise<void>((resolve) => {
+      return socket.getusers (() => {
+        return Promise.all(
+          people
+            .filter( ~~~~ => ~~~~~)
+            .map(~~~ => { ~~~
+            })
+        ).then(() => {
+          resolve();
+        });
+      });
+    });
+  }
+```
+
+* socket 로직을 요청하는 서버에서 위와같이 promise 활용(위 코드는 psudo code)
 * filter, map 이용 코드 cleaning<br>
 <br>
 
