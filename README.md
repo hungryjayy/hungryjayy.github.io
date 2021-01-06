@@ -39,4 +39,16 @@ Redis 설치 https://redis.io/topics/quickstart
 *depends_on -> restapi와 frontend가 해당 condition을 먼저 만족해야 해당 환경 실행*
  <img src = "./images/dependson.png"><br>
  
+ ## Load Balancing
+ <img src = "./images/loadbalancing.png"><br>
+ * ping restapi의 결과: 0.4와 0.5 ip를 왔다갔다 하는걸 볼 수 있음 - load balancing
+    * 해당하는 4,5는 각각 하나의 restapi 서버들임
+    
+
+ <img src = "./images/restapi1.png"><br>
  
+ <img src = "./images/restapi2.png"><br>
+ 
+ 
+ <img src = "./images/dockercontainer.png"><br>
+ * $ docker-compose ps 결과
