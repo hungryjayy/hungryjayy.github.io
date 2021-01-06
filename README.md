@@ -25,21 +25,22 @@
 Redis 설치 https://redis.io/topics/quickstart
 
 
-## 1/6 정리
-* hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경
+## redis logic
  <img src = "./images/socketIO.png"><br>
+* hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경
 
-* 이 과정에서 promise 활용 비동기 -> 동기식 처리
-* filter, map 이용 코드 cleaning
  <img src = "./images/asyncPromise.png"><br>
+* socket 로직을 요청하는 서버에서 promise 활용
+* filter, map 이용 코드 cleaning
 
-* docker compose 환경설정 변경
+## docker compose
  <img src = "./images/dockercompose.png"><br>
+* docker compose 환경설정 변경
  
-*depends_on -> restapi와 frontend가 해당 condition을 먼저 만족해야 해당 환경 실행*
  <img src = "./images/dependson.png"><br>
+*depends_on -> restapi와 frontend가 해당 condition을 먼저 만족해야 해당 환경 실행*
  
- ## Load Balancing
+## Load Balancing
  <img src = "./images/loadbalancing.png"><br>
  * ping restapi의 결과: 0.4와 0.5 ip를 왔다갔다 하는걸 볼 수 있음 - load balancing
     * 해당하는 4,5는 각각 하나의 restapi 서버들임
