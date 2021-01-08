@@ -38,7 +38,23 @@ error => alert(error) // 실행되지 않음
 * `.finally(f)`는 `.then(f, f)`와 유사. Promise가 처리(이행, 거부)된다면 `f`가 항상 실행됨.<br>
 * `finally` 핸들러에는 인수가 없음. Promise의 이행 여부도 알 수 없음(보편적인 동작 만을 수행)<br>
 * `finally`는 자동으로 다음 handler에게 Promise의 결과, 에러 전달<br>
+<br>
+<br>
+
+## Chaining
+* 순차적으로 처리해야하는 비동기 작업이 여러개 있을 때 사용(중첩 Callback을 대체 가능)<br>
+
+* Handler가 Promise를 반환하면, 나머지 체인은 Promise가 처리될 때까지 대기하다가 처리가 완료되면 `result`(값 또는 에러)가 다음 체인으로 전달됨<br>
+
+* `.then`은 Promise를 반환<br>
+
+* 하나의 Promise 이후 여러개의 handler(`.then()`)에 전달 가능. 이 때 각각은 독립적으로 수행<br>
+
+* 추후 손쉬운 확장을 위해 항상 Promise를 반환하도록 개발하는 것이 좋음<br>
+
+<br><br>
+
 
 ### Reference
 https://ko.javascript.info/promise-basics#ref-1134
-
+https://ko.javascript.info/promise-chaining
