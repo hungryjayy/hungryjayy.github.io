@@ -38,3 +38,7 @@ error => alert(error) // 실행되지 않음
 * `.finally(f)`는 `.then(f, f)`와 유사. Promise가 처리(이행, 거부)된다면 `f`가 항상 실행됨.<br>
 * `finally` 핸들러에는 인수가 없음. Promise의 이행 여부도 알 수 없음(보편적인 동작 만을 수행)<br>
 * `finally`는 자동으로 다음 handler에게 Promise의 결과, 에러 전달<br>
+
+### Reference
+https://ko.javascript.info/promise-basics#ref-1134
+
