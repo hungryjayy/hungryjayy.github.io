@@ -21,3 +21,6 @@
 script.onload = () => callback(null, script);
 script.onerror = () => callback(new Error(`${src}를 불러오는 도중에 에러가 발생했습니다.`));
 ```
+
+### Reference
+https://ko.javascript.info/callbacks
