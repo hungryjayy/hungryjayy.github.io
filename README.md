@@ -3,4 +3,4 @@
 
 
 ### reference
-https://ko.javascript.info/async
+https://javascript.info/async
