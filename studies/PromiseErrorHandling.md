@@ -24,3 +24,5 @@ reject(new Error("에러 발생!"));
 	* 만약 이 때 rejection handler가 없으면 에러가 갇히고, script가 죽게 됨.
 	→ `unhandledrejection` event
 	
+### Reference
+https://ko.javascript.info/promise-error-handling
