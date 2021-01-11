@@ -37,5 +37,33 @@ Promise.all([
 
 <br>
 
+### Microtask
+* Promise handler는 항상 비동기적으로 실행<br>
+
+```
+let promise = Promise.resolve();
+
+promise.then(() => alert("프라미스 성공!"));
+
+alert("코드 종료");
+```
+
+<br>
+
+*이 코드에서 “코드 종료”가 먼저 출력. 그 이유는?<br>*
+- 현재 코드에서 자유로운 상태가 되었을 때 JS engine은 queue(microtask queue)에서 작업을 꺼내 실행(이행된 Promise의 핸들러 `.then`부분)<br>
+
+```
+Promise.resolve()
+	.then(() => alert("프라미스 성공!"))
+	.then(() => alert("코드 종료"));
+```
+
+이와 같이 변경하면 의도대로 출력 가능.<br>
+
+
+*c.f) 처리되지 못한 거부에서 `unhandledrejection` event는 microtask queue에 있는 모든 작업이 완료되고서도 error가 잡히지 않는다면 발생한다. 따라서 setTimeout으로 error를 잡아 처리해준다면 `unhandledrejection` 가 트리거 된다.*<br>
+<br>
+
 ### Reference
 https://ko.javascript.info/promise-api
