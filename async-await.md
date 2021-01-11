@@ -22,4 +22,9 @@ function 앞에 `async`를 붙이면 해당 함수는 반환 값을 fulfilled �
 <br>
 
 ### Error handling<br>
-Promise가 정상 이행 시 `await promise`는 Promise의 `result`에 저장된 값을 반환. 거부 시 `throw` 문 처럼 Error 던져짐. → `try...catch` 이용해 에러 잡을 수 있음.
+Promise가 정상 이행 시 `await promise`는 Promise의 `result`에 저장된 값을 반환. 거부 시 `throw` 문 처럼 Error 던져짐. → `try...catch` 이용해 에러 잡을 수 있음.<br>
+
+<br>
+
+### Reference
+https://ko.javascript.info/async-await
