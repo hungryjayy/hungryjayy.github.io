@@ -66,4 +66,5 @@ Promise.resolve()
 <br>
 
 ### Reference
-https://ko.javascript.info/promise-api
+https://ko.javascript.info/promise-api <br>
+https://ko.javascript.info/microtask-queue
