@@ -13,8 +13,10 @@
 
 
 ## then, catch, finally<br>
+각각의 Handler들.(항상 비동기적 실행)<br>
+
 ### then<br>
-`.then(result, error)` 에서 Promise 이행 시 `result`, 거부 시 `error` <br>
+`.then(result, error)` 에서 Promise 이행 시 `result`, 거부 시 `error`<br>
 
 예시)
 ```
