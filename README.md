@@ -26,40 +26,45 @@ Redis 설치 https://redis.io/topics/quickstart
 
 
 ## redis logic
+
 ```
-return Promise.all([
-            client.hset('socketToUser', ~~~, ~~~, () => { resolve(); }),
-            client.hset('socketToRoom', ~~~, ~~~, () => { resolve(); }),
-            client.hset('UserToSocket', ~~~,, ~~~,, () => { 
-              client.hget('UserToSocket', ~~~,, (socket: any) => {
-              
-              });
-              resolve(); 
-            }),
-          ]).then(() => {
+const redis = require('redis');
+
+const client = redis.createClient({ host: 'redis', port: 6379 });
+
+client.on('error', (error: any) => {
+  debug(error);
+});
 ```
-          
-* hset, hget을 이용해 소켓 통신 가능하도록 기존 로직 변경(위 코드는 psudo code)<br>
 <br>
 
 ```
-    return new Promise<void>((resolve) => {
-      return socket.getusers (() => {
-        return Promise.all(
-          people
-            .filter( ~~~~ => ~~~~~)
-            .map(~~~ => { ~~~
-            })
-        ).then(() => {
-          resolve();
-        });
-      });
-    });
-  }
+client.hset(hash, key, val, (err, res) => {
+    console.log(res); // 1 or 0
+}
 ```
 
-* socket 로직을 요청하는 서버에서 위와같이 promise 활용(위 코드는 psudo code)
-* filter, map 이용 코드 cleaning<br>
+<br>
+
+```
+client.hget(hash, key, (err, res) => {
+    console.log(res); // value
+}
+```
+
+<br>
+
+* 위 코드를 깔끔하게 Promise로 이용하기 위해 아래와 같이 구현(이와 같이 여러 method 구현해 놓고 필요에 따라 사용)
+```
+public set(hash: string, key: string, value: string) {
+    return new Promise((resolve) => {
+      client.hset(hash, key, value, (err, result) => {
+        resolve(reply);
+      })
+    })
+  }
+```
+          
 <br>
 
 ## docker compose
