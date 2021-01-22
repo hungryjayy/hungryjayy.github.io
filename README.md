@@ -76,7 +76,7 @@ socket instance와 room간 관계를 저장하고, 연결된 모든 clinet에게
 
 * routing message의 역할을 수행하는 Interface <br>
 
-<img src = "./images/redisAdapter.png">
+<img src = "./images/redisadapter.png">
 
 ```
 const redisAdapter = require('socket.io-redis');
@@ -93,6 +93,6 @@ socketServer = io(baseServer)
 ```
 
 
-### reference
-https://socket.io/docs/v3
+### reference <br>
+https://socket.io/docs/v3 <br>
 https://socket.io/docs/v3/using-multiple-nodes/
