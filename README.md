@@ -3,7 +3,7 @@ JS + Nodejs -> Kotlin + Spring boot 도입 과정에서 학습, 이슈들
 
 <br>
 
-## 기존 프로젝트(javaScript)에서 Kotlin으로 옮겨과는 과정에서 공부한 것 정리
+## javaScript to Kotlin 이관 과정에서 공부한 것 정리
 
 * [Kotlin + Spring boot 사용 시 MariaDB connection 방법](./studies/springbootwithMariaDB.md)
 * [Kotlin에서 비동기 처리 Coroutine](./studies/aboutCoroutine.md)
