@@ -7,7 +7,7 @@
 
 # 1. Master Slave
 
-<img src="./images/sentinel.md">
+<img src="./images/sentinel.png">
 
 - Master : slave = 1 : n 가능
 - Master는 Data 변경시 변경 내용을 backlog에 기록하고 slave는 backlog 를 바탕으로 replication.
@@ -35,7 +35,7 @@
 
 # 2. Redis Cluster(Scale out)
 
-<img src="./images/cluster.md">
+<img src="./images/cluster.png">
 
 - Redis에서 제공하는 replication, 샤딩 기법.
 - Sentinel과는 별도의 솔루션.
