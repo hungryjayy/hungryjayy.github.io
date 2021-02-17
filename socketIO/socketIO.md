@@ -36,6 +36,38 @@
 `socket.emit()` - 이것을 통해 event를 보낸다(client에게) <br>
 
  `socket.on(<event name>, <listener>)` event가 도착하면 listener를 통해 받는다.(callback처럼) <br>
+ 
+ * 관련 모듈
+ <img src = "./images/module.png">
+ <br>
+ 
+ * redisClient, redis + socketIO(adapter)
+ <img src = "./images/adapter.png">
+
+- 전체(broadcast)
+
+    `socketServer.emit(eventName, data);`
+
+- Namespace
+
+    `socketServer.of(nameSpace),emit(eventName, data);`
+
+- 특정인
+
+    `socketServer.to(socketID).emit(eventName, data);`
+
+- 특정 방 입장
+
+    `socket.join(roomID)`
+
+- 특정 방 전체에 event 전달
+
+    `socketServer.io(roomID).emit(eventName, data);`
+
+    or
+
+    `socket.broadcast.to(roomID).emit(eventName, data);`
+
 
 <br>
 
