@@ -27,13 +27,17 @@ HTTP POST, http://myweb.users
 * API URL만 보고도 무슨 API인지 알도록 직관적으로.(길지않게 2depth정도만)<br><br>
 * REST api는 대상에 대한 행동(CRUD)을 정의. → 대상은 명사, 복수형
 
->>_나쁜 예)_<br>
->>>HTTP POST : /getDogs<br>
->>>HTTP POST : /setDogsOwner<br>
+```
+나쁜 예)<br>
+HTTP POST : /getDogs<br>
+HTTP POST : /setDogsOwner<br>
+```
 
->>_좋은 예)_<br>
->>>HTTP GET : /dogs<br>
->>>HTTP POST : /dogs/{puppy}/owner/{terry}<br><br>
+```
+좋은 예)<br>
+HTTP GET : /dogs<br>
+HTTP POST : /dogs/{puppy}/owner/{terry}<br><br>
+```
 
 * resource간 관계 표현
 > 1) 서브 url. GET /owner/{terry}/dogs<br>
@@ -50,13 +54,14 @@ HTTP POST, http://myweb.users
 <br>
 * Error stack은 response 메시지에 포함 시키지 말 것.(기술 스택, 파일 위치 등 노출 우려)<br><br>
 
-* 페이징: 많은 도큐먼트 리턴시 잘라서 리턴하는 페이징 처리 필요
->>> /records?offset=100&limit=25 (100번째 record부터 25개 출력) // e.g) 슬라이드 참조<br>
+* 페이징: 많은 도큐먼트 리턴시 잘라서 리턴하는 페이징 처리 필요<br>
+`/records?offset=100&limit=25 (100번째 record부터 25개 출력) // e.g) 슬라이드 참조<br>`
 
 * 부분 응답: REST api 중 일부만 응답하는 방식. 가독성 높, 부하 낮.<br>
 
-* 검색: GET에 쿼리스트링 사용.
->>> - users?name=cho&region=seoul&offset=20&limit=10<br> <br>
+* 검색: GET에 쿼리스트링 사용. <br>
+ `users?name=cho&region=seoul&offset=20&limit=10<br>`
+ <br>
 
 ##### Reference
 https://www.slideshare.net/Byungwook/rest-api-60505484
