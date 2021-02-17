@@ -105,11 +105,19 @@ io.on('connection', async (socket) => {
 ### Adapter: Redis
 socket instance와 room간 관계를 저장하고, 연결된 모든 clinet에게 broadcasting을 가능하게 한다.<br>
 
-* default in memory 와 redis를 이용할 수 있는데, scale out 측면에서 redis가 더 효과적 <br>
+scale out에서 redis가 효과적
 
-* routing message의 역할을 수행하는 Interface <br>
+- Adapter 역할(기존 restapi 에서의 방법)
+    - 일종의 cluster처럼 연결된 각 서버에 broadcast 하는 방식
+    - routing message의 역할을 수행하는 Interface
+    - socket과 room간 관계를 저장함
+    - Redis와의 adapting을 통해 broadcasting 기능이 가능
 
 <img src = "./images/redisadapter.png">
+
+- Pub / Sub 기능 통해 수행(현재 restapi의 방법)
+    - 각 서버들은 하나의 channel을 subscribe
+    - 메시지를 보낼 서버가 publish를 하면 각 서버는 메시지를 받는다.
 
 ```
 const redisAdapter = require('socket.io-redis');
