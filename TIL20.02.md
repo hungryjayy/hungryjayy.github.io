@@ -1,84 +1,41 @@
-200215
+## 200215
+
+### code review
+
+* typeof (ABC) (x) → typeof ABC
+* 작성 file 끝에 new line 넣어주기 https://minz.dev/19 → cat 관련 문제
+* docker image에 version 명시하는 것이 좋음.
+  * docker image는 docker hub로부터 온다.
 
 
 
-\### code review
+* 변수 이름 Id vs ID → Id가 많이 쓰이고 가독성도 좋다
+  * e.g. socketIdToUser와 같이 Camelcase 중간에 오는 경우. 
 
+## 200216
 
+*TODO: hypermeeting-devops 테스트 (hello world돌아가는지 정도?)* 
 
-\* typeof (ABC) (x) → typeof ABC
+*  pub/sub(redis)에서 subscribe한 객체는 broadcasting을 받기 위해 무한히 blocking된다. → sub을 또 다른 목적으로 사용할 수 없는 이유
 
+* 내가 무언가(모듈 등)을 도입했을 때 package.json 등에 생소한 모듈이 있다 → npm에서 내가 도입한 무언가와의 의존성을 찾아보자.
 
+### Kubernetes
 
-\* 작성 file 끝에 new line 넣어주기 https://minz.dev/19 → cat 관련 문제
+* pod(파드): 여러 컨테이너가 모인 서비스 or 하나의 컨테이너로 구성되어있음(즉 하나 이상)
+* cluster(클러스터): 운영하는(배포하는) 하나의 형태
+* helm(헬름): 
+  1. 클러스터 각 환경에 따라 달라지는 값을 정해두고 이에 따라 배포하는 매커니즘.
+  2. 쿠버네티스 차트를 관리하기 위한 도구
+* 차트: 매니페스트 템플릿 구성하고 패키지로 관리, 매니페스트 파일 생성
 
+* 매니페스트: 매니페스트 파일에 기초해 쿠버네티스 리소스 관리
 
+* 실무에서는 로컬 및 운영 클러스터를 막론하고 여러 환경에 배포해야하기 때문에 애플리케이션은 모두 차트로 패키징해 kubectl 대신 helm으로 배포 및 업데이트.
 
-\* docker image에 version 명시하는 것이 좋음.
+## 200217
 
-\- docker image는 docker hub로부터 온다.
-
-
-
-\* 변수 이름 Id vs ID → Id가 많이 쓰이고 가독성도 좋다
-
-\- e.g. socketIdToUser와 같이 Camelcase 중간에 오는 경우. 
-
- 
-
-
-
-200216
-
-//TODO: hypermeeting-devops 테스트 (hello world돌아가는지 정도?)
-
-
-
-\* pub/sub(redis)에서 subscribe한 객체는 broadcasting을 받기 위해 무한히 blocking된다. → sub을 또 다른 목적으로 사용할 수 없는 이유
-
-
-
-\* 내가 무언가(모듈 등)을 도입했을 때 package.json 등에 생소한 모듈이 있다 → npm에서 내가 도입한 무언가와의 의존성을 찾아보자.
-
-
-
-<Kubernetes>
-
-pod(파드): 여러 컨테이너가 모인 서비스 or 하나의 컨테이너로 구성되어있음(즉 하나 이상)
-
-
-
-cluster(클러스터): 운영하는(배포하는) 하나의 형태
-
-
-
-helm(헬름): 
-
-\1. 클러스터 각 환경에 따라 달라지는 값을 정해두고 이에 따라 배포하는 매커니즘.
-
-\2. 쿠버네티스 차트를 관리하기 위한 도구
-
-
-
-차트: 매니페스트 템플릿 구성하고 패키지로 관리, 매니페스트 파일 생성
-
-
-
-매니페스트: 매니페스트 파일에 기초해 쿠버네티스 리소스 관리
-
-
-
-\* 실무에서는 로컬 및 운영 클러스터를 막론하고 여러 환경에 배포해야하기 때문에 애플리케이션은 모두 차트로 패키징해 kubectl 대신 helm으로 배포 및 업데이트.
-
-
-
- 
-
-
-
-200217
-
-배경
+### 배경
 
 ​	•	언제사용? 
 
@@ -176,88 +133,47 @@ https://goodgid.github.io/Redis-Master-Slave-and-Cluster/
 
 https://medium.com/garimoo/redis-documentation-2- HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"레디스 HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"- HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"클러스터 HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"- HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"튜토리얼 HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63" HYPERLINK "https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63"-911ba145e63
 
+## 200218
 
-
- 
-
-
-
-200218
-
-TODO: proposed rebase done.
-
-, kotlin쪽 살펴보기
-
-
+*TODO: proposed rebase done.* 
 
 TODO: 
 
-\1. PO 위에서 간단한거 사용해서 잘 동작하는지 확인
+1. PO 위에서 간단한거 사용해서 잘 동작하는지 확인
 
-\2. WAPL service에서 받은 요청 **RPC**처럼 PO로 띄워 HM server에 전달하기
+2. WAPL service에서 받은 요청 **RPC**처럼 PO로 띄워 HM server에 전달하기
 
+## 200219
 
+* 문서에서 말하는 ${PROOBJECT_HOME} == ProObject7/개발/proobject7
+* PO: 프레임워크의 장점을 수용한 아키텍처적 최적화된 앱 플랫폼
+* Prostudio는 eclipse같다.
+* Prostudio에서 application Project 만들어 띄우려면 만들때부터 아예 서버 열어놓고 띄우기..
 
-200219
+## 200220
 
-\* 문서에서 말하는 ${PROOBJECT_HOME} == ProObject7/개발/proobject7
+* Controller : 비즈니스 로직 처리, 세분화가 필요할 경우 적절한 service에 전달
 
+* Service: DAO로 데이터베이스에 접근, DTO로 전달
 
+* DAO : Data Access Object
 
-\* PO: 프레임워크의 장점을 수용한 아키텍처적 최적화된 앱 플랫폼
+* DTO : Data Transfer Object
 
+## 200222
 
+ *TODO:* 
 
-\* Prostudio는 eclipse같다.
+1. Docker server 설치까지 완료한 상태.
 
+2. docker-compose up 으로 po server들 띄우고
+3. pro studio 에서 application 만들어보기
 
+4. Dockerfile manual대로 업데이트 해야할듯 35page부터.
 
-\* Prostudio에서 application Project 만들어 띄우려면 만들때부터 아예 서버 열어놓고 띄우기..
+5. commit 어떤 branch에 올릴지 성회님과 고민
 
-
-
-\* Docker 설치
-
-
-
-
-
-200220
-
-
-
-Controller : 비즈니스 로직 처리, 세분화가 필요할 경우 적절한 service에 전달
-
-Service: DAO로 데이터베이스에 접근, DTO로 전달
-
-DAO : Data Access Object
-
-DTO : Data Transfer Object
-
-
-
-
-
-200222
-
- TODO:
-
-\1. Docker server 설치까지 완료한 상태.
-
-\2. docker-compose up 으로 po server들 띄우고
-
-\3. pro studio 에서 application 만들어보기
-
-\4. Dockerfile manual대로 업데이트 해야할듯 35page부터.
-
-\5. commit 어떤 branch에 올릴지 성회님과 고민
-
-
-
-
-
-*
-
+```javascript
 func().then(async () => {
 
   if (foo()) {
@@ -269,80 +185,45 @@ func().then(async () => {
   await promise() // second
 
  })
+```
+
+​	이와 같은 코드에서 first → second 순서 보장. If() 조건절은 즉시 판별이 일어남.
 
 
 
-이와 같은 코드에서 first → second 순서 보장. If() 조건절은 즉시 판별이 일어남.
+## 200223
 
+* 나머지 함수는 가장 마지막 인자에 들어와야 함.
 
+* async 함수에서 반환하면 자동으로 Promise 씌워준다. error시 reject() 명시해야 하는것으로 보임.
 
-200223
+### docker 조사
 
+* docker는 server/client 구조이다.
 
+* docker command는 HTTP 프로토콜을 이용하는 restapi이다. e.g. 우리가 docker ps 라는 command를 치면 docker server에 GET api-version/containers 라는 요청을 보내는 것과 같다.
 
-\* 나머지 함수는 가장 마지막 인자에 들어와야 함.
+* 보통 docker daemon(server)와 client는 같은 machine 내에 존재한다.
 
+  → 설정을 통해 client가 원격(remote)으로 server에 docker command 전달할 수 있다.
 
+* dockerhost: docker daemon을 실행하고 image 저장하고 ,container를 올리는애
 
-\* async 함수에서 반환하면 자동으로 Promise 씌워준다. error시 reject() 명시해야 하는것으로 보임.
+* docker daemon: client에게 받은 docker command(api)를 실행해 host machine에서 container 실행.
 
+* docker engine: client, server를 통틀어 engine이라고 함.
 
+## 200224
 
-<docker 조사>
+* socket.io는 node.js의 app과의 connection을 관리해준다. (웹소켓과같은걸 이용해서)
 
-\* docker는 server/client 구조이다.
+* redis는 일반적인 pub/sub서버이다.
 
+* 위의 두가지는 비슷하게 일한다. Node.js는 싱글스레드이고, socket을 오픈해놓을 수 있는 한계가 있다. 많은 socket server가 함께 동작하고 브로드캐스팅하게 하려면, socket.io-redis가 있다.
 
+* socket.io-redis는 각 node에게 event를 배포하기 위해 redis의 pub/sub를 사용한다.
 
-\* docker command는 HTTP 프로토콜을 이용하는 restapi이다. e.g. 우리가 docker ps 라는 command를 치면 docker server에 GET api-version/containers 라는 요청을 보내는 것과 같다.
-
-
-
-\* 보통 docker daemon(server)와 client는 같은 machine 내에 존재한다.
-
-→ 설정을 통해 client가 원격(remote)으로 server에 docker command 전달할 수 있다.
-
-
-
-
-
-\* dockerhost: docker daemon을 실행하고 image 저장하고 ,container를 올리는애
-
-
-
-\* docker daemon: client에게 받은 docker command(api)를 실행해 host machine에서 container 실행.
-
-
-
-\* docker engine: client, server를 통틀어 engine이라고 함.
-
-
-
-200224
-
-
-
-\* socket.io는 node.js의 app과의 connection을 관리해준다. (웹소켓과같은걸 이용해서)
-
-
-
-\* redis는 일반적인 pub/sub서버이다.
-
-
-
-\* 위의 두가지는 비슷하게 일한다. Node.js는 싱글스레드이고, socket을 오픈해놓을 수 있는 한계가 있다. 많은 socket server가 함께 동작하고 브로드캐스팅하게 하려면, socket.io-redis가 있다.
-
-
-
-\* socket.io-redis는 각 node에게 event를 배포하기 위해 redis의 pub/sub를 사용한다.
-
-
-
-\* socket.io-redis 원리: redis의 pub/sub 기능 이용. 하나의 서버에서 pub/sub을 만들고 연결해놓고 나중에 현재서버에서 접속이 들어오면 다른 서버들에 publish해서 알려주고 다른 서버는 구독중.
-
-
-
-
+* socket.io-redis 원리: redis의 pub/sub 기능 이용. 하나의 서버에서 pub/sub을 만들고 연결해놓고 나중에 현재서버에서 접속이 들어오면 다른 서버들에 publish해서 알려주고 다른 서버는 구독중.
 
 https://github.com/socketio/socket.io-redis/issues/21#issuecomment-60315678
 
