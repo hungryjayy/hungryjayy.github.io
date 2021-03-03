@@ -74,3 +74,26 @@
   * Query 작성 후 저장시 자동으로 쿼리에 해당하는 소스 생성
   * (FILE전용)
   * layered file생성, 읽을 때 사용 객체
+
+  ---------
+
+  ### Object flow editer
+
+
+
+* BO (biz object)
+  * 비즈니스 수행 재사용성 단위.
+  * SO나 JO에서 레퍼런스 호출됨.
+  * DO 호출 후 데이터 가공 등 수행
+* SO (service object)
+  * 서비스 수행 관리 object.
+  * BO flow 중심 애플리케이션
+* JO (job object)
+  * batch 수행 때 task 정의
+
+
+
+---
+
+### Object module 개발 절차
+
