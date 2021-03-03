@@ -55,3 +55,22 @@
   * localhost:14000/promanager
   * localhost:24000/promanagerops
   * localhost:34000/promanagerrte(아마도..)
+
+
+
+## 200303
+
+* DO (Data Object)
+
+  * SO 입출력 전용 Data를 담아서 DTO 역할 수행하는 객체
+  * 사용자가 Promanager에서 in/out에 사용되는 프로퍼티(Meta정보)를 정의해 사용, 이에 대한 여러 메서드 제공(e.g. getter setter)
+  * excel 파일을 이용해 DO객체 생성 가능
+
+* DOF (Data Object Factory) - DB용 or FILE용
+
+  * (DB전용)
+  * DataBase에 접근 DAO 역할
+
+  * Query 작성 후 저장시 자동으로 쿼리에 해당하는 소스 생성
+  * (FILE전용)
+  * layered file생성, 읽을 때 사용 객체
