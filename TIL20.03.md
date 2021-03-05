@@ -97,7 +97,9 @@
 
 ## 200305
 
-### Javascript vs TypeScript
+### Language
+
+#### Javascript vs TypeScript
 
 * JS
   * 타입 시스템이 없는(정적) 동적 프로그래밍 언어. 따라서 런타임 에러가 많이 발생할 수 있다.
@@ -110,7 +112,11 @@
     * 타입을 명시함으로써 가독성 또한 높다.
   * 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
 
+#### Map vs forEach
 
+* forEach는 array 요소를 한번 순회한다.
+* map() Array요소가 제공된 함수로 호출될 때 callback에서 적용되는 새 요소들로 새로운 array를 만든다.
+  * filter는 조건문으로 새로운 함수 반환
 
 
 
