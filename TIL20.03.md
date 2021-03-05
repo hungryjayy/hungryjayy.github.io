@@ -112,6 +112,66 @@
     * 타입을 명시함으로써 가독성 또한 높다.
   * 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
 
+#### Kotlin vs Java
+
+* Java와 동일한 타입안정성 + 타입 추론(Inference) 제공.
+  * `val name = "abced"` <- 이 경우 알아서 String으로 인식
+
+* Null 안정성 제공
+
+  * `var foo: String? = "Hello"` 물음표는 nullable을 의미
+
+  * 위의 경우 `foo?.bar()`와 같이 쓰면 null이 아닐때 bar() 호출, null일 때 null 반환
+
+  * Not-Null Assertion(!!)
+
+  * Elvis operator `?:`
+
+    * ```kotlin
+      val foo: String? = getString()
+      return foo?.length ?: 0
+      ```
+
+    * 위의 경우 null 아닐 때 length, null일 때 0 반환
+
+* Delegation pattern(상속 대안)
+
+  ``` kotlin
+  class CopyPrinter(copier: Copy, printer: Print)
+   : Copy by copier, Print by printer
+  interface Copy {
+   fun copy(page: Page): Page
+  }
+  interface Print {
+   fun print(page: Page)
+  }
+  ```
+
+  * 위 예제에서 copy로 copy를, print로 print를 그 자리에서 바로 선언하고 있다.
+
+* Extention
+
+  ```Kotlin
+  // StringExt.kt
+  fun String.double(): String() {
+  	return this + this
+  }
+  ```
+
+  * 이 때 `"Hello".double()` 이처럼 사용 가능.
+
+* Companion 객체
+
+  * 어떤 클래스의 모든 인스턴스가 공유하는 객체 만들 때. e.g. singleton?
+
+* Smart casting
+
+* collection 함수
+
+* control 제어 구조
+
+* 일급 컬렉션?
+
 #### Map vs forEach
 
 * forEach는 array 요소를 한번 순회한다.
