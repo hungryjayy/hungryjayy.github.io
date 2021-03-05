@@ -163,20 +163,48 @@
 * Companion 객체
 
   * 어떤 클래스의 모든 인스턴스가 공유하는 객체 만들 때. e.g. singleton?
+  * 자바에서 static 변수 / 메서드 사용했을 때와 동일
+    * 객체 생성도 전에 런타임시작하는 그 때 즉시 생성된다.
 
 * Smart casting
 
+  * 개발자가 따로 type을 캐스팅해줄 필요 없이 컴파일러가 알아서 Type을 캐스팅해줌
+
 * collection 함수
 
-* control 제어 구조
+  * (*mutable과 immutable을 구분하여 지원한다는 점*)
+  * List - remove, add, addAll, removeAt, removeIf 등
+  * Set - `setOf<type>(items)` 
+  * Map - Key, value쌍. `Pair(A, B) or A to B`와 같이 세팅
 
-* 일급 컬렉션?
-
-#### Map vs forEach
-
-* forEach는 array 요소를 한번 순회한다.
-* map() Array요소가 제공된 함수로 호출될 때 callback에서 적용되는 새 요소들로 새로운 array를 만든다.
+* Map vs forEach
+  * forEach는 array 요소를 한번 순회한다.
+  * map() Array요소가 제공된 함수로 호출될 때 callback에서 적용되는 새 요소들로 새로운 array를 만든다.
   * filter는 조건문으로 새로운 함수 반환
 
 
 
+### Backend
+
+* 일급 컬렉션?
+
+  * ```java
+    public class GameRanking {
+    
+        private Map<String, String> ranks;
+    
+        public GameRanking(Map<String, String> ranks) {
+            this.ranks = ranks;
+        }
+    }
+    ```
+
+  * 컬렉션을 wrapping하면서 그 외 다른 멤버변수가 없는 상태
+
+    * 비즈니스에 종속적인 자료구조
+    * 불변성이 필요하다면 Collection 내부 각각들의 불변성(필요하다면 불변이 아니어도 됨)
+    * 상태, 행위를 이곳에서 관리
+
+  * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
+    * cars 하나의 인스턴스로 비즈니스로직 관리 가능
+    * 
