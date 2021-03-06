@@ -115,8 +115,9 @@
 #### Kotlin vs Java
 
 * Java와 동일한 타입안정성 + 타입 추론(Inference) 제공.
-  * `val name = "abced"` <- 이 경우 알아서 String으로 인식
-
+  
+* `val name = "abced"` <- 이 경우 알아서 String으로 인식
+  
 * Null 안정성 제공
 
   * `var foo: String? = "Hello"` 물음표는 nullable을 의미
@@ -207,4 +208,6 @@
 
   * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
     * cars 하나의 인스턴스로 비즈니스로직 관리 가능
-    * 
+
+
+
