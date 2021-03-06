@@ -97,7 +97,7 @@
 
 ## 200305
 
-### Language
+## Language
 
 #### Javascript vs TypeScript
 
@@ -185,7 +185,90 @@
 
 
 
-### Backend
+### event loop, 비동기 처리 등
+
+#### Javascript
+
+* 싱글스레드 기반, Event loop를 기반으로 하는 Node.js
+* Javascript engine은 JS를 해석하고 실행하는 엔진
+
+#### Javascript engine(Call stack, heap, task queue)
+
+* Call stack
+
+  * JS는 단 하나의 call stack 사용
+  * 따라서 JS가 실행되는 방식은 Run to completion. 하나의 함수가 실행되면 다른 task는 수행될 수 없다.
+  * 메서드 실행시 call stack에 새로운 stack frame 생성하고 return시 stack에서 해당 frame을 pop한다.
+
+* Heap
+
+  * 동적으로 생성된 객체(인스턴스)는 힙에 할당.
+
+* Microtask queue
+
+  * task queue보다 여기를 우선적으로 확인
+  * mutation observer(?), promise가 여기로 들어감
+
+* Task Queue(event queue)
+
+  * JS 런타임환경에는 처리해야하는 Task를 임시저장하는 대기 큐가 존재. 그것이 Task queue == event queue.
+  * Call stack이 비어졌을 때 queue에 먼저 들어온 task가 stack으로 들어간다.
+  * 비동기로 호출되는 함수는 Task queue에 enqueue된다.
+  * JS에서는 event에 의해 실행되는 함수(핸들러)들이 비동기로 실행된다.
+  * 여기서 지워지는 타이밍은 stack에서 수행 후 pop 되고 나서.
+
+* Event loop
+
+  * 위의 작업들을 해주는게 event loop
+
+    ```javascript
+    while(queue.waitForMessage()) {
+    	queue.processNextMessage();
+    }
+    ```
+
+    * 이러한 방식으로 이벤트 루프는 현재 실행중인 task가 없는지, task queue에 task가 있는지 반복적으로 확인
+
+  
+
+* queue 우선순위
+
+  * micrortask queue -> animation frames -> task queue
+  * 직접적인 작업들은 Web API에서 처리한다.
+  * animation frame : 브라우저 랜더링 관련
+
+  
+
+* *c.f)* 예시
+
+  * ![img](https://lh5.googleusercontent.com/7VzhhuhOWgWobYatpJHlFeqBa0k5rT5qxQnjvXr5EWXc4jo1NDlahVbvag39KSK8COVPzMUH32HWwFrPWbB3fSmc3KQRuH13nlZbkWoDPlPJppdrKh-mIj7OROIdhR0ZkkQsZwYw)
+    * 실행결과 1 -> 3 -> 2
+    * call stack에 test1 in, test 2 in하고 setTimeout메서드의 익명함수는 task queue로 들어간다. 이후 test 3 실행 후 모두 실행되어 각각의 stack frame들이 pop되어 stack이 비게 되면 task queue에 있던 test2의 익명method가 call stack으로 들어가 실행된다.
+
+#### eventloop, 비동기  처리과정 Reference
+
+http://asfirstalways.tistory.com/362 
+
+http://sculove.github.io/blog/2018/01/18/javascriptflow/
+
+*두 링크 정독 여러번하기 
+
+
+
+### Hoisting
+
+* 사전적 의미: 끌어올리기. 선언되는 모든 변수는 호이스트된다.(끌어올려진다)
+* 따라서 변수의 정의가 그 범위에 따라 선언과 할당으로 분리 되는것.
+* 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 JS엔진은 함수 선언을 끌어올리기 때문에 가능하다.
+* 다만 변수의 값은 끌어올리지 않으므로 선언보다 앞에서 출력하면 `undefined` 된다.
+
+### Closure
+
+
+
+
+
+## Backend
 
 * 일급 컬렉션?
 
@@ -208,6 +291,3 @@
 
   * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
     * cars 하나의 인스턴스로 비즈니스로직 관리 가능
-
-
-
