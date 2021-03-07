@@ -291,3 +291,7 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 
   * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
     * cars 하나의 인스턴스로 비즈니스로직 관리 가능
+
+
+
+* service, repository 같은 것들은 singleton처럼 전체 코드에서 하나만 사용해도 된다. -> 코드 수정
