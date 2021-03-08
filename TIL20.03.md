@@ -387,3 +387,14 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
   * cars 하나의 인스턴스로 비즈니스로직 관리 가능
   
     
+
+### Rest api
+
+: API를 설계 할 때 자원을 나타내는 URI가 있고, http method를 통해 자원을 어떻게 처리할 지 설계하는 방식의 아키텍처
+
+* 구성
+  * 자원(resource) - URI / 행위 - HTTP method / 표현 representations
+* 특징
+  * URI로 지정된 리소스에 대한 조작을 한정적인 Interface를 통해 수행하는 아키텍처
+  * Stateless: 작업을 위한 상태정보를 따로 저장하지 않는다. 단순히 들어온 요청만을 처리 -> 불필요한 정보 관리 x
+  * client-server 구조: 서버는 API를 제공, 클라이언트는 세션이나 로그인 정보를 관리. 각각의 역할이 구분되고 의존성이 줄어든다.
