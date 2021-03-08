@@ -85,11 +85,15 @@
   * 비즈니스 수행 재사용성 단위.
   * SO나 JO에서 레퍼런스 호출됨.
   * DO 호출 후 데이터 가공 등 수행
-  * DOF를 사용
+  * DOF를 사용하는 부분
 * SO (service object)
   * 서비스 수행 관리 object.
   * BO flow 중심 애플리케이션
   * SO의 이름은 특히 더 대문자로 해줘야한다.
+  * input output 필요
+  * BO를 멤버 var로 설정해줘야한다.
+  * 일반 메서드를 만ㄴ들지 말고 오버라이드 메서드를 생성해야한다.
+  * generate DD를 하면 servicegroup.xml이 생성되고, 여기서 SO에 대한 정보가 저장된다.
 * JO (job object)
   * batch 수행 때 task 정의
 
