@@ -99,24 +99,29 @@
 
 
 
+* URLconnection & HttpURLConnection
+
+  * HttpURLconnection은 URLConnection을 구현한 클래스
+
+  * 기본적으로 get 메서드
+
+  * setRequestMethod()를 통해 메서드 변경 가능
+
+  * `getResponseCode(), getResponseMessage()` => 응답 코드, 응답 메시지 리턴받을 수 있다.
+
+    * Reference
+
+      https://mytalkhome.tistory.com/855
 
 
-## 200305
 
-### Language
 
-#### Javascript vs TypeScript
 
-* JS
-  * 타입 시스템이 없는(정적) 동적 프로그래밍 언어. 따라서 런타임 에러가 많이 발생할 수 있다.
-    * RTE: 프로그램에서 수행할 수 없는 동작을 시도할 때 발생
-    * 컴파일 error: 컴파일 타임에 발생. 주로 문법적 오류
-  * 비교적 유연하게 개발할 수 있는 환경 제공
-* TS는 
-  * TS는 JS 기반으로 만들어졌다.
-  * 정적 타입을 지원해서 컴파일 단계에서 오류를 포착 가능.
-    * 타입을 명시함으로써 가독성 또한 높다.
-  * 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
+## 200305~ 면접준비
+
+# Language
+
+## Kotlin
 
 #### Kotlin vs Java
 
@@ -184,64 +189,201 @@
   * Set - `setOf<type>(items)` 
   * Map - Key, value쌍. `Pair(A, B) or A to B`와 같이 세팅
 
-* Map vs forEach
-  * forEach는 array 요소를 한번 순회한다.
-  * map() Array요소가 제공된 함수로 호출될 때 callback에서 적용되는 새 요소들로 새로운 array를 만든다.
-  * filter는 조건문으로 새로운 함수 반환
+#### Map vs forEach
 
-* 표현식 vs 구문
+* forEach는 array 요소를 한번 순회한다.
+* map() Array요소가 제공된 함수로 호출될 때 callback에서 적용되는 새 요소들로 새로운 array를 만든다.
+* filter는 조건문으로 새로운 함수 반환
 
-  * 표현식은 값을 반환한다.
+#### 표현식 vs 구문
 
-    * == 값을 만든다
-    * == 대입 연산자 오른쪽에 명시할 수 있다.(값을 저장)
+* 표현식은 값을 반환한다.
 
-    `val foo = when { }`
+  * == 값을 만든다
+  * == 대입 연산자 오른쪽에 명시할 수 있다.(값을 저장)
 
-  * 구문은 무언가가 실행되도록 명령을 지시하는 문장을 의미
-    * == 값을 만들지는 않는다.
+  `val foo = when { }`
 
+* 구문은 무언가가 실행되도록 명령을 지시하는 문장을 의미
+  
+  * == 값을 만들지는 않는다.
+  
 * when 표현식에서는 항상 else를 필요로 한다.(값을 만들어야 하기 때문에)
 
+### 
 
+## JS TS
 
-### Backend
+### Javascript vs TypeScript
 
-* 일급 컬렉션?
+* JS
+  * 타입 시스템이 없는(정적) 동적 프로그래밍 언어. 따라서 런타임 에러가 많이 발생할 수 있다.
+    * RTE: 프로그램에서 수행할 수 없는 동작을 시도할 때 발생
+    * 컴파일 error: 컴파일 타임에 발생. 주로 문법적 오류
+  * 비교적 유연하게 개발할 수 있는 환경 제공
+* TS는 
+  * TS는 JS 기반으로 만들어졌다.
+  * 정적 타입을 지원해서 컴파일 단계에서 오류를 포착 가능.
+    * 타입을 명시함으로써 가독성 또한 높다.
+  * 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
 
-  * ```java
-    public class GameRanking {
-    
-        private Map<String, String> ranks;
-    
-        public GameRanking(Map<String, String> ranks) {
-            this.ranks = ranks;
-        }
+### event loop, 비동기 처리 등
+
+#### Javascript
+
+- 싱글스레드 기반, Event loop를 기반으로 하는 Node.js
+- Javascript engine은 JS를 해석하고 실행하는 엔진
+
+#### Javascript engine(Call stack, heap, task queue)
+
+- Call stack
+
+  - JS는 단 하나의 call stack 사용
+  - 따라서 JS가 실행되는 방식은 Run to completion. 하나의 함수가 실행되면 다른 task는 수행될 수 없다.
+  - 메서드 실행시 call stack에 새로운 stack frame 생성하고 return시 stack에서 해당 frame을 pop한다.
+
+- Heap
+
+  - 동적으로 생성된 객체(인스턴스)는 힙에 할당.
+
+- Microtask queue
+
+  - task queue보다 여기를 우선적으로 확인
+  - mutation observer(?), promise가 여기로 들어감
+
+- Task Queue(event queue)
+
+  - JS 런타임환경에는 처리해야하는 Task를 임시저장하는 대기 큐가 존재. 그것이 Task queue == event queue.
+  - Call stack이 비어졌을 때 queue에 먼저 들어온 task가 stack으로 들어간다.
+  - 비동기로 호출되는 함수는 Task queue에 enqueue된다.
+  - JS에서는 event에 의해 실행되는 함수(핸들러)들이 비동기로 실행된다.
+  - 여기서 지워지는 타이밍은 stack에서 수행 후 pop 되고 나서.
+
+- Event loop
+
+  - 위의 작업들을 해주는게 event loop
+
+    ```
+    while(queue.waitForMessage()) {
+    	queue.processNextMessage();
     }
     ```
 
-  * 컬렉션을 wrapping하면서 그 외 다른 멤버변수가 없는 상태
+    - 이러한 방식으로 이벤트 루프는 현재 실행중인 task가 없는지, task queue에 task가 있는지 반복적으로 확인
 
-    * 비즈니스에 종속적인 자료구조
-    * 불변성이 필요하다면 Collection 내부 각각들의 불변성(필요하다면 불변이 아니어도 됨)
-    * 상태, 행위를 이곳에서 관리
+- queue 우선순위
 
-  * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
+  - micrortask queue -> animation frames -> task queue
+  - 직접적인 작업들은 Web API에서 처리한다.
+  - animation frame : 브라우저 랜더링 관련
+
+- *c.f)* 예시
+
+  - ![img](https://camo.githubusercontent.com/d635b008ba59f57449a924eac64883de31a814d56ed9791db6d5980c6312e1f0/68747470733a2f2f6c68352e676f6f676c6575736572636f6e74656e742e636f6d2f37567a686875684f5767576f62596174704a486c4665714261306b357254357178516e6a7658723545575863346a6f314e446c6168566276616733394b534b38434f56507a4d554833324857774672505762423366536d63334b5152754831336e6c5a626b576f44506c504a707064724b682d6d496a374f524f49646852305a6b6b51735a775977)
+    - 실행결과 1 -> 3 -> 2
+    - call stack에 test1 in, test 2 in하고 setTimeout메서드의 익명함수는 task queue로 들어간다. 이후 test 3 실행 후 모두 실행되어 각각의 stack frame들이 pop되어 stack이 비게 되면 task queue에 있던 test2의 익명method가 call stack으로 들어가 실행된다.
+
+#### eventloop, 비동기 처리과정 Reference
+
+http://asfirstalways.tistory.com/362
+
+http://sculove.github.io/blog/2018/01/18/javascriptflow/
+
+*두 링크 정독 여러번하기
+
+### Hoisting
+
+- 사전적 의미: 끌어올리기. 선언되는 모든 변수는 호이스트된다.(끌어올려진다)
+- 따라서 변수의 정의가 그 범위에 따라 선언과 할당으로 분리 되는것.
+- 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 JS엔진은 함수 선언을 끌어올리기 때문에 가능하다.
+- 다만 변수의 값은 끌어올리지 않으므로 선언보다 앞에서 출력하면 `undefined` 된다.
+
+### Closure
+
+* 반환된 내부함수(생명주기가 끝난)가 자신이 선언되었을 때의 환경인 스코프를 기억해 선언되었을 때의 환경 밖에서 접근할 수 있다.
+
+* ```javascript
+  var name = `Warning`;
+  function outer() {
+    var name = `closure`;
+    return function inner() {
+      console.log(name);
+    };
+  }
+  
+  var callFunc = outer();
+  callFunc();
+  // console> closure
+  ```
+
+  * 여기서 outer 내부의 name 변수를 자유변수라고 한다.
+
+### this
+
+* JS의 모든 함수는 실행될 때마다 함수 내부에 this 객체가 추가됨.
+
+1. 객체의 메서드를 호출할 때 `A.B` 에서 this는 A 객체를 가리킨다.
+2. 함수를 호출할 때 this는 전역 객체에 바인딩 된다.
+3. 생성자 함수를 통해 객체를 생성할 때 -> 일반적인 생성자와 같게 생각하면 됨
+   1. 내부에서 객체 자체를 this
+4. apply, bind, call
+   1. apply: func.apply(this, [param1, param2])
+   2. bind: func {}.bind(this, param1, param2)
+   3. call: func.call(this, param1, param2)
+
+### arrow function
+
+*  간결하다
+
+  ``` javascript
+  materials.map(function(material) { 
+    return material.length; 
+  }); // [8, 6, 7, 9]
+  
+  materials.map((material) => {
+    return material.length;
+  }); // [8, 6, 7, 9]
+  
+  materials.map(({length}) => length); // [8, 6, 7, 9]
+  ```
+
+* 상위 스코프
+
+  ```javascript
+  function Person(){
+    this.age = 0;
+  
+    setInterval(() => {
+      this.age++; // |this|는 person 객체를 참조
+    }, 1000);
+  }
+  
+  var p = new Person();
+  ```
+
+# Backend
+
+### 일급 컬렉션?
+
+* ```java
+  public class GameRanking {
+  
+      private Map<String, String> ranks;
+  
+      public GameRanking(Map<String, String> ranks) {
+          this.ranks = ranks;
+      }
+  }
+  ```
+
+* 컬렉션을 wrapping하면서 그 외 다른 멤버변수가 없는 상태
+
+  * 비즈니스에 종속적인 자료구조
+  * 불변성이 필요하다면 Collection 내부 각각들의 불변성(필요하다면 불변이 아니어도 됨)
+  * 상태, 행위를 이곳에서 관리
+
+* Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
+  
+  * cars 하나의 인스턴스로 비즈니스로직 관리 가능
+  
     
-    * cars 하나의 인스턴스로 비즈니스로직 관리 가능
-
-
-
-* URLconnection & HttpURLConnection
-
-  * HttpURLconnection은 URLConnection을 구현한 클래스
-
-  * 기본적으로 get 메서드
-
-  * setRequestMethod()를 통해 메서드 변경 가능
-
-  * `getResponseCode(), getResponseMessage()` => 응답 코드, 응답 메시지 리턴받을 수 있다.
-
-    * Reference
-
-      https://mytalkhome.tistory.com/855
