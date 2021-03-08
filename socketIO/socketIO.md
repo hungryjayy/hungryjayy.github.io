@@ -38,11 +38,17 @@
  `socket.on(<event name>, <listener>)` event가 도착하면 listener를 통해 받는다.(callback처럼) <br>
  
  * 관련 모듈
- <img src = "./images/module.png">
+ 
+ ```
+ const redisAdapter = require('socket.io-redis');
+ ```
+ 
  <br>
  
- * redisClient, redis + socketIO(adapter)
- <img src = "./images/adapter.png">
+ * redis + socketIO(adapter)
+ ```
+ const sockerServer = SocketIO().adapter(redisAdatper( ... ));
+ ```
 
 - 전체(broadcast)
 
@@ -115,7 +121,7 @@ scale out에서 redis가 효과적
 
 <img src = "./images/redisadapter.png">
 
-- Pub / Sub 기능 통해 수행(현재 restapi의 방법)
+- Pub / Sub 기능 통해 수행
     - 각 서버들은 하나의 channel을 subscribe
     - 메시지를 보낼 서버가 publish를 하면 각 서버는 메시지를 받는다.
 
