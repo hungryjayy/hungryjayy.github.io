@@ -233,7 +233,15 @@
 
 
 * URLconnection & HttpURLConnection
+
   * HttpURLconnection은 URLConnection을 구현한 클래스
+
   * 기본적으로 get 메서드
+
   * setRequestMethod()를 통해 메서드 변경 가능
+
   * `getResponseCode(), getResponseMessage()` => 응답 코드, 응답 메시지 리턴받을 수 있다.
+
+    * Reference
+
+      https://mytalkhome.tistory.com/855
