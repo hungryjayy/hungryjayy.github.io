@@ -296,6 +296,33 @@
   - ![img](https://camo.githubusercontent.com/d635b008ba59f57449a924eac64883de31a814d56ed9791db6d5980c6312e1f0/68747470733a2f2f6c68352e676f6f676c6575736572636f6e74656e742e636f6d2f37567a686875684f5767576f62596174704a486c4665714261306b357254357178516e6a7658723545575863346a6f314e446c6168566276616733394b534b38434f56507a4d554833324857774672505762423366536d63334b5152754831336e6c5a626b576f44506c504a707064724b682d6d496a374f524f49646852305a6b6b51735a775977)
     - 실행결과 1 -> 3 -> 2
     - call stack에 test1 in, test 2 in하고 setTimeout메서드의 익명함수는 task queue로 들어간다. 이후 test 3 실행 후 모두 실행되어 각각의 stack frame들이 pop되어 stack이 비게 되면 task queue에 있던 test2의 익명method가 call stack으로 들어가 실행된다.
+  
+- *c. f) 예시 2*
+
+  ​	
+
+  ``` javascript
+  function aaa() {
+    setTimeout(() => {
+      console.log('d');
+    }, 0); 
+    console.log('c');
+  }
+  
+  setTimeout(() => {
+    console.log('a');
+    aaa();
+  }, 0);
+  
+  Promise.resolve().then(() => {
+    aaa();
+    console.log('b');
+  });
+  ```
+
+  * 출력순서 예상해보기.  답: 밑의 closure 밑에
+
+  
 
 #### eventloop, 비동기 처리과정 Reference
 
@@ -331,6 +358,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
   ```
 
   * 여기서 outer 내부의 name 변수를 자유변수라고 한다.
+
+* 위의 예시 2 답 c b a c d d
 
 ### this
 
