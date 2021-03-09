@@ -268,6 +268,11 @@
   - JS에서는 event에 의해 실행되는 함수(핸들러)들이 비동기로 실행된다.
   - 여기서 지워지는 타이밍은 stack에서 수행 후 pop 되고 나서.
 
+- web API or 백그라운드
+
+  - Settimeout에서 n초가 다 수행되기 전까지, event handler에서 해당 event가 발생하기 전까지 기다리는 곳
+  - 이후 발생하거나 완료 되면 task queue로 보낸다.
+
 - Event loop
 
   - 위의 작업들을 해주는게 event loop
@@ -369,6 +374,106 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
   
   var p = new Person();
   ```
+
+## JS + Node.js
+
+### var, let, const
+
+* var: function scope
+
+* let: block scope,
+
+* const: block scope, 상수 (재할당 불가)
+
+* var는 함수 내부라면 블록 밖이라도 참조 가능 그러나,
+
+  
+
+#### 예-1) var hoisting
+
+var는 함수 스코프
+
+```javascript
+function counter () {
+  for(var i=0; i<10; i++) {
+    console.log('i', i)
+  }
+}
+counter()
+console.log('after loop i is', i) 
+// ReferenceError: i is not defined
+```
+
+#### 예-2) IIFE (immediately-invoked function expression)
+
+​		*IIFE: 정의하자마자 즉시 실행함수, `()`로 씌워 만들수 있다*
+
+```js
+// IIFE를 사용하면
+// i is not defined가 뜬다.
+(function() {
+  // var 변수는 여기까지 hoisting이 된다.
+  for(var i=0; i<10; i++) {
+    console.log('i', i)
+  }
+})()
+console.log('after loop i is', i) 
+// ReferenceError: i is not defined
+
+//////////
+// var i 전역변수화 됨 IIFE
+(function() {
+  for(i=0; i<10; i++) {
+    console.log('i', i)
+  }
+})()
+console.log('after loop i is', i) // after loop i is 10
+```
+
+
+
+### Node.js란? - Javascript가 서버에서 동작될 수 있도록 하는 그러한 환경(플랫폼)
+
+: 크롬 V8 JavaScript 엔진으로 빌드된 JS 런타임기
+
+#### 특징
+
+* Nods.js 라이브러리 내의 api는 모두 비동기
+* 단일 스레드.
+* 이벤트 메커니즘을 통해 서버가 멈추지 않으며 실시간 데이터 app, SPA, IO 잦은 앱개발에 효율적
+  * 여기서 I/O란? 파일 시스템 접근, 네트워크 요청과 같은 작업.
+* 하나의 작업 자체가 오래걸리면 전체 성능 저하.
+
+
+
+#### foreach() vs map()
+
+* foreach
+  * 값 반환 x
+  * 각 요소에 대한 콜백을 수행. (현재 배열을 변경해서 반환). map보다 빠르다.
+* map
+  * 값 반환
+  * 각 요소에서 함수를 호출하고, 결과로 새로운 배열을 만들어냄.
+
+#### closure: 자신이 생성될 때의 환경을 기억함.
+
+
+
+### Node 기능
+
+#### Http 모듈
+
+* 인터넷에서 데이터를 주고 받을 수 있는 프로토콜
+
+
+
+#### Express
+
+* package.json : 모듈 버전, 의존 패키지 관리(npm 이용)
+* 라우팅: app.js로 routing 역할 수행.
+* 앱 구동
+
+
 
 # Backend
 
