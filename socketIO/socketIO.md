@@ -27,28 +27,19 @@
 
 * 통신을 시작할 때 각 브라우저에 대해 websocket, pooling, streaming, flash socket 등에서 가장 적절한 방법을 찾아 보내줌. <br>
 
-* socket.io를 통해 개발하면 websocket이 지원되지 않아도 양방향으로 주고받을 수 있음 <br>
+* socket.io를 통해 양방향통신 가능 <br>
 
-* 그렇다고 socket.io != websocket이다. 따라서 socket.io 클라이언트와 websocket 서버는 연결이 안된다. Vice versa <br>
-
-* 기존 사내 restapi 서버에서 쓰던 방식
-
-`socket.emit()` - 이것을 통해 event를 보낸다(client에게) <br>
-
- `socket.on(<event name>, <listener>)` event가 도착하면 listener를 통해 받는다.(callback처럼) <br>
+* socket.io와 websocket는 호환 불가 <br>
  
- * 관련 모듈
- 
- ```
- const redisAdapter = require('socket.io-redis');
- ```
+ * 모듈
+
+    `const redisAdapter = require('socket.io-redis');`
  
  <br>
  
  * redis + socketIO(adapter)
- ```
- const sockerServer = SocketIO().adapter(redisAdatper( ... ));
- ```
+
+    `const sockerServer = SocketIO().adapter(redisAdatper( ... ));`
 
 - 전체(broadcast)
 
@@ -80,6 +71,7 @@
 ### Room
 
 소켓이 `join` 과 `leave` 를 할 수 있는 임의의 채널이다. 소켓을 통해 client들에게 event를 broadcast할 수 있다.<br>
+
   *이 때 client의 입장에선 room 들에 대한 정보를 모른다.(사실 서버쪽에서만 신경 쓸 일)*
 <br>
 
@@ -113,7 +105,7 @@ socket instance와 room간 관계를 저장하고, 연결된 모든 clinet에게
 
 scale out에서 redis가 효과적
 
-- Adapter 역할(기존 restapi 에서의 방법)
+- Adapter 역할
     - 일종의 cluster처럼 연결된 각 서버에 broadcast 하는 방식
     - routing message의 역할을 수행하는 Interface
     - socket과 room간 관계를 저장함
