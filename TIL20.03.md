@@ -256,7 +256,9 @@
 - Microtask queue
 
   - task queue보다 여기를 우선적으로 확인
-  - mutation observer(?), promise가 여기로 들어감
+  - mutation observer(?), promise가 여기로 들어감.
+  - Promise의 핸들러는 항상 이 queue를 통과해야 한다.
+    - 처리되지 못한 에러: microtask queue 빈 후 처리하지 못하는 error에 대해 `unhandledrejection` 발생.
 
 - Task Queue(event queue)
 
