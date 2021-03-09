@@ -577,6 +577,8 @@ test 주도형 개발. 기능 추가 전 테스트 먼저 작성.
 
 ## 함수형 프로그래밍
 
+함수를 side effect 없도록 선언하고 사용하는 선언형 프로그래밍.
+
 가장 큰 두가지 특징: immutable data, first class citizen
 
 e. g. map, filter 등이 함수형 프로그래밍 함수
