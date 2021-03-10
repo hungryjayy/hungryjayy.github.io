@@ -332,6 +332,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 
 *두 링크 정독 여러번하기
 
+
+
 ### Hoisting
 
 - 사전적 의미: 끌어올리기. 선언되는 모든 변수는 호이스트된다.(끌어올려진다)
@@ -404,6 +406,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
   var p = new Person();
   ```
 
+
+
 ## JS + Node.js
 
 ### var, let, const
@@ -471,7 +475,7 @@ console.log('after loop i is', i) // after loop i is 10
 * 단일 스레드.
 * 이벤트 메커니즘을 통해 서버가 멈추지 않으며 실시간 데이터 app, SPA, IO 잦은 앱개발에 효율적
   * 여기서 I/O란? 파일 시스템 접근, 네트워크 요청과 같은 작업.
-* 하나의 작업 자체가 오래걸리면 전체 성능 저하.
+* 하나의 작업 자체가 오래걸리면 전체 성능 저하. (싱글스레드 이기 때문)
 
 
 
@@ -541,6 +545,7 @@ console.log('after loop i is', i) // after loop i is 10
 : API를 설계 할 때 자원을 나타내는 URI가 있고, http method를 통해 자원을 어떻게 처리할 지 설계하는 방식의 아키텍처
 
 * 구성
+  
   * 자원(resource) - URI / 행위 - HTTP method / 표현 representations
 * 특징
   * URI로 지정된 리소스에 대한 조작을 한정적인 Interface를 통해 수행하는 아키텍처
@@ -556,6 +561,8 @@ console.log('after loop i is', i) // after loop i is 10
 * 단점
   * 복잡한 비즈니스에서 http method의 한계로 인해 모든 경우를 cover할 수 없을 것 같다.
   * 공식화 된 Rest API 표준이 존재하지 않다는 점도 아쉬운 점 중 하나.
+  
+  
 
 ### TDD
 
