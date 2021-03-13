@@ -16,6 +16,7 @@
 *cf* ))
 
 * 공인 아이피란? 
+
   * 인터넷상 서로다른 PC끼리 통신을 위해 필요한 아이피
   * 20.94.163.19
 
@@ -29,6 +30,7 @@
 ### ubuntu pc에서 ssh열고 window에서 putty로 접속
 
 * 업무용에서 개발용 ssh로 접속해 docker container 바라보는 방법
+
   1. 개발용에 ssh 환경 설정 https://jmoon.co.kr/183
      1. sudo ufw enable
      2. sudo ufw allow 22(ssh default)
@@ -126,16 +128,16 @@
 #### Kotlin vs Java
 
 * 함수형 프로그래밍(함수가 일급 객체로서의 의미를 가짐)
-  
+
   * 1급 객체
     * 변수나 데이터에 함수 할당 가능
     * 객체의 인자로 넘길 수 있음
     * 객체의 리턴값으로 리턴 가능
-  
+
 * Java와 동일한 타입안정성 + 타입 추론(Inference) 제공.
-  
+
 * `val name = "abced"` <- 이 경우 알아서 String으로 인식
-  
+
 * Null 안정성 제공
 
   * `var foo: String? = "Hello"` 물음표는 nullable을 의미
@@ -212,9 +214,9 @@
   `val foo = when { }`
 
 * 구문은 무언가가 실행되도록 명령을 지시하는 문장을 의미
-  
+
   * == 값을 만들지는 않는다.
-  
+
 * when 표현식에서는 항상 else를 필요로 한다.(값을 만들어야 하기 때문에)
 
 
@@ -296,7 +298,7 @@
   - ![img](https://camo.githubusercontent.com/d635b008ba59f57449a924eac64883de31a814d56ed9791db6d5980c6312e1f0/68747470733a2f2f6c68352e676f6f676c6575736572636f6e74656e742e636f6d2f37567a686875684f5767576f62596174704a486c4665714261306b357254357178516e6a7658723545575863346a6f314e446c6168566276616733394b534b38434f56507a4d554833324857774672505762423366536d63334b5152754831336e6c5a626b576f44506c504a707064724b682d6d496a374f524f49646852305a6b6b51735a775977)
     - 실행결과 1 -> 3 -> 2
     - call stack에 test1 in, test 2 in하고 setTimeout메서드의 익명함수는 task queue로 들어간다. 이후 test 3 실행 후 모두 실행되어 각각의 stack frame들이 pop되어 stack이 비게 되면 task queue에 있던 test2의 익명method가 call stack으로 들어가 실행된다.
-  
+
 - *c. f) 예시 2*
 
   ​	
@@ -378,7 +380,7 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 
 ### arrow function
 
-*  간결하다
+* 간결하다
 
   ``` javascript
   materials.map(function(material) { 
@@ -533,7 +535,7 @@ console.log('after loop i is', i) // after loop i is 10
   * 상태, 행위를 이곳에서 관리
 
 * Car라는 클래스 객체 3개를 모두 관리해야할 때 Cars 쓰는것처럼
-  
+
   * cars 하나의 인스턴스로 비즈니스로직 관리 가능
 
 
@@ -545,23 +547,29 @@ console.log('after loop i is', i) // after loop i is 10
 : API를 설계 할 때 자원을 나타내는 URI가 있고, http method를 통해 자원을 어떻게 처리할 지 설계하는 방식의 아키텍처
 
 * 구성
-  
+
   * 자원(resource) - URI / 행위 - HTTP method / 표현 representations
+
 * 특징
+
   * URI로 지정된 리소스에 대한 조작을 한정적인 Interface를 통해 수행하는 아키텍처
   * Stateless: 작업을 위한 (client의)상태정보를 따로 저장하지 않는다. 단순히 들어온 요청만을 처리 -> 불필요한 정보 관리 x
     * 만약 stateful하다면 서버가 클라이언트의 현재 상태를 저장해야한다. 따라서 클라이언트의 상태는 서버에 종속된다.
       * 이 경우의 로드밸런싱을 하는 경우에 서버가 클라이언트의 상태를 공유할수있는 redis같은 시스템이 필요.
     * Stateless하기 때문에 어느 서버가 처리하던 클라이언트의 요청은 동일하게 처리 가능.
   * client-server 구조: 서버는 API를 제공, 클라이언트는 세션이나 로그인 정보를 관리. 각각의 역할이 구분되고 의존성이 줄어들고 확장성은 높아진다.
+
 * 장점
+
   * 원하는 타입으로 데이터를 주고받을 수 있다.
   * http method 타입과 uri만 읽어도 해당 인터페이스가 어떠한 기능과 연결되는지 파악이 용이하다
   * client-server구조. api로 들어오는 요청을 처리해 요청한대로 보내주기만 하면 된다. 각자의 역할이 명확히 분리 
+
 * 단점
+
   * 복잡한 비즈니스에서 http method의 한계로 인해 모든 경우를 cover할 수 없을 것 같다.
   * 공식화 된 Rest API 표준이 존재하지 않다는 점도 아쉬운 점 중 하나.
-  
+
   
 
 ### TDD
@@ -602,3 +610,37 @@ e. g. map, filter 등이 함수형 프로그래밍 함수
 
 
 
+## 200313
+
+### 디미터 법칙
+
+* 객체가 자기 자신을 책임지는 자율적인 존재이다.
+* 따라서 객체 내부 구조를 묻지 말고 무언가를 시켜라.
+
+#### 디미터 법칙을 어긴 코드
+
+``` kotlin
+object.getChild().getContent().getItem().getTitle()
+```
+
+* 기차 충돌(train wreck) : 이와 같이 `getter` 가 줄줄이 이어진 코드
+  * 이러한 설계는 객체들이 어떻게 연결되어있는지를 보여준다.
+  * 객체 구조(연결)이 변경될 수 있으므로 프로그램은 불안정해진다.
+
+#### 디미터 법칙이 하나의 .을 강제하는 규칙은 아니다.
+
+```kotlin
+IntStream.of(1, 15, 2)
+  .filter(x -> x > 10)
+  .distinct()
+  .count();
+```
+
+* 이와 같은 코드가 기차 충돌을 초래하기 때문에 디미터 법칙을 위반한다고 생각할 것이다.
+  * 하지만 `of`, `filter`, `distinct` 메서드는 모두 `IntStream` 이라는 동일한 클래스 인스턴스를 반환한다. 즉 이들은 `IntStream` 인스턴스를 또다른 `IntStream`인스턴스로 변환한다.
+  * 따라서 이 코드는 디미터 법칙을 위반하지 않는다.
+
+#### 디미터 법칙은 오직 결합도와 관련 된 것.
+
+* 객체의 내부구조가 외부로 노출되는 경우에 해당됨.
+* e. g) 이 관점에서 보면 racingCar 프로젝트에서 car의 위치들을 비교해 winner를 구하는 로직 또한 Cars가 아니라 Car에서 하는게 맞는 것.
