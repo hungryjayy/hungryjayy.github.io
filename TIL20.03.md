@@ -697,6 +697,14 @@ IntStream.of(1, 15, 2)
 
 ### 원격 Prostudio에서 publish, 개발 nodejs로 consume
 
+* bo 설정
+
+  * 192.168.9.127:5672로 전달.
+
+  * username, password 설정해주어야 함. guest guest 경우 원격으로 전송 불가.
+
+    
+
 1. pub/sub 로직 추가
 
    * pub: SO -> BO (pub) -> SO -> WAPL
@@ -706,6 +714,7 @@ IntStream.of(1, 15, 2)
 3. rabbitmq 실행하기
 
    * guest/guest가 admin
+   * rabbitmqctl start_app
 
    1. 적당히 username / password와 같이 유저만들어주기
       * rabbitmqctl add_user username password
