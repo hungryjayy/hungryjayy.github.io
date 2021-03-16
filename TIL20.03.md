@@ -608,8 +608,6 @@ e. g. map, filter 등이 함수형 프로그래밍 함수
     * 리턴값으로 전달 가능
     * 함수를 파라미터로 전달 가능
 
-
-
 ## 200313
 
 ### 디미터 법칙
@@ -692,3 +690,25 @@ IntStream.of(1, 15, 2)
 * Layer간 데이터 전송을 위함.
 * 로직을 갖지 않는다.
 * 가변적.
+
+
+
+## 200316
+
+### 원격 Prostudio에서 publish, 개발 nodejs로 consume
+
+1. pub/sub 로직 추가
+
+   * pub: SO -> BO (pub) -> SO -> WAPL
+
+2. docker로 nodejs쪽 container 열어주기(서버열어주기)
+
+3. rabbitmq 실행하기
+
+   * guest/guest가 admin
+
+   1. 적당히 username / password와 같이 유저만들어주기
+      * rabbitmqctl add_user username password
+   2. virtual host로 만들어주기 (queue와 계정을 그룹핑) 
+      * rabbitmqctl set_permissions -p / "username" ".*" ".*" ".*"
+
