@@ -724,3 +724,12 @@ IntStream.of(1, 15, 2)
    2. virtual host로 만들어주기 (queue와 계정을 그룹핑) 
       * rabbitmqctl set_permissions -p / "username" ".*" ".*" ".*"
 
+
+
+
+
+### Comment 정리
+
+* getter 이름 다르게 붙이는 것 고민해보기
+* 서비스 자체를 하나의 싱글톤으로 생각하기
+* 
