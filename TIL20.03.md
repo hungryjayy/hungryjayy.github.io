@@ -744,15 +744,12 @@ IntStream.of(1, 15, 2)
 ### 코테연습
 
 * Vector는 memset 불가..
-
-* C++
-
+* C++ string
   * `string.erase(index부터, length만큼);`
   * `string.replace(index부터, length만큼, ""얘로 변경);`
   * `string.find(""얘를 찾아라, index부터);`
   * 이외에도 여러 버전으로 오버로딩되어있으니 라이브러리를 공부하기
-
-  
+* `isupper()`, `isdigit()`, `toupper()` 등 camel case가 적용이 안되어있으니 주의
 
 ## 200318
 
