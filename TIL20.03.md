@@ -729,8 +729,9 @@ IntStream.of(1, 15, 2)
 ## 200317
 
 * Docker trouble shooting
-  * docker-compose를 down 전에 변경한다면 `has active endpoints` 에러를 만나게된다..
-
+  
+* docker-compose를 down 전에 변경한다면 `has active endpoints` 에러를 만나게된다..
+  
 * 시도해볼것 : pub sub을 다른 queue를 사용해 기다리도록 해보자..
 
   
@@ -740,7 +741,10 @@ IntStream.of(1, 15, 2)
 * getter 이름 다르게 붙이는 것 고민해보기
 * 서비스 자체를 하나의 싱글톤으로 생각하기
 
+### 코테연습
 
+* Vector는 memset 불가..
+* 
 
 ## 200318
 
