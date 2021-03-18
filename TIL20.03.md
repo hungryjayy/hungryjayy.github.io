@@ -726,7 +726,16 @@ IntStream.of(1, 15, 2)
 
 
 
+## 200317
 
+* Docker trouble shooting
+  * docker-compose를 down 전에 변경한다면 `has active endpoints` 에러를 만나게된다..
+
+
+
+* 시도해볼것 : pub sub을 다른 queue를 사용해 기다리도록 해보자..
+
+  
 
 ### Comment 정리
 
