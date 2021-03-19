@@ -766,3 +766,10 @@ IntStream.of(1, 15, 2)
 * docker logs {container ID}
 * docker-compose 실행시 `-d` <-- background로 실행
   * 없이 실행하면 실시간 로그를 확인 할 수 있다.
+
+### npm command (== CLI commands)
+
+* init : package.json 생성
+* install : 패키지 설치
+* start: 패키지 시작
+* update: 패키지 업데이트
