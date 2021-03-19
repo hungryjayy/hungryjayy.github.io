@@ -751,6 +751,16 @@ IntStream.of(1, 15, 2)
   * 이외에도 여러 버전으로 오버로딩되어있으니 라이브러리를 공부하기
 * `isupper()`, `isdigit()`, `toupper()` 등 camel case가 적용이 안되어있으니 주의
 
+
+
 ## 200318
 
-* TODO: health check 후 restapi log 살폅기
+* TODO: health check 후 restapi log 살펴보기
+
+
+
+### docker
+
+* docker container inspect {container ID}
+  * 헬스체크 로그?같은걸 볼수있음
+* docker logs {container ID}
