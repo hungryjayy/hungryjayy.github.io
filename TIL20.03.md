@@ -767,7 +767,7 @@ IntStream.of(1, 15, 2)
 * docker-compose 실행시 `-d` <-- background로 실행
   * 없이 실행하면 실시간 로그를 확인 할 수 있다.
 
-### npm command (== CLI commands)
+### npm command (== CLI commands (command line interface))
 
 * init : package.json 생성
 * install : 패키지 설치
