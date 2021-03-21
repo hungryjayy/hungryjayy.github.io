@@ -796,13 +796,60 @@ IntStream.of(1, 15, 2)
   }
   ```
 
-  Block의 마지막 return값에 따라 let의 return도 변한다.
+  * Block의 마지막 return값에 따라 let의 return도 변한다.
 
+  * `T?.let { }` 형태를 통해 non-null로 만들수 있다.
 
+#### with
 
+* ``` kotlin
+  val person = Person("James", 56)
+  with(person) {
+      println(name)
+      println(age)
+      //자기자신을 반환해야 하는 경우 it이 아닌 this를 사용한다
+  }
+  ```
 
+  * 블럭 안에서 곧바로 person의 프로퍼티에 접근 가능.
+  * 주로 객체의 함수를 여러개 호출할 때 그룹화하는 용도
 
-#### 	
+#### run
+
+* 첫번째 형태
+
+  ```kotlin
+  val person = Person("James", 56)
+  val ageNextYear = person.run {
+      ++age
+  }
+  
+  println("$ageNextYear")
+  
+  // 57
+  
+  ```
+
+  * with처럼 인자로 람다 리시버를 받는다.
+  * 차이점은 T의 확장함수라는 점.
+  * 따라서 non-null 일때만 실행할 수 있다.
+
+  
+
+* 두번째 형태
+
+* ``` kotlin
+  val person = run {
+      val name = "James"
+      val age = 56
+      Person(name, age)
+  }
+  ```
+
+  * 확장함수가 아니다.
+  * 어떠한 객체를 생성하기 위한 명령문들을 하나의 블럭으로 묶어 가독성을 높이는 용도
+
+#### 
 
 
 
