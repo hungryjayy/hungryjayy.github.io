@@ -779,7 +779,34 @@ IntStream.of(1, 15, 2)
 ## 200320
 
 * Kotlin에서 Object를 하나의 싱글톤으로 사용
-* 
+
+## 200321
+
+
+
+### Kotlin let, also, run, apply, with
+
+#### let
+
+* ```kotlin
+  val resultIt = person.let {
+      it.name = "James"
+      it.age = 56
+      it // (T)->R 부분에서의 R에 해당하는 반환값.
+  }
+  ```
+
+  Block의 마지막 return값에 따라 let의 return도 변한다.
+
+
+
+
+
+#### 	
+
+
+
+
 
 ## 200322
 
