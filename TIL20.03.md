@@ -930,20 +930,20 @@ IntStream.of(1, 15, 2)
   - 조금 Data JPA에서 간소화시킨 버전?
     - 스펙이 작다. 기능이 없다. 이런 관점은 아님
     - 가볍게 만들었다? 정도??
+- MariaDB
+  - 오픈소스이다.(무료)
+  - Mysql보다 많은 기능 제공
 
-- DB
-  - MariaDB
-    - 버전
-  - MySQL
-    - 유료(상업용 라인)
-    - 비상업용 무료?
-    - 버전 많고(5버전, 8버전)
-  - MongoDB
-  - ElasticSearch
-  - DynamoDB(AWS)
-    - 오버스펙이다
-  - Redis
-    - 오버스펙이다
+- MySQL
+  - 유료(상업용 라인)
+  - 비상업용 무료?
+  - 버전 많고(5버전, 8버전)
+- MongoDB
+- ElasticSearch
+- DynamoDB(AWS)
+  - 오버스펙이다
+- Redis
+  - 오버스펙이다
 
 ### 협업 툴
 
