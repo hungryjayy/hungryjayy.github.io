@@ -908,4 +908,5 @@ IntStream.of(1, 15, 2)
 * 연결 성공.(async 코드 구조 문제였던 것으로 추정)
   * 그러나 rest -> PO에서 rest가 보낸 시점에 PO는 받지 않을 수 있음
   * 서버가 양쪽 다 온전히 켜져있는 상태에서 주고받는 것 볼 수 있을 듯.
-
+* ![image-20210322170155058](/home/joowon/.config/Typora/typora-user-images/image-20210322170155058.png)
+  * (send)PO -> rest, (recv)rest, (send)rest -> PO, (recv)PO 순으로 통신하면 잘 주고받음.
