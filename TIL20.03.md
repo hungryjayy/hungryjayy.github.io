@@ -893,6 +893,14 @@ IntStream.of(1, 15, 2)
 
 ## 200322
 
+* Docker CLI
+
+  * 컨테이너 모두 삭제
+
+    ​	docker rm `docker ps -a -q`
+
+    
+
 * TODO: DATA 전송 확인 불가..
 * 연결은 되었으니 지속적으로 DATA를 주고받는 환경 test?
 * 예시 코드살펴보기.
