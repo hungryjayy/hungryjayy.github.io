@@ -996,5 +996,7 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
   ref ) https://xlffm3.github.io/spring%20&%20spring%20boot/DTOLayer/
 
+  https://dbbymoon.tistory.com/4
+
 * 작은 프로젝트일 수록 DTO가 필요없을 수 있다.
 * 큰 프로젝트 일 수록 DTO가 힘을 발휘할 것 같다.
