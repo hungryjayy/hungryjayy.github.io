@@ -998,18 +998,43 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
   https://dbbymoon.tistory.com/4
 
+  https://github.com/HomoEfficio/dev-tips/blob/master/DTO-DomainObject-Converter.md
+
 * 작은 프로젝트일 수록 DTO가 필요없을 수 있다.
 * 큰 프로젝트 일 수록 DTO가 힘을 발휘할 것 같다.
 
-### 나의 정리
+#### 나의 정리
 
 * Service에서 Repo에 넘겨줄때
   * DTO to Entity(domain)
-    * fooEntity = FooEntity.of(fooDto);
+    * `fooEntity = FooEntity.of(fooDto);`  or `FooEntity.toEntity(fooDto);`
+      * repository에 저장하는 entity는 request에 의존적이지 않고 entity 의존적이어야 한다.
     * service의 private 메서드에서 처리
+    * 주로 빌더패턴(Kotlin에서는 딱히 불필요?)
 * DB에 저장
   * fooEntity = fooRepository.save(fooEntity);
 * 저장 결과 DTO로 반환
   * Entity(domain) to DTO
     * return FooDto.of(fooEntity);
-    * converter에서 담당(converter를 서비스에 주입해서 처리)
+    * converter에서 담당(responseDTO에서 구현한 converter를 서비스에 주입해서 처리)
+      * view나 client쪽으로(바깥으로) 노출하는 작업은 해당 responseDTO에 의존적이어야 한다.
+* 헷갈릴 때 위의 세 링크를 살펴보기
+
+* Java에서 builder pattern
+  * 인자가 많아도 어떤 인자에 맵핑되는지 확인 가능하기에 필요없어진다.
+
+* DTO는 단순한 자료구조로만 사용하는 것이 좋다.
+  * 이 관례상 DTO에서 SQL이 실행될 것이라고 생각하는 개발자는 없다.
+  * DTO가 Repository를 의존하면 unit test를 작성하기 어려워진다.
+
+
+
+##### Kotlin에서 Builder pattern
+
+
+
+
+
+### Inner, nested class
+
+* 
