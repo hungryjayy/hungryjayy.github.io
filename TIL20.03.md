@@ -1027,14 +1027,12 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
   * 이 관례상 DTO에서 SQL이 실행될 것이라고 생각하는 개발자는 없다.
   * DTO가 Repository를 의존하면 unit test를 작성하기 어려워진다.
 
+### Inner class
 
-
-##### Kotlin에서 Builder pattern
-
-
-
-
-
-### Inner, nested class
-
-* 
+* 내부(nested) 클래스 장점
+  * 내부에서 외부 클래스 멤버 접근 가능
+  * 서로 관련된 클래스를 논리적으로 묶어 표현해, 코드의 캡슐화 증가
+  * 외부에선 내부에 접근 불가. 따라서 코드 복잡성 감소.
+* inner vs nested
+  * Kotlin에서는 nested가 default
+  * 
