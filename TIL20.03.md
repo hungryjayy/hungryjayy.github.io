@@ -977,3 +977,24 @@ IntStream.of(1, 15, 2)
   - Gitlab을 사용하면 장점이 있다고 생각
   - 오버스펙이다
 - Notion
+
+
+
+## 200323
+
+### DTO에 관한 고찰
+
+DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서 사용하는 것은 맞는 듯..
+
+- Controller에서 DTO를 Entity로 변환시켜 Service에게 파라미터로 보내기.
+
+- Controller에서 DTO 자체를 Service에게 파라미터로 보내고, Service가 Entity화 시키기.
+
+- Service가 Controller로 응답을 보낼 때, Entity를 반환하고 Controller가 이를 DTO로 변환하여 사용하기.
+
+- Service가 Controller로 응답을 보낼 때, Entity를 DTO로 변환시켜 반환하기.
+
+  ref ) https://xlffm3.github.io/spring%20&%20spring%20boot/DTOLayer/
+
+* 작은 프로젝트일 수록 DTO가 필요없을 수 있다.
+* 큰 프로젝트 일 수록 DTO가 힘을 발휘할 것 같다.
