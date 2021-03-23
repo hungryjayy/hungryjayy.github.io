@@ -1000,3 +1000,16 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 * 작은 프로젝트일 수록 DTO가 필요없을 수 있다.
 * 큰 프로젝트 일 수록 DTO가 힘을 발휘할 것 같다.
+
+### 나의 정리
+
+* Service에서 Repo에 넘겨줄때
+  * DTO to Entity(domain)
+    * fooEntity = FooEntity.of(fooDto);
+    * service의 private 메서드에서 처리
+* DB에 저장
+  * fooEntity = fooRepository.save(fooEntity);
+* 저장 결과 DTO로 반환
+  * Entity(domain) to DTO
+    * return FooDto.of(fooEntity);
+    * converter에서 담당(converter를 서비스에 주입해서 처리)
