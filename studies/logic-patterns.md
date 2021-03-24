@@ -1,10 +1,11 @@
-# 비지니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)
+# 비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)
 
 ## 도메인 모델(비즈니스 객체 자체 중심)
 :단순히 ERD를 class diagram으로 나타낸 것은 아니고 객체 설계에 가까운 느낌<br>
 
 _도메인: 요청을 받아 해결해야 할 문제의 영역_<br>
 _도메인 모델: 다양한 entity, entity 속성, 역할, 관계, 제약 등 기술._<br>
+
 1. 상속, 객체, 패턴들이 서로 연결 복잡한 형태.
 2. 데이터베이스 하나당 하나의 도메인 객체
 
