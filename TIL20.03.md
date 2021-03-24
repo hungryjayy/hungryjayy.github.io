@@ -1043,3 +1043,32 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 * server가 kafka, rabbitmq, PO 뭐든간에, client 쪽에서 어쨌건 이걸 사용할 수 있는 라이브러리를 만들어보자
 * 일단은 nodejs 서버를 사용할 것 같다.
+
+
+
+### docker
+
+* 환경변수 설정
+
+  * Docker-compose.yml에서 ${VARNAME} 의 표기를 하는 경우 YAML을 처리하는 동안에 compose에서 이 변수를 동적으로 읽는다.
+
+  * 따라서 `image: ghost:${GHOST_VERSION}` 이와 같을 경우
+
+  * CLI에서 `GHOST_VERSION=2 docker-compose up` 이와 같이 버전 조절 가능.
+
+  * 또한, .env파일에 값을 저장하거나 CLI에서 설정하거나, YAML 안에서 `${GHOST_VERSION:-2}` 등의 방식으로 변수 설정 가능
+
+  * ```bsh
+    ${parameter:-word}
+        파라미터가 세팅이 안되어있거나 null인 경우 word로 대체된다.
+    ```
+
+  * docker-compose의 container 부분에서 `${DB_PORT:-3306}:3306` 이와 같은 것은 포트 포워딩의 개념으로 추측. 
+
+    * 외부포트 : 호스트 포트
+
+
+
+* RabbitMQ
+  * vhost : vhost설정을 통해 각 사용자마다 격리된 환경을 제공 받을 수 있다.
+  * durable: exchange, queue의 durable 속성은 disk에 메시지를 저장할지 결정하는 boolean 형태의 option이다.
