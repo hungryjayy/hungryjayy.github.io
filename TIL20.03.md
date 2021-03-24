@@ -1036,3 +1036,10 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 * inner vs nested
   * Kotlin에서는 nested가 default
   * 
+
+
+
+## 200324
+
+* server가 kafka, rabbitmq, PO 뭐든간에, client 쪽에서 어쨌건 이걸 사용할 수 있는 라이브러리를 만들어보자
+* 일단은 nodejs 서버를 사용할 것 같다.
