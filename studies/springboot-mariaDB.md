@@ -1,7 +1,7 @@
 # SpringBootwithMariaDB
 Spring boot와 Maria DB를 connect하는 방법
 
-![](../images/Untitled.png)
+![](./images/Untitled.png)
 
 - Spring data JPA, JPA, Hibernate를 통해 MariaDB 연결.
     1. 환경설정(build.gradle.kts)에 plugin 및 allopen 환경설정.

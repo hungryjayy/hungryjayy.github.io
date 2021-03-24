@@ -1,6 +1,9 @@
 ## Query Interface<br>
-DB와의 communication을 위함.(low level)<br>
-대부분의 Sequlize method들은 query interface의 도움을 받아 구현된다.<br><br>
+* Sequlize: ORM
+
+* Query interface
+  * DB와의 communication을 위함.(low level)<br>
+    대부분의 Sequlize method들은 query interface의 도움을 받아 구현된다.<br><br>
 
 ## Sequelize migration<br>
 이미 운영중인 서비스의 DB를 변경해야 할 때 편리.<br>
@@ -28,6 +31,5 @@ down: 'up' 실행되기 전의 상태로 DB 복원.
 . . .<br>
 <br>
 
-공문 참조<br><br>
 #### Reference
 https://sequelize.org/master/manual/query-interface.html
