@@ -1072,3 +1072,23 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 * RabbitMQ
   * vhost : vhost설정을 통해 각 사용자마다 격리된 환경을 제공 받을 수 있다.
   * durable: exchange, queue의 durable 속성은 disk에 메시지를 저장할지 결정하는 boolean 형태의 option이다.
+
+
+
+
+
+* Nodejs
+
+  * 설계
+
+    * 좋은 예: 자족적인 컴포넌트 기반으로 설계하라
+
+      [![alt text](https://github.com/goldbergyoni/nodebestpractices/raw/master/assets/images/structurebycomponents.PNG)](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebycomponents.PNG)
+
+    * 나쁜 예: 기술적인 역할별로 모아라
+
+      [![alt text](https://github.com/goldbergyoni/nodebestpractices/raw/master/assets/images/structurebyroles.PNG)](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG)
+
+  * javascript에서 { 를 선언문과 같은 줄에서 시작해야 하는 이유 }
+    * https://stackoverflow.com/questions/3641519/why-do-results-vary-based-on-curly-brace-placement
+    * 
