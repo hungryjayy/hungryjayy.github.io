@@ -1115,9 +1115,13 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
     - - 메시지를 쌓아두었다가 처리하는 batch Consumer 구현도 가능합니다.
 
-
-
 ### CLI
 
 * 해당 포트 사용하는 IP PID 찾기 : sudo lsof -i:15672
 * 해당 IP 죽이기: sudo kill -9 1335
+
+
+
+## 200326
+
+TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보기
