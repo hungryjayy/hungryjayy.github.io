@@ -21,3 +21,9 @@
 - Subscription, 비동기식
 - 고성능
 - 분산처리에 효율적
+
+### kafka vs rabbitMQ
+
+* rabbitMQ : broker가 consumer에 메시지를 push
+* kafka : consumer가 broker로부터 메시지를 pull하는 방식
+  * 애초에 메시지를 disk에 저장하기 때문에 이러한 방식이 가능한 것
