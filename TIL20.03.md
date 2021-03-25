@@ -1067,15 +1067,9 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
     * 외부포트 : 호스트 포트
 
-
-
 * RabbitMQ
   * vhost : vhost설정을 통해 각 사용자마다 격리된 환경을 제공 받을 수 있다.
   * durable: exchange, queue의 durable 속성은 disk에 메시지를 저장할지 결정하는 boolean 형태의 option이다.
-
-
-
-
 
 * Nodejs
 
@@ -1089,6 +1083,34 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
       [![alt text](https://github.com/goldbergyoni/nodebestpractices/raw/master/assets/images/structurebyroles.PNG)](https://github.com/goldbergyoni/nodebestpractices/blob/master/assets/images/structurebyroles.PNG)
 
-  * javascript에서 { 를 선언문과 같은 줄에서 시작해야 하는 이유 }
+  * javascript에서 { 를 선언문과 같은 줄에서 시작해야 하는 이유
     * https://stackoverflow.com/questions/3641519/why-do-results-vary-based-on-curly-brace-placement
-    * 
+
+
+
+## 200325
+
+### Kafka
+
+* single consumer가 아닌 multi consumer를 염두에 두고 설계되었기 때문에 rabbitMQ보다 성능이 좋다.
+
+
+
+### Kafka vs rabbitMQ
+
+- RabbitMQ
+
+- - Message Broker가 Consumer에게 메시지를 **push**하는 방식
+
+  - - Broker는 Consumer의 처리여부에 관계없이 push를 하므로, 메시지 소비 속도보다 생산 속도가 빠를 경우 Consumer에 부하를 주게됩니다.
+    - RabbitMQ는 DRAM을 사용하므로 buffer를 사용하지만, DRAM을 다 사용하면 disk에 저장합니다. 따라서 batch 같이 큰 작업에서는 disk로 메시지를 읽어올 경우 지연이 발생합니다.
+
+- Kafka
+
+- - Consumer가 Broker로부터 메시지를 **pull**하는 방식
+
+  - - Consumer가 처리할 수 있을 때 메시지를 가져오므로 자원을 효율적으로 사용합니다.
+
+    - Kafka는 애초에 메시지를 disk에 저장하고, 이미 처리한 과거의 offset으로 자유롭게 움직일 수 있으므로 batch 작업에서 자원의 낭비라던지 지연이 발생하지 않습니다.
+
+    - - 메시지를 쌓아두었다가 처리하는 batch Consumer 구현도 가능합니다.
