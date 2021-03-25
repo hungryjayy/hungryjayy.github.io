@@ -40,6 +40,7 @@
 - Redis에서 제공하는 replication, 샤딩 기법.
 - Sentinel과는 별도의 솔루션.
 - 각 redis는 다른 모든 redis들과 직접 연결하여 **gossip protocol**을 통해 통신. → Multi-master, multi-slave.
+  
     - client 또한 모든 redis와 직접 연결해 data 주고받음.
 - gossip Protocol 기본 port는 16379 → (Redis보다 10000 높은 번호를 사용)
 - 각 master는 **Hash Slot**이라는 data 저장구역을 다른 master와 나누어 소유.(위 그림은 hash slot을 3개로 균등 분할해 구성한 모습)
