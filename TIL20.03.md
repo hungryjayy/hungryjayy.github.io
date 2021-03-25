@@ -1114,3 +1114,10 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
     - Kafka는 애초에 메시지를 disk에 저장하고, 이미 처리한 과거의 offset으로 자유롭게 움직일 수 있으므로 batch 작업에서 자원의 낭비라던지 지연이 발생하지 않습니다.
 
     - - 메시지를 쌓아두었다가 처리하는 batch Consumer 구현도 가능합니다.
+
+
+
+### CLI
+
+* 해당 포트 사용하는 IP PID 찾기 : sudo lsof -i:15672
+* 해당 IP 죽이기: sudo kill -9 1335
