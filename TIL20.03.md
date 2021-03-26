@@ -1125,3 +1125,8 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 ## 200326
 
 TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보기
+
+
+
+* work Queue를 통해 양방향 완료
+* setTimeout 잘 설정해서 PO -> reatapi ACK 보낼 때 connection 끊기지 않게 하자.
