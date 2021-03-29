@@ -1146,3 +1146,10 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
   * prefetch count가 1로 설정되어있으면 소비자로부터 ack를 받지 못한 메시지가 1개라도 있을 때 해당 소비자에게는 메시지를 전달하지 않음.
   * 즉, prefetch count는 소비자에게 동시에 전달되는 메시지의 양
 
+
+
+* Docker Trouble shooting
+  * 계속해서 용량이 부족한 문제 발생
+    * docker-compose를 새로 실행해 container를 띄울때마다 용량 에러가 발생
+    * 매 up 때마다 container에 대한 dummy data가 어마어마하게 쌓여있었다.
+    * `sudo docker system prune --volumes` 를 통해 제거
