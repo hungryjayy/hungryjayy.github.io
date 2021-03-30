@@ -1230,3 +1230,6 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
 
     * 결과는 Before -> In function -> After -> One
     * https://kkangdda.tistory.com/77 참고
+
+* RabbitMQ PO쪽 Thread.sleep()을 지우고 해보면 두개의 message를 받는 것을 볼 수 있다.
+  * ACK가 제대로 전송이 안되었기 때문에 Rest쪽에서 메시지를 한 번 더 보내는 꼴.
