@@ -1200,7 +1200,33 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
 ## 200330
 
 * 타입스크립트
+
   * Type
     * 대문자는 Wrapper object이고, 소문자는 primitive type이다.
     * 따라서 소문자 권장
   * BlueBird 에러 -> Promise를 지원하는 모듈?느낌. 따라서 Promise 관련 문제
+
+  
+
+* Async / await 와 microtask
+
+  * await을 만나면 async 함수 실행이 일시정지되고 async 함수 전체가 microtask queue로 삽입.
+
+    * await 된 값이 resolve된 promise를 리턴할 때 까지 지연.
+    * 이 때 call stack이 빈 상태가 된다.
+
+    ``` javascript
+    const one = () => Promise.resolve('One');
+    
+    async function myFunc() {
+        console.log('In function!')
+        const rest = await one()
+        console.log(res)
+    }
+    console.log('Before function!')
+    myFunc();
+    console.log('After function!')
+    ```
+
+    * 결과는 Before -> In function -> After -> One
+    * https://kkangdda.tistory.com/77 참고
