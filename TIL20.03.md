@@ -1232,4 +1232,55 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
     * https://kkangdda.tistory.com/77 참고
 
 * RabbitMQ PO쪽 Thread.sleep()을 지우고 해보면 두개의 message를 받는 것을 볼 수 있다.
+  
   * ACK가 제대로 전송이 안되었기 때문에 Rest쪽에서 메시지를 한 번 더 보내는 꼴.
+  
+  
+  
+* Javascript
+
+  * closure
+
+    * 어떤 데이터(어휘적 환경)과 그 데이터를 조작하는 함수를 연관시킨다.
+
+      ``` javascript
+      function makeAdder(x) {
+        var y = 1;
+        return function(z) {
+          y = 100;
+          return x + y + z;
+        };
+      }
+      
+      var add5 = makeAdder(5);
+      var add10 = makeAdder(10);
+      //클로저에 x와 y의 환경이 저장됨
+      
+      console.log(add5(2));  // 107 (x:5 + y:100 + z:2)
+      console.log(add10(2)); // 112 (x:10 + y:100 + z:2)
+      ```
+
+      * https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
+
+    * 이러한 맥락에서 객체지향과 비슷하다.(어떠한 데이터 자체는 숨기고, 그 데이터를 조작하는 메서드는 노출한다)
+
+      ``` javascript
+      function aTeam() {
+      	score = 0;
+        return function() {
+          return score++;
+        }
+      }
+      
+      var goal = aTeam();
+      console.log(goal());
+      console.log(goal());
+      console.log(goal());
+      -------------------------
+      결과:
+      0
+      1
+      2
+      ```
+
+      
