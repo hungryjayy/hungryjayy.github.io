@@ -1292,3 +1292,9 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
 * require vs import
   * require은 commonJS 방식
 * Dynamic import란?
+
+
+
+## 200401
+
+* 이벤트 리스너 부분 살펴보기
