@@ -1283,4 +1283,11 @@ TODO: work Queue (tutorial 2번) 을 통해 해보기, 블로그 글 읽어보�
       2
       ```
 
-      
+
+
+
+
+## 200331
+
+* TODO: async / await 부분 snippet w/ debugger로 debug 테스트
+* https://stackoverflow.com/questions/56851983/why-does-this-line-of-code-with-await-trigger-microtask-queue-processing#
