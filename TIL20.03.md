@@ -343,6 +343,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 - 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 JS엔진은 함수 선언을 끌어올리기 때문에 가능하다.
 - 다만 변수의 값은 끌어올리지 않으므로 선언보다 앞에서 출력하면 `undefined` 된다.
 
+
+
 ### Closure
 
 * 반환된 내부함수(생명주기가 끝난)가 자신이 선언되었을 때의 환경인 스코프를 기억해 선언되었을 때의 환경 밖에서 접근할 수 있다.
@@ -365,6 +367,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
 
 * 위의 예시 2 답 c b a c d d
 
+
+
 ### this
 
 * JS의 모든 함수는 실행될 때마다 함수 내부에 this 객체가 추가됨.
@@ -377,6 +381,8 @@ http://sculove.github.io/blog/2018/01/18/javascriptflow/
    1. apply: func.apply(this, [param1, param2])
    2. bind: func {}.bind(this, param1, param2)
    3. call: func.call(this, param1, param2)
+
+
 
 ### arrow function
 
@@ -1050,15 +1056,15 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 * 환경변수 설정
 
-  * Docker-compose.yml에서 ${VARNAME} 의 표기를 하는 경우 YAML을 처리하는 동안에 compose에서 이 변수를 동적으로 읽는다.
+  * Docker-compose.yml에서 `${VARNAME}`의 표기를 하는 경우 YAML을 처리하는 동안에 compose에서 이 변수를 동적으로 읽는다.
 
-  * 따라서 `image: ghost:${GHOST_VERSION}` 이와 같을 경우
+    * 따라서 `image: rabbitmq:${RABBITMQ_VERSION}` 이와 같을 경우
 
-  * CLI에서 `GHOST_VERSION=2 docker-compose up` 이와 같이 버전 조절 가능.
+    * CLI에서 `RABBITMQ_VERSION=2 docker-compose up` 이와 같이 버전 조절 가능.
 
   * 또한, .env파일에 값을 저장하거나 CLI에서 설정하거나, YAML 안에서 `${GHOST_VERSION:-2}` 등의 방식으로 변수 설정 가능
 
-  * ```bsh
+    ```bsh
     ${parameter:-word}
         파라미터가 세팅이 안되어있거나 null인 경우 word로 대체된다.
     ```
