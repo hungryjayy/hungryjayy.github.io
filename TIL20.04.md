@@ -38,3 +38,38 @@
 * #### eslint-plugin-prettie
 
   * Prettier를 ESLint 플러그인으로 추가한다. 즉, Prettier에서 인식하는 코드상의 포맷 오류를 ESLint 오류로 출력해준다.
+
+
+
+## Kafka
+
+* 특징
+  * pub/sub 모델 기반 동작. Producer, consumer, broker 구성.
+    * 특정 수신자에게 직접 보내주는 시스템이 아님.
+  * publisher는 메시지를 topic을 통해 카테고리화
+  * consumer는 해당 topic을 subscribe해 메시지를 읽어올 수 있음.
+  * 클러느터 내의 broker 분산은 ZooKeeper가 담당
+* 장점
+  * 메시지를 파일시스템에 저장 - durability 보장.
+  * consumer가 broker로부터 pull 하는 방식
+  * Producer 중심적. 많은 양의 데이터를 파티셔닝에 기반.
+
+
+
+## RabbitMQ
+
+* 특징
+  * 여러가지 매커니즘 존재
+  * 개방형 프로토콜을 위한 AMQP 구현을 위해 개발
+* 장점
+  * 유연한 routing 가능
+  * Broker 중심적. producer / consumer 간의 보장되는 메시지 전달에 초점
+  * 데이터 처리보단 관리적 측면이나 다양한 기능 구현을 위한 서비스를 구축할 때 사용
+
+# 200408
+
+## RPC Module => NodeJS Stream Binder
+
+- RPC Layer Interface -> [RabbitMQ, Kafka, PO]
+- RabbitMQ, Kafka 잘 알아보기 (Kafka Cluster 구축)
+- 신기한 Kafka 기능도 지원하기
