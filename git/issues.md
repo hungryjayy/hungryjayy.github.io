@@ -5,7 +5,7 @@
 
 
 
-* `git config --global --user.name= user`
+* `git config --global --user.name="hungryjay"`
   * author 변경
   * user.name 대신 다른 것(email 등)도 변경 가능
   * global option 없을 경우 현재의 디렉토리 한정
