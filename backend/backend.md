@@ -67,6 +67,75 @@ public class GameRanking {
 
 
 
+#### http api vs rest api
+
+* http api
+
+  * http를 사용해서 서로 정해둔 스펙으로 통신
+  * 넓은 의미의 restapi
+
+* rest api(restful api)
+
+  : http api와 같으나 추가적으로 **restful한 네가지 특징**을 갖는다.
+
+  * 자원 식별: 각각의 자원은 URI를 통해 식별 가능해야한다.
+
+    * 명사 사용, 복수형일땐 복수형
+
+    `GET /room/1`
+
+  * 표현을 통한 리소스 조작: 자원을 묘사한 표현을 전송한다.
+
+    * GET, POST, PUT, DELETE
+
+    * 따라서 서버 코드에 얽매이지 않고 client 구현 가능.
+
+    * 서버의 수정에도 영향을 받지 않는다.
+
+      e.g) `GET http://www.example.com/v2/apple`
+
+  * 자기 서술형 메시지: 수신자가 이해하기 위한 모든 정보를 가지고 있어야 한다.
+
+    * 메시지를 이해하기 위해 내용까지 살펴봐야 한다면 자기서술적이지 않다.
+
+  * **hateoas : 클라이언트가 리소스에 접근하기를 원한다면, server가 응답을 줄 때 hyperlink를 추가해서 보내준다. 다음에 클라이언트가 어떤 API를 호출해야하는지는 해당 링크를 통해 받을 수 있다. **
+
+    * **이 원칙을 통해 클라이언트와 서버는 완전하게 분리됨.**
+
+    * **URI 등이 바뀌어도 클라이언트에서는 자동으로 연결됨**
+
+      * **클라이언트에게 자원을 보내면서 다음에 연결할 URL을 링크로 같이 보내기 때문에**
+
+      > 이 원칙이 중요한 것은 이렇게 함으로서 클라이언트와 서버간의 완전한 분리가 이루어지게 됩니다. 만약 서버의 자원을 나타내는 URI 가 변경되었을 경우 클라이언트는 서버의 변화에 종속적으로 그 정보를 클라이언트 정보에 추가하게 됩니다. (SPA 상에서 href 데이터를 바꾸어 줘야함) 하지만 HATEOAS를 제대로 적용했을 시 아래와 같이 _links.profile 에 대한 href정보만 조회해주면 되므로 서버에서 URI정보가 바뀌어도 클라이언트 측에서 소스 변경없이 그대로 사용할 수 있게 됩니다.
+      >
+      > 출처: https://engkimbs.tistory.com/855 [새로비]
+
+    **(ex)**
+
+```
+"_links" : {
+  "self" : {
+    "href" : "http://localhost:8080/api/events/46"
+  },
+  "profile" : {
+    "href" : "/docs/index.html#resources-events-get"
+  }
+}
+```
+
+
+
+출처: https://engkimbs.tistory.com/855 [새로비]
+
+
+
+##### reference) 
+
+##### https://www.inflearn.com/questions/126743
+
+##### http://amazingguni.github.io/blog/2016/03/REST%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4-1
+
+
 
 ### RPC (vs restapi)
 
