@@ -208,3 +208,7 @@ IntStream.of(1, 15, 2)
 * e. g) 이 관점에서 보면 racingCar 프로젝트에서 car의 위치들을 비교해 winner를 구하는 로직 또한 Cars가 아니라 Car에서 하는게 맞는 것.
 
 
+
+
+
+
