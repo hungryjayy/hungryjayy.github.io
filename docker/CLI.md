@@ -16,7 +16,7 @@
 
 * 컨테이너 모두 삭제
 
-  ​	docker rm `docker ps -a -q`
+  ​	`docker rm $(docker ps -a -q)`
 
 
 
