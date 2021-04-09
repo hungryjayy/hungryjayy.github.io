@@ -14,3 +14,18 @@
 
 
 
+* redis service 계속 켜지는 문제
+
+  * 사실 이게 HA를 위해 꺼지면 다시 켜지는것?
+
+    `/etc/init.d/redis-server stop` 을 이용하자.
+
+
+
+* 서비스 관련 CLI
+  * `/etc/init.d/redis-server start`
+  * `/etc/init.d/redis-server restart`
+  * `redis-cli shutdown` (mac에서)
+
+
+
