@@ -93,6 +93,17 @@ public class GameRanking {
 
 
 
+* 보안에 대해서
+  * Session 사용 금지.
+    * Stateless라는 특징을 위반
+  * HTTP auth / OAuth
+
+* 문서화
+  * Swagger UI
+  * 설계용, 배포용 두가지로 나눠도 좋음.
+
+
+
 ##### Reference)
 
 ##### https://www.slideshare.net/brotherjinho/restful-api-64494716
