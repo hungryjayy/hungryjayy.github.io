@@ -181,3 +181,39 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 #### Reference) https://cheese10yun.github.io/spring-guide-directory/
+
+
+
+### DAO vs Repository
+
+#### Repository
+
+* 특정 객체 컬렉션을 관리
+* 메모리에 로드되어있다고 가정하고, 메모리 내 특정 객체, 객체 집합, 전체 객체에 접근하기 위함
+* 집합의 생명주기 관리를 위해 persistence 로직 사용.
+* 이때 도메인 객체가 persistence 로직에 의존
+  * 의존성 제거를 위해 Interface, persistence(구현부) 로직으로 분리.
+    * 인터페이스 -> 도메인 layer에 속함.
+    * 구현부 -> persistence layer에 속함. 
+  * `Separated interface` : DIP(dependency Inversion Principle)에 기반한 방법
+* ORM 사용시 객체 단위로 테이블 관리하고, 이때 repository가 DAO 역할 수행
+
+
+
+#### DAO
+
+* 위의 repository와 같이 도메인 로직과 persistence 로직을 분리해 `separation of concerns` 원리 충족의 목적.
+  * 하부의 persistence 메커니즘이 DB라는 사실을 숨기지 않는다.
+* DAO의 인터페이스는 CRUD 쿼리와 1:1 매핑되는 세밀한 오퍼레이션 제공
+  * DB SQL 단위.(service == 트랜젝션 단위, controller == 업무 단위)
+  * 단일 데이터 접근.
+  * 실제 비즈니스 로직 처리 : 하나 이상의 DAO 조합 == 트랜젝션 단위
+
+
+
+#### Refence)
+
+#### http://egloos.zum.com/aeternum/v/1160846
+
+#### https://velog.io/@leyuri/DAO%EC%99%80-Repository-DTO-VO
+
