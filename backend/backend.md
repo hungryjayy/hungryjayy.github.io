@@ -69,6 +69,40 @@ public class GameRanking {
 
 
 
+#### 좋은 restapi를 구성하기
+
+* resource는 복수형, 명사 - 의미상 이게 명확
+  * `/rooms/{roomId}` : 모든 rooms 중 roomId에 해당하는 room
+  * `/rooms/` : 모든 rooms
+* get, post, put, delete 각각의 http method 각각의 성격을 위반 x
+  * e.g. get 메서드는 어떠한 상태를 변경하지 않음.
+  * post는 값을 읽기만 하지는 않음.
+    * 보안상 취약하다고 이걸 사용하지 말고 https 통신을 하도록 해서 해결하는 것이 바람직.
+* API version을 갖게 하는 것도 관리 측면에서 좋음
+* camel case보다는 dash나 snake case가 좋아보임
+  * 그러나 팀원과의 상의 필요
+  * 개발자 뿐 아니라 일반 사용자들도 html을 통해 접근 할수 있음을 염두
+  * restapi는 애초에 원활한 커뮤니케이션을 목적으로 하기 때문
+* HATEOAS - restful하게 만드는 특징
+  * client는 link를 통해서 api에 접근 가능.
+  * server에서 URI를 변경해도 문제가 생기지 않음
+    * client와 server의 분리
+* filtering, sorting, field 선택, paging 등을 제공
+* Error 처리
+  * 200, 300, 400, 500대 http 상태 코드 숙지
+
+
+
+##### Reference)
+
+##### https://www.slideshare.net/brotherjinho/restful-api-64494716
+
+##### https://www.rocketpunch.com/cards/post/436146
+
+
+
+
+
 #### http api vs rest api
 
 * http api
@@ -81,8 +115,6 @@ public class GameRanking {
   : http api와 같으나 추가적으로 **restful한 네가지 특징**을 갖는다.
 
   * 자원 식별: 각각의 자원은 URI를 통해 식별 가능해야한다.
-
-    * 명사 사용, 복수형일땐 복수형
 
     `GET /room/1`
 
@@ -109,9 +141,9 @@ public class GameRanking {
       * **클라이언트에게 자원을 보내면서 다음에 연결할 URL을 링크로 같이 보내기 때문에**
 
       > 이 원칙이 중요한 것은 이렇게 함으로서 클라이언트와 서버간의 완전한 분리가 이루어지게 됩니다. 만약 서버의 자원을 나타내는 URI 가 변경되었을 경우 클라이언트는 서버의 변화에 종속적으로 그 정보를 클라이언트 정보에 추가하게 됩니다. (SPA 상에서 href 데이터를 바꾸어 줘야함) 하지만 HATEOAS를 제대로 적용했을 시 아래와 같이 _links.profile 에 대한 href정보만 조회해주면 되므로 서버에서 URI정보가 바뀌어도 클라이언트 측에서 소스 변경없이 그대로 사용할 수 있게 됩니다.
-      >
+    >
       > 출처: https://engkimbs.tistory.com/855 [새로비]
-
+  
     **(ex)**
 
 ```
