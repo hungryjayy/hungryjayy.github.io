@@ -22,3 +22,10 @@
 
 
 
+## 200412
+
+* dev 변경사항 병합 후 merge 올리자 jenkins error 발생
+  * 로그파일 확인하니 `Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)`
+  * 위의 registry-1.docker.io/v2 링크타고 들어가보니 `{"errors":[{"code":"UNAUTHORIZED","message":"authentication required","detail":null}]}`
+  * 인증단계 실패 예상, 구글링 결과
+    * 찾아보니 그냥 로그인 문제, 네트워크 문제 등이 많다고 함..
