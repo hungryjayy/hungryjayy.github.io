@@ -268,3 +268,25 @@
 * 관련 있는 상수들을 모아 심볼릭한 명칭의 집합으로
 * java에서의 static 변수 효과
 * 이러한 상수 타입으로 어떠한 변수를 할당했을 때 그 변수를 수정함으로써 얻는 런타임에서의 에러를 방지할 수 있다.
+
+
+
+
+
+### Time 시간 관련 API
+
+* `Instant.now()` 한 점을 나타냄. 따라서 비교 가능
+* `Duration.ofHours(2)` - 2시간  차이
+  * 테스트에 유용하게 쓰일 수도
+* `LocalDateTime` : 시간대 포함하지 않음.
+  * `LocalDate`, `LocalTime` 도 존재
+* `ZonedDateTime` : 시간대 개념 추가
+  * Local에서 시간대면 추가되면 Zoned. 반대도 가능
+
+
+
+
+
+#### Reference)
+
+#### https://yangbox.tistory.com/24
