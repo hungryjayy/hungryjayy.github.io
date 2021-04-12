@@ -143,3 +143,16 @@
 
 
 
+## JPA + Kotlin
+
+
+
+### data class
+
+* JPA 사용 시 Kotlin에서는 entity를 data class로 선언하지 않음
+  1. 코틀린은 기본적으로 상속을 막아놓고 `open` keyword를 추가해 상속 가능 class로 변경 가능. 그런데, data class에서는 open keyword 조차 불가
+     * JPA의 지연 로딩
+       * 지연 로딩 객체를 실제 참조하기 전까지는 Proxy객체로 참조, 이 Proxy 객체는 Entity를 상속해 만들어짐.
+  2. Data class construct 시점에 제공받는 `hashCode()`
+     * ID는 더 추후에 JPA가 세팅해준다.
+     * 
