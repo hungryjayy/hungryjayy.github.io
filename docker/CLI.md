@@ -22,3 +22,8 @@
 
 * `sudo docker system prune --volumes`
   * 저장해놓은 container들 완전 제거
+
+
+
+* `--build` : 도커 컨테이너 이미지 생성
+  * 이미지는 불변이기 때문에 설정 변경 있을 때 이걸 해줘야 한다.
