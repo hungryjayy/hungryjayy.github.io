@@ -36,7 +36,7 @@
 
 
 
-### Annotation
+## Annotation
 
 * `@RequestParam`
   * Get mapping에서 url의 parameter를 받음
@@ -48,7 +48,7 @@
 
 
 
-### DTO(data transfer object)
+## DTO(data transfer object)
 
 * Layer간 데이터 전송을 위함.
 * Domain model 객체를 그대로 두고, 복사하여 다양한 presentation logic을 추가한 정도
@@ -56,13 +56,13 @@
 
 
 
-#### DTO와 엔티티를 분리하는 이유
+### DTO와 엔티티를 분리하는 이유
 
 * 만약 프론트에서 dto 객체의 구성이나 네이밍등의 변경사항이 있을경우 엔티티를 그대로 쓰면 DB 컬럼명까지 까지 수정해줘야하는 경우가 생길 수 있으니 분리한다.
 
 
 
-#### DTO에 관한 고찰
+### DTO에 관한 고찰
 
 DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서 사용하는 것은 맞는 듯..
 
@@ -86,7 +86,7 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-#### 나의 정리
+### 나의 정리
 
 * Service에서 Repo에 넘겨줄때
   * DTO to Entity(domain)
@@ -118,7 +118,7 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-### Domain, entity, VO
+## Domain, entity, VO
 
 1. Domain
 
@@ -155,13 +155,13 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-### 패키지 구조
+## 패키지 구조
 
 * 크게 계층형과 도메인형이 존재할 듯.
 
 
 
-#### 계층형
+### 계층형
 
 * dao, controller, service 등 각 계층별로 구분
 * 전체 구조를 빠르게 파악 가능
@@ -169,7 +169,7 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-#### 도메인형
+### 도메인형
 
 * 약간 DDD 스타일
 
@@ -184,9 +184,9 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-### DAO vs Repository
+## DAO vs Repository
 
-#### Repository
+### Repository
 
 * 특정 객체 컬렉션을 관리
 * 메모리에 로드되어있다고 가정하고, 메모리 내 특정 객체, 객체 집합, 전체 객체에 접근하기 위함
@@ -200,7 +200,7 @@ DTO 위치에 대해 정해진건 없다. 다만 service 혹은 controller에서
 
 
 
-#### DAO
+### DAO
 
 * 위의 repository와 같이 도메인 로직과 persistence 로직을 분리해 `separation of concerns` 원리 충족의 목적.
   * 하부의 persistence 메커니즘이 DB라는 사실을 숨기지 않는다.
