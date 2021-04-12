@@ -29,3 +29,4 @@
   * 위의 registry-1.docker.io/v2 링크타고 들어가보니 `{"errors":[{"code":"UNAUTHORIZED","message":"authentication required","detail":null}]}`
   * 인증단계 실패 예상, 구글링 결과
     * 찾아보니 그냥 로그인 문제, 네트워크 문제 등이 많다고 함..
+* 해결 : 그냥 다시 해보니까 됨.. 기존과 같은 로그인 정보인데 에러가 발생했으므로 **네트워크 문제**였던 것으로 판단
