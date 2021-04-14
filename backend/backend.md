@@ -1,4 +1,4 @@
-### 일급 컬렉션
+## 일급 컬렉션
 
 ```java
 public class GameRanking {
@@ -28,7 +28,7 @@ public class GameRanking {
 
 
 
-### Rest api
+## Rest api
 
 : API를 설계 할 때 자원을 나타내는 URI가 있고, http method를 통해 자원을 어떻게 처리할 지 설계하는 방식의 아키텍처
 
@@ -179,6 +179,18 @@ public class GameRanking {
 ##### https://www.inflearn.com/questions/126743
 
 ##### http://amazingguni.github.io/blog/2016/03/REST%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4-1
+
+
+
+### Java(Kotlin) + Rest
+
+* ResponseEntity
+  * Http 응답에 해당하는 header, body를 포함하는 클래스
+  * HttpEntity를 상속, Body Type 지정 가능.
+
+
+
+#### Reference ) https://devlog-wjdrbs96.tistory.com/182
 
 
 
