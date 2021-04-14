@@ -36,7 +36,35 @@
 
 
 
+## Bean?
+
+* POJO(plain, old java object)
+* IoC 컨테이너에 의해 인스턴스화, 관리, 생성 됨. ++ thread safety 보장
+* 기본적으로 싱글톤으로 생성되는 것 + 기존 싱글톤의 문제를 해결
+* XML파일로 관리
+
+
+
+#### Reference) 
+
+#### https://gmlwjd9405.github.io/2018/11/10/spring-beans.html
+
+#### https://velog.io/@yhh1056/%EC%8A%A4%ED%94%84%EB%A7%81-Bean-Configuration-Singleton
+
+### Restapi에서
+
+
+
 ## Annotation
+
+* `@Componenet` : 클래스를 Bean으로 등록
+* `@Repository` : @Component + DAO 관련 장점 (unchecked 예외 처리)
+* `@Service` : @Component + 서비스 레이어 명시
+* `@Controller` : @Componenet + 컨트롤러에서 사용할 어노테이션 추가사용
+
+
+
+#### Reference) https://m.blog.naver.com/writer0713/220695884239
 
 * `@RequestParam`
   * Get mapping에서 url의 parameter를 받음
