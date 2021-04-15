@@ -151,10 +151,18 @@ public class GameRanking {
 
       * **클라이언트에게 자원을 보내면서 다음에 연결할 URL을 링크로 같이 보내기 때문에**
 
+      * ![image-20210415234537963](/Users/joowon/Library/Application Support/typora-user-images/image-20210415234537963.png)
+
+      * 예시: 주문에 대한 정보를 보낼 때 주문 고객에게 사용 가능한 작업을 식별하는 링크를 주문 presentation에 포함
+
+      * 요청에 대한 응답을 보낼 때 그 스크린에서 할 수 있는 것들을 요청으로 보내면 됨 위와 같이.
+
+        #### ref) https://docs.microsoft.com/ko-kr/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources
+
       > 이 원칙이 중요한 것은 이렇게 함으로서 클라이언트와 서버간의 완전한 분리가 이루어지게 됩니다. 만약 서버의 자원을 나타내는 URI 가 변경되었을 경우 클라이언트는 서버의 변화에 종속적으로 그 정보를 클라이언트 정보에 추가하게 됩니다. (SPA 상에서 href 데이터를 바꾸어 줘야함) 하지만 HATEOAS를 제대로 적용했을 시 아래와 같이 _links.profile 에 대한 href정보만 조회해주면 되므로 서버에서 URI정보가 바뀌어도 클라이언트 측에서 소스 변경없이 그대로 사용할 수 있게 됩니다.
     >
       > 출처: https://engkimbs.tistory.com/855 [새로비]
-  
+
     **(ex)**
 
 ```
