@@ -53,3 +53,14 @@
 * #### eslint-plugin-prettie
 
   * Prettier를 ESLint 플러그인으로 추가한다. 즉, Prettier에서 인식하는 코드상의 포맷 오류를 ESLint 오류로 출력해준다.
+
+
+
+
+
+## 200417
+
+* 보고싶은 깃헙 레포지토리에서 URL에 github.com -> github1s.com으로 바꿔주면 
+
+  vscode 웹으로 열림(readonly
+  )[Github1s - GitHub코드를 VS Code로 1초만에 둘러보기](https://daddyprogrammer.org/tech-news/?vid=285)
