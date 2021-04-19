@@ -27,6 +27,7 @@
 
 
 * 클러스터 내의 broker 분산은 ZooKeeper가 담당
+  * Broker는 클러스터로 구성되어 동작
 
 
 
@@ -77,3 +78,34 @@ Message Broker가 Consumer에게 메시지를 **push**하는 방식
      * 데이터를 사용하는 서비스가 해당 데이터를 쉽게 찾을 수 있음
 
 #### reference) https://engineering.linecorp.com/ko/blog/how-to-use-kafka-in-line-1/
+
+
+
+## Topic과 Partition
+
+* Partition: topic를 쪼갠 작은 단위
+
+
+
+## Messaging model
+
+1. #### Queue model
+
+   * 메시지가 쌓여있는 큐로부터 메시지를 가져와 consumer pool에 있는 consumer 중 하나에 메시지를 할당하는 방식
+     * 서버 scaled 상황에서 이게 적절할 듯
+
+2. #### Pub-Sub model
+
+   * topic을 구독하는 모든 consumer에게 메시지 브로드캐스팅
+
+
+
+### Consumer Group?
+
+* 이 개념을 통해 위의 두 모델을 pub-sub 모델로 일반화 하였음.
+
+* 
+
+  
+
+#### Refenence) https://epicdevs.com/17
