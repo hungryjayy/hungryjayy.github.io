@@ -83,7 +83,33 @@ Message Broker가 Consumer에게 메시지를 **push**하는 방식
 
 ## Topic과 Partition
 
-* Partition: topic를 쪼갠 작은 단위
+* Topic
+  * 하나의 관심사. 이 것을 구독하여 사용
+
+* Partition
+  * topic를 쪼갠 작은 단위
+  * HA를 위해 replication 설정을 할 경우 partition 단위로 각 서버들에 분산되어 복제
+    * 장애 발생 시 partition 단위로 fail over
+
+### Partition 분산
+
+* Producer가 어떤 partition으로 메시지를 전송할지는 partition 분배 알고리즘에 의해
+  * Round robin, 메시지 키를 통해 패턴 매핑, CRC32를 통해 modulo 연산 등
+
+
+
+### Partition replication?
+
+![img](https://t1.daumcdn.net/cfile/tistory/2655FB425509181D07)
+
+* 위는 replication factor을 3으로 설정한 상태의 클러스터 
+* Replication factor의 수에 따른 상황(replication factor == n인 상황)
+  * n개의 replica는 1개의 leader(빨강), n-1개의 follower(파랑) 로 구성
+  * 읽기와 쓰기는 모두 leader에서
+  * follower는 leader를 복제
+  * leader 장애시 follower가 leader로 승격
+
+
 
 
 
