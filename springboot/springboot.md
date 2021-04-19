@@ -136,6 +136,38 @@
 
 
 
+### 에러처리
+
+### @ControllerAdvice
+
+* 에러를 한 곳에서 처리(각각의 Controller의 에러 처리 로직은 비슷비슷 할 것이기 때문)
+* @Restcontrolleradvice = @ControllerAdvice + @ResponseBody
+
+
+
+### @ExceptionHandler
+
+* @Controller, @RestController의 Bean에서 발생한 예외를 잡아서 한 메서드에서 처리
+* 인자로 캐치하고 싶은 예외 클래스 등록
+* 여러개도 가능
+  * e.g. ) `@ExceptionHandler({ Exception1.class, Exception2.class })`
+
+
+
+### @ResponseStatus 
+
+* Controller나 Exception의 return에 status 정보를 설정하여 리턴해줌.
+
+
+
+#### Reference) 
+
+#### https://jeong-pro.tistory.com/195
+
+
+
+
+
 
 
 ### @RequestParam`
