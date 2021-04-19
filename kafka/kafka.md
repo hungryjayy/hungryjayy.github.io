@@ -103,13 +103,13 @@ Message Broker가 Consumer에게 메시지를 **push**하는 방식
 ![img](https://t1.daumcdn.net/cfile/tistory/2655FB425509181D07)
 
 * 위는 replication factor을 3으로 설정한 상태의 클러스터 
+  * 위처럼 세개의 브로커에 leader가 균등하게 분배.
+  * 따라서 read,write를 모두 leader가 수행함에도 불구하고 부하가 균등 분배 됨
 * Replication factor의 수에 따른 상황(replication factor == n인 상황)
   * n개의 replica는 1개의 leader(빨강), n-1개의 follower(파랑) 로 구성
   * 읽기와 쓰기는 모두 leader에서
   * follower는 leader를 복제
   * leader 장애시 follower가 leader로 승격
-
-
 
 
 
@@ -128,9 +128,16 @@ Message Broker가 Consumer에게 메시지를 **push**하는 방식
 
 ### Consumer Group?
 
-* 이 개념을 통해 위의 두 모델을 pub-sub 모델로 일반화 하였음.
+* 이 개념을 통해 위의 두 모델을 pub-sub 모델로 일반화.
 
-* 
+* Topic을 나눈 단위인 partition은 CG(consumer group) 당 하나의 consumer 접근만을 허용
+
+  * 이 때의 consumer는 partition owner. 한번 구성되면 broker, consumer 변동이 있지 않는 한 계속 유지
+    * consumer 추가 시 CG 내 재분배
+    * broker 추가 시 전체에서 재분배
+  * 동일한 CG의 consumer는 동일한 partition 접근 불가
+
+* CG에 다수의 consumer가 할당되면 각 consumer마다 별도의 partition으로부터 메시지를 받아오기 때문에 CG는 큐 모델로 동작
 
   
 
