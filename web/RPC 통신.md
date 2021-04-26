@@ -5,8 +5,10 @@
 ## RPC (vs restapi)
 
 * IDL(Interface Definition Language)을 활용해 통신은 신경쓰지 않고 원격의 프로그램을 로컬처럼 이용
+  * IDL: 다른 언어로 작성된 여러 서비스 들을 연결하기 위해 중간 인터페이스를 정의하는 언어
 * request parameter, reseponse parameter를 알아야한다.
   * 따라서 양쪽의 인터페이스 규약을 정의한 후, Skeleton, Stub 코드를 이용.
+  * 서로 다른 주소공간을 사용하므로 stub을 통해 매개변수를 변환해주어야 함.
 * client, server간 연관관계가 돈독해진다(?), 즉 의존성 증가
 * 계층간 함수명 등이 그대로 노출되는 구조라서 마이크로 서비스 내부 시스템, 디자인이 그대로 노출된다.
 * **아래의 Stub, Skeleton을 통한 정보 전달 과정은 네트워크를 통한 자료고환을 포함하기 때문에 Local에서의 일반적인 method call 보다는 더 많은 시간을 소모.**
@@ -35,6 +37,8 @@
 
 
 #### Reference)
+
+#### https://velog.io/@bmh8993/REST%EC%99%80-RPCgRPC%EA%B0%80-%EB%93%B1%EC%9E%A5%ED%95%98%EA%B8%B0%EA%B9%8C%EC%A7%80
 
 #### https://mindock.github.io/network/rest-rpc/
 
