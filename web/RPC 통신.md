@@ -5,7 +5,6 @@
 ## RPC (vs restapi)
 
 * IDL(Interface Definition Language)을 활용해 통신은 신경쓰지 않고 원격의 프로그램을 로컬처럼 이용
-  * IDL: 다른 언어로 작성된 여러 서비스 들을 연결하기 위해 중간 인터페이스를 정의하는 언어
 * request parameter, reseponse parameter를 알아야한다.
   * 따라서 양쪽의 인터페이스 규약을 정의한 후, Skeleton, Stub 코드를 이용.
   * 서로 다른 주소공간을 사용하므로 stub을 통해 매개변수를 변환해주어야 함.

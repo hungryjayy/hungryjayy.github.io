@@ -8,25 +8,19 @@
     
   * 기본적으로 IDL로는 protocol buffer(PB)를 사용. JSON 등 다른 직렬화 방식도 사용 가능
 
-    * IDL(Interface Definition language): 타 언어간 통신 가능하도록 하는 중간 인터페이스 정의 언어.
-
-      * 대표적으로 XML, JSON, PB(protocol buffer)
-
-      e.g) c++을 사용한 컴포넌트와 자바를 사용한 컴포넌트 사이에서 국한되지 않고 인터페이스를 묘사
-
   * 장점
-    * 1. 경량. 작은 리소스만으로도 좊은 성능
+  * 1. 경량. 작은 리소스만으로도 좊은 성능
       2. 효율: protobuf 를 통해 구조화된 데이터를 직렬화 함.
-         * 직렬화: 객체 또는 data를 Byte형태 스트림으로 변경해 보냄
+       * 직렬화: 객체 또는 data를 Byte형태 스트림으로 변경해 보냄
       
-      ![img](https://media.vlpt.us/images/kyusung/post/058599e3-3486-4b0b-9600-59a827f2d40a/gRPC%20%E2%80%93%20Guides%202020-03-11%2018-21-22.png)
+    ![img](https://media.vlpt.us/images/kyusung/post/058599e3-3486-4b0b-9600-59a827f2d40a/gRPC%20%E2%80%93%20Guides%202020-03-11%2018-21-22.png)
       
       
-
+  
   * 대기 시간이 짧고 처리량이 높은 통신에 필요(효율성이 중요한 마이크로 서비스)
-
+  
   * Best example: 대표적으로 많이 쓰이는 IoT 기기들
-
+  
     1. voice controller, 2. smart light switch, 3. smoke alarms lock, 4. camera 
 
   * RPC 특성상, 아키텍처가 아니라 server와 client의 관계에서 교류가 이루어짐
