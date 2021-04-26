@@ -108,17 +108,6 @@ public class GameRanking {
 
 
 
-
-
-### RPC (vs restapi)
-
-* request parameter, reseponse parameter를 알아야한다.
-  * 따라서 양쪽의 인터페이스 규약을 정의한 후, Skeleton, Stub 코드를 이용.	
-* client, server간 연관관계가 돈독해진다(?), 즉 의존성 증가
-* 계층간 함수명 등이 그대로 노출되는 구조라서 마이크로 서비스 내부 시스템, 디자인이 그대로 노출된다.
-
-
-
 ### TDD
 
 test 주도형 개발. 기능 추가 전 테스트 먼저 작성.
