@@ -10,6 +10,8 @@
 
     * IDL(Interface Definition language): 타 언어간 통신 가능하도록 하는 중간 인터페이스 정의 언어.
 
+      * 대표적으로 XML, JSON, PB(protocol buffer)
+
       e.g) c++을 사용한 컴포넌트와 자바를 사용한 컴포넌트 사이에서 국한되지 않고 인터페이스를 묘사
 
   * 장점
