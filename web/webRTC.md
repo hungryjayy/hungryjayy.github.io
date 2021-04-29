@@ -47,3 +47,42 @@
 #### Reference)
 
 #### https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md
+
+
+
+
+
+## Socket.io signaling
+
+### Format
+
+* Client -> Portal
+  * Client가 Portal과 연결되어 send/recv 할 준비가 되면, Client는 socket객체의 `emit()` 을 통해 Portal에게 모든 signaling message를 보내야 한다.
+* Portal -> Client
+  * Portal에 Client가 연결되어 socket 객체가 send/recv 할 준비가 되면, Portal은 `emit()`을 통해 Client에게 모든 signaling mesage를 보내야 한다.
+
+
+
+### Connection Maintenance
+
+* Client Connects
+  * Portal은 Client의 연결을 받기 위해 각각의 socket.io 서버 포트를 listen할 수 있어야 한다.
+  * Secure socket.io 서버가 가능해지면, SSL certificate과 PK store path가 올바르게 정해져야한다. (portal.toml 의 config를 통해)
+* Client Keeps Alive
+  * Socket.io 서버는 keep-alive 메커니즘을 갖고있기 때문에 app level의 heart-beat는 불필요.
+  * 그러나, 서버가 죽는 경우를 대비해서 Client는 현재의 티켓이 만료되기 전에 주기적으로 reconnection 티켓을 refresh해야한다.
+* Client Disconnects
+  * 서버 사이드에서의 연결된 socket.io 객체는 disconnect event를 받는다.
+  * 다음의 조건들이 만족된다면, disconnect event 이후에 reconnecting 타이머`(Timer100)`가  시작된다.
+    1. Participant leaving 가 발생하지 않았을 때(의도적으로 나간게 아닐 때)
+    2. Conenction이 mobile client로부터 초기화되었을 때
+* Client Reconnects
+  * `RequestName` : "relogin"
+  * `RequestData` : ReconnectionTicket 객체
+  * `ResponseData` : base64-encoded ReconnectionTicket 객체(ResponseStatus가 "ok" 일 때)
+
+
+
+#### Reference)
+
+#### **https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md**
