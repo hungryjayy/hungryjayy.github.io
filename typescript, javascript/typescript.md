@@ -174,7 +174,7 @@ console.log('after loop i is', i)
 
 ​		*IIFE: 정의하자마자 즉시 실행함수, `()`로 씌워 만들수 있다*
 
-```js
+```javascript
 // IIFE를 사용하면
 // i is not defined가 뜬다.
 (function() {
