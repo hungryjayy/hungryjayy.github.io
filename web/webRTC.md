@@ -56,6 +56,8 @@
 
 ### Format
 
+*Signaling message : 서로 다른 네트워크에 있는 2개의 디바이스를 위치시키기 위해서는 각 디바이스의 위치를 발견하는 방법, 미디어 포맷 협의 필요. 이 프로세스를 Signaling이라고 함. *
+
 * Client -> Portal
   * Client가 Portal과 연결되어 send/recv 할 준비가 되면, Client는 socket객체의 `emit()` 을 통해 Portal에게 모든 signaling message를 보내야 한다.
 * Portal -> Client
