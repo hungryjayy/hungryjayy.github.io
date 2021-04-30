@@ -208,3 +208,38 @@
 
 #### https://ict-nroo.tistory.com/127
 
+
+
+## In Clause
+
+* `findBy~~In` 의 인자로 List를 받으면 자동으로 in clause로 변경 됨
+
+  * Query로 치면 `where ~~ in list` 와 같은 형태라고 보면 됨
+
+* `select ... from Table where id in (id1, id2, id3)` 이와 같은 형태로
+
+  * 그런데 여기서 ids는 고정된 크기의 객체가 아님
+
+  * e.g) 5개씩 잘라서 받으며, 12개의 id를 받는다고 가정한다면 아래와 같은 형태로 받게 될 것
+
+    ``` mysql
+    select .... from Sample where id in (? ,? ,?, ?, ?);
+    select .... from Sample where id in (? ,? ,? ,? ,?);
+    select .... from Sample where id in (? ,? );
+    ```
+
+  * 이러한 경우 11, 12, 13, 14, 15개의 id의 리스트를 받을 때를 고려하면 총 5개의 쿼리가 생겨버림
+  * 문제점
+    * DB 관점에서 preparedStatement 효과를 누리지 못하게 됨
+    * 힙 메모리 점유됨
+    * 1000개 단위로 fetch해 온다면, 1000개의 다른 execution plan cache를 발생하게 될 것
+  * 해결
+    * in_clause_parameter_padding 옵션 지정 해주기 -> 2의 제곱 단위로 padding
+    * 직접 padding
+    * execution plan cache 사이즈 조정 이 경우에 2048부터해서 줄여가며 메모리 상황을 보아야 함
+
+
+
+#### Reference)
+
+#### https://meetup.toast.com/posts/211
