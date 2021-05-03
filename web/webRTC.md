@@ -98,10 +98,9 @@
 1. Client(엔드포인트에서 사용하는 사용자)
    1. 여러 설정 후 publish
 2. V11Client `on('publish') `
-   1. safeCall을 통해 배열 객체로 만들어주고
-   2. streamID (난수)생성
-   3. Validation 이후
-   4. Portal의 publish call
+   1. streamID (난수)생성
+   2. Validation 이후
+   3. Portal의 publish call
 3. Portal
    1. portal/rpcRequest에게 RPC call(publish) 
    2. Conference Agent에게 요청됨
@@ -114,9 +113,47 @@
    2. getWorkernode를 통해 worker node 얻고, locality 변수에 저장
    3. 이후 worker node, session에 대한 정보들 conference/rpcRequest의 RPC call(initiate)
    4. conference/rpcRequest에서는 목적노드의 publish call -> worker node에게로
-6. Worker node(access node)
+6. Worker node(access node) (webrtc/index)
    1. webRTC connection 생성 (createdWebRTCConnection)
    2. 위의 메서드 내부에서 WrtcConnection 객체 생성, 이 때 pub을 위한 addMediaStream 또한 진행됨(미디어 스트림 생성)
+      1. Wrtc 객체 생성하면서 Webrtc connection Ready되고, 여기서 Conference node에게 connection ready status를 알려야 함.( onSessionProgress 호출)
+      2. accessController에서 onReady 상태가 되면, 미리 세팅해두었던 conference의 onSessionEstablished를 호출
+7. Conference
+   1. addStream을 통해 roomController.publish
+   2. Client에게 ready 상태를 알림
+
+
+
+## Subscribe 과정
+
+1. Client
+   1. send signaling message(subscribe)
+2. V11Client
+   1. Subscripbe Id 생성, validation,
+   2. portal에게 subscribe 요청
+3. Portal
+   1. rpcRequest subscribe 요청(portal/rpcReq)
+   2. Conference Agent가 받음
+4. Conference Agent
+   1. 여러 유효성체크, subs 정보 저장
+   2. initiateSubscription -> subsc배열에 subs 객체 추가
+   3. accessController.initiate
+5. Access Controller
+   1. Session 배열에 session 객체 저장
+   2. getWorkernode를 통해 worker node 얻고, locality 변수에 저장
+   3. 이후 worker node, session에 대한 정보들 conference/rpcRequest의 RPC call(initiate)
+   4. conference/rpcReq 에서 direction === out이므로 목적노드의 subscribe 요청
+6. Worker node(webrtc/index)
+   1. webRTC connection 생성 (createdWebRTCConnection)
+   2. 위의 메서드 내부에서 WrtcConnection 객체 생성, 이 때 pub을 위한 addMediaStream 또한 진행됨(미디어 스트림 생성)
+      1. Wrtc 객체 생성하면서 Webrtc connection Ready되고, 여기서 Conference node에게 connection ready status를 알려야 함.( onSessionProgress 호출)
+      2. accessController에서 onReady 상태가 되면, 미리 세팅해두었던 conference의 onSessionEstablished를 호출
+7. Conference
+   1. addSubscription 호출, media.video, audio 설정 후 roomController -> subscribe
+   2. getAudioStream
+      1. mixed Stream이라면 mixedStream을 생성하고 AudioStream을 얻음
+   3. getVideoStream
+      1. mixed Stream이고, 매치되는 mixed stream이 없다면 해당하는 Stream을 생성 후 얻음
 
 
 
