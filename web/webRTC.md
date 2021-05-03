@@ -88,3 +88,40 @@
 #### Reference)
 
 #### **https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md**
+
+
+
+# OWT 코드분석
+
+## Publish 과정
+
+1. Client(엔드포인트에서 사용하는 사용자)
+   1. 여러 설정 후 publish
+2. V11Client `on('publish') `
+   1. safeCall을 통해 배열 객체로 만들어주고
+   2. streamID (난수)생성
+   3. Validation 이후
+   4. Portal의 publish call
+3. Portal
+   1. portal/rpcRequest에게 RPC call(publish) 
+   2. Conference Agent에게 요청됨
+4. Conference Agent
+   1. 여러 유효성 검사
+   2. initiateStream을 통해 streams 배열에 stream객체 저장
+   3. webrtc worker node를 얻기 위해 accessController에게 initiate 요청
+5. accessController
+   1. Session 배열에 session 객체 저장
+   2. getWorkernode를 통해 worker node 얻고, locality 변수에 저장
+   3. 이후 worker node, session에 대한 정보들 conference/rpcRequest의 RPC call(initiate)
+   4. conference/rpcRequest에서는 목적노드의 publish call -> worker node에게로
+6. Worker node(access node)
+   1. webRTC connection 생성 (createdWebRTCConnection)
+   2. 위의 메서드 내부에서 WrtcConnection 객체 생성, 이 때 pub을 위한 addMediaStream 또한 진행됨(미디어 스트림 생성)
+
+
+
+#### Reference)
+
+#### Client - https://github.com/open-webrtc-toolkit/owt-client-javascript/blob/8fae8a8e1714109d0851391f8fd20ffe3775cb65/src/sdk/conference/channel.js#L146
+
+#### Server - https://github.com/open-webrtc-toolkit/owt-server
