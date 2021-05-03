@@ -94,23 +94,6 @@
 
 
 
-
-
-### this
-
-* JS의 모든 함수는 실행될 때마다 함수 내부에 this 객체가 추가됨.
-
-1. 객체의 메서드를 호출할 때 `A.B` 에서 this는 A 객체를 가리킨다.
-2. 함수를 호출할 때 this는 전역 객체에 바인딩 된다.
-3. 생성자 함수를 통해 객체를 생성할 때 -> 일반적인 생성자와 같게 생각하면 됨
-   1. 내부에서 객체 자체를 this
-4. apply, bind, call
-   1. apply: func.apply(this, [param1, param2])
-   2. bind: func {}.bind(this, param1, param2)
-   3. call: func.call(this, param1, param2)
-
-
-
 ### arrow function
 
 * 간결하다
