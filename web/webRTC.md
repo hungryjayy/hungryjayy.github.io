@@ -95,7 +95,7 @@
 
 ## Publish 과정
 
-1. Client(엔드포인트에서 사용하는 사용자)
+1. **Client**(엔드포인트에서 사용하는 사용자)
 
    1. 유효성검사
       1. RTCRtp인코딩 파라미터, 오디오, 비디오 인코딩 파라미터 validation
@@ -106,20 +106,20 @@
    2. peerConnection 생성
    3. signaling Message 보냄(publish로)
 
-2. V11Client `on('publish') `
+2. **V11Client** `on('publish') `
 
    1. streamID (난수)생성
    2. Validation 이후
    3. Portal의 publish call 
       * clientId == participantId, stream_id, req == pubInfo
 
-3. Portal
+3. **Portal**
 
    1. portal/rpcRequest에 RPC call(publish)
       * participants[participantId].controller, participantId, streamId, pubInfo
    2. Conference Agent에게 요청됨(that.publish)
 
-4. Conference Agent
+4. **Conference Agent**
 
    1. 유효성 검사
       1. 해당 시점 accessController, roomController 객체의 존재여부
@@ -127,12 +127,15 @@
       3. auth, input 수, Stream 이미 존재, audio or video 금지여부 등
       4. sip or analytics 타입의 경우 stream 추가하고 끝
    2. initiateStream을 통해 streams 배열에 stream객체 새롭게 저장
+      * **Pub할 때 streams[streamId] 추가, Sub할 때 Subscriptions[subscriptionId]에 추가**
    3. format_preference의 video, audio를 pubInfo의 video,audio로 set
    4. webrtc worker node를 얻기 위해 accessController에게 initiate 요청
 
-5. accessController
+5. **accessController**
 
-   1. Session 배열에 session 객체 새롭게 저장
+   1. Session 배열에 session 객체 새롭게 저장 
+
+      * **Pub / Sub에 관계 없이 전부 Sessions[sessionId]에 추가.(이 때 conflict 방지 해야 함)**
 
    2. getWorkernode를 통해 workerAgent.Id, workerNode 얻음
 
@@ -150,7 +153,7 @@
       1. conference/rpcRequest에서는 목적노드의 publish call -> worker node에게로
          * sessionId (=connectionId), sessionType (=connectionType), options
 
-6. Worker node(access node) (webrtc/index)
+6. **Worker node(access node) (webrtc/index)**
 
    1. 중복 연결 방지 validation
    2. (connectionType == sessionType이 webrtc일 때) createdWebRTCConnection
