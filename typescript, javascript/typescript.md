@@ -199,3 +199,37 @@ console.log('after loop i is', i) // after loop i is 10
 
 
 
+### !! (Double Exclamation)
+
+* Not 연산자인 `!`는 입력값을 boolean으로 변경해, true -> false, false -> true로 변환해주는 논리연산자
+* `!!`는 다른 타입의 데이터를 boolean 타입으로 명시적 형변환.
+
+```javascript
+var a;
+console.log(a); // undefined
+console.log(!a); // true;
+console.log(!!a); // false;
+
+var a = "test"; //a: "test" (조건문 적용시 true) 
+var b = !"test"; //b: false 
+var c = !!"test"; //c: true
+
+출처:
+https://ifuwanna.tistory.com/278 [IfUwanna IT]
+https://hermeslog.tistory.com/279
+```
+
+* boolean 타입이 아니면서 false가 되는 경우(이외에는 모두 기본적으로 true)
+  * "" : 빈 문자열
+  * NaN : Not a Number
+  * undefined
+  * null
+  * 0
+
+
+
+#### Reference)
+
+#### https://ifuwanna.tistory.com/278
+
+#### https://hermeslog.tistory.com/279
