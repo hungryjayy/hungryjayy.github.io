@@ -108,18 +108,19 @@
 
 2. **V11Client** `on('publish') `
 
-   1. streamID (난수)생성
-   2. Validation 이후
-   3. Portal의 publish call 
+   1. `if(!that.inRoom)` -> 방에 join하지 않았다면 여기서 에러 
+   2. streamID (난수)생성
+   3. Validation 이후
+   4. Portal의 publish call 
       * clientId == participantId, stream_id, req == pubInfo
 
-3. **Portal**
+3. **Portal** 
 
    1. portal/rpcRequest에 RPC call(publish)
-      * participants[participantId].controller, participantId, streamId, pubInfo
+      * participants[participantId].controller (여기선 conference Agent), participantId, streamId, pubInfo
    2. Conference Agent에게 요청됨(that.publish)
 
-4. **Conference Agent**
+4. **Conference Agent** - 여기서 **Participants[participantId] 등록(addParticipant)**
 
    1. 유효성 검사
       1. 해당 시점 accessController, roomController 객체의 존재여부
@@ -127,7 +128,10 @@
       3. auth, input 수, Stream 이미 존재, audio or video 금지여부 등
       4. sip or analytics 타입의 경우 stream 추가하고 끝
    2. initiateStream을 통해 streams 배열에 stream객체 새롭게 저장
-      * **Pub할 때 streams[streamId] 추가, Sub할 때 Subscriptions[subscriptionId]에 추가**
+      * **Pub할 때 streams[streamId] init, Sub할 때 Subscriptions[subscriptionId] init**
+        * 생성 시점: **addStream**
+        * 여기서 streamId, subscriptionId는 v11Client에서 생성한 Random Number
+        * streams[stream]에는 info가 있음( `info : { owner: participantId, type: pubInfo.type }` )
    3. format_preference의 video, audio를 pubInfo의 video,audio로 set
    4. webrtc worker node를 얻기 위해 accessController에게 initiate 요청
 
@@ -135,7 +139,7 @@
 
    1. Session 배열에 session 객체 새롭게 저장 
 
-      * **Pub / Sub에 관계 없이 전부 Sessions[sessionId]에 추가.(이 때 conflict 방지 해야 함)**
+      * **Pub / Sub에 관계 없이 전부 sessions[sessionId]에 추가.(이 때 conflict 방지 해야 함)**
 
    2. getWorkernode를 통해 workerAgent.Id, workerNode 얻음
 
