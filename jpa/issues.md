@@ -36,3 +36,10 @@
 #### https://wakestand.tistory.com/511
 
 #### https://eastglow.github.io/data-base/2018/09/07/Oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC%EC%99%80-IN-%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-%EC%84%B1%EB%8A%A5-%EC%A0%80%ED%95%98.html
+
+
+
+## findAllBy~~ vs findBy~~~
+
+* 둘은 이름만 다르지, 같은 쿼리를 만들어 냄.
+*  복수형을 만들어내는 곳에선 All, 아닌 곳에선 findBy를 사용해 코드의 가독성을 높이면 됨
