@@ -19,3 +19,20 @@
 * @JoinColumn 어노테이션의 옵션 name은 해당 엔티티 테이블에 어떤 컬럼명으로 저장할지를 지정
   * 실제로 FK가 맵핑되는 컬럼은 해당 타입(엔티티)의 PK이니까 자동으로 알아서 맵핑해줌.
 
+
+
+## SQL in절로 서브쿼리 시 성능 이슈
+
+* In을 이용하면 서브쿼리를 먼저 수행하고 그 결과로 메인 쿼리를 수행
+
+  * row의 데이터들을 모두 확인함
+
+  * -> 따라서 EXISTS나 JOIN으로 대체가능한 것은 대체하는 것이 좋음
+
+    
+
+#### Reference)
+
+#### https://wakestand.tistory.com/511
+
+#### https://eastglow.github.io/data-base/2018/09/07/Oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC%EC%99%80-IN-%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-%EC%84%B1%EB%8A%A5-%EC%A0%80%ED%95%98.html
