@@ -127,3 +127,34 @@ public void savePost() {
 #### https://kapentaz.github.io/spring/Spring-Transaction-%EC%A0%81%EC%9A%A9-%EB%B2%94%EC%9C%84-%EC%A0%9C%EC%96%B4-%EB%B0%A9%EB%B2%95/#
 
 #### https://netframework.tistory.com/entry/Spring-Transactional%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC
+
+
+
+
+
+### Default @Transactional
+
+* 기본적으로 SingleJpaRepository (JPA interface 구현체부분)에 가보면 전체가 Transaction으로 감싸져있음.
+
+* 그러나, 커스텀 메소드(query method)에는 @Transactional을 선언해줘야 함.
+
+  ```java
+  @Transactional(readOnly = true)
+  public interface UserRepository extends JpaRepository<User, Long> {
+  
+    List<User> findByLastname(String lastname);
+  
+    @Modifying
+    @Transactional
+    @Query("delete from User u where u.active = false")
+    void deleteInactiveUsers();
+  }
+  ```
+  * 전체에 readOnly를 감싸주고, writable하게 할 부분에(C,U,D) @Transactional 을 붙여 오버라이딩하면 writable해진다.
+
+
+
+#### Reference)
+
+#### https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#transactional-query-methods
+
