@@ -1,4 +1,4 @@
-## 토큰 받는 과정
+## 토큰 생성 과정
 
 1. Client
 
@@ -62,4 +62,6 @@
 
       * 1, 2 과정을 통해 리스트된 worker들 중 strategy 전략에 따라 **하나의 worker** 골라냄
         * 토큰에 대한 task 수행할 worker 할당 후 **on_ok**
+   
+7. dataAccess에 token 추가 후 tokenString 클라이언트에게 전달
 
