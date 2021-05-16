@@ -4,9 +4,38 @@
 
 ## 벌크연산
 
-* 벌크연산이란? 여러 건의 데이터를 한번에 변경(modify or delete)
+* 벌크연산이란? 여러 건의 데이터를 한번에 변경(update or delete)
 
+* UPDATE
+
+  ```sql
+  String sql = "UPDATE Product p " +
+      "SET p.prce = p.price * 1.1 " +
+      "WHERE p.stockAmount < :stockAmount";
   
+  int resultCount = em.createQuery(sql)
+          .setParameter("stockAmount", 10)
+          .executeUpdate();
+  ```
+
+  출처: https://joont92.github.io/jpa/JPQL/
+
+
+
+* DELETE
+
+  ```sql
+  String sql = "DELETE FROM Product p " +
+      "WHERE p.price < :price";
+  
+  int resultCount = em.createQuery(sql)
+          .setParameter("price", 100)
+          .executeUpdate();
+  ```
+
+  출처: https://joont92.github.io/jpa/JPQL/
+
+
 
 #### 벌크연산에 대해서는 영속성 컨텍스트를 건너띄고, DB에 직접 쿼리
 
@@ -44,3 +73,5 @@
 #### https://data-make.tistory.com/617
 
 #### https://freedeveloper.tistory.com/154
+
+#### https://joont92.github.io/jpa/JPQL/
