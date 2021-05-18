@@ -18,10 +18,9 @@
 
   #### 단점
 
-  * **HOLB(Head Of Line Blocking)**
-    * 특정 응답 지연
-    * Pipelining을 통해 1연결 1req,res - > 1연결 N req,res 기법에서 발생
-    * 하나의 res가 지연되면 다른 res도 지연됨
+  * **HOLB(Head Of Line Blocking)** - 특정 응답 지연
+    * Pipelining을 통해 1연결 1req,res - > 1연결 N req,res 기법으로 해결하는 과정에서 발생
+      * 문제점: 파이프라인의 앞선작업 하나의 res가 지연되면 다른 res도 지연됨
   * **RPP(Round Trip Time) 증가**
     * 1 연결 1 req이기 때문에 connection마다 TCP 연결
       * 이 때 3-way handshake or 4-way handshake -> 오버헤드
