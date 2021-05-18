@@ -14,10 +14,14 @@
 * ### Checked Exception
 
   * 컴파일 시점
+    * 따라서 Try ... catch 이용
   * 반드시 예외처리 해야함.
   * 예외 발생시 롤백 하지 않음
-    * 복구가 가능하기 때문(현실적으로는 많지 않음)
+    * 복구가 가능하기 때문(현실적으로는 많지 않음 -> SQL Exception의 경우)
   * IOException, ClassNotFoundException 등등
+
+
+
 
 * ### Unchecked Exception
 
