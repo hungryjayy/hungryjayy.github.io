@@ -32,7 +32,7 @@
     * 직접 padding
     * execution plan cache 사이즈 조정 이 경우에 2048부터해서 줄여가며 메모리 상황을 보아야 함
 
-#### 
+
 
 #### Reference)
 
@@ -55,3 +55,20 @@
 #### https://wakestand.tistory.com/511
 
 #### https://eastglow.github.io/data-base/2018/09/07/Oracle-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC%EC%99%80-IN-%EB%AC%B8%EC%9C%BC%EB%A1%9C-%EC%9D%B8%ED%95%9C-%EC%84%B1%EB%8A%A5-%EC%A0%80%ED%95%98.html
+
+
+
+
+
+## In clause 동작방식
+
+* 일단 `findByIdIn`과 같은 JPA 메서드는 쿼리로 변경되는데 `.... WHERE IN` 의 형태로 변경되긴 할텐데, 이 WHERE IN은 어떻게 동작하는가?
+  * 만약 IN절이 또다른 쿼리(서브쿼리)라면 일단 서브쿼리 먼저 수행하는 것이 당연한 것
+* 제일 먼저 테이블에 접근해 한 레코드를 가져오며, 그 레코드의 해당 값이 IN절에서 뽑아낸 여러 요소들에 포함되는지 체 하나라도 일치한다면 레코드에 대한 쿼리를 수행하는 것
+
+
+
+#### Reference)
+
+#### https://doorbw.tistory.com/222
+
