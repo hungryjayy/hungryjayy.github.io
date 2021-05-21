@@ -5,9 +5,22 @@
 * 양방향 통신이기 때문에 서버쪽이 업데이트 되는 상황에서도 client쪽 화면을 refresh해줄 수 있음
   * 기존에는 Long polling or Ajax같은걸 사용
   * 그러나, 이 또한 요청에 대해 HTTP 응답을 보내는 방식의 단방향 통신을 유지하는 선에서 구현된 방식
-* Steteful protocol. 한번 연결되면 같은 라인을 사용해 통신. -> HTTP 연결 트래픽 감소
+* Stateful protocol. 한번 연결되면 같은 라인을 사용해 통신. -> HTTP 연결 트래픽 감소
 * HTTP와 같은 포트 사용
 * 연결은 HTTP를 통해 이루어지고, 이후에는 WS 프로토콜. 일정 시간 뒤 HTTP 연결 disconnect
+
+* **HandShake**
+  * HTTP 기반으로 handshaking.
+
+
+
+### Rest와의 비교
+
+* REST에서는 많은 URI를 통해 application 설계되는데, 웹소켓은 하나의 URL로 Connection 생기고, 이후 해당 Connection으로만 통신
+* Handshake 완료되고 Connection 유지.
+  * REST(Http 통신)에서는 요청-응답 후 Connection close됨.
+  * 따라서 이론상 하나의 server가 port수의 한계(n < 65535) 를 넘는 client 요청 처리 가능
+  * 웹소켓에서는 connection 유지하므로 가용 port 수 만큼 client 통신 가능
 
 
 
@@ -20,10 +33,18 @@
 
 
 
-## Socket.io
+## 라이브러리
 
+### SockJS
+
+* 구버전 브라우저에서는 websocket을 지원하지 않는데, **spring**에서는(**Stomp를 사용할 때**) sockjs-client를 사용하는 client와 합을 맞춰 webSocket을 사용할 수 있다.
+
+
+
+### Socket.io
+
+* **Node.js** 기반, WS를 안정적으로 사용하기 위한 것
 * WS가 비교적 최근에 나온 기술이라 구 버전의 웹 브라우저는 웹 소켓을 지원하지 않음
-* Node.js 기반, WS를 안정적으로 사용하기 위한 것
 
 
 
@@ -55,3 +76,5 @@
 #### https://duckdevelope.tistory.com/19
 
 #### https://webclub.tistory.com/491
+
+#### https://supawer0728.github.io/2018/03/30/spring-websocket/
