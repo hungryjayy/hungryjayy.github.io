@@ -25,3 +25,28 @@
 
 * 둘은 이름만 다르지, 같은 쿼리를 만들어 냄.
 *  복수형을 만들어내는 곳에선 All, 아닌 곳에선 findBy를 사용해 코드의 가독성을 높이면 됨
+
+
+
+-------------
+
+
+
+## 200525
+
+### MongoDB 도입해 개발 도중 발생 에러
+
+```
+If you have database settings to be loaded from a particular profile you may need to activate it mongodb
+```
+
+* application.properties
+  * 이 곳에서 datasource 명시 안했어서? -> 외부 속성 문제 X
+* JPA + MongoDB 의존성으로 인한 문제. JPA 제거(MongoDB에서도 원래 사용하던 API 그대로 사용)
+
+
+
+
+
+
+
