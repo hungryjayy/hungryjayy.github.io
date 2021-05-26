@@ -2,76 +2,87 @@
 
 * 웹에서 쓰이는 통신 프로토콜(상호간에 정의된 규칙)
 * TCP / IP 프로토콜의 Application 레이어에서 동작
-* Stateless 프로토콜
-  * 데이터 요청이 독립적으로 관리.(이전 데이터 요청과 다음 요청은 관련이 없음)
-* Client-Server 구조
 
 
 
-## HTTP/1.1
+### **Stateless 프로토콜(상태가 없음)**
 
-* 가장 많이 사용되고 있는 프로토콜(Rest API가 사용)
+* 데이터 요청이 독립적으로 관리(이전 데이터 요청과 다음 요청은 관련이 없음) 하기 때문에, 쇼핑 장바구니 기능처럼 한 사용자가 일관된 방식으로 요청을 할 때 문제가 될 수 있음.
+* 이걸 하기 위해 **HTTP쿠키**가 **상태가 있는 세션**을 만들어준다.
+  * 헤더 확장성을 사용해, 각각의 요청들에 대한 세션을 만들도록 HTTP 쿠키가 추가 됨.
+  * 서버에서 사용자의 웹 브라우저에 **쿠키**(데이터 조각)를 전달하고, 브라우저는 그 데이터를 브라우저에 저장. 추후 재 요청시 해당 데이터를 함께 전송.
+    * 로그인 시 Token 정보를 이거로 활용 가능
 
-* 1연결당 1Req,1Res를 처리
+### Client-Server 구조
 
-  * 동시전송문제, 다수의 리소스 처리 시 성능 이슈
+* 포트 80을 디폴트로 사용
+* 기본적으로 신뢰성 있는 TCP 표준에 의존
+* 클라이언트, 서버 통신 전에 TCP 연결을 해야함.
+  * 3 way, 4 way handshake
+  * 여러 요청을 보내야 할 때 각 요청마다 연결을 열면 비효율
+    * 그러나, 계속 연결을 유지하는 것은 그것대로 또 리소스 낭비
+    * HTTP/1.1에서는 지속적인 연결을 도입
+    * HTTP/2.0에서는 단일 연결 상에서 다중 전송 할 수 있도록 함.
 
-  #### 단점
+### Simple
 
-  * **HOLB(Head Of Line Blocking)** - 특정 응답 지연
-    * Pipelining을 통해 1연결 1req,res - > 1연결 N req,res 기법으로 해결하는 과정에서 발생
-      * 문제점: 파이프라인의 앞선작업 하나의 res가 지연되면 다른 res도 지연됨
-  * **RPP(Round Trip Time) 증가**
-    * 1 연결 1 req이기 때문에 connection마다 TCP 연결
-      * 이 때 3-way handshake or 4-way handshake -> 오버헤드
-  * **heavy header**
-    * header의 많은 중복된 값이 전송됨. 이 중 cookie가 가장 문제라고 함
+* HTTP 메시지들은 사람이 읽고 이해하기 편함
 
-
-
-## HTTP/2.0
-
-* HTTP 1.1과 동일한 API면서 성능 향상에 초점
-* **Multiplexed Streams**
-  * 1 con N message, Res는 순서에 상관 없이 stream으로 주고받음
-* **Stream Prioritization**
-  * 리소스간 우선순위 -> Client가 필요한 리소스 부터 Response
-* **Server Push**
-  * 클라이언트가 요청하지 않은 리소스(필요하게 될 리소스)를 마음대로 보내줌
-  * HTTP/1.1에서는 요청한 html 문서를 해석하면서 필요한 리소스를 재요청하지만 HTTP/2에서는 이러한 것들을 push해주어 클라이언트의 요청 최소화
-* **Header Compression**
-  * HPACK 압축방식을 통해 Header 정보 압축
+  ```http
+  GET / HTTP/1.1
+  Host: developer.mozilla.org
+  Accept-Language: fr
 
 
 
-![img](https://user-images.githubusercontent.com/31475037/89241056-d77c9480-d638-11ea-8ef4-7d9d475ac560.png)
+
+
+## HTTP 기반 시스템의 구성요소
+
+* 클라이언트 요청은 사용자 에이전트(대부분 브라우저)에 의해 전송됨.
+* 서버는 이에 따른 응답을 보냄
+* 요청과 응답 사이에는 다양한 개체들
+  * Proxy : 게이트웨이 or 캐시 역할 수행
+
+![img](https://mdn.mozillademos.org/files/13679/Client-server-chain.png)
+
+
+
+### 클라이언트: 사용자 에이전트
+
+* 사용자를 대신해 동작함(요청을 보낸다던가). 주로 브라우저에 의해 수행됨
+* 하는 일
+  * 페이지의 html 문서 요청
+  * 페이지 내 리소스들을 표시하기 위한 css에 해당하는 추가 요청
+  * 받은 리소스 혼합
+* **웹 페이지란?**
+  * 하이퍼텍스트 문서
+  * 사용자가 사용자 에이전트를 제어하고, 새로운 웹 페이지를 가져오기 위한 실행(마우스 클릭) 될 수 있는 링크
+  * 이러한 지시사항을 변환하고 http응답을 해석해 사용자에게 명확한 응답 제공
+
+
+
+### 웹 서버
+
+* 통신채널 반대편에 클라이언트 요청에 대한 문서(**정적**)를 제공하는 서버
+
+* LB 혹은 캐시, DB 등의 정보를 얻고, 문서를 생성하는 소프트웨어의 복잡한 부분을 공유하는 서버의 집합을 웹 서버라고 하기에 단일 기계라고 말 함.
+
+  ![Basic representation of a client/server connection through HTTP](https://mdn.mozillademos.org/files/8659/web-server.svg)
+
+  
+
+### 프록시
+
+* 웹 브라우저와 웹 서버 사이에 존재, 어플리케이션 레벨에서 동작
+* 많은 곳에서 캐싱 기능을 장점으로 말함.
+  * LB, 필터링, 인증, 로깅과 같은 다양한 기능 또한 제공
+* forward, reverse(보안을 위해) 프록시라는 것 존재
+  * 리버스 프록시에선 실제 서버를 내부망으로 가려놓고, 프록시를 통해 통신.
+  * 프록시 문제발생 혹은 해킹을 당해도 실제 서버는 문제 없음.
 
 
 
 #### Reference)
 
-#### https://chacha95.github.io/2020-06-15-gRPC1/
-
-#### https://velog.io/@taesunny/HTTP2HTTP-2.0-%EC%A0%95%EB%A6%AC
-
-#### https://developers.google.com/web/fundamentals/performance/http2?hl=ko
-
-
-
-## Http Status
-
-* 200
-  * OK, 성공했음을 알림
-* 201
-  * created. 새로운 리소스가 생겼음
-  * 주로 Post, Put에 대한 응답
-* 400
-  * Bad Request
-  * 클라이언트의 요청이 유효성에 맞는지 확인
-* 404
-  * Not found
-  * 클라이언트의 요청에 해당하는 리소스가 없을 때
-
-
-
-#### Reference) https://sanghaklee.tistory.com/61
+#### https://developer.mozilla.org/ko/docs/Web/HTTP/Overview#http_%EA%B8%B0%EB%B0%98_%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98_%EA%B5%AC%EC%84%B1%EC%9A%94%EC%86%8C
