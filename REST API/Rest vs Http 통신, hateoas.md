@@ -20,7 +20,7 @@
 
   ### 2. 표현을 통한 리소스 조작: 자원을 묘사한 표현을 전송한다.
 
-  * GET, POST, PUT, DELETE
+  * GET, POST, PUT, DELETE, PATCH(일부 수정)
 
   * 따라서 서버 코드에 얽매이지 않고 client 구현 가능.
 
@@ -32,7 +32,22 @@
 
   ### 3. 자기 서술형 메시지: 수신자가 이해하기 위한 모든 정보를 가지고 있어야 한다.
 
-  * 메시지를 이해하기 위해 내용까지 살펴봐야 한다면 자기서술적이지 않다.
+  * REST API 메시지만 보고도 쉽게 이해할 수 있도록 자기서술적이다.
+
+    ```http
+    HTTP/1.1 200 OK
+    \[{ “op” : “remove”, “path” : “a/b/c"}\]
+    ```
+
+    이러한 메시지에서
+
+    ```http
+    HTTP/1.1 200 OK
+    Content-Type: application/json-patch+json
+    \[{ “op” : “remove”, “path” : “a/b/c"}\]
+    ```
+
+  
 
   
 
@@ -69,8 +84,10 @@
 
 
 
-##### reference) 
+#### reference) 
 
-##### https://www.inflearn.com/questions/126743
+#### https://www.inflearn.com/questions/126743
 
-##### http://amazingguni.github.io/blog/2016/03/REST%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4-1
+#### http://amazingguni.github.io/blog/2016/03/REST%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4-1
+
+#### https://sabarada.tistory.com/9
