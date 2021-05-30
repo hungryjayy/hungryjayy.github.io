@@ -9,7 +9,9 @@
 ## 시간복잡도
 
 * 평균적으로 **O(Nlog(N))** 이지만, 최악의 경우 **O(N^2)**가 된다.
-* 최악의 경우: pivot에 해당하는 값이 항상 배열내에서 
+  * n log n= n(호출의 깊이) * log n(각 호출에서 비교연산)
+* 최악의 경우: pivot에 해당하는 값이 항상 부분 배열내에서 가장 작거나 가장 커서 원소 n개에 대해서 각 호출을 n번, n-1번, n-2번 ... 계속 수행해야한다. 따라서 이 경우 O(N^2)
+  * 방지하는 방법 ? 특정 위치의 원소를 정하지 말고 랜덤한(가운데의) pivot을 지정하면 된다.
 
 
 
@@ -24,6 +26,41 @@
    * 둘다 stop한 상황에서 둘이 교체하고, 다시 진행
    * high < low 가 되었을 때 high와 pivot을 교체(pivot이 왼 쪽에 있는 경우였기 때문에)
 3. pivot을 기준으로 좌, 우 서브 배열로 나눠 2번의 과정을 각각 진행한다.
+
+```c++
+int quickSort(int* data, int start, int end) {
+  if(start == end) // size of data is 1.
+    return;
+  
+  int pivot = start;
+  int low = start + 1, high = end;
+  while(1) {
+    while(start <= high && data[pivot] < data[high])
+      high--;
+    
+    while(high <= end && data[low] < data[pivot])
+      low++;
+    
+    if(high < low)
+      break;
+    
+    int tmp = data[high];
+    data[high] = data[low];
+    data[low] = tmp;
+  }
+  
+  int tmp = data[high];
+  data[high] = data[pivot];
+  data[pivot] = tmp;
+  
+  quickSort(data, start, high - 1);
+  quickSort(data, high + 1, end);
+}
+```
+
+
+
+
 
 
 
