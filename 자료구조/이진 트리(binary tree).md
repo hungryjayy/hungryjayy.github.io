@@ -1,0 +1,88 @@
+# Binary Tree
+
+: Root를 중심으로 두 개의 서브 트리로 나뉘는 트리.
+
+* 이 때 나눠진 두 서브트리도 이진트리여야 한다.
+  * leaf node에 도달했을 때 해당 leaf node를 root로 하는 (마지막의) 서브트리도 이진트리여야 하기 때문에 Node 하나인 것도 이진 트리. -> 같은 논리로 공집합도 이진 트리.
+
+
+
+## 트리 순회
+
+* **DFS** - 기본적으로 재귀적 탐색(스택으로 구현)
+
+  * 전위 순회 : R, 좌, 우
+
+    * e. g) 아래와 같이 재귀적으로 구현. (중위, 후위는 순서만 다름)
+
+    ```c++
+    // linked list
+    void PreOrder(Node* node) {
+    	if (node == NULL)
+    		return;
+    
+    	cout << node->data;
+    	PreOrder(node->left);
+    	PreOrder(node->right);
+    }
+    
+    // array
+    int tree[100] = {};
+    void PreOrder(Int index) {
+    	if (index <= 0 || treeSize < index || tree[index] == 0)
+    		return;
+    
+    	cout << tree[index];
+    	PreOrder(index * 2);
+    	PreOrder(index * 2 + 1);
+    }
+    ```
+
+  * 중위 순회 : 좌, R, 우
+
+  * 후위 순회 : 좌, 우, R
+* **BFS** - 낮은 레벨부터(root부터) (큐로 구현)
+
+
+
+## 종류
+
+* **포화 이진 트리**
+  * 모든 노드가 꽉 찬 이진 트리.
+  * 높이(level)을 h라고 할 때 노드 갯수는 `2^(h+1) - 1` 이다.
+    * 여기서 높이 == 간선 높이
+* **완전 이진 트리**
+  * 모든 자식이 위에서 아래로, 왼쪽에서 오른쪽으로 순서대로 채워진 트리
+* **정 이진 트리**
+  * 모든 자식 노드는 2개 or 0개
+* 이진 트리를 이용한 BST(이진 탐색 트리), 균형 이진 탐색 트리, 힙(최대, 최소 힙) 등
+
+
+
+## 트리 표현(내부 구현방식)
+
+1. 순차 표현 - 배열로 구현하고 Index로 접근
+
+   * Root 노드: 1 / 내가 n 일 때, 왼쪽 자식은 `2 * n`, 오른쪽 자식은 `2 * n + 1`
+   * 완전이진트리가 아니라면 사용하지 않는 메모리 낭비하게 됨.
+
+2. linked list 표현 - 각 노드는 아래의 구조를 갖게 됨
+
+   ```c++
+   struct Node
+   {
+   	int data;
+   	Node* left;
+   	Node* right;
+   };
+   ```
+
+
+
+
+
+#### Reference)
+
+#### https://sean-ma.tistory.com/25?category=781378
+
+#### https://galid1.tistory.com/176
