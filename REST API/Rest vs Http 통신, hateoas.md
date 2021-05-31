@@ -14,6 +14,8 @@
 
   ### 1. 자원 식별: 각각의 자원은 URI를 통해 식별 가능해야한다.
 
+  * 따라서 URI를 작성할 때 사람이 읽고도 자원의 위치를 알 수 있도록
+
   ​	`GET /room/1`
 
   
@@ -33,42 +35,53 @@
   ### 3. 자기 서술형 메시지: 수신자가 이해하기 위한 모든 정보를 가지고 있어야 한다.
 
   * REST API 메시지만 보고도 쉽게 이해할 수 있도록 자기서술적이다.
-
-    ```http
+  
+    ```Http
+    GET /HTTP /1.1
+  ```
+    
+```http
     HTTP/1.1 200 OK
-    \[{ “op” : “remove”, “path” : “a/b/c"}\]
+  \[{ “op” : “remove”, “path” : “a/b/c"}\]
     ```
-
+    
     이러한 메시지에서
-
-    ```http
+  
+    ```Http
+  GET /HTTP /1.1
+    Host: www.test.co.kr
+  ```
+    
+  
+    
+  ```http
     HTTP/1.1 200 OK
-    Content-Type: application/json-patch+json
+  Content-Type: application/json-patch+json
     \[{ “op” : “remove”, “path” : “a/b/c"}\]
-    ```
-
+  ```
   
 
   
 
-  ### 4. **hateoas : 클라이언트가 리소스에 접근하기를 원한다면, server가 응답을 줄 때 hyperlink를 추가해서 보내준다. 다음에 클라이언트가 어떤 API를 호출해야하는지는 해당 링크를 통해 받을 수 있다. **
-
-  * **이 원칙을 통해 클라이언트와 서버는 완전하게 분리됨.**
-
-  * **URI 등이 바뀌어도 클라이언트에서는 자동으로 연결됨**
-
+  
+### 4. **hateoas : 클라이언트가 리소스에 접근하기를 원한다면, server가 응답을 줄 때 hyperlink를 추가해서 보내준다. 다음에 클라이언트가 어떤 API를 호출해야하는지는 해당 링크를 통해 받을 수 있다. **
+  
+* **이 원칙을 통해 클라이언트와 서버는 완전하게 분리됨.**
+  
+* **URI 등이 바뀌어도 클라이언트에서는 자동으로 연결됨**
+  
     * **클라이언트에게 자원을 보내면서 다음에 연결할 URL을 링크로 같이 보내기 때문에**
-
+  
       * e.g) 주문에 대한 정보를 보낼 때 주문 고객에게 사용 가능한 작업을 식별하는 링크를 주문 presentation에 포함
-
+  
     * 요청에 대한 응답을 보낼 때 그 스크린에서 할 수 있는 것들을 요청으로 보내면 됨
-
+  
       #### ref) https://docs.microsoft.com/ko-kr/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources
-
+  
     > 이 원칙이 중요한 것은 이렇게 함으로서 클라이언트와 서버간의 완전한 분리가 이루어지게 됩니다. 만약 서버의 자원을 나타내는 URI 가 변경되었을 경우 클라이언트는 서버의 변화에 종속적으로 그 정보를 클라이언트 정보에 추가하게 됩니다. (SPA 상에서 href 데이터를 바꾸어 줘야함) 하지만 HATEOAS를 제대로 적용했을 시 아래와 같이 _links.profile 에 대한 href정보만 조회해주면 되므로 서버에서 URI정보가 바뀌어도 클라이언트 측에서 소스 변경없이 그대로 사용할 수 있게 됩니다.
-
+  
   >출처: https://engkimbs.tistory.com/855 [새로비]
-
+  
   **e.g )**
 
 ```
@@ -85,6 +98,8 @@
 
 
 #### reference) 
+
+#### https://doitnow-man.tistory.com/96
 
 #### https://www.inflearn.com/questions/126743
 
