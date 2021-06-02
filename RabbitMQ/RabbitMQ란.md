@@ -1,4 +1,4 @@
-## Rabbitmq란?
+# Rabbitmq란?
 오픈소스 메시지 브로커이다. 가볍고, 쉬우며 다양한 messaging protocol을 지원한다.
 
 ## 특징

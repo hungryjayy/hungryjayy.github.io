@@ -1,3 +1,5 @@
+# Issues
+
 ## 200216
 
 * pub/sub(redis)에서 subscribe한 객체는 broadcasting을 받기 위해 무한히 blocking된다. 

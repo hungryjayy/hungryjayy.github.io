@@ -1,4 +1,4 @@
-### CLI
+# 기타 CLI
 
 * 해당 포트 사용하는 IP PID 찾기 : `sudo lsof -i:15672`
 
