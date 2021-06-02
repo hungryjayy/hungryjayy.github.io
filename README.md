@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_117 TILs and counting..._
+_118 TILs and counting..._
 
 ---
 
@@ -154,8 +154,8 @@ _117 TILs and counting..._
 - [Domain, entity, VO](Spring_Boot/Domain_Entity_VO.md)
 - [Spring MVC vs Webflux](Spring_Boot/MVC_Webflux.md)
 - [POJO(Plain Old Java Object)](Spring_Boot/POJO.md)
-- [Reactive programming](Spring_Boot/Reactive_Programming.md)
 - [SpringBoot 용어 및 기본 개념](Spring_Boot/Spring_Boot_용어_및_기본_개념.md)
+- [Spring Reactive stream과 Webflux](Spring_Boot/Webflux와_Reactive.md)
 - [디렉토리 구성, 패키지 구조](Spring_Boot/디렉토리_구성_패키지_구조.md)
 - [Annotation](Spring_Boot/어노테이션.md)
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
@@ -173,6 +173,7 @@ _117 TILs and counting..._
 - [Sync, Async, blocking, non-blocking](Typescript_javascript/동기_비동기_block_non-block.md)
 - [동치연산자 '==' vs '==='](Typescript_javascript/동치연산자.md)
 - [정규표현식(pattern matching)](Typescript_javascript/정규표현식(pattern_matching).md)
+- [함수의 메서드 (call, apply, bind)](Typescript_javascript/함수의_메서드_call_apply_bind.md)
 
 ### [WebRTC](#WebRTC)
 - [OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리](WebRTC/OWT_WebSocket_분석.md)
