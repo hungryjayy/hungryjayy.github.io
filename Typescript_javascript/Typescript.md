@@ -2,18 +2,18 @@
 
 
 
-### JS
+## JavaScript
 
-* 타입 시스템이 없는(정적) 동적 프로그래밍 언어. 따라서 런타임 에러가 많이 발생할 수 있다.
+* 타입 시스템이 없는 동적 프로그래밍 언어. 따라서 런타임 에러가 많이 발생할 수 있다.
   * RTE: 프로그램에서 수행할 수 없는 동작을 시도할 때 발생
   * 컴파일 error: 컴파일 타임에 발생. 주로 문법적 오류
 * 비교적 유연하게 개발할 수 있는 환경 제공
 
 
 
-### TS
+## TypeScript
 
-* TS는 JS 기반으로 만들어졌다.
+* TS는 JS 기반으로 만들어졌다.(컴파일 시 javascript 파일로 컴파일됨.)
 * 정적 타입을 지원해서 컴파일 단계에서 오류를 포착 가능.
   * 타입을 명시함으로써 가독성 또한 높다.
 * 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
@@ -22,10 +22,35 @@
 
 ## Hoisting
 
-- 사전적 의미: 끌어올리기. 선언되는 모든 변수는 호이스트된다.(끌어올려진다)
+- 사전적 의미: 끌어올리기. **선언되는 모든 변수는 호이스트된다**.(끌어올려진다)
 - 따라서 변수의 정의가 그 범위에 따라 선언과 할당으로 분리 되는것.
-- 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 JS엔진은 함수 선언을 끌어올리기 때문에 가능하다.
-- 다만 변수의 값은 끌어올리지 않으므로 선언보다 앞에서 출력하면 `undefined` 된다.
+- 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 **JS엔진은 실행되기 전에 함수 선언을 끌어올리기 때문에** 가능하다.
+- 다만 변수의 **선언**만 끌어올려지지, **할당**은 끌어올리지 않으므로 할당보다 앞에서 출력하면 `undefined` 된다.
+- **var hoisting 문제.** -> 'use strict'를 사용해 방지
+
+```typescript
+  /** --- JS Parser 내부의 호이스팅(Hoisting)의 결과 - 위와 동일 --- */
+  var foo2; // [Hoisting] 함수표현식의 변수값 "선언"
+
+  function foo() { // [Hoisting] 함수선언문
+          console.log("hello");
+  }
+
+  foo();
+  foo2(); // ERROR!! 
+
+  foo2 = function() { 
+          console.log("hello2");
+  }
+
+https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
+```
+
+#### Reference)
+
+#### https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
+
+
 
 
 
@@ -114,14 +139,14 @@
   materials.map(({length}) => length); // [8, 6, 7, 9]
   ```
 
-* 상위 스코프
+* this의 범위
 
   ```javascript
   function Person(){
     this.age = 0;
   
     setInterval(() => {
-      this.age++; // |this|는 person 객체를 참조
+      this.age++; // this는 person 객체(window)를 참조
     }, 1000);
   }
   
@@ -132,70 +157,115 @@
 
 ## var, let, const
 
-* var: function scope
+### var
 
-* let: block scope,
+* 변수 재선언 가능
 
-* const: block scope, 상수 (재할당 불가)
+* function scope
 
-* var는 함수 내부라면 블록 밖이라도 참조 가능 그러나,
+* var는 함수 내부라면 블록 밖이라도 참조 가능
+
+* 함수 내부에서 var로 선언한 것은 함수 내부까지만 hoisting
+
+* var hoisting 방지를 위해 'use strict'
 
   
 
-#### 예-1) var hoisting
+  #### 예-1) var hoisting
 
-var는 함수 스코프
+  var는 함수 스코프
 
-```javascript
-function counter () {
-  for(var i=0; i<10; i++) {
-    console.log('i', i)
+  ```javascript
+  function counter () {
+    for(var i=0; i<10; i++) {
+      console.log('i', i)
+    }
   }
-}
-counter()
-console.log('after loop i is', i) 
-// ReferenceError: i is not defined
-```
+  counter()
+  console.log('after loop i is', i) 
+  // ReferenceError: i is not defined
+  ```
 
-#### 예-2) IIFE (immediately-invoked function expression)
+  #### 예-2) IIFE (immediately-invoked function expression)
 
-​		*IIFE: 정의하자마자 즉시 실행함수, `()`로 씌워 만들수 있다*
+  ​		*IIFE: 정의하자마자 즉시 실행함수, `()`로 씌워 만들수 있다*
 
-```javascript
-// IIFE를 사용하면
-// i is not defined가 뜬다.
-(function() {
-  // var 변수는 여기까지 hoisting이 된다.
-  for(var i=0; i<10; i++) {
-    console.log('i', i)
-  }
-})()
-console.log('after loop i is', i) 
-// ReferenceError: i is not defined
+  ```javascript
+  // IIFE를 사용하면 i is not defined가 뜬다.
+  (function() {
+    // var 변수는 여기까지(실행함수 내부) hoisting이 된다.
+    for(var i=0; i<10; i++) {
+      console.log('i', i)
+    }
+  })()
+  console.log('after loop i is', i) 
+  // ReferenceError: i is not defined
+  
+  ------------------------
+  
+  // i 전역변수화 됨 IIFE
+  // i를 function 안에서 재정의하지 않아, function 밖에서 선언된 전역변수라고 판단
+  (function() {
+    for(i=0; i<10; i++) {
+      console.log('i', i)
+    }
+  })()
+  console.log('after loop i is', i) // after loop i is 10
+  
+  ```
 
-//////////
-// var i 전역변수화 됨 IIFE
-(function() {
-  for(i=0; i<10; i++) {
-    console.log('i', i)
-  }
-})()
-console.log('after loop i is', i) // after loop i is 10
-```
+  ```typescript
+  var i;
+  (function() {
+    'use strict'
+    for(i=0; i<10; i++) {
+      console.log('i', i)
+    }
+  })()
+  console.log('after loop i is', i)// ReferenceError: i is not defined
+  // i가 function 안에서 재정의되었지만, use strict 덕분에 밖에서는 line 1의 var i(undefined)
+  
+  ```
+
+
+
+### let
+
+* ES6이후 var을 보완하기 위해 나옴
+* block scope
+* 재선언 불가, 재할당 가능
+
+
+
+### const
+
+* ES6이후 var을 보완하기 위해 나옴
+* 기본적으로 const를 지향
+* block scope
+* 재선언 불가, 재할당 불가
+  * 상수의 경우 const로 선언
+
+
+
+#### Reference)
+
+#### https://moollang.tistory.com/10
+
+
 
 
 
 ## forEach() vs map()
 
 * forEach
-  * 값 반환 X
+  * **값 반환 X**
   * 각 요소에 대한 콜백을 수행. (현재 배열을 변경해서 반환). map보다 빠르다.
   * JS에서는 for-loop가 더 빠르고, kotlin에서는 forEach(Collection의 경우)가 더 빠르다.
-  * 원래의 배열을 바꿀 염려 있음. 주로 DB 저장과 같은 일에 사용됨
+  * **원래의 배열을 바꿀 염려** 있음. 주로 DB 저장과 같은 일에 사용됨
 * map
-  * 값 반환 O
+  * **값 반환 O**
   * 각 요소에서 함수를 호출하고, 결과로 새로운 배열을 만들어냄.
-  * 원래의 배열에 영향을 주지 않기 때문에 함수형 프로그래밍에 더 적합.
+  * 원래의 배열에 영향을 주지 않기 때문에 **함수형 프로그래밍**에 더 적합.
 
 #### forEach와 map 각각은 서로가 할 일을 대체할 수 있음
 
@@ -240,6 +310,8 @@ https://hermeslog.tistory.com/279
 
 
 #### Reference)
+
+#### https://moollang.tistory.com/10
 
 #### https://ifuwanna.tistory.com/278
 
