@@ -1,5 +1,3 @@
-
-
 # In Clause
 
 * `findBy~~In` 의 인자로 List를 받으면 자동으로 in clause로 변경 됨

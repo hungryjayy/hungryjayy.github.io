@@ -1,5 +1,6 @@
+# Redis, 웹소켓(socket.io-redis)
 
-# Redis와 웹소켓(socket.io-redis)
+
 
 ## 양 방향 통신
 이전에는 Polling, Streaming 방식 등 여러 방법을 통해 양 방향 통신을 구현
