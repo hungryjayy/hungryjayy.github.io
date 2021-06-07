@@ -12,6 +12,8 @@
 
 * 가장 많이 사용되고 있는 프로토콜(Rest API가 사용)
 
+* 개발자도구에서 protocol에 `http/1.1`  로 표현됨 
+
 * **파이프라이닝** 도입
 
   * 이전 요청 다 수행하기 전에 다음 요청 보냄.
@@ -26,17 +28,20 @@
   * **HOLB(Head Of Line Blocking)** - 특정 응답 지연
     * Pipelining을 통해 1연결 1req,res - > 1연결 N req,res 기법으로 해결하는 과정에서 발생
       * 문제점: 파이프라인의 앞선작업 하나의 res가 지연되면 다른 res도 지연됨
-  * **RPP(Round Trip Time) 증가**
+  * **RTT(Round Trip Time) 증가**
     * 재사용이 있더라도, 기본적으로 1 연결 1 req이기 때문에 connection마다 TCP 연결
       * 이 때 3-way handshake or 4-way handshake -> 오버헤드
   * **heavy header**
     * header의 많은 중복된 값이 전송됨. 이 중 cookie가 가장 문제라고 함
+      * cookie는 매번 전송되기 때문에.
 
 
 
 ## HTTP/2.0
 
 * HTTP 1.1과 동일한 API면서 성능 향상에 초점
+* 개발자도구에서 protocol에 `h2`  로 표현됨
+  * HTTP 헤더에 cookie의 쿠키가 있는데, 이게 압축된 버전?
 * **Multiplexed Streams**
   * 1 con N message, Res는 순서에 상관 없이 stream으로 주고받음
 * **Stream Prioritization**
