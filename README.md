@@ -44,9 +44,7 @@ _120 TILs and counting..._
 - [자료구조](#자료구조)
 
 ### [Back_end](#Back_end)
-- [CORS](Back_end/CORS.md)
 - [TDD(Test Driven Develop)](Back_end/TDD.md)
-- [Was vs Web Server](Back_end/Webserver_vs_WAS.md)
 - [디미터 법칙](Back_end/디미터_법칙.md)
 - [일급 컬렉션](Back_end/일급_컬렉션.md)
 
@@ -71,15 +69,17 @@ _120 TILs and counting..._
 
 ### [Http_네트워크_통신](#Http_네트워크_통신)
 - [3 way, 4 way handshake](Http_네트워크_통신/3_way_4_way_handshake.md)
+- [CORS: Cross-Origin Resource Sharing](Http_네트워크_통신/CORS.md)
 - [HTTP/1.1 vs HTTP/2.0](Http_네트워크_통신/HTTP1.1_vs_HTTP2.0.md)
 - [HTTP protocol](Http_네트워크_통신/HTTP_protocol.md)
 - [HTTP Status](Http_네트워크_통신/HTTP_status.md)
-- [HTTP vs HTTPS](Http_네트워크_통신/HTTP_vs_HTTPs.md)
+- [HTTPS(vs HTTP)](Http_네트워크_통신/HTTP_vs_HTTPs.md)
 - [IDL](Http_네트워크_통신/IDL.md)
 - [Issues](Http_네트워크_통신/Issues.md)
 - [Proxy란](Http_네트워크_통신/Proxy란.md)
 - [RPC 통신](Http_네트워크_통신/RPC_통신.md)
 - [TCP/IP vs UDP](Http_네트워크_통신/TCP_IP_UDP.md)
+- [Was vs Web Server](Http_네트워크_통신/Webserver_vs_WAS.md)
 - [gRPC](Http_네트워크_통신/gRPC.md)
 - [웹 스토리지(세션 스토리지, 로컬 스토리지)](Http_네트워크_통신/웹_스토리지(로컬_스토리지_세션_스토리지).md)
 - [웹 통신의 큰 흐름](Http_네트워크_통신/웹_통신의_흐름.md)
