@@ -73,7 +73,7 @@ _120 TILs and counting..._
 - [HTTP/1.1 vs HTTP/2.0](Http_네트워크_통신/HTTP1.1_vs_HTTP2.0.md)
 - [HTTP protocol](Http_네트워크_통신/HTTP_protocol.md)
 - [HTTP Status](Http_네트워크_통신/HTTP_status.md)
-- [HTTPS(vs HTTP)](Http_네트워크_통신/HTTP_vs_HTTPs.md)
+- [HTTPS와 SSL](Http_네트워크_통신/HTTP_vs_HTTPs.md)
 - [IDL](Http_네트워크_통신/IDL.md)
 - [Issues](Http_네트워크_통신/Issues.md)
 - [Proxy란](Http_네트워크_통신/Proxy란.md)
@@ -200,7 +200,7 @@ _120 TILs and counting..._
 
 ### [운영체제](#운영체제)
 - [동기 vs 비동기(Sync vs Async)](운영체제/sync_async.md)
-- [가상 메모리](운영체제/가상 메모리.md)
+- [가상 메모리](운영체제/가상_메모리.md)
 - [데드락(Deadlock)](운영체제/데드락(Deadlock).md)
 - [스레드(Thread)](운영체제/스레드.md)
 - [임계영역(Critical section)](운영체제/임계영역(Critical_section).md)
