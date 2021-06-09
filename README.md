@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_122 TILs and counting..._
+_123 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Dockerfile](Docker/Dockerfile.md) - Tue May 25 17:59:11 2021 +0900
-- [데드락(Deadlock)](운영체제/데드락(Deadlock).md) - Tue May 25 00:18:21 2021 +0900
+- [쿠키(Cookie)](Http_네트워크_통신/쿠키_세션_1_쿠키.md) - Thu Jun 10 00:56:18 2021 +0900
+- [토큰 기반 인증 방식 - JWT(Json Web Token)](Http_네트워크_통신/쿠키_세션_3_토큰.md) - Thu Jun 10 00:56:18 2021 +0900
 
 ### Categories
 
@@ -73,9 +73,9 @@ _122 TILs and counting..._
 - [3 way, 4 way handshake](Http_네트워크_통신/3_way_4_way_handshake.md)
 - [CORS: Cross-Origin Resource Sharing](Http_네트워크_통신/CORS.md)
 - [HTTP/1.1 vs HTTP/2.0](Http_네트워크_통신/HTTP1.1_vs_HTTP2.0.md)
+- [HTTPS와 SSL](Http_네트워크_통신/HTTPS_SSL.md)
 - [HTTP protocol](Http_네트워크_통신/HTTP_protocol.md)
 - [HTTP Status](Http_네트워크_통신/HTTP_status.md)
-- [HTTPS와 SSL](Http_네트워크_통신/HTTP_vs_HTTPs.md)
 - [IDL](Http_네트워크_통신/IDL.md)
 - [Issues](Http_네트워크_통신/Issues.md)
 - [Proxy란](Http_네트워크_통신/Proxy란.md)
@@ -85,8 +85,9 @@ _122 TILs and counting..._
 - [gRPC](Http_네트워크_통신/gRPC.md)
 - [웹 스토리지(세션 스토리지, 로컬 스토리지)](Http_네트워크_통신/웹_스토리지(로컬_스토리지_세션_스토리지).md)
 - [웹 통신의 큰 흐름](Http_네트워크_통신/웹_통신의_흐름.md)
-- [쿠키(Cookie)](Http_네트워크_통신/쿠키,세션_1_쿠키.md)
-- [세션(Session)](Http_네트워크_통신/쿠키,세션_2_세션,_쿠키와의_차이.md)
+- [쿠키(Cookie)](Http_네트워크_통신/쿠키_세션_1_쿠키.md)
+- [세션(Session)](Http_네트워크_통신/쿠키_세션_2_세션과_쿠키_차이.md)
+- [토큰 기반 인증 방식 - JWT(Json Web Token)](Http_네트워크_통신/쿠키_세션_3_토큰.md)
 
 ### [JPA](#JPA)
 - [Dirty checking](JPA/Dirty_checking.md)
