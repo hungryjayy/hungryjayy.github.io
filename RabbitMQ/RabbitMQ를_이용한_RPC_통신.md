@@ -1,6 +1,6 @@
 # RabbitMQ를 이용한 RPC 통신
 
-<img src = "/home/joowon/lab/정리/TIL/RabbitMQ/images/rpc.png">
+<img src = "./images/rpc.png">
 
 - API 서버와 분석 서버를 연결하는 queue 역할이기 때문에 언제 죽을지 모름. 그러므로 오랜 시간 RPC가 다운될 경우를 고려한다면 에러 처리를 잘해야 한다.
 - 아래의 작업들은 모두 `RabbitTemplate`을 통해 자동으로 동작한다.
