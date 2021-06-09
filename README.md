@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_120 TILs and counting..._
+_122 TILs and counting..._
 
 ---
 
@@ -54,6 +54,8 @@ _120 TILs and counting..._
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
+- [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/DB_정규화_1,2,3_정규형.md)
+- [DB 정규화가 필요한 이유와 함수적 종속](Database/DB_정규화가_필요한이유.md)
 - [SQL Injection](Database/SQL_injection과_prepared_statement.md)
 - [Database 스키마](Database/스키마.md)
 
