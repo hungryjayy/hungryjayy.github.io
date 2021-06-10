@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_123 TILs and counting..._
+_127 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [쿠키(Cookie)](Http_네트워크_통신/쿠키_세션_1_쿠키.md) - Thu Jun 10 00:56:18 2021 +0900
-- [토큰 기반 인증 방식 - JWT(Json Web Token)](Http_네트워크_통신/쿠키_세션_3_토큰.md) - Thu Jun 10 00:56:18 2021 +0900
+- [합병 정렬(Merge sort)](알고리즘/합병_정렬.md) - Thu Jun 10 18:22:20 2021 +0900
+- [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md) - Thu Jun 10 17:27:23 2021 +0900
 
 ### Categories
 
@@ -54,10 +54,10 @@ _123 TILs and counting..._
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
-- [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/DB_정규화_1,2,3_정규형.md)
-- [DB 정규화가 필요한 이유와 함수적 종속](Database/DB_정규화가_필요한이유.md)
 - [SQL Injection](Database/SQL_injection과_prepared_statement.md)
 - [Database 스키마](Database/스키마.md)
+- [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/정규화_1_2_3_BCNF.md)
+- [DB 정규화가 필요한 이유와 함수적 종속](Database/정규화가_필요한이유.md)
 
 ### [Docker](#Docker)
 - [CLI](Docker/CLI.md)
@@ -126,11 +126,11 @@ _123 TILs and counting..._
 - [Event loop, 비동기 처리의 흐름](Node.js/이벤트루프_비동기.md)
 
 ### [REST_API](#REST_API)
-- [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징과_6가지_원칙.md)
+- [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징_6가지_원칙.md)
+- [REST와 HTTP / Rest 인터페이스 원칙(Uniform Interface)](REST_API/REST_HTTP_인터페이스원칙.md)
 - [REST API resource 표현방식](REST_API/Resource_표현_방식.md)
-- [REST 와 HTTP / HATEOAS](REST_API/Rest_Http_hateoas.md)
 - [조대협님의 RestAPI design (slide share 정리)](REST_API/조대협님의_REST_API_디자인_정리.md)
-- [좋은 restapi 구성하기](REST_API/좋은_restapi_구성하기.md)
+- [좋은 restapi 구성하기](REST_API/좋은_RESTAPI_구성하기.md)
 
 ### [RabbitMQ](#RabbitMQ)
 - [AMQP 라이브러리 Option](RabbitMQ/AMQP_옵션.md)
@@ -199,7 +199,11 @@ _123 TILs and counting..._
 - [Class diagram](소프트웨어_공학/클래스_다이어그램.md)
 
 ### [알고리즘](#알고리즘)
+- [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md)
+- [삽입 정렬(Insert sort)](알고리즘/삽입_정렬.md)
+- [선택 정렬(Select sort)](알고리즘/선택_정렬.md)
 - [퀵 정렬(Quick sort)](알고리즘/퀵_정렬.md)
+- [합병 정렬(Merge sort)](알고리즘/합병_정렬.md)
 
 ### [운영체제](#운영체제)
 - [동기 vs 비동기(Sync vs Async)](운영체제/sync_async.md)
