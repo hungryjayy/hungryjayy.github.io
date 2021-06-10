@@ -1,6 +1,8 @@
 # REST API resource 표현방식
 
-* 기본적으로 명사형태
+* 기본적으로는 명사형태
+
+
 
 ## 1. document
 
@@ -12,7 +14,7 @@
 
 * 객체 인스턴스, DB의 record와 유사한 개념
 * 일반적으로 id를 통해(유일한 것)
-* GET, PUT, DELETE에 사용
+* GET, PUT, DELETE, PATCH에 사용
 
 
 
@@ -50,7 +52,7 @@
 
 * CRUD 로 구분이 안될만한 것들에 수행하면 될 듯
 
-  * RPC call 대신에 이걸 사용하면 rest의 단점을 보완가능할 것 같고, RPC를 사용하지 않아도 될 것 같음
+  * RPC call 대신에 이걸 사용하면 rest의 단점을 보완가능, RPC 커버 가능?
 
 * REST 특성상 명사를 사용하도록 권장하지만, 여기서는 function을 실행하는 느낌이기 때문에 동사를 사용해도 될 것 같다고 함
 
