@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_127 TILs and counting..._
+_128 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [힙 정렬(Heap sort)](알고리즘/힙_정렬.md) - Thu Jun 10 21:12:11 2021 +0900
 - [합병 정렬(Merge sort)](알고리즘/합병_정렬.md) - Thu Jun 10 18:22:20 2021 +0900
-- [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md) - Thu Jun 10 17:27:23 2021 +0900
 
 ### Categories
 
@@ -204,6 +204,7 @@ _127 TILs and counting..._
 - [선택 정렬(Select sort)](알고리즘/선택_정렬.md)
 - [퀵 정렬(Quick sort)](알고리즘/퀵_정렬.md)
 - [합병 정렬(Merge sort)](알고리즘/합병_정렬.md)
+- [힙 정렬(Heap sort)](알고리즘/힙_정렬.md)
 
 ### [운영체제](#운영체제)
 - [동기 vs 비동기(Sync vs Async)](운영체제/sync_async.md)
