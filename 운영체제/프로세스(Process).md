@@ -1,0 +1,99 @@
+# 프로세스(Process)
+
+: 실행중인 프로그램. 디스크로부터 메모리에 적재되어 CPU의 할당을 받고, OS로부터 주소 공간, 메모리 등을 할당받는 것
+
+
+
+## Section
+
+* Data
+  * **전역 변수**(초기화 되지 않은 전역변수는 BSS영역에), **static 변수** 저장
+  * 프로세스 생성 시점에 위의 변수들을 이 곳에 저장
+* Stack
+  * **로컬 변수**, 함수의 **매개변수**, **복귀 주소** 등 임시자료 저장
+  * 초기화 시점에는 메모리만 할당
+  * 윗 방향으로 할당
+* Heap
+  * **동적 할당**을 위한 메모리 영역.
+  * 초기화 시점에는 메모리만 할당
+  * 아래방향으로 할당
+* Code
+  * 프로그램 실행 파일 내의 명령어들(소스코드) 저장
+
+
+
+## PCB(프로세스 제어 블록)
+
+: 프로세스에 대한 중요한 정보들을 저장 하고있는 운영체제의 자료구조
+
+* 프로세스 생성과 동시에 고유한 PCB 생성
+* Context switch 발생 시 진행하던 작업을 PCB에 저장하고 switch.
+  * 다시 CPU 할당받으면 PCB로부터 저장되어있던 내용 불러와 작업 수행. 
+* PCB 내부 저장되는 것
+  * **PID** (a.k.a. Process ID) : 프로세스마다의 고유한 아이디
+  * **프로세스 상태**(new, ready, blocked, running, terminated)
+  * **프로그램 카운터** : 다음으로 실행할 명령어 주소
+  * **CPU 레지스터** : running 상태에서의 실행을 저장하기 위해 사용된다.
+    * **PC 레지스터**(멀티 스레드 환경에서 공유됨), AC 레지스터, IR 등등 존재
+  * **CPU 스케줄링 정보** : 프로세스 우선순위, 스케줄 큐에 대한 포인터
+
+
+
+## 프로세스 상태변화
+
+<img src="https://t1.daumcdn.net/cfile/tistory/276F904A595DCF4F23" alt="img" style="zoom:150%;" /> 
+
+*출처: https://blockdmask.tistory.com/22*
+
+
+
+* `new -> ready` : 장기 스케줄러에 의해 Ready Queue에 올라감
+* `ready -> running` : 단기 스케줄러에 의해 CPU에 할당된 상태.
+* `running -> ready` : 다른 프로세스에 의해 선점당하면 다시 ready Queue로.
+  * 스케줄링 알고리즘이 우선순위 스케줄링인 경우
+* `running -> blocked` : 입출력(I/O) 이벤트 발생시 block
+* `blocked -> ready` : 입출력(I/O) 이벤트 종료 시 다시 Ready
+* `running -> terminate` : 프로세스 종료
+
+
+
+#### `ready`, `blocked` 상태에는 여러 프로세스 존재할 수 있으나, 싱글 코어CPU라고 가정했을 때 `running` 상태의 프로세스는 단 하나 존재
+
+
+
+#### 스케줄링
+
+* 대부분의 OS에서는 **우선순위 알고리즘**이나 **Round Robin** 혼합해서 사용한다고 함
+
+
+
+## 멀티 프로세스
+
+* 두개 이상의 CPU가 협력적으로 하나 이상의 task 병렬적 처리
+* 프로세스간 독립적 공간이 필요할 때프로그램 카운터 : 프로세스가 다음에 실행할 명령어의 주소
+
+
+
+### 장점
+
+* 한 프로세스 장애 발생해도 다른 프로세스에 영향이 없음(안정성 높음)
+* 임계영역에 대한 고민을 할 필요 없음
+
+
+
+### 단점
+
+* 자원 공유가 되지 않아 메모리 낭비
+* context switch시에 속도 저하
+
+
+
+#### Reference)
+
+#### https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS
+
+#### https://blockdmask.tistory.com/22
+
+#### https://velog.io/@hoo00nn/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C
+
+#### https://wooody92.github.io/os/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C/
