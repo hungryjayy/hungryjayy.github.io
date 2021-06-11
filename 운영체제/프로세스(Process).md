@@ -39,34 +39,6 @@
 
 
 
-## 프로세스 상태변화
-
-<img src="https://t1.daumcdn.net/cfile/tistory/276F904A595DCF4F23" alt="img" style="zoom:150%;" /> 
-
-*출처: https://blockdmask.tistory.com/22*
-
-
-
-* `new -> ready` : 장기 스케줄러에 의해 Ready Queue에 올라감
-* `ready -> running` : 단기 스케줄러에 의해 CPU에 할당된 상태.
-* `running -> ready` : 다른 프로세스에 의해 선점당하면 다시 ready Queue로.
-  * 스케줄링 알고리즘이 우선순위 스케줄링인 경우
-* `running -> blocked` : 입출력(I/O) 이벤트 발생시 block
-* `blocked -> ready` : 입출력(I/O) 이벤트 종료 시 다시 Ready
-* `running -> terminate` : 프로세스 종료
-
-
-
-#### `ready`, `blocked` 상태에는 여러 프로세스 존재할 수 있으나, 싱글 코어CPU라고 가정했을 때 `running` 상태의 프로세스는 단 하나 존재
-
-
-
-#### 스케줄링
-
-* 대부분의 OS에서는 **우선순위 알고리즘**이나 **Round Robin** 혼합해서 사용한다고 함
-
-
-
 ## 멀티 프로세스
 
 * 두개 이상의 CPU가 협력적으로 하나 이상의 task 병렬적 처리
