@@ -6,9 +6,14 @@
 
  
 
+![data-encapsulation.png](https://github.com/WeareSoft/tech-interview/blob/master/contents/images/data-encapsulation.png?raw=true) 
+
 * 캡슐화
   * 아랫층으로 데이터를 넘길 때 각각의 레이어에서 붙일 수 있는 **헤더를 붙이는 과정**
   * 2층에서는 **오류제어**를 위해 헤더가 아닌 **데이터**의 뒷부분에도 일부 데이터가 추가됨
+  * PDU(프로토콜 데이터 유닛)
+    * **전송하려는 데이터** SDU(Service Data Unit) 와 **제어 정보** PCI(Protocol Control Information)로 구성되어 있다.
+    * PCI에는 송신자와 수신자 주소, 오류 검출 코드, 프로토콜 제어 정보 등이 있음.
 * 비캡슐화
   - 전달받은 데이터가 윗쪽 계층으로 전해지면서 **헤더가 벗겨지는 과정**
 
@@ -107,3 +112,5 @@
 #### https://ryusae.tistory.com/4
 
 #### https://velog.io/@inyong_pang/OSI-7-%EA%B3%84%EC%B8%B5%EA%B3%BC-TCPIP-%EA%B3%84%EC%B8%B5
+
+#### https://github.com/WeareSoft/tech-interview/blob/master/contents/images/data-encapsulation.png

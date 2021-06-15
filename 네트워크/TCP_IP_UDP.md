@@ -4,7 +4,7 @@
 
 ### UDP : User Datagram Protocol
 
-
+ 
 
 ### 프로토콜이란?
 
@@ -21,6 +21,8 @@
 * 위의 그림에서 **전송 계층**은 IP에 전달되는 패킷의 오류를 검사하고 재전송 요구 등의 제어를 담당.
 * **전송 계층**에서 TCP, UDP라는 두 종류의 프로토콜이 사용 됨 
 * 동일한 IP라도, TCP / UDP의 포트가 다르면 제공 서비스가 다름
+* TCP와 UDP는 별도의 포트 주소 공간을 관리하기 때문에 같은 포트를 사용해도 된다.
+  * 두 프로토콜에서 동일한 포트를 할당해도 다른 포트로 간주
 
 | **포트의 타입**               | **포트의 범위** | **설명**                                                     |
 | ----------------------------- | --------------- | ------------------------------------------------------------ |
@@ -38,18 +40,19 @@
 * UDP보다는 느림
 * 신뢰성 있는 전송이 중요할 때 사용
 
-
+<img src="https://github.com/WeareSoft/tech-interview/raw/master/contents/images/tcp-virtual-circuit.png" alt="img" style="zoom:50%;" /> 
 
 ### 특징
 
 * **흐름 제어**
-  * 데이터 처리 속도 조절로 수신자 buffer overflow 방지
+  * **데이터 송신하는 곳과 수신하는 곳의 데이터 처리 속도를 조절**
+    * 수신자 buffer overflow 방지
   * 수신자가 Window size로 수신량을 정함
     * **슬라이딩 윈도우**: 수신측에서 설정한 window 크기만큼에 대해서는, ack를 받지 않아도 전송을 가능하도록 함.
     * window에 포함된 패킷들이 전송되고 **ACK**를 받으면, 그 만큼 윈도우를 slide하는 방식
     * window크기 동적으로 변화
-* **혼잡 제어**
-  * 네트워크 패킷 수가 너무 증가하지 않도록 방지
+* **혼잡 제어
+  * 네트워크 내의 패킷 수가 너무 증가하지 않도록 방지
   * 소통량 과다 -> 패킷을 덜 전송해 혼잡 줄임
 * **신뢰성** 보장
   * 정상적인 상황이라면 ACK값이 연속적으로 전송되어야 함.
@@ -75,7 +78,11 @@
 
 ## UDP
 
-* 데이터그램 방식을 제공하는 비연결형 서비스
+<img src="https://github.com/WeareSoft/tech-interview/raw/master/contents/images/udp-datagram.png" alt="img" style="zoom:50%;" /> 
+
+* 데이터그램 단위로 처리하는 **비연결형 서비스**
+  * 연결을 위해 할당되는 논리적 경로 없음
+  * 패킷은 각각 독립적 관계(독립적으로 처리)
 * ACK와 같은 절차 없음
   * 신뢰성 낮음
   * 덕분에 빠르긴 함
@@ -100,6 +107,8 @@
 
 
 #### Reference)
+
+#### https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md#tcp%EC%9D%98-3-way-handshake%EC%99%80-4-way-handshake
 
 #### https://velog.io/@hidaehyunlee/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%A0%84%EB%8B%AC%EB%90%98%EB%8A%94-%EC%9B%90%EB%A6%AC-OSI-7%EA%B3%84%EC%B8%B5-%EB%AA%A8%EB%8D%B8%EA%B3%BC-TCPIP-%EB%AA%A8%EB%8D%B8
 
