@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_130 TILs and counting..._
+_133 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [스케줄링 알고리즘](운영체제/스케줄링_알고리즘.md) - Fri Jun 11 15:12:15 2021 +0900
-- [프로세스 상태변화와 스케줄러](운영체제/스케줄러_프로세스상태.md) - Fri Jun 11 15:12:15 2021 +0900
+- [Class diagram](소프트웨어공학/클래스_다이어그램.md) - Tue Jun 15 23:31:43 2021 +0900
+- [3 way, 4 way handshake](네트워크/3_way_4_way_handshake.md) - Tue Jun 15 23:31:43 2021 +0900
 
 ### Categories
 
@@ -23,7 +23,6 @@ _130 TILs and counting..._
 - [Database](#Database)
 - [Docker](#Docker)
 - [Git](#Git)
-- [Http_네트워크_통신](#Http_네트워크_통신)
 - [JPA](#JPA)
 - [Kafka](#Kafka)
 - [Kotlin](#Kotlin)
@@ -38,7 +37,8 @@ _130 TILs and counting..._
 - [WebRTC](#WebRTC)
 - [etc.](#etc.)
 - [객체지향](#객체지향)
-- [소프트웨어_공학](#소프트웨어_공학)
+- [네트워크](#네트워크)
+- [소프트웨어공학](#소프트웨어공학)
 - [알고리즘](#알고리즘)
 - [운영체제](#운영체제)
 - [자료구조](#자료구조)
@@ -68,26 +68,6 @@ _130 TILs and counting..._
 
 ### [Git](#Git)
 - [Issues](Git/Issues.md)
-
-### [Http_네트워크_통신](#Http_네트워크_통신)
-- [3 way, 4 way handshake](Http_네트워크_통신/3_way_4_way_handshake.md)
-- [CORS: Cross-Origin Resource Sharing](Http_네트워크_통신/CORS.md)
-- [HTTP/1.1 vs HTTP/2.0](Http_네트워크_통신/HTTP1.1_vs_HTTP2.0.md)
-- [HTTPS와 SSL](Http_네트워크_통신/HTTPS_SSL.md)
-- [HTTP protocol](Http_네트워크_통신/HTTP_protocol.md)
-- [HTTP Status](Http_네트워크_통신/HTTP_status.md)
-- [IDL](Http_네트워크_통신/IDL.md)
-- [Issues](Http_네트워크_통신/Issues.md)
-- [Proxy란](Http_네트워크_통신/Proxy란.md)
-- [RPC 통신](Http_네트워크_통신/RPC_통신.md)
-- [TCP/IP vs UDP](Http_네트워크_통신/TCP_IP_UDP.md)
-- [Was vs Web Server](Http_네트워크_통신/Webserver_vs_WAS.md)
-- [gRPC](Http_네트워크_통신/gRPC.md)
-- [웹 스토리지(세션 스토리지, 로컬 스토리지)](Http_네트워크_통신/웹_스토리지(로컬_스토리지_세션_스토리지).md)
-- [웹 통신의 큰 흐름](Http_네트워크_통신/웹_통신의_흐름.md)
-- [쿠키(Cookie)](Http_네트워크_통신/쿠키_세션_1_쿠키.md)
-- [세션(Session)](Http_네트워크_통신/쿠키_세션_2_세션과_쿠키_차이.md)
-- [토큰 기반 인증 방식 - JWT(Json Web Token)](Http_네트워크_통신/쿠키_세션_3_토큰.md)
 
 ### [JPA](#JPA)
 - [Dirty checking](JPA/Dirty_checking.md)
@@ -194,11 +174,34 @@ _130 TILs and counting..._
 - [객체지향적 설계 원칙 - SOLID 원칙](객체지향/SOLID원칙.md)
 - [Spring에서의 객체지향(협력, 책임, 역할)](객체지향/Spring_객체지향.md)
 
-### [소프트웨어_공학](#소프트웨어_공학)
-- [디자인 패턴](소프트웨어_공학/디자인_패턴.md)
-- [Class diagram](소프트웨어_공학/클래스_다이어그램.md)
+### [네트워크](#네트워크)
+- [3 way, 4 way handshake](네트워크/3_way_4_way_handshake.md)
+- [CORS: Cross-Origin Resource Sharing](네트워크/CORS.md)
+- [HTTP/1.1 vs HTTP/2.0](네트워크/HTTP1.1_vs_HTTP2.0.md)
+- [HTTPS와 SSL](네트워크/HTTPS_SSL.md)
+- [HTTP protocol](네트워크/HTTP_protocol.md)
+- [HTTP Status](네트워크/HTTP_status.md)
+- [IDL](네트워크/IDL.md)
+- [Issues](네트워크/Issues.md)
+- [OSI(Open System Interconnection) 7계층](네트워크/OSI_7계층.md)
+- [Proxy란](네트워크/Proxy란.md)
+- [RPC 통신](네트워크/RPC_통신.md)
+- [TCP / IP 프로토콜의 4계층](네트워크/TCP:IP_4계층.md)
+- [TCP/IP vs UDP](네트워크/TCP_IP_UDP.md)
+- [Was vs Web Server](네트워크/Webserver_vs_WAS.md)
+- [gRPC](네트워크/gRPC.md)
+- [웹 스토리지(세션 스토리지, 로컬 스토리지)](네트워크/웹_스토리지(로컬_스토리지_세션_스토리지).md)
+- [웹 통신의 큰 흐름](네트워크/웹_통신의_흐름.md)
+- [쿠키(Cookie)](네트워크/쿠키_세션_1_쿠키.md)
+- [세션(Session)](네트워크/쿠키_세션_2_세션과_쿠키_차이.md)
+- [토큰 기반 인증 방식 - JWT(Json Web Token)](네트워크/쿠키_세션_3_토큰.md)
+
+### [소프트웨어공학](#소프트웨어공학)
+- [디자인 패턴](소프트웨어공학/디자인_패턴.md)
+- [Class diagram](소프트웨어공학/클래스_다이어그램.md)
 
 ### [알고리즘](#알고리즘)
+- [MST(최소 스패닝 트리)와 Kruskal, Prim](알고리즘/MST_크루스칼_프림.md)
 - [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md)
 - [삽입 정렬(Insert sort)](알고리즘/삽입_정렬.md)
 - [선택 정렬(Select sort)](알고리즘/선택_정렬.md)
