@@ -31,6 +31,8 @@
 4. ACK: 클라이언트가 ACK를 보낸다.
    * 이 때 둘다 **CLOSED** 상태 
 
+
+
 #### 지연으로 패킷이 FIN보다 늦어지는 상황
 
 * 세션 종료 후 전송되는 패킷은 drop, 데이터 유실 됨.
@@ -38,8 +40,21 @@
 
 
 
+#### 연결 끊는 상황에서 3 way 아닌 4 way로 구성하는 이유
+
+* Client 데이터 전송이 끝났어도 Server쪽에서 아직 보낼 데이터가 남아있을 수 있기 때문에
+* 따라서, 받은 FIN에 대한 ACK만 보내고, **보낼 것이 있으면 다 보내고** 난 후 본인도 FIN을 보낸다.
+
+
+
+#### 시퀀스넘버를 난수로 난리는 이유
+
+* Port를 통해 연결하고 데이터를 교환하고 다시 끊고 나서, 시간이 지나고서 같은 포트를 다시 또 사용한다. 따라서, 과거에 사용된 포트번호 쌍을 사용할 가능성이 존재하기 때문에, 과거의 SYN을 현재의 SYN으로 인식할 수 있다.(오해가 생길 수 있다)
+
 
 
 #### Reference)
 
 #### https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake
+
+#### https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md#tcp%EC%9D%98-3-way-handshake%EC%99%80-4-way-handshake
