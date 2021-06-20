@@ -3,8 +3,9 @@
 ## 함수형 프로그래밍(함수가 일급 객체로서의 의미를 가짐)
 
 * 함수를 side effect 없도록 선언하고 사용하는 선언형 프로그래밍.
-  * 따라서 forEach vs map : map이 함수형에 가까움
-
+  * 따라서 `forEach` vs `map` : `map`이 함수형에 가까움
+    * 원래의 배열을 바꾸지 않는다. -> side effect 방지
+  
 * 가장 큰 두가지 특징
   1. Immutable 
      * 변경 불가능
@@ -36,9 +37,10 @@
 
   * ```kotlin
     val foo: String? = getString()
+    
     return foo?.length ?: 0
     ```
-
+    
   * 위의 경우 null 아닐 때 length, null일 때 0 반환
 
 
@@ -48,6 +50,7 @@
 ``` kotlin
 class CopyPrinter(copier: Copy, printer: Print)
  : Copy by copier, Print by printer
+
 interface Copy {
  fun copy(page: Page): Page
 }
@@ -64,7 +67,7 @@ interface Print {
 
 ```Kotlin
 // StringExt.kt
-fun String.double(): String() {
+fun String.double(): String {
 	return this + this
 }
 ```
@@ -73,11 +76,11 @@ fun String.double(): String() {
 
 
 
-## Companion 객체
+## Companion object
 
 * 어떤 클래스의 모든 인스턴스가 공유하는 객체 만들 때.
 * 자바에서 static 변수 / 메서드 사용했을 때와 동일
-  * 객체 생성도 전에 런타임시작하는 그 때 즉시 생성된다.
+  * "객체 생성"도 전에 런타임시작하는 그 때 즉시 생성된다.
 
 
 
@@ -101,7 +104,7 @@ fun String.double(): String() {
 
 * 구문은 무언가가 실행되도록 명령을 지시하는 문장을 의미
 
-  * == 값을 만들지는 않는다.
+  * 따라서, 값을 만들지는 않는다.
 
 * when 표현식에서는 항상 else를 필요로 한다.(값을 만들어야 하기 때문에)
 
@@ -109,7 +112,7 @@ fun String.double(): String() {
 
 ## object
 
-* 코틀린에서 싱글톤을 사용하는 법
+* 코틀린에서 싱글톤을 사용하는 방법
 
 
 
