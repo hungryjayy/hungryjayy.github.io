@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_133 TILs and counting..._
+_135 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Class diagram](소프트웨어공학/클래스_다이어그램.md) - Tue Jun 15 23:31:43 2021 +0900
-- [3 way, 4 way handshake](네트워크/3_way_4_way_handshake.md) - Tue Jun 15 23:31:43 2021 +0900
+- [JVM의 가비지 컬렉터](Java/가비지컬렉터.md) - Wed Jun 16 15:02:53 2021 +0900
+- [Lazy Evaluation](Java/Lazy_Evaluation.md) - Wed Jun 16 13:53:17 2021 +0900
 
 ### Categories
 
@@ -24,6 +24,7 @@ _133 TILs and counting..._
 - [Docker](#Docker)
 - [Git](#Git)
 - [JPA](#JPA)
+- [Java](#Java)
 - [Kafka](#Kafka)
 - [Kotlin](#Kotlin)
 - [Kubernetes](#Kubernetes)
@@ -79,6 +80,10 @@ _133 TILs and counting..._
 - [JPA 연관관계](JPA/JPA_연관관계.md)
 - [JPA의 Proxy](JPA/JPA와_Proxy.md)
 - [JPA 벌크연산(update, delete)](JPA/벌크연산_Update_Delete.md)
+
+### [Java](#Java)
+- [Lazy Evaluation](Java/Lazy_Evaluation.md)
+- [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
 
 ### [Kafka](#Kafka)
 - [Kafka 아키텍처](Kafka/Kafka_아키텍처_Partition_Consumer_group_등.md)
