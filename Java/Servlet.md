@@ -1,0 +1,56 @@
+# Java Servlet
+
+: 웹 요청에 대해 동적인 처리가 가능한 Server Side에서 돌아가는 Java 프로그램
+
+* **data processing(Controller)** 역할?
+* **Java 코드** 안에 HTML 코드가 들어가있는 형태(하나의 클래스)
+* 서블릿이 한번 수정되면 다시 컴파일해 업데이트 한 후 재배포 해야함(개발 생산성 저하)
+
+
+
+## 동작 과정
+
+<img src="https://gmlwjd9405.github.io/images/web/servlet-program.png" alt="img" style="zoom: 50%;" />
+
+1. 웹서버가 HTTP request를 Web Container(서블릿 컨테이너)에 위임한다.
+   * WEB_INF/web.xml 설정에서 어떤 URL과 매핑되어 있는지 확인하고, **요청에 맞는 적절한 서블릿 실행**
+   * 이 때 만약 서블릿 객체가 **메모리에 없다면 2번** 수행(초기화). **메모리에 있다면 3번** 수행
+2. Container는 `service()` 메서드 호출(**실제 요청**) 전에 **servlet 객체를 메모리**에 올린다(**초기화**).
+   * Web Container는 적절한 Servlet 파일을 컴파일(.class 파일 생성)하고, 메모리에 올려 Servlet 객체 만듦
+   * 메모리에 로드될 때 Servlet 객체를 초기화하는 `init()` 수행
+3. Container는 request가 올때마다 **스레드 생성**해 처리
+   * 각 스레드 생성 후 서블릿의 `service()` 를 통해, 입력받은 메소드가 무엇이냐에 따라 `doGet()`, `doPost()` 등 적절한 메서드를 호출하고, 이 메서드만 수행하고 나면 스레드는 종료( `destroy()` )
+   * 각 요청마다 하나씩 스레드를 만들기보다, Thread Pool을 만들어 WAS에게 관리를 맡김
+     * 따라서 WAS가 **서블릿의 생명주기**를 담당. 아래의 그림 참고
+
+![img](https://gmlwjd9405.github.io/images/web/servlet-life-cycle.png) 
+
+
+
+## 서블릿 메소드
+
+1. `init()` : 초기화 역할
+   * 한 번만 수행
+   * 서블릿 객체가 메모리에 로드될 때 수행
+2. `service()` : 요청에 맞는 메소드 수행
+   * 요청 개수 만큼 수행
+   * 구현체가 HttpServlet에 존재
+     * HttpServlet의 service() 메서드는 **템플릿 메서드 패턴**으로 구현되어 있음
+       * 추상 클래스와 실제 구현체를 만들고, 추상 클래스를 다른 클래스들이 오버라이딩 하도록 하는 패턴
+       * **구현체는 HttpServlet에, 추상 메서드는 GenericServlet에**
+       * 따라서 HttpServlet을 상속받은 Servlet 클래스에서 해당메서드를 오버라이드하지 않았다면, 그 부모인 HttpServlet의 `service()`가 호출
+       * 즉, 하위 클래스(**Servlet**)에서 **개발자가 직접** doGet, doPost 등의 메서드를 **오버라이드**해두면 HttpServlet의 service() 메서드가 요청에 맞는 메서드(하위 클래스에서 오버라이드한 메서드)를 호출하게 됨
+     * 각 요청마다 수행되는 스레드에서 **임계 영역 문제**를 고려해야 함
+       * 각 스레드는 Stack(지역 변수)과 PC 레지스터를 독립적으로 갖고 나머지는 공유
+       * 따라서 Heap에서의 **static 변수**, **전역 변수** 에 대한 고려 필요
+3. `destroy()` : 객체 메모리에서 제거
+   * 한 번만 수행
+   * 웹 어플리케이션 갱신 or WAS 종료 시 수행
+
+
+
+#### Reference)
+
+#### https://gmlwjd9405.github.io/2018/10/28/servlet.html
+
+#### https://github.com/WeareSoft/tech-interview/blob/master/contents/etc.md
