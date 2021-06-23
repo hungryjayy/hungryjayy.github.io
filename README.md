@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_135 TILs and counting..._
+_136 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Java Servlet](Java/Servlet.md) - Wed Jun 23 17:34:33 2021 +0900
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md) - Wed Jun 16 15:02:53 2021 +0900
-- [Lazy Evaluation](Java/Lazy_Evaluation.md) - Wed Jun 16 13:53:17 2021 +0900
 
 ### Categories
 
@@ -83,6 +83,7 @@ _135 TILs and counting..._
 
 ### [Java](#Java)
 - [Lazy Evaluation](Java/Lazy_Evaluation.md)
+- [Java Servlet](Java/Servlet.md)
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
 
 ### [Kafka](#Kafka)
