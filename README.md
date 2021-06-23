@@ -128,7 +128,7 @@ _135 TILs and counting..._
 ### [Redis](#Redis)
 - [Docker를 통해 LB / REDIS로 scaled-server 리소스 공유](Redis/Docker_LB_REDIS로_scaled-server_연결.md)
 - [Issues](Redis/Issues.md)
-- [Redis cluster, sentinel](Redis/Redis_cluster_sentinel.md)
+- [Redis Replication / Cluster와 Sentinel](Redis/Redis_cluster_sentinel.md)
 - [Redis, 웹소켓(socket.io-redis)](Redis/Redis_socketIO.md)
 - [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_통해_scale_out.md)
 
