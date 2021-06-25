@@ -1,4 +1,4 @@
-# REST와 HTTP / Rest 인터페이스 원칙(Uniform Interface)
+# REST와 HTTP / Rest 유니폼 인터페이스(Uniform Interface)
 
 ## HTTP API
 
@@ -119,6 +119,19 @@
 
 
 
+#### HATEOAS가 어려운 이유
+
+* html으로 전달하는 방법 말고 JSON의 경우에는 본문에 `link`라는 것을 하나 정의해서 거기에 링크를 박으면 됨
+* 그런데
+  1. 클라이언트입장에서 이를 동적으로 파싱해야하기도 하고
+  2. 링크 정보가 과다해질 수 있다.(상태전이가 아주 많고 복잡한 경우)
+  3. 최소 어떠한 link relation이 있는지를 파악하고 있어야 UI에 바인딩이 가능
+  4. 또한, URI 변경 말고, link relation이 변경되면, 우리가 변경에 대한걸 반영해야 하는 것은 여전하기도 함
+
+
+
+
+
 #### reference) 
 
 #### https://doitnow-man.tistory.com/96
@@ -130,3 +143,5 @@
 #### http://amazingguni.github.io/blog/2016/03/REST%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4-1
 
 #### https://sabarada.tistory.com/9
+
+#### https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=saltynut&logNo=220758336130
