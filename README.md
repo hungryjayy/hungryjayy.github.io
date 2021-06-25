@@ -13,8 +13,8 @@ _136 TILs and counting..._
 
 ### 2 most recent TILs
 
+- [REST와 HTTP / Rest 유니폼 인터페이스(Uniform Interface)](REST_API/RESTful_유니폼_인터페이스.md) - Fri Jun 25 16:07:05 2021 +0900
 - [Java Servlet](Java/Servlet.md) - Wed Jun 23 17:34:33 2021 +0900
-- [JVM의 가비지 컬렉터](Java/가비지컬렉터.md) - Wed Jun 16 15:02:53 2021 +0900
 
 ### Categories
 
@@ -113,7 +113,7 @@ _136 TILs and counting..._
 
 ### [REST_API](#REST_API)
 - [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징_6가지_원칙.md)
-- [REST와 HTTP / Rest 인터페이스 원칙(Uniform Interface)](REST_API/REST_HTTP_인터페이스원칙.md)
+- [REST와 HTTP / Rest 유니폼 인터페이스(Uniform Interface)](REST_API/RESTful_유니폼_인터페이스.md)
 - [REST API resource 표현방식](REST_API/Resource_표현_방식.md)
 - [조대협님의 RestAPI design (slide share 정리)](REST_API/조대협님의_REST_API_디자인_정리.md)
 - [좋은 restapi 구성하기](REST_API/좋은_RESTAPI_구성하기.md)
