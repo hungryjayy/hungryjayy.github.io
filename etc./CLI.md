@@ -29,3 +29,13 @@
 
 
 
+* 포트 열어주기
+  * `iptables -I INPUT 1 -p tcp --dport 6379 -j ACCEPT`
+
+
+
+
+
+#### Reference)
+
+#### https://bottlecok.tistory.com/16
