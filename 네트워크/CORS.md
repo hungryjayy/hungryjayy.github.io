@@ -15,6 +15,24 @@
 
 
 
+#### Origin과 domain의 차이
+
+* domain: naver.com
+
+* origin: https://naver.com + 포트
+
+  * 프로토콜 + 포트까지.
+
+* 정확한 문법
+
+  ```
+  Origin: <scheme> "://" <hostname> [ ":" <port> ]
+  
+  e.g) https://developer.mozilla.org
+  ```
+
+
+
 ## 동작 방식
 
 * 브라우저가 리소스 요청 시 헤더에 추가 정보를 담아 보냄
@@ -91,6 +109,8 @@
 #### Reference)
 
 #### https://hannut91.github.io/blogs/infra/cors
+
+#### https://velog.io/@josworks27/CORS-%EA%B8%B0%EC%B4%88-%EA%B0%9C%EB%85%90
 
 #### https://zzossig.io/posts/web/what_is_cors/
 
