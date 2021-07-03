@@ -13,8 +13,8 @@ _137 TILs and counting..._
 
 ### 2 most recent TILs
 
-- [도커 스웜(Docker Swarm)](Docker/도커 스웜(Docker Swarm).md) - Tue Jun 29 14:39:33 2021 +0900
 - [REST와 HTTP / Rest 유니폼 인터페이스(Uniform Interface)](REST_API/RESTful_유니폼_인터페이스.md) - Fri Jun 25 16:07:05 2021 +0900
+- [Java Servlet](Java/Servlet.md) - Wed Jun 23 17:34:33 2021 +0900
 
 ### Categories
 
@@ -66,7 +66,7 @@ _137 TILs and counting..._
 - [Docker 용어, 환경설정 기본 개념](Docker/Docker_용어_환경설정_기본_개념.md)
 - [Dockerfile](Docker/Dockerfile.md)
 - [Issues](Docker/Issues.md)
-- [도커 스웜(Docker Swarm)](Docker/도커 스웜(Docker Swarm).md)
+- [도커 스웜(Docker Swarm)](Docker/도커_스웜(Docker_Swarm).md)
 
 ### [Git](#Git)
 - [Issues](Git/Issues.md)
