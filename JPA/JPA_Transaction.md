@@ -32,8 +32,10 @@
   * DEFAULT : 기본격리수준
   * READ_UNCOMMITED(0): 커밋되지 않는 데이터 읽기 허용(더티캐시 발생가능)
   * READ_COMMITED(1): 커밋된 데이터만 읽음(더티캐시 방지)
-  * REPEATABLE_READ(2): 트랜잭션 완료시 까지 select가 사용되는 모든 데이터에 shared lock. 다른 사용자는 해당 영역 수정 불가해짐.(Non-repeatable read 방지)
+  * REPEATABLE_READ(2): 트랜잭션 완료시 까지 select가 사용되는 모든 데이터에 shared lock. 다른 사용자는 해당 영역 수정 불가해짐.(Repeatable read 방지)
+    * Repeatable read: 한 트랜잭션에서 두번 조회할 때 두개의 값이 달라져버림.(**수정, 삭제**) 따라서, 한 트랜잭션에서 여러 스냅샷이 사용되는 경우
   * SERIALIZABLE(3): 수정 및 입력까지 불가능(Phantom read 방지)
+    * Phantom read: 한 트랜잭션 조회에서 다른 레코드가 추가될 것도 방지(**생성**). 완전한 단계의 read only
 
 2. propagation
    * 트랜잭션 도중 다른 트랜잭션 호출시 선택 옵션
