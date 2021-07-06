@@ -33,6 +33,10 @@
 
 
 
+* `grep` : 내가 원하는 키워드가 포함되어있는 행을 찾아주는 명령어
+
+
+
 * redis service 계속 켜지는 문제
 
   * HA를 위해 꺼지면 다시 켜지는것?
@@ -56,5 +60,7 @@
 
 
 #### Reference)
+
+#### https://opentutorials.org/course/2598
 
 #### https://bottlecok.tistory.com/16
