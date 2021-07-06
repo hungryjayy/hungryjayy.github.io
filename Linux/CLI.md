@@ -52,6 +52,7 @@
 * `apt-get update` : 내가 현재 설치할 수 있는 프로그램 목록을 최신 상태로 반영해주는 CLI
 * `apt-cache search ~~~` : ~~~가 들어간, 다운받을 수 있는 것들 조회
 * `apt-get install`
+* `whereis ~~` : 내가 설치한게 어디있는지 알고 싶을 때
 
 
 
