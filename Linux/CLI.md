@@ -15,7 +15,7 @@
 
 
 
-### `help`, `man`
+### help와 man(manual)
 
 * help: 간단한 사용법
 * man: `man ls` 처럼 man + CLI.
@@ -35,9 +35,10 @@
 
 ### 프로세스
 
-* `ps aux`
+* `ps` or `ps aux`(컴퓨터 내 모든 프로세스를 보려면 후자)
+  * `ps aux | grep apache` 처럼 사용 가능
 * 포트 사용하는 IP PID 찾기 : `sudo lsof -i:15672`
-* 해당 IP 죽이기: `sudo kill -9 1335``
+* 해당 IP 죽이기: `sudo kill -9 1335`
 * ``netstat -ano`
   * -a` : 모든 연결과 대기중인 포트
 
