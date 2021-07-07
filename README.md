@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_144 TILs and counting..._
+_145 TILs and counting..._
 
 ---
 
@@ -55,7 +55,8 @@ _144 TILs and counting..._
 - [Issues](C++/Issues.md)
 
 ### [Cloud](#Cloud)
-- [온프레미스와 Iaas, Paas, Saas](Cloud/온프레미스_클라우드.md)
+- [IaaS, PaaS, SaaS](Cloud/IaaS_PaaS_SaaS.md)
+- [온프레미스와 클라우드](Cloud/온프레미스_클라우드.md)
 
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
