@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_138 TILs and counting..._
+_144 TILs and counting..._
 
 ---
 
@@ -20,6 +20,7 @@ _138 TILs and counting..._
 
 - [Back_end](#Back_end)
 - [C++](#C++)
+- [Cloud](#Cloud)
 - [Database](#Database)
 - [Docker](#Docker)
 - [Git](#Git)
@@ -28,6 +29,7 @@ _138 TILs and counting..._
 - [Kafka](#Kafka)
 - [Kotlin](#Kotlin)
 - [Kubernetes](#Kubernetes)
+- [Linux](#Linux)
 - [Node.js](#Node.js)
 - [REST_API](#REST_API)
 - [RabbitMQ](#RabbitMQ)
@@ -51,6 +53,9 @@ _138 TILs and counting..._
 
 ### [C++](#C++)
 - [Issues](C++/Issues.md)
+
+### [Cloud](#Cloud)
+- [온프레미스와 Iaas, Paas, Saas](Cloud/온프레미스_클라우드.md)
 
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
@@ -105,6 +110,14 @@ _138 TILs and counting..._
 
 ### [Kubernetes](#Kubernetes)
 - [Kubernetes 기초 용어](Kubernetes/Kubernetes_기초_용어.md)
+
+### [Linux](#Linux)
+- [CLI](Linux/CLI.md)
+- [CLI를 사용하는 이유](Linux/CLI를_사용하는_이유.md)
+- [Shell과 Kernel](Linux/Shell_Kernel.md)
+- [Linux 기초](Linux/리눅스_기초.md)
+- [리눅스와 프로세스](Linux/리눅스_프로세스.md)
+- [유닉스 디렉토리의 구조](Linux/유닉스_디렉토리구조.md)
 
 ### [Node.js](#Node.js)
 - [Issues](Node.js/Issues.md)
@@ -173,7 +186,6 @@ _138 TILs and counting..._
 - [WebRTC & OWT](WebRTC/webRTC_&_OWT.md)
 
 ### [etc.](#etc.)
-- [기타 CLI](etc./CLI.md)
 - [Issues](etc./Issues.md)
 - [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](etc./도메인_로직패턴.md)
 - [코드 깔끔하게 작성하기](etc./코드_깔끔하게_작성하기.md)
