@@ -14,6 +14,7 @@
 * `chmod` : 파일의 권한(readable, writable, executable)을 바꿔줄 수 있음
 * `tail -f aaa.log` : aaa.log를 계속 감시하고 있다가 바뀔때마다 리프레시해서 보여줌
   * 실시간 로그 볼때 편함
+* `-u` : --unlock
 
 
 
@@ -49,6 +50,15 @@
 * help: 간단한 사용법
 * man: `man ls` 처럼 man + CLI.
   * 더 상세할 수 있음
+
+
+
+### 다중 사용자
+
+* `id` : 내 자신이 누구인지
+* `who` : 누가 현재 접속해있는지
+*  `sudo useradd -m aaa`
+  * `/home`에서 ls를 보면 aaa 사용자가 추가된 것을 보게된다.
 
 
 
