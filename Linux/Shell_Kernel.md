@@ -41,6 +41,17 @@
 
 
 
+### 쉘 스타트업 스크립트
+
+* `alias l = 'ls -al'` : ls -al의 별명을 l로 만들어 준 것
+* bash에 무엇을 실행할지 코드가 있음.
+
+
+
+
+
+
+
 #### Reference)
 
 #### https://opentutorials.org/course/2598/14203

@@ -12,6 +12,35 @@
 * `touch aaa.txt` : aaa.txt 만들기
 * `grep` : 내가 원하는 키워드가 포함되어있는 행을 찾아주는 명령어
 * `chmod` : 파일의 권한(readable, writable, executable)을 바꿔줄 수 있음
+* `tail -f aaa.log` : aaa.log를 계속 감시하고 있다가 바뀔때마다 리프레시해서 보여줌
+  * 실시간 로그 볼때 편함
+
+
+
+### 파일 찾기
+
+* `locate` : 디렉토리를 돌면서 찾는 것이 아니고 mlocate라는 DB 를 뒤져서 위치를 찾는 것
+
+  e.g) `locate *.log` : log 파일 모두 찾기
+
+* `find`
+
+  * `find [찾기 시작할 경로] [어떻게 찾을건지] [무엇을]`
+
+    e.g) `find / -name *.log` 
+
+* `whereis`: 실행파일이 어디에 있는지?
+  * `whereis ls` : ls 명령어가 어디에있는지?
+  * $PATH와 연관 : `echo $PATH` 명령어를 수행하면 bin 밑의 ls를 찾기 위해 PATH에 있는 경로를 전부 찾아다님.
+    * 따라서, 어떤 경로에서 ls를 수행하던, 우리가 원하는 ls를 수행 할 수 있는 것
+
+
+
+### FG(fore ground)
+
+* `fg` : 백그라운드에 있던 프로그램을 포그라운드로
+* `jobs`:  현재 back ground로 실행되고 있는 것 무엇이 있는지
+  * nano 작성 중 Ctrl + Z 누르면 back ground로, jobs로 확인 가능
 
 
 
