@@ -1,16 +1,19 @@
 # HTTP/1.1 vs HTTP/2.0
 
+<br>
+
 ## HTTP/1.0
 
+* **처음으로 널리 쓰인 HTTP 버전**
 * 1연결당 1Req,1Res를 처리
 * 브라우저에서 요청에 대한 성공과 실패를 바로 알 수 있게 됨.
-* 이전에는 GET만 사용, POST 추가됨
+* 이전(0.9)에는 GET만 사용했고, 여기서 POST 추가됨
 
-
+<br>
 
 ## HTTP/1.1
 
-* 가장 많이 사용되고 있는 프로토콜(Rest API가 사용)
+* **가장 많이 사용되고 있는 프로토콜**(Rest API에서 사용)
 
 * 개발자도구에서 protocol에 `http/1.1`  로 표현됨 
 
@@ -35,7 +38,7 @@
     * header의 많은 중복된 값이 전송됨. 이 중 cookie가 가장 문제라고 함
       * cookie는 매번 전송되기 때문에.
 
-
+<br>
 
 ## HTTP/2.0
 
@@ -52,13 +55,15 @@
 * **Header Compression**
   * HPACK 압축방식을 통해 Header 정보 압축
 
-
+<br>
 
 ![img](https://user-images.githubusercontent.com/31475037/89241056-d77c9480-d638-11ea-8ef4-7d9d475ac560.png)
 
-
+<br><br>
 
 #### Reference)
+
+#### HTTP 완벽가이드
 
 #### https://chacha95.github.io/2020-06-15-gRPC1/
 

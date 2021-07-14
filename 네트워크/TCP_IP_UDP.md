@@ -4,7 +4,7 @@
 
 ### UDP : User Datagram Protocol
 
- 
+ <br>
 
 ### 프로토콜이란?
 
@@ -32,7 +32,7 @@
 
 * 출처: https://engineer-mole.tistory.com/140 [매일 꾸준히, 더 깊이]
 
-
+<br>
 
 ## TCP
 
@@ -63,7 +63,29 @@
 * 점대점(P2P) : 연결은 2개의 엔드포인트가 있음
   * 따라서 multicasting이나 broadcasting 지원 x
 
+<br>
 
+#### 텔넷: SSH같이 원격 접속
+
+* 직접 컴퓨터의 포트로 TCP 커넥션 연결.
+
+* 웹 서버는 원격으로 접속한 사용자를 웹 클라이언트로 취급하고 TCP 커넥션을 통해 돌려주는 데이터를 화면에 출력
+
+  ``` http
+  1 % telnet www.joes-hardware.com 80
+  2 Trying 128.121.66.211...
+  3 Connected to joes-hardware.com.
+  4 Escape character is '^]'.
+  5 GET /tools.html HTTP/1.1
+  6 Host: www.joes-hardward.com
+  7 
+  ```
+
+  * line 1: 텔넷은 호스트명을 찾아 80번 포트로 대기중인 joes-hardware 웹 서버에 연결
+  * line 2~4: 커넥션 수립을 알ㄹ리는 텔넷의 출력
+  * line 5~7: 사용자가 직접 HTTP 요청 입력 후 Host 헤더로 전송하고, 한줄 더 띄우면 해당 웹 서버에서 리소스(`/tools.html`) 반환
+
+<br>
 
 ### TCP 서버의 특징
 
@@ -74,7 +96,7 @@
 * Streaming에 사용되지 않음
   * 손실 시 재요청해 정확한 데이터를 주고받는 것보다 지연되지 않는 stream이 유리하기 때문
 
-
+<br><br>
 
 ## UDP
 
@@ -92,7 +114,7 @@
   * e.g. 실시간 스트리밍
   * 그러나 개발자가 개발 레벨에서 어느정도 신뢰성을 줄 수는 있다고 함
 
-
+<br>
 
 ### UDP 서버의 특징
 
@@ -102,11 +124,11 @@
   * 멀티캐스트, 브로드캐스트 다 가능
 * 데이터그램 단위 전송 (65535 바이트 크기)
 
-
-
-
+<br><br>
 
 #### Reference)
+
+#### HTTP 완벽 가이드
 
 #### https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md#tcp%EC%9D%98-3-way-handshake%EC%99%80-4-way-handshake
 
@@ -117,3 +139,4 @@
 #### https://engineer-mole.tistory.com/140
 
 #### https://velog.io/@hidaehyunlee/TCP-%EC%99%80-UDP-%EC%9D%98-%EC%B0%A8%EC%9D%B4
+
