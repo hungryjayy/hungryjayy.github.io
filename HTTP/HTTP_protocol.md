@@ -3,7 +3,7 @@
 * 웹에서 쓰이는 통신 프로토콜(상호간에 정의된 규칙)
 * TCP / IP 프로토콜의 Application 레이어에서 동작
 
-
+<br>
 
 ### **Stateless 프로토콜(상태가 없음)**
 
@@ -12,6 +12,8 @@
   * 헤더 확장성을 사용해, 각각의 요청들에 대한 세션을 만들도록 HTTP 쿠키가 추가 됨.
   * 서버에서 사용자의 웹 브라우저에 **쿠키**(데이터 조각)를 전달하고, 브라우저는 그 데이터를 브라우저에 저장. 추후 재 요청시 해당 데이터를 함께 전송.
     * 로그인 시 Token 정보를 이거로 활용 가능
+
+<br>
 
 ### Client-Server 구조
 
@@ -24,6 +26,8 @@
     * HTTP/1.1에서는 지속적인 연결을 도입
     * HTTP/2.0에서는 단일 연결 상에서 다중 전송 할 수 있도록 함.
 
+<br>
+
 ### Simple
 
 * HTTP 메시지들은 사람이 읽고 이해하기 편함
@@ -32,10 +36,9 @@
   GET / HTTP/1.1
   Host: developer.mozilla.org
   Accept-Language: fr
+  ```
 
-
-
-
+<br><br>
 
 ## HTTP 기반 시스템의 구성요소
 
@@ -46,7 +49,7 @@
 
 ![img](https://mdn.mozillademos.org/files/13679/Client-server-chain.png)
 
-
+<br>
 
 ### 클라이언트: 사용자 에이전트
 
@@ -60,7 +63,7 @@
   * 사용자가 사용자 에이전트를 제어하고, 새로운 웹 페이지를 가져오기 위한 실행(마우스 클릭) 될 수 있는 링크
   * 이러한 지시사항을 변환하고 http응답을 해석해 사용자에게 명확한 응답 제공
 
-
+<br>
 
 ### 웹 서버
 
@@ -70,7 +73,8 @@
 
   ![Basic representation of a client/server connection through HTTP](https://mdn.mozillademos.org/files/8659/web-server.svg)
 
-  
+
+<br>
 
 ### 프록시
 
@@ -81,7 +85,7 @@
   * 리버스 프록시에선 실제 서버를 내부망으로 가려놓고, 프록시를 통해 통신.
   * 프록시 문제발생 혹은 해킹을 당해도 실제 서버는 문제 없음.
 
-
+<br><br>
 
 #### Reference)
 
