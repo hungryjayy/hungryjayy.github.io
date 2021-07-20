@@ -9,6 +9,11 @@
 
 
 
+* `sudo dockerd --debug`
+  * 데몬 실행 안될때 디버깅
+
+
+
 * docker-compose 실행시 `-d` <-- background로 실행
   * 없이 실행하면 실시간 로그를 확인 할 수 있다.
 
@@ -23,7 +28,7 @@
 
 
 * `sudo docker system prune --volumes`
-  * 저장해놓은 container들 완전 제거
+  * 로컬에 있는 데이터 볼륨 완전 제거
 
 
 
