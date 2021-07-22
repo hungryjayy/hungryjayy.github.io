@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_145 TILs and counting..._
+_156 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [REST와 HTTP / Rest 유니폼 인터페이스(Uniform Interface)](REST_API/RESTful_유니폼_인터페이스.md) - Fri Jun 25 16:07:05 2021 +0900
-- [Java Servlet](Java/Servlet.md) - Wed Jun 23 17:34:33 2021 +0900
+- [HTTP 메서드](HTTP/HTTP_메서드.md) - Thu Jul 22 17:25:55 2021 +0900
+- [HTTP 메시지](HTTP/HTTP_메시지.md) - Thu Jul 22 17:25:55 2021 +0900
 
 ### Categories
 
@@ -24,6 +24,7 @@ _145 TILs and counting..._
 - [Database](#Database)
 - [Docker](#Docker)
 - [Git](#Git)
+- [HTTP](#HTTP)
 - [JPA](#JPA)
 - [Java](#Java)
 - [Kafka](#Kafka)
@@ -78,6 +79,16 @@ _145 TILs and counting..._
 ### [Git](#Git)
 - [Issues](Git/Issues.md)
 
+### [HTTP](#HTTP)
+- [HTTP/1.1 vs HTTP/2.0](HTTP/HTTP1.1_vs_HTTP2.0.md)
+- [HTTPS와 SSL](HTTP/HTTPS_SSL.md)
+- [HTTP 메서드](HTTP/HTTP_메서드.md)
+- [HTTP 메시지](HTTP/HTTP_메시지.md)
+- [HTTP 상태코드](HTTP/HTTP_상태코드.md)
+- [HTTP란](HTTP/HTTP기초.md)
+- [Proxy란](HTTP/Proxy란.md)
+- [URL과 리소스](HTTP/URL_리소스.md)
+
 ### [JPA](#JPA)
 - [Dirty checking](JPA/Dirty_checking.md)
 - [In Clause](JPA/In_clause.md)
@@ -115,10 +126,17 @@ _145 TILs and counting..._
 ### [Linux](#Linux)
 - [CLI](Linux/CLI.md)
 - [CLI를 사용하는 이유](Linux/CLI를_사용하는_이유.md)
+- [Daemon, Service](Linux/Daemon_Service.md)
+- [Permission](Linux/Permission.md)
 - [Shell과 Kernel](Linux/Shell_Kernel.md)
+- [다중 사용자](Linux/다중_사용자.md)
+- [도메인과 DNS](Linux/도메인_DNS.md)
+- [리눅스 관점에서의 네트워크, 인터넷, 서버](Linux/리눅스_관점_네트워크_인터넷.md)
 - [Linux 기초](Linux/리눅스_기초.md)
+- [리눅스와 웹 서버](Linux/리눅스_웹서버.md)
 - [리눅스와 프로세스](Linux/리눅스_프로세스.md)
 - [유닉스 디렉토리의 구조](Linux/유닉스_디렉토리구조.md)
+- [Port (포트)와 포트포워딩](Linux/포트_포트포워딩.md)
 
 ### [Node.js](#Node.js)
 - [Issues](Node.js/Issues.md)
@@ -144,6 +162,7 @@ _145 TILs and counting..._
 
 ### [Redis](#Redis)
 - [Docker를 통해 LB / REDIS로 scaled-server 리소스 공유](Redis/Docker_LB_REDIS로_scaled-server_연결.md)
+- [HAProxy Config (Redis LB)](Redis/HAProxy_Config_(Redis_LB).md)
 - [Issues](Redis/Issues.md)
 - [Redis Replication / Cluster와 Sentinel](Redis/Redis_cluster_sentinel.md)
 - [Redis, 웹소켓(socket.io-redis)](Redis/Redis_socketIO.md)
@@ -198,13 +217,8 @@ _145 TILs and counting..._
 ### [네트워크](#네트워크)
 - [3 way, 4 way handshake](네트워크/3_way_4_way_handshake.md)
 - [CORS: Cross-Origin Resource Sharing](네트워크/CORS.md)
-- [HTTP/1.1 vs HTTP/2.0](네트워크/HTTP1.1_vs_HTTP2.0.md)
-- [HTTPS와 SSL](네트워크/HTTPS_SSL.md)
-- [HTTP protocol](네트워크/HTTP_protocol.md)
-- [HTTP Status](네트워크/HTTP_status.md)
 - [IDL](네트워크/IDL.md)
 - [OSI(Open System Interconnection) 7계층](네트워크/OSI_7계층.md)
-- [Proxy란](네트워크/Proxy란.md)
 - [RPC 통신](네트워크/RPC_통신.md)
 - [TCP / IP 프로토콜의 4계층](네트워크/TCP:IP_4계층.md)
 - [TCP/IP vs UDP](네트워크/TCP_IP_UDP.md)
