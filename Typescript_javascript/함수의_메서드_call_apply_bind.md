@@ -3,73 +3,141 @@
 : 함수에 존재하는 기본 **메소드**. 
 
 * 첫번째 인자로 this를 대체할 수 있어, 실행 컨텍스트(window)를 다른 것으로 바꿀 때 사용가능.
+* 이미 할당되어있는 "다른 객체의 함수나 메소드"를 "호출하는 해당 객체에 재할당"
+  * 따라서 window를 현재의 객체를 참조하도록.
 
-
+<br>
 
 ## call
 
-* 보통 함수와같이 인자를 넣어서 전달
-* `func.call(this, a, b)`
+* 보통 함수와같이 **인자 목록**을 넣어서 전달
+
+  * e.g) `func.call(this, a, b)`
+
+
+<br>
+
+### 쓰이는 예시
+
+* 객체의 생성자 연결에 사용(생성자 체이닝)
+
+  ```javascript
+  function Product(name, price) {
+    this.name = name;
+    this.price = price;
+  
+    if (price < 10) {
+      throw RangeError('Some range error');
+    }
+  }
+  
+  function Food(name, price) {
+    Product.call(this, name, price);
+    this.category = 'food';
+  }
+  
+  function Toy(name, price) {
+    Product.call(this, name, price);
+    this.category = 'toy';
+  }
+  
+  var cheese = new Food('feta', 5); // Error
+  var fun = new Toy('robot', 20);
+
+<br>
+
+* 익명함수 호출에 사용
+
+  ``` javascript
+  let people = {
+    name: 'AAA',
+  }
+  ...
+  (function(i) {
+      this.print = function() {
+        console.log('#' + i + ': ' + this.name);
+      }
+      this.print();
+  }).call(people, i);
+  ...
+  ```
+
+  <br>
+
+* this 원하는 컨텍스트 지정
+
+  ```javascript
+  function greet() {
+    var reply = [this.animal, 'typically sleep between', this.sleepDuration].join(' ');
+    console.log(reply);
+  }
+  
+  var obj = {
+    animal: 'cats', sleepDuration: '12 and 16 hours'
+  };
+  
+  greet.call(obj);  // cats typically sleep between 12 and 16 hours
+
+<br>
+
+* 인수 지정 없이(window 전달)
+
+  ```javascript
+  // 'use strict'; strict 모드 사용 시 this는 undefined 값을 가지게 됨
+  
+  var sData = 'Wisen';
+  function display(){
+    console.log('sData value is %s ', this.sData);
+  }
+  
+  display.call();  // sData value is Wisen
+
+<br>
 
 ## apply
 
-* this와 배열로 전달
-* `func.apply(this, [1, 2, 3])`
+* `call`과 비슷하지만, `call` 은 **인수 목록**을, `apply()` 는 **배열 하나**를 전달한다는 점이 다르다.
+  * e.g) `func.apply(this, [1, 2, 3])`
 
-* zerocho.com 예시 - call, apply
+<br>
 
-```typescript
-var example = function (a, b, c) {
-  return a + b + c;
-};
-example(1, 2, 3);
-example.call(null, 1, 2, 3);
-example.apply(null, [1, 2, 3]);
-```
+### 쓰이는 예시
 
-```typescript
-var obj = {
-  string: 'zero',
-  yell: function() {
-    alert(this.string);
-  }
-};
-var obj2 = {
-  string: 'what?'
-};
-obj.yell(); // 'zero';
-obj.yell.call(obj2); // 'what?'
-```
+* 배열관련 된 것들 처리할 때 좋음
 
+  * JS엔진의 인수 길이 제한 오버플로우(65536)에 주의
 
+  ```javascript
+  1.
+  var array = ['a', 'b'];
+  var elements = [0, 1, 2];
+  array.push.apply(array, elements); // ['a', 'b', 0, 1, 2]
+  
+  2.
+  var numbers = [5, 6, 2, 3, 7];
+  
+  var max = Math.max.apply(null, numbers);
+  
+  var min = Math.min.apply(null, numbers);
+  ```
+
+  * +) 생성자 체이닝에도 마찬가지로 쓰임
+
+<br>
 
 ## bind
 
 * this만 바꿔 반환하고, 호출하지는 않음.
-*  `call(this, 1, 2, 3)`은 `bind(this)(1, 2, 3)` 와 같음.
+* `call(this, 1, 2, 3)`은 `bind(this)(1, 2, 3)` 와 같음.
 
-* zerocho.com 예시 - bind
+<br>
 
-```typescript
-var obj = {
-  string: 'zero',
-  yell: function() {
-    alert(this.string);
-  }
-};
-var obj2 = {
-  string: 'what?'
-};
-var yell2 = obj.yell.bind(obj2);
-yell2(); // 'what?'
-
-// obj.yell에서 this는 obj2가 된다. this가 obj2가 된 함수를 반환하기 위한 목적
-```
-
-
+### 쓰이는 예시
 
 
 
 #### Reference)
+
+#### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call
 
 #### https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd
