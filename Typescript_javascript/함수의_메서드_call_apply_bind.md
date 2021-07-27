@@ -5,6 +5,7 @@
 * 첫번째 인자로 this를 대체할 수 있어, 실행 컨텍스트(window)를 다른 것으로 바꿀 때 사용가능.
 * 이미 할당되어있는 "다른 객체의 함수나 메소드"를 "호출하는 해당 객체에 재할당"
   * 따라서 window를 현재의 객체를 참조하도록.
+* **MDN예시 반복**해서 보기
 
 <br>
 
@@ -134,7 +135,54 @@
 
 ### 쓰이는 예시
 
+* 객체로부터 메소드 추출 뒤 함수 호출하면, 원본 객체는 그 함수의 `this`로 사용되는 것이 아님.
 
+  ```javascript
+  this.x = 9;
+  var module = {
+    x: 81,
+    getX: function() { return this.x; }
+  };
+  
+  module.getX(); // 81이 맞다.
+  
+  var retrieveX = module.getX;
+  retrieveX();
+  // 9 반환 - 함수가 전역 스코프에서 호출됐음
+  
+  // module과 바인딩된 'this'가 있는 새로운 함수 생성
+  // 신입 프로그래머는 전역 변수 x와 module의 속성 x를 혼동할 수 있음
+  var boundGetX = retrieveX.bind(module);
+  boundGetX(); // 81
+  ```
+
+<br>
+
+* setTimeout 과 사용 - `this` 는 window 객체로 설정됨
+
+  ```javascript
+  function LateBloomer() {
+    this.petalCount = Math.ceil(Math.random() * 12) + 1;
+  }
+  
+  // 1초 지체 후 bloom 선언
+  LateBloomer.prototype.bloom = function() {
+    window.setTimeout(this.declare.bind(this), 1000);
+  };
+  
+  LateBloomer.prototype.declare = function() {
+    console.log('I am a beautiful flower with ' +
+      this.petalCount + ' petals!');
+  };
+  
+  var flower = new LateBloomer();
+  flower.bloom();
+  // 1초 뒤, 'declare' 메소드 유발
+  ```
+
+<br>
+
+<br>
 
 #### Reference)
 
