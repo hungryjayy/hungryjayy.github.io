@@ -1,19 +1,21 @@
 # CORS: Cross-Origin Resource Sharing
 
+<br>
 
+## CORS란?, 특징
 
-## CORS란
-
-* HTTP 헤더를 사용해 애플리케이션이 **다른 origin 리소스에 접근할 수 있게**, **다른 origin에서 나의 resource에 함부로 접근하지 못하게** 하기 위해 사용하는 메커니즘
+* **HTTP 헤더**를 사용해 애플리케이션이 **다른 origin 리소스에 접근할 수 있게**, **다른 origin이 나의 resource에 함부로 접근하지 못하게** 하기 위해 사용하는 메커니즘
   * HTTP 헤더의 Origin과 관련이 있음
+* javascript로 만든 크로스 오리진 요청에는 기본적으로 쿠키나 HTTP 인증같은 자격 증명(Credential)이 함께 전송되지 않는다.
+  * credentail과 함께 전송되는 요청은 영향력이 강하기 때문에, javascript로 민감한 정보에 접근할 수 있기 때문
 * 처음 전송되는(받는) Origin에 대한 요청은 **cross-origin HTTP**에 의해 처리됨.
 * **필요 이유: 보안상의 이유**
   * 서비스하고 있지 않은 브라우저에서 세션을 요청해 획득한다면 악의적인 행동을 할 수 있음
 * **Preflight ?**
   * 사전 전달 메시지, 이걸 통해 "허가"를 받게 되면 그때부터 실제 정보 요청
-  * OPTIONS 메서드를 통해
+  * `OPTIONS` 메서드를 통해
 
-
+<br>
 
 #### Origin과 domain의 차이
 
@@ -31,7 +33,7 @@
   e.g) https://developer.mozilla.org
   ```
 
-
+<br>
 
 ## 동작 방식
 
@@ -42,29 +44,34 @@
 
 <img src="https://mdn.mozillademos.org/files/17214/simple-req-updated.png" alt="img" style="zoom: 67%;" />
 
-
+<br>
 
 ## Simple request
 
-* 일부 요청은 Preflight를 트리거하지 않는다. 다음의 조건들을 만족하는 Simple Request 여야 한다.
-  1. GET, HEAD, POST
+* 일부 요청은 Preflight를 트리거하지 않는다. 다음의 조건들을 **모두** 만족하는 **Simple Request** 여야 한다.
+  1. GET, HEAD, POST (데이터 변화시킬 위험 없는 **안전한 메서드**)
   2. User Agent가 자동으로 설정한 헤더 + CORS-safelisted request 헤더
   3. Content-type 헤더는 아래의 세개만 가능
      * `application/x-www-form-urlencoded`, `multipart/form-data` , `text/plain` 
 
-* 예시
+
+e.g) preflight 트리거한 예제
 
 <img src="https://mdn.mozillademos.org/files/16753/preflight_correct.png" alt="img"  /> 
 
-1. Post요청과 함께 보냄, 2. Content-type이 `application/xml`, 3. 사용자 정의 헤더이기 때문에 preflighted 처리.
+* main 요청은 Cross-Origin 요청이기 때문에 `Origin:` 이 붙는다.
 
+1. `Post` 메서드 요청
+2. `Content-type` 이 `application/xml`
+3. 그런데, **사용자 정의 헤더**이기 때문에 **preflighted** 처리.
 
+<br>
 
 ## 헤더 목록
 
 *위의 예시 or MDN 자세한 예시 참고*
 
-
+<br>
 
 ### Request(서버에게)
 
@@ -72,7 +79,7 @@
 * Access-Control-Request-Method(`preflight` 과정에서) : 실제 요청에서 **어떤 메서드**를 사용할 것인지
 * Access-Control-Request-Headers(`preflight` 과정에서) : 실제 요청에서 **어떤 header**를 사용할 것인지
 
-
+<br>
 
 ### Response(서버에서)
 
@@ -92,7 +99,7 @@
   - `preflight`요청에 대한 응답의 일부로 사용되는 경우 실제 요청을 수행 할 수 있는지를 나타냅니다.
   - 간단한 GET 요청은 `preflight`되지 않으므로 자격 증명이 있는 리소스를 요청하면 헤더가 리소스와 함께 반환되지 않으면 브라우저에서 응답을 무시하고 웹 콘텐츠로 반환하지 않음
 
-
+<br>
 
 ## 멱등(idempotent) vs 비멱등
 
@@ -104,16 +111,61 @@
   * 요청에 앞서 Preflight(사전전달)를 해야한다. -> `OPTIONS` 사용
     * Handshake 절차.
 
+<br>
 
+## COR의 역사
+
+* **한 사이트의 스크립트**에서 **다른 사이트에 있는 콘텐츠에 접근할 수 없다**는 제약이 있었다.
+  * 따라서 `hacker.com`에서 `gmail.com`에 접근할 수 없었다. - 해커의 접근 방지
+* 제약을 피하는 **트릭**: 제약 때문에 웹 페이지는 자유롭지 못했고, **웹 개발자들이 강력한 기능을 원하면서** 트릭을 만들어 냄.
+
+<br>
+
+### 트릭
+
+1. Form 사용 : `<form>` 태그에 `<iframe>` 를 넣어 전송해 네트워크(GET, POST) 요청
+
+   * 그러나, 다른 사이트에서  `<iframe>` 의 콘텐츠를 읽는 것이 금지되었어서, 응답을 읽는 것 불가능했음
+
+2. Script 사용 : `<script>` 태그에 `src` 속성값을 이용해 보내는 것
+
+   ```javascript
+   // 1. 날씨 데이터를 처리하는데 사용되는 함수를 선언
+   function gotWeather({ temperature, humidity }) {
+     alert(`temperature: ${temperature}, humidity: ${humidity}`);
+   }
+   ```
+
+   ```javascript
+   // 2. 다음과 같은 script 태그를 만듦. 스크립트는 동적으로 생성
+   let script = document.createElement('script');
+   script.src = `http://another.com/weather.json?callback=gotWeather`;
+   document.body.append(script);
+   ```
+
+   ```javascript
+   // 실행 결과
+   gotWeather({ temperature: 25, humidity: 78 });
+   ```
+
+   * 리모트 서버에서 받아온 스크립트가 실행되면 `gotWeather` 함수가 호출됨. 이 함수는 현재 페이지에서 만들었기도 하고, 리모트 서버(`weather.com`)에서 받은 데이터도 있기 때문에 원하는 결과를 얻음.
+
+3. 위의 과정들을 거쳐, 명시적으로 cross origin 요청 허가를 알려주는 cors가 생겨나게 됨
+
+<br><br>
+
+<br><br>
 
 #### Reference)
+
+#### 모던 Javascript 튜토리얼 - https://ko.javascript.info/fetch-crossorigin
+
+#### https://developer.mozilla.org/ko/docs/Web/HTTP/CORS
 
 #### https://hannut91.github.io/blogs/infra/cors
 
 #### https://velog.io/@josworks27/CORS-%EA%B8%B0%EC%B4%88-%EA%B0%9C%EB%85%90
 
 #### https://zzossig.io/posts/web/what_is_cors/
-
-#### https://developer.mozilla.org/ko/docs/Web/HTTP/CORS
 
 #### https://medium.com/@woody_dev/cors-cross-origin-resource-sharing-cea401fb79b6
