@@ -1,6 +1,6 @@
-# TypeScript 특징(vs Javascript)
+# Javascript 기초, 문법
 
-
+<br>
 
 ## JavaScript
 
@@ -9,50 +9,16 @@
   * 컴파일 error: 컴파일 타임에 발생. 주로 문법적 오류
 * 비교적 유연하게 개발할 수 있는 환경 제공
 
-
+<br>
 
 ## TypeScript
 
 * TS는 JS 기반으로 만들어졌다.(컴파일 시 javascript 파일로 컴파일됨.)
-* 정적 타입을 지원해서 컴파일 단계에서 오류를 포착 가능.
-  * 타입을 명시함으로써 가독성 또한 높다.
-* 객체지향 언어로, 데이터 추상화에 중심을 두는 언어.
+* 정적 타입을 지원해서 **컴파일 단계에서 오류를 포착** 가능.
+  * 타입을 명시함으로써 **가독성** 또한 높다.
+* **객체지향** 언어로, 데이터 추상화에 중심을 두는 언어.
 
-
-
-## Hoisting
-
-- 사전적 의미: 끌어올리기. **선언되는 모든 변수는 호이스트된다**.(끌어올려진다)
-- 따라서 변수의 정의가 그 범위에 따라 선언과 할당으로 분리 되는것.
-- 함수 선언이 함수를 실행하는 부분보다 뒤에 있어도 **JS엔진은 실행되기 전에 함수 선언을 끌어올리기 때문에** 가능하다.
-- 다만 변수의 **선언**만 끌어올려지지, **할당**은 끌어올리지 않으므로 할당보다 앞에서 출력하면 `undefined` 된다.
-- **var hoisting 문제.** -> 'use strict'를 사용해 방지
-
-```typescript
-  /** --- JS Parser 내부의 호이스팅(Hoisting)의 결과 - 위와 동일 --- */
-  var foo2; // [Hoisting] 함수표현식의 변수값 "선언"
-
-  function foo() { // [Hoisting] 함수선언문
-          console.log("hello");
-  }
-
-  foo();
-  foo2(); // ERROR!! 
-
-  foo2 = function() { 
-          console.log("hello2");
-  }
-
-https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
-```
-
-#### Reference)
-
-#### https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
-
-
-
-
+<br>
 
 ## Closure
 
@@ -74,7 +40,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 
   * 여기서 outer 내부의 name 변수를 자유변수라고 한다.
 
-
+<br>
 
 
 * 어떤 데이터(환경)과 그 데이터를 조작하는 함수를 연관시킨다.
@@ -98,7 +64,9 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 
   #### reference) https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
-  
+
+<br>
+
 
 * 이러한 맥락에서 객체지향과 비슷하다.(어떠한 데이터 자체는 숨기고, 그 데이터를 조작하는 메서드는 노출한다)
 
@@ -121,7 +89,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
   2
   ```
 
-
+<br>
 
 ## arrow function
 
@@ -153,7 +121,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
   var p = new Person();
   ```
 
-
+<br>
 
 ## var, let, const
 
@@ -169,7 +137,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 
 * var hoisting 방지를 위해 'use strict'
 
-  
+  <br>
 
   #### 예-1) var hoisting
 
@@ -227,7 +195,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
   
   ```
 
-
+<br>
 
 ### let
 
@@ -235,7 +203,7 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 * block scope
 * 재선언 불가, 재할당 가능
 
-
+<br>
 
 ### const
 
@@ -245,15 +213,13 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 * 재선언 불가, 재할당 불가
   * 상수의 경우 const로 선언
 
-
+<br>
 
 #### Reference)
 
 #### https://moollang.tistory.com/10
 
-
-
-
+<br><br>
 
 ## forEach() vs map()
 
@@ -269,16 +235,14 @@ https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html
 
 #### forEach와 map 각각은 서로가 할 일을 대체할 수 있음
 
-
-
-
+<br>
 
 ## Type(대, 소문자 차이점)
 
 * 대문자는 Wrapper object이고, 소문자는 primitive type이다.
 * 따라서 소문자 권장
 
-
+<br>
 
 ## !! (Double Exclamation)
 
@@ -307,9 +271,11 @@ https://hermeslog.tistory.com/279
   * null
   * 0
 
-
+<br><br>
 
 #### Reference)
+
+#### 모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
 
 #### https://moollang.tistory.com/10
 
