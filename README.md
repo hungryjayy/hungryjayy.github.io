@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_156 TILs and counting..._
+_157 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Javascript란?](Typescript_javascript/Javascript란.md) - Wed Jul 28 23:50:14 2021 +0900
 - [HTTP 메서드](HTTP/HTTP_메서드.md) - Thu Jul 22 17:25:55 2021 +0900
-- [HTTP 메시지](HTTP/HTTP_메시지.md) - Thu Jul 22 17:25:55 2021 +0900
 
 ### Categories
 
@@ -188,6 +188,7 @@ _156 TILs and counting..._
 - [async / await](Typescript_javascript/Async_Await.md)
 - [Callback](Typescript_javascript/Callback.md)
 - [Issues](Typescript_javascript/Issues.md)
+- [Javascript란?](Typescript_javascript/Javascript란.md)
 - [Promise 1 - Promise 기초](Typescript_javascript/Promise-1.md)
 - [Promise 2 - Error 처리](Typescript_javascript/Promise-2.md)
 - [Promise 3 - Promise API, MicroTask](Typescript_javascript/Promise-3.md)

@@ -1,78 +1,87 @@
 # Docker 용어, 환경설정 기본 개념
 
+<br>
+
+## 사용하는 이유
+
+1. **가상환경** : 애플리케이션을 서비스로 돌리는데 필요한 종속 항목들을 띄워, 빠르고 가볍게 실행할 수 있다.
+2. 협업 시 팀원들과 일관된 환경들로 구성해 사용가능(개발환경, 운영환경, 스테이지, ..)
+3. 수많은 서비스들을 이용해보고싶을 때 일일이 다운 안받고 그냥 도커 환경에 docker hub의 이미지를 받아서 실행 가능
+
+<br>
+
 ## 용어
 
 ![img](https://blog.kakaocdn.net/dn/cHvenO/btqCwXNywRD/gau1eJ5ShKmlWWEWgZUF2K/img.png)
 
-* Container
-  * 애플리케이션을 종속적 객체(라이브러리 등)과 함께 묶어놓은 관리 환경
-  * 만들어놓은 Image를 실행한 상태
-  * 장점
-    * 작은 단위로 개발, 운영 가능하다
-    * 가상머신에 비해 가볍다(배포에 소요되는 시간이 상대적으로 적다)
-    * 어느 환경에서나 구동 가능
+### Container
 
+* 애플리케이션을 종속적 객체(라이브러리 등)과 함께 묶어놓은 관리 환경
+* 만들어놓은 **Image를 실행한 상태**
+* **장점**
+  * 작은 단위로 개발, 운영 가능하다
+  * 가상머신에 비해 가볍다(배포에 소요되는 시간이 상대적으로 적다는데, 가상머신은 안써봐서 모름)
+  * 어느 환경에서나 구동 가능
 
+<br>
 
-* Image
-  * 환경설정, 소스코드, 의존성 등을 설정한 상태의 하나의 버전
-    * 만들어진 이미지이기 때문에 불변
+### Image
 
+* **환경설정**, **소스코드**, 의존성 등을 설정한 상태의 하나의 버전
+  * 이미 만들어진 이미지이기 때문에 불변
+* Hub에 있는 이미지가 아니면 직접 `Dockerfile`로 구성해서 이미지를 만들고 사용 가능
+  * 이걸 팀원들과 공유해야할 땐? private registry를 구성해 이미지를 올려놓고, 여러개를 쉘스크립트 같은거로 한번에 다운받을 수 있음
 
+<br>
 
-* Docker daemon
+### Docker daemon
 
-  * client로 부터 API 입력을 받아 host machine에서 이미지나 컨테이너 등의 도커 객체들을 관리
+* Client(사용자 에이전트?)로 부터 CLI(API) 입력을 받아 host machine에서 **이미지**나 **컨테이너** 등의 도커 객체, 컴포즈 환경, 네트워크 등 모든걸 관리
+* 보통 docker daemon(server)와 client는 같은 machine 내에 존재한다.
+* 설정을 통해 client가 원격(remote)으로 server에 docker command 전달할 수 있다. (e.g 스웜 환경)
 
-  * 보통 docker daemon(server)와 client는 같은 machine 내에 존재한다.
+<br>
 
-    → 설정을 통해 client가 원격(remote)으로 server에 docker command 전달할 수 있다.
+### Docker host
 
+* daemon을 실행하고, image, container를 관리 (== 호스트 컴퓨터?)
 
+<br>
 
-* Docker host
-  * daemon을 실행하고, image, container를 관리
+### Docker client
 
+* 사용자의 CLI를 요청으로 바꿔 보내주는 역할?
 
+* docker는 server/client 구조이다.
 
-* Docker client
+* docker command는 HTTP 프로토콜을 이용하는 REST API이다.
 
-  * 사용자의 CLI를 요청으로 바꿔 보내주는 역할?
+  * 도커 CLI는 내부적으로 GO언어를 통해 API들이 구현되어있다고 함.
+  
+    e.g) `docker ps` 라는 CLI는 docker server에 `GET api-version/containers` 라는 요청을 보내는 것과 같다.
 
-  * docker는 server/client 구조이다.
+<br>
 
-  * docker command는 HTTP 프로토콜을 이용하는 restapi이다.
+### Docker-compose
 
-    e.g) `docker ps` 라는 CLI는 docker server에 GET api-version/containers 라는 요청을 보내는 것과 같다.
+* 다수의 컨테이너를 한번에 실행시키기 위한 도구
+* 각 컨테이너의 설정들을 모두 갖고 있다.
+* 같은 네트워크로 구성할때 편리
 
+<br>
 
+### Docker engine
 
-* Docker-compose
-  * 다수의 컨테이너를 한번에 실행시키기 위한 도구
-  * 각 컨테이너의 설정들을 모두 갖고 있다.
+* client, server를 통틀어 engine이라고 함.
+* 이미지 생성, 컨테이너 실행
 
-
-
-* Docker engine
-  * client, server를 통틀어 engine이라고 함.
-  * 이미지 생성, 컨테이너 실행
-
-
-
-#### reference 
-
-* https://tech.osci.kr/2020/03/03/91690167/
-* https://senticoding.tistory.com/94
-
-
+<br><br>
 
 ## docker compose 환경변수 설정
 
-* Docker-compose.yml에서 `${VARNAME}`의 표기를 하는 경우 해당 YAML 파일을 처리하는 동안에 compose에서 이 변수를 동적으로 읽는다.
+* Docker-compose.yml에서 `${VARNAME}`의 표기를 하는 경우 해당 yaml 파일을 처리하는 동안에 compose에서 이 변수를 **동적으로** 읽는다.
 
-  * 따라서 `image: rabbitmq:${RABBITMQ_VERSION}` 이와 같을 경우
-
-  * CLI에서 `RABBITMQ_VERSION=2 docker-compose up` 이와 같이 버전 조절 가능.
+  * 따라서 `image: rabbitmq:${RABBITMQ_VERSION}` 이와 같을 경우 **CLI를 통해** `RABBITMQ_VERSION=2 docker-compose up` 이와 같이 버전 조절 가능.
 
 * 또한, `.env`파일에 값을 저장하거나 CLI에서 설정하거나, YAML 안에서 `${GHOST_VERSION:-2}` 등의 방식으로 변수 설정 가능
 
@@ -81,8 +90,16 @@
       파라미터가 세팅이 안되어있거나 null인 경우 word로 대체된다.
   ```
 
-* docker-compose의 container 부분에서 `${DB_PORT:-3306}:3306` 이와 같은 것은 포트 포워딩의 개념으로 추측. 
+* docker-compose의 container 부분에서 `${DB_PORT:-3306}:3306` 이렇게 포트 바인딩 가능
 
   * 외부포트 : 호스트 포트
 
-  
+<br><br>
+
+#### reference 
+
+#### https://docs.docker.com/get-started/overview/
+
+#### https://tech.osci.kr/2020/03/03/91690167/
+
+#### https://senticoding.tistory.com/94
