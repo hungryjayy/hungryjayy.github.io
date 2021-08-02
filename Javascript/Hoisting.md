@@ -36,19 +36,24 @@ function foo(text) {
   console.log(foo); // 2
   ```
 
-- 함수의 경우도 마찬가지.
+- 함수의 경우도 마찬가지. 그러나, **선언문**과 **표현식**에서 차이가 있다.
 
+  - **함수 선언문**: 자바스크립트 엔진은 스크립트 실행 전, 초기화 단계에서 전역에 선언된 함수 선언문을 찾고, 해당 함수를 생성.
+  - **함수 표현식**: 실행 흐름이 `let foo = function...`의 우측 표현식에 도달했을 때 함수가 생성된다.
+    - 이 방식대로 한다면, 함수가 할당된 변수가 존재하는 컨택스트라면 해당 함수를 사용 가능하다는 특징
+    - 함수를 값처럼 할당, 복사
+  
   ```javascript
     var foo2; // 변수값 선언
   
-    function foo() { // 함수 선언
+    foo(); // hello
+    foo2(); // Error: foo2 is not a function.
+  
+    function foo() { // 함수 선언식
         console.log("hello");
     }
   
-    foo();
-    foo2(); // Error: foo2 is not a function.
-  
-    foo2 = function() { // 함수 선언 (호이스팅 x)
+    foo2 = function() { // 함수 표현식 (호이스팅 x). 실제로 도달했을 때 함수 선언.
         console.log("hello2");
     }
   ```
