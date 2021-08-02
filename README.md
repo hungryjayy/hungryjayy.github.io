@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_157 TILs and counting..._
+_160 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Javascript란?](Typescript_javascript/Javascript란.md) - Wed Jul 28 23:50:14 2021 +0900
 - [HTTP 메서드](HTTP/HTTP_메서드.md) - Thu Jul 22 17:25:55 2021 +0900
+- [HTTP 메시지](HTTP/HTTP_메시지.md) - Thu Jul 22 17:25:55 2021 +0900
 
 ### Categories
 
@@ -27,6 +27,7 @@ _157 TILs and counting..._
 - [HTTP](#HTTP)
 - [JPA](#JPA)
 - [Java](#Java)
+- [Javascript](#Javascript)
 - [Kafka](#Kafka)
 - [Kotlin](#Kotlin)
 - [Kubernetes](#Kubernetes)
@@ -37,7 +38,6 @@ _157 TILs and counting..._
 - [Redis](#Redis)
 - [Socket](#Socket)
 - [Spring_Boot](#Spring_Boot)
-- [Typescript_javascript](#Typescript_javascript)
 - [WebRTC](#WebRTC)
 - [etc.](#etc.)
 - [객체지향](#객체지향)
@@ -105,6 +105,24 @@ _157 TILs and counting..._
 - [Java Servlet](Java/Servlet.md)
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
 
+### [Javascript](#Javascript)
+- [async / await](Javascript/Async_Await.md)
+- [Callback](Javascript/Callback.md)
+- [Hoisting](Javascript/Hoisting.md)
+- [Issues](Javascript/Issues.md)
+- [Javascript 기초, 문법](Javascript/Javascript_basic.md)
+- [Javascript란?](Javascript/Javascript란.md)
+- [Promise 1 - Promise 기초](Javascript/Promise-1.md)
+- [Promise 2 - Error 처리](Javascript/Promise-2.md)
+- [Promise 3 - Promise API, MicroTask](Javascript/Promise-3.md)
+- [this vs self](Javascript/this_self.md)
+- ['use strict'](Javascript/use_strict.md)
+- [논리연산자(&&, ||)와 단축평가](Javascript/논리연산자_단축평가.md)
+- [Sync, Async, blocking, non-blocking](Javascript/동기_비동기_block_non-block.md)
+- [동치연산자 '==' vs '==='](Javascript/동치연산자.md)
+- [정규표현식(pattern matching)](Javascript/정규표현식(pattern_matching).md)
+- [함수의 메서드 (call, apply, bind)](Javascript/함수의_메서드_call_apply_bind.md)
+
 ### [Kafka](#Kafka)
 - [Kafka 아키텍처](Kafka/Kafka_아키텍처_Partition_Consumer_group_등.md)
 - [Kafka 이해하기 (vs rabbitMQ)](Kafka/Kafka_이해하기(vs_rabbitMQ).md)
@@ -144,6 +162,7 @@ _157 TILs and counting..._
 - [Node.js란?](Node.js/Node.js_란.md)
 - [Sequelize에서 DB Migration하기](Node.js/Sequelize_DB_Migration.md)
 - [Event loop, 비동기 처리의 흐름](Node.js/이벤트루프_비동기.md)
+- [테스트 자동화와 Mocha](Node.js/테스트자동화_Mocha.md)
 
 ### [REST_API](#REST_API)
 - [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징_6가지_원칙.md)
@@ -183,22 +202,6 @@ _157 TILs and counting..._
 - [디렉토리 구성, 패키지 구조](Spring_Boot/디렉토리_구성_패키지_구조.md)
 - [Annotation](Spring_Boot/어노테이션.md)
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
-
-### [Typescript_javascript](#Typescript_javascript)
-- [async / await](Typescript_javascript/Async_Await.md)
-- [Callback](Typescript_javascript/Callback.md)
-- [Issues](Typescript_javascript/Issues.md)
-- [Javascript란?](Typescript_javascript/Javascript란.md)
-- [Promise 1 - Promise 기초](Typescript_javascript/Promise-1.md)
-- [Promise 2 - Error 처리](Typescript_javascript/Promise-2.md)
-- [Promise 3 - Promise API, MicroTask](Typescript_javascript/Promise-3.md)
-- [TypeScript 특징(vs Javascript)](Typescript_javascript/Typescript.md)
-- [this vs self](Typescript_javascript/this_self.md)
-- [논리연산자(&&, ||)와 단축평가](Typescript_javascript/논리연산자_단축평가.md)
-- [Sync, Async, blocking, non-blocking](Typescript_javascript/동기_비동기_block_non-block.md)
-- [동치연산자 '==' vs '==='](Typescript_javascript/동치연산자.md)
-- [정규표현식(pattern matching)](Typescript_javascript/정규표현식(pattern_matching).md)
-- [함수의 메서드 (call, apply, bind)](Typescript_javascript/함수의_메서드_call_apply_bind.md)
 
 ### [WebRTC](#WebRTC)
 - [OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리](WebRTC/OWT_WebSocket_분석.md)
