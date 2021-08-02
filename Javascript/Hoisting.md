@@ -53,6 +53,27 @@ function foo(text) {
     }
   ```
 
+* 함수 스코프 내 호이스팅 - 함수 내에서만 호이스팅 된다.
+
+  ```javascript
+  function foo() {
+    for(var j = 0; j < 10; j++) {
+      alert(j);
+    }
+  }
+  foo();
+  
+  (function () { // IIFE
+    for(var i = 0; i < 10; i++) {
+      alert(i);
+    }
+  })()
+  
+  console.log(i); // Error: i is not defined
+  console.log(j); // 실행도 안되고, 되어도 Error: j is not defined
+  ```
+
+
 <br><br>
 
 #### Reference)
