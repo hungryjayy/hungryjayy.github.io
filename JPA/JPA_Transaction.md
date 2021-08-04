@@ -28,14 +28,20 @@
 
 * transaction에서 일관성 없는 데이터를 허용하는 수준.
 * 격리 수준이 올라갈수록 성능 저하 이슈
-* 종류
-  * DEFAULT : 기본격리수준
-  * READ_UNCOMMITED(0): 커밋되지 않는 데이터 읽기 허용(더티캐시 발생가능)
-  * READ_COMMITED(1): 커밋된 데이터만 읽음(더티캐시 방지)
-  * REPEATABLE_READ(2): 트랜잭션 완료시 까지 select가 사용되는 모든 데이터에 shared lock. 다른 사용자는 해당 영역 수정 불가해짐.(Repeatable read 방지)
-    * Repeatable read: 한 트랜잭션에서 두번 조회할 때 두개의 값이 달라져버림.(**수정, 삭제**) 따라서, 한 트랜잭션에서 여러 스냅샷이 사용되는 경우
-  * SERIALIZABLE(3): 수정 및 입력까지 불가능(Phantom read 방지)
-    * Phantom read: 한 트랜잭션 조회에서 다른 레코드가 추가될 것도 방지(**생성**). 완전한 단계의 read only
+* **Read 오류**
+  * Dirty read: **다른 트랜젝션에 의해 수정되어 값이 달라졌지만**, 아직 커밋은 되지 않은 데이터를 **읽는 것**
+  * Repeatable read: 선행 트랜잭션이 읽은 데이터를 후행 트랜잭션이 **수정, 삭제**. 따라서, **한 트랜잭션에서 여러 스냅샷이 사용**되는 경우
+  * Phantom read: 한 트랜잭션 조회에서 다른 레코드를 **삽입**할 것 방지.
+* **격리 수준 종류**
+  * **level 0** - **READ_UNCOMMITED**: 변경사항이 커밋되지 않는 데이터 읽기 허용
+    * **Dirty read**, **repeatable read**, **phantom read** 발생
+  * **level 1** - **READ_COMMITED**: 변경사항이 커밋되어 확정된 데이터만 읽음
+    * **repeatable read**, **phantom read** 발생
+    * 대부분의 DBMS가 이걸 디폴트로
+  * **level 2** - **REPEATABLE_READ**: **선행 트랜잭션이 읽는(select하는)** 모든 데이터에 **shared lock**. 다른 트랜잭션은 해당 영역 수정 및 삭제 불가해짐.
+    * **phantom read** 발생
+  * **level 3** - **SERIALIZABLE**: 선행 트랜잭션이 읽는 데이터에 새로운 레코드 **삽입**까지 불가능 - **update lock**
+    * 완전한 단계의 LOCK
 
 2. propagation
    * 트랜잭션 도중 다른 트랜잭션 호출시 선택 옵션
