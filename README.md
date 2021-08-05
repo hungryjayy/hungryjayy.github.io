@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_160 TILs and counting..._
+_161 TILs and counting..._
 
 ---
 
@@ -39,7 +39,7 @@ _160 TILs and counting..._
 - [Socket](#Socket)
 - [Spring_Boot](#Spring_Boot)
 - [WebRTC](#WebRTC)
-- [etc.](#etc.)
+- [개발](#개발)
 - [객체지향](#객체지향)
 - [네트워크](#네트워크)
 - [소프트웨어공학](#소프트웨어공학)
@@ -209,10 +209,11 @@ _160 TILs and counting..._
 - [OWT server 토큰 생성 과정 분석](WebRTC/OWT_server_토큰_생성과정.md)
 - [WebRTC & OWT](WebRTC/webRTC_&_OWT.md)
 
-### [etc.](#etc.)
-- [Issues](etc./Issues.md)
-- [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](etc./도메인_로직패턴.md)
-- [코드 깔끔하게 작성하기](etc./코드_깔끔하게_작성하기.md)
+### [개발](#개발)
+- [Issues](개발/Issues.md)
+- [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](개발/도메인_로직패턴.md)
+- [코드 깔끔하게 작성하기](개발/코드_깔끔하게_작성하기.md)
+- [파라미터의 역할](개발/파라미터의_역할.md)
 
 ### [객체지향](#객체지향)
 - [객체지향적 설계 원칙 - SOLID 원칙](객체지향/SOLID원칙.md)
