@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_161 TILs and counting..._
+_162 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [비밀번호 대신 PAT(Personal Access Token) 받아 사용하기](Git/Access_Token_사용.md) - Sun Aug 15 18:16:53 2021 +0900
 - [HTTP 메서드](HTTP/HTTP_메서드.md) - Thu Jul 22 17:25:55 2021 +0900
-- [HTTP 메시지](HTTP/HTTP_메시지.md) - Thu Jul 22 17:25:55 2021 +0900
 
 ### Categories
 
@@ -77,6 +77,7 @@ _161 TILs and counting..._
 - [도커 스웜(Docker Swarm)](Docker/도커_스웜(Docker_Swarm).md)
 
 ### [Git](#Git)
+- [비밀번호 대신 PAT(Personal Access Token) 받아 사용하기](Git/Access_Token_사용.md)
 - [Issues](Git/Issues.md)
 
 ### [HTTP](#HTTP)
