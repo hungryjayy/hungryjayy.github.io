@@ -1,20 +1,29 @@
 # NPM CLI
 
+<br>
+
+## 기본 CLI
+
 * `npm init` : package.json 생성
-
-
 
 * `npm install` : 패키지 설치
   * 현재의 package.json에 맞게 모듈 맞춰줌
-  * `--dev` 를 붙이면 devdependencies 에 등록된다.
-  * 개발 환경에만 필요한 패키지
+  * `--dev` 를 붙이면 dev dependencies 에 등록된다.
   * 프로덕션 환경에서는 적용되지 않음?
     * 프로덕션 환경: 라이브 환경(실제 실행한 상황)
 
+* `npm start`: 패키지 시작
 
+* `npm update`: 패키지 업데이트
 
-* npm start: 패키지 시작
+<br>
 
+## 노드 버전 관리
 
+* `nvm use 14.15.4` : 14.15.4 사용할 것이다.(현재의 터미널 탭에 한해서)
+  * 따라서, 새로운 bash에서 `nvm version` 을 쳐보면 이전 버전(default)를 사용하고 있다고 나오는 것 확인 
+* `nvm alias default node` : 최신 버전을 디폴트로
+* `nvm alias default node 14.15.4` 해당 버전을 디폴트로
+  * 혹은 `bashrc`에서 스크립트를 수정하면, 새로운 bash가 뜰 때 해당 스크립트를 수행하고, 그 때마다 버전을 바꿔서 실행하게 된다.
 
-* npm update: 패키지 업데이트
+<br>
