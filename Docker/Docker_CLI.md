@@ -51,3 +51,14 @@ docker push {registry 경로}/{무슨 이름으로 올릴지}:{버전 명시}
 
 * 로컬에서 `npm install` 를 해줬었는데, 알고보니 직접 컨테이너 안에서 수행했어야 했다.
   * dev환경 compose 설정 확인해보니, `node_modules`를 따로 관리해주고 있었음.
+* `node_modules:/root/server/node_modules/` 처럼 맵핑되어있었음
+
+<br>
+
+## 볼륨 관련
+
+* `docker volume ls` : 현재 로컬에 있는 도커 볼륨 확인
+
+* `docker volume inspect ${volume name}` : 아래와같이 mount point 등등 확인 가능
+
+  ![image-20210823131900574](./images/inspect.png)

@@ -19,8 +19,9 @@
 ./mongodb/conf.d/mongo.conf:/etc/mongodb.conf
 ```
 
-* 이와 같은 경우 `mongo.conf`(왼쪽)를 `/etc/mongodb.conf`에 마운트 (데이터 볼륨을 컨테이너에 마운트)
+* 이와 같은 경우 `mongo.conf`(왼쪽)를 `/etc/mongodb.conf`에 마운트 (내가 갖고 있는 **데이터 볼륨**을 현재 띄워놓은 **컨테이너**의 해당 위치에 마운트)
   * *마운트: 하드웨어와 특정 디렉토리를 연결하는 것.*
+  * 갖고있는 볼륨 확인 : `docker volume ls`
 
 
 
