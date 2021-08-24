@@ -7,8 +7,21 @@
 ## About
 
 * 2009년 ES5에서 새로운 기능이 추가되면서 **기존 기능 일부가 변경**되어 호환성 이슈가 있었다. JS에서는 그 **변경 사항**을 항상 활성화시키지 않고, `'use strict'`라는 지시자를 사용하는 경우에만 활성화되도록 했다.
+  
   * 따라서, 해당 지시자를 사용하면서 좀더 자바스크립트를 **모던하게(현대적으로)**(모던 자바스크립트) 사용할 수 있게 함.
+  
 * 기본 모드는 sloppy mode(느슨한 모드)라고 부른다.
+
+  * **전통방식**??
+
+  ```javascript
+  if (false) {
+      var x = "hello";
+  }
+  console.log(x);
+  ```
+
+  * 이와같은 코드에서 block scope 내의 변수에 접근 시 error가 아닌 undefined가 띄워졌었다.
 
 <br>
 
@@ -23,6 +36,7 @@
       'use strict';
       // 이 함수는 엄격 모드
     })()
+    ```
 
 * use strict를 선언하면, 취소할 방법은 없음.
 
@@ -89,6 +103,8 @@
 #### Reference)
 
 #### 모던 JavaScript 튜토리얼 https://ko.javascript.info/strict-mode
+
+#### Node.js 디자인패턴
 
 #### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode
 

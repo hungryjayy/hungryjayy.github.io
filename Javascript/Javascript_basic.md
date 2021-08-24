@@ -18,6 +18,7 @@
   console.log(message); // hello
   message = 123456;
   console.log(message); // 123456
+  ```
 
 <br>
 
@@ -97,73 +98,6 @@
 
 <br>
 
-## arrow function
-
-* 간결하다
-
-  ``` javascript
-  materials.map(function(material) { 
-    return material.length; 
-  }); // [8, 6, 7, 9]
-  
-  materials.map((material) => {
-    return material.length;
-  }); // [8, 6, 7, 9]
-  
-  materials.map(({length}) => length); // [8, 6, 7, 9]
-  ```
-
-* this의 범위
-
-  ```javascript
-  function Person(){
-    this.age = 0;
-  
-    setInterval(() => {
-      this.age++; // this는 person 객체(window)를 참조
-    }, 1000);
-  }
-  
-  var p = new Person();
-  ```
-
-<br>
-
-## var, let, const
-
-### var
-
-* 변수 **재선언 가능**
-
-* function scope
-
-* var는 **함수 내부라면 블록 밖이라도** 참조 가능
-
-* 함수 내부에서 var로 선언한 것은 **함수 내부까지만 hoisting**
-
-  * var hoisting 방지를 위해 'use strict'
-
-  <br>
-
-### let
-
-* ES6이후 var을 보완하기 위해 나옴
-* block scope
-* **재선언 불가, 재할당 가능**
-
-<br>
-
-### const
-
-* ES6이후 var을 보완하기 위해 나옴
-* 기본적으로 const를 지향
-* block scope
-* **재선언 불가, 재할당 불가**
-  * 상수의 경우 const로 선언
-* 대문자 상수: `const COLOR_RED = "F00";`
-
-<br>
-
 ## forEach() vs map()
 
 * forEach
@@ -219,6 +153,8 @@ https://hermeslog.tistory.com/279
 #### Reference)
 
 #### 모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
+
+#### Node.js 디자인패턴
 
 #### https://moollang.tistory.com/10
 
