@@ -18,8 +18,9 @@
 
 
 ## Sync + non-blocking
+* 논 블로킹 IO에 접근하는 가장 기본적인 패턴
 * application에서 I/O 요청한 후 return하여 다른 작업 수행하다가 완료되었는지 틈틈히 확인해준다.
-  * 이것이 polling 방식
+  * 이것이 **polling** 방식 (**busy-waiting**)
 * 작업 효율이 좋지 않다고 함
 
 
