@@ -42,7 +42,7 @@
 
 ### 작은 외부 인터페이스
 
-: 최소한의 기능만을 노출 가능
+: 최소한의 기능만을 export로 노출 가능
 
 <br>
 
@@ -61,10 +61,12 @@
 
 #### Http 모듈
 
-* 인터넷에서 데이터를 주고 받을 수 있는 프로토콜
+* HTTP 통신으로 데이터를 주고 받을 수 있는 프로토콜
+  * createServer를 통해 server 객체 생성(웹서버 객체)
 
 #### Express
 
+* 외장 모듈(npm으로 다운)
 * package.json : 모듈 버전, 의존 패키지 관리(npm 이용)
 * Routing: app.js로 routing 역할 수행
   * URI 및 특정 HTTP 요청메소드인 특정 엔드포인트에 대한 요청에 application이 응답하는 방법을 결정
