@@ -10,7 +10,7 @@
 
 * Disk I/O작업은 기본적으로 블로킹 I/O인데, 이걸 매번 block시키면 해당 스레드의 **유휴시간**이 길어지기 때문에 효율적으로 바꿔야 한다.
 
-![disk_io_blocking](/home/joowon/lab/정리/TIL/Node.js/images/disk_io_blocking.png)
+![disk_io_blocking](./images/disk_io_blocking.png)
 
 * 하나의 연결은 한 thread로 처리되는데, block이 많으면 위와같이 유휴시간이 길어진다.
 * 동시성을 처리하기 위해서 각 연결 당 스레드 풀에서 스레드 가져와 할당해줄텐데, 이처럼 스레드 낭비(유휴시간)이 많다면 메모리를 소비하고 context switch를 유발하고, 낭비이다.
@@ -29,7 +29,7 @@
 
 : 각 I/O 작업과 관련된 핸들러를 갖는 것. 
 
-![reactor_pattern](/home/joowon/lab/정리/TIL/Node.js/images/reactor_pattern.png)
+![reactor_pattern](./images/reactor_pattern.png)
 
 * **이벤트가 생성**되어 **디멀티플렉서**에 의해 **이벤트 큐**로 전해지고, **이벤트 루프**에 의해 처리되는 즉시 **각 핸들러는 호출**된다.
 * 핸들러는 (5a)실행을 완료해 **이벤트 루프에 제어를 반환**할 수도, 혹은 새로운 비동기 요청(5b)이 발생해, 제어가 이벤트 루프로 돌아가기 전에**디멀티플렉서에 새로운 이벤트**를 등록(1)할 수도 있다.
