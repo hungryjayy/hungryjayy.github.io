@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_162 TILs and counting..._
+_167 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [비밀번호 대신 PAT(Personal Access Token) 받아 사용하기](Git/Access_Token_사용.md) - Sun Aug 15 18:16:53 2021 +0900
-- [HTTP 메서드](HTTP/HTTP_메서드.md) - Thu Jul 22 17:25:55 2021 +0900
+- [Git: 델타와 스냅샷](Git/Git_델타_스냅샷.md) - Wed Aug 25 16:13:56 2021 +0900
+- [Sync, Async, blocking, non-blocking](Node.js/동기_비동기_block_non-block.md) - Tue Aug 24 17:46:19 2021 +0900
 
 ### Categories
 
@@ -69,7 +69,7 @@ _162 TILs and counting..._
 - [DBCP(DB 커넥션 풀)](Database/커넥션풀.md)
 
 ### [Docker](#Docker)
-- [CLI](Docker/CLI.md)
+- [Docker CLI](Docker/Docker_CLI.md)
 - [Docker 볼륨과 바인드 마운트](Docker/Docker_볼륨과_bind_mount(volume_bind_mount).md)
 - [Docker 용어, 환경설정 기본 개념](Docker/Docker_용어_환경설정_기본_개념.md)
 - [Dockerfile](Docker/Dockerfile.md)
@@ -78,7 +78,9 @@ _162 TILs and counting..._
 
 ### [Git](#Git)
 - [비밀번호 대신 PAT(Personal Access Token) 받아 사용하기](Git/Access_Token_사용.md)
+- [Git: 델타와 스냅샷](Git/Git_델타_스냅샷.md)
 - [Issues](Git/Issues.md)
+- [Squash로 commit 통합하기](Git/Squash_commit_통합.md)
 
 ### [HTTP](#HTTP)
 - [HTTP/1.1 vs HTTP/2.0](HTTP/HTTP1.1_vs_HTTP2.0.md)
@@ -109,6 +111,7 @@ _162 TILs and counting..._
 ### [Javascript](#Javascript)
 - [async / await](Javascript/Async_Await.md)
 - [Callback](Javascript/Callback.md)
+- [ES2015(ES6 이후)에서 달라진 점](Javascript/ES2015_JS.md)
 - [Hoisting](Javascript/Hoisting.md)
 - [Issues](Javascript/Issues.md)
 - [Javascript 기초, 문법](Javascript/Javascript_basic.md)
@@ -119,7 +122,6 @@ _162 TILs and counting..._
 - [this vs self](Javascript/this_self.md)
 - ['use strict'](Javascript/use_strict.md)
 - [논리연산자(&&, ||)와 단축평가](Javascript/논리연산자_단축평가.md)
-- [Sync, Async, blocking, non-blocking](Javascript/동기_비동기_block_non-block.md)
 - [동치연산자 '==' vs '==='](Javascript/동치연산자.md)
 - [정규표현식(pattern matching)](Javascript/정규표현식(pattern_matching).md)
 - [함수의 메서드 (call, apply, bind)](Javascript/함수의_메서드_call_apply_bind.md)
@@ -161,7 +163,10 @@ _162 TILs and counting..._
 - [Issues](Node.js/Issues.md)
 - [NPM CLI](Node.js/NPM_CLI.md)
 - [Node.js란?](Node.js/Node.js_란.md)
+- [Reactor 패턴을 통한 Non-blocking 처리](Node.js/Reactor_Pattern.md)
 - [Sequelize에서 DB Migration하기](Node.js/Sequelize_DB_Migration.md)
+- [Sequelize 연관관계](Node.js/Sequelize_연관관계.md)
+- [Sync, Async, blocking, non-blocking](Node.js/동기_비동기_block_non-block.md)
 - [Event loop, 비동기 처리의 흐름](Node.js/이벤트루프_비동기.md)
 - [테스트 자동화와 Mocha](Node.js/테스트자동화_Mocha.md)
 
