@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_167 TILs and counting..._
+_169 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Git: 델타와 스냅샷](Git/Git_델타_스냅샷.md) - Wed Aug 25 16:13:56 2021 +0900
-- [Sync, Async, blocking, non-blocking](Node.js/동기_비동기_block_non-block.md) - Tue Aug 24 17:46:19 2021 +0900
+- [HTTP 완벽가이드 4장 - 2. HTTP 커넥션](HTTP/HTTP_완벽가이드_4장_2_HTTP_커넥션.md) - Tue Aug 31 00:59:09 2021 +0900
+- [HTTP 완벽가이드 4장 - 1. TCP 커넥션](HTTP/HTTP_완벽가이드_4장_1_TCP_커넥션.md) - Tue Aug 31 00:59:09 2021 +0900
 
 ### Categories
 
@@ -85,12 +85,14 @@ _167 TILs and counting..._
 ### [HTTP](#HTTP)
 - [HTTP/1.1 vs HTTP/2.0](HTTP/HTTP1.1_vs_HTTP2.0.md)
 - [HTTPS와 SSL](HTTP/HTTPS_SSL.md)
-- [HTTP 메서드](HTTP/HTTP_메서드.md)
-- [HTTP 메시지](HTTP/HTTP_메시지.md)
-- [HTTP 상태코드](HTTP/HTTP_상태코드.md)
+- [HTTP 완벽가이드 2장 - URL과 리소스](HTTP/HTTP_완벽가이드_2장_URL_리소스.md)
+- [HTTP 완벽가이드 3장 - 1. HTTP 메시지](HTTP/HTTP_완벽가이드_3장_1_HTTP_메시지.md)
+- [HTTP 완벽가이드 3장 - 2. HTTP 메서드](HTTP/HTTP_완벽가이드_3장_2_HTTP_메서드.md)
+- [HTTP 완벽가이드 3장 - 3. HTTP 상태코드](HTTP/HTTP_완벽가이드_3장_3_HTTP_상태코드.md)
+- [HTTP 완벽가이드 4장 - 1. TCP 커넥션](HTTP/HTTP_완벽가이드_4장_1_TCP_커넥션.md)
+- [HTTP 완벽가이드 4장 - 2. HTTP 커넥션](HTTP/HTTP_완벽가이드_4장_2_HTTP_커넥션.md)
 - [HTTP란](HTTP/HTTP기초.md)
 - [Proxy란](HTTP/Proxy란.md)
-- [URL과 리소스](HTTP/URL_리소스.md)
 
 ### [JPA](#JPA)
 - [Dirty checking](JPA/Dirty_checking.md)
