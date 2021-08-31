@@ -1,4 +1,4 @@
-# Node.js란?
+# Node.js 디자인 패턴 1장 - 1. Node.js란?
 
 * Javascript가 서버에서 동작될 수 있도록 하는 그러한 환경(플랫폼)
 * 구글이 크롬 브라우저 용으로 개발한 V8 JavaScript 엔진으로 빌드된 JS 런타임기

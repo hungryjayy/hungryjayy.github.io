@@ -1,4 +1,4 @@
-# Reactor 패턴을 통한 Non-blocking 처리
+# Node.js 디자인 패턴 1장 - 3. Reactor 패턴을 통한 Non-blocking 처리
 
 : **리소스**(기다리고 있던 DB의 목적 리소스)에서 새 **이벤트를** 사용할 수 있을때까지 **디멀티플렉서**가 차단되다가, 처리된 다음 **이벤트 큐**로 전해지고, **이벤트 루프**에 의해 **핸들러**가 호출되어 반응하는 것
 
@@ -27,7 +27,7 @@
 
 ## Reactor 패턴
 
-: 각 I/O 작업과 관련된 핸들러를 갖는 것. 
+: 각 I/O 작업과 관련된 핸들러를 갖는 것. Javascript의 **Callback은 리액터 패턴의 핸들러**를 구현한 것.
 
 ![reactor_pattern](./images/reactor_pattern.png)
 
