@@ -1,4 +1,4 @@
-# Node.js 디자인 패턴 2장 - 1. 콜백 패턴
+# Node.js 디자인 패턴 2장 - 1. Callback Pattern(콜백 패턴)
 
 <br>
 
@@ -26,7 +26,7 @@ function add(a, b, callback) {
 
 * setTimeout은 `addAsync`로 제어를 돌려주어 제어가 호출자에게 반환된다.
 
-![async_cps](/home/joowon/lab/정리/TIL/Node.js/images/async_cps.png) 
+![async_cps](./images/async_cps.png) 
 
 * 호출 시점의 컨텍스트를 유지하는 것은 **Closure의 특성** 덕분
 
