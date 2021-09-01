@@ -1,4 +1,4 @@
-# 'use strict'
+# 모던 JavaScript 튜토리얼 - 'use strict'
 
 : 엄격한 모드로, 기존에 무시해왔던 것들을 엄격하게 잡아낸다고 이해.
 
@@ -102,11 +102,8 @@
 
 #### Reference)
 
-#### 모던 JavaScript 튜토리얼 https://ko.javascript.info/strict-mode
+#### 모던 JavaScript 튜토리얼 https://ko.javascript.info
 
 #### Node.js 디자인패턴
 
 #### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode
-
-
-

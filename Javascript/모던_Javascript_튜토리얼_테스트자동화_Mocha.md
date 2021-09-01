@@ -1,4 +1,4 @@
-# 테스트 자동화와 Mocha
+# 모던 JavaScript 튜토리얼 - 테스트 자동화와 Mocha
 
 : 개발한 내용의 신뢰성을 높여 궁극적으로 코드 전반의 신뢰도를 높이는 작업
 
@@ -109,5 +109,4 @@ describe("foo", () => {
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
-
+#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info

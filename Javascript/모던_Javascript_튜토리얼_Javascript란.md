@@ -1,4 +1,4 @@
-# Javascript란?
+# 모던 JavaScript 튜토리얼 - Javascript란?
 
 : html 안에 "스크립트"로 작성하고, **브라우저**에서 실행할 수 있는 언어.
 
@@ -33,6 +33,7 @@
   
   </body>
   </html>
+  ```
 
 <br>
 
