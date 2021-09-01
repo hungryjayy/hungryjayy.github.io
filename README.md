@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_169 TILs and counting..._
+_174 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [HTTP 완벽가이드 4장 - 2. HTTP 커넥션](HTTP/HTTP_완벽가이드_4장_2_HTTP_커넥션.md) - Tue Aug 31 00:59:09 2021 +0900
-- [HTTP 완벽가이드 4장 - 1. TCP 커넥션](HTTP/HTTP_완벽가이드_4장_1_TCP_커넥션.md) - Tue Aug 31 00:59:09 2021 +0900
+- [Node.js 디자인 패턴 2장 - 4. Observer Pattern(옵저버 패턴)](Node.js/Node.js_디자인패턴_2장_4_Observer_Pattern.md) - Tue Aug 31 18:18:30 2021 +0900
+- [Node.js 디자인 패턴 2장 - 1. Callback Pattern(콜백 패턴)](Node.js/Node.js_디자인패턴_2장_1_Callback_Pattern.md) - Tue Aug 31 18:18:30 2021 +0900
 
 ### Categories
 
@@ -111,20 +111,22 @@ _169 TILs and counting..._
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
 
 ### [Javascript](#Javascript)
-- [async / await](Javascript/Async_Await.md)
-- [Callback](Javascript/Callback.md)
-- [ES2015(ES6 이후)에서 달라진 점](Javascript/ES2015_JS.md)
 - [Hoisting](Javascript/Hoisting.md)
 - [Issues](Javascript/Issues.md)
 - [Javascript 기초, 문법](Javascript/Javascript_basic.md)
-- [Javascript란?](Javascript/Javascript란.md)
-- [Promise 1 - Promise 기초](Javascript/Promise-1.md)
-- [Promise 2 - Error 처리](Javascript/Promise-2.md)
-- [Promise 3 - Promise API, MicroTask](Javascript/Promise-3.md)
 - [this vs self](Javascript/this_self.md)
-- ['use strict'](Javascript/use_strict.md)
 - [논리연산자(&&, ||)와 단축평가](Javascript/논리연산자_단축평가.md)
 - [동치연산자 '==' vs '==='](Javascript/동치연산자.md)
+- [모던 JavaScript 튜토리얼 - async / await](Javascript/모던_Javascript_튜토리얼_Async_Await.md)
+- [모던 JavaScript 튜토리얼 - Callback](Javascript/모던_Javascript_튜토리얼_Callback.md)
+- [모던 JavaScript 튜토리얼 - Javascript란?](Javascript/모던_Javascript_튜토리얼_Javascript란.md)
+- [모던 JavaScript 튜토리얼 - Promise 1 - Promise 기초](Javascript/모던_Javascript_튜토리얼_Promise_1_Promise_기초.md)
+- [모던 JavaScript 튜토리얼 - Promise 2 - Error 처리](Javascript/모던_Javascript_튜토리얼_Promise_2_Error_처리.md)
+- [모던 JavaScript 튜토리얼 - Promise 3 - Promise API](Javascript/모던_Javascript_튜토리얼_Promise_3_Promise_API.md)
+- [모던 JavaScript 튜토리얼 - Promise 4 - 프라미스화](Javascript/모던_Javascript_튜토리얼_Promise_4_프라미스화.md)
+- [모던 JavaScript 튜토리얼 - Promise 5 - MicroTask](Javascript/모던_Javascript_튜토리얼_Promise_5_MicroTask.md)
+- [모던 JavaScript 튜토리얼 - 'use strict'](Javascript/모던_Javascript_튜토리얼_use_strict.md)
+- [모던 JavaScript 튜토리얼 - 테스트 자동화와 Mocha](Javascript/모던_Javascript_튜토리얼_테스트자동화_Mocha.md)
 - [정규표현식(pattern matching)](Javascript/정규표현식(pattern_matching).md)
 - [함수의 메서드 (call, apply, bind)](Javascript/함수의_메서드_call_apply_bind.md)
 
@@ -164,13 +166,16 @@ _169 TILs and counting..._
 ### [Node.js](#Node.js)
 - [Issues](Node.js/Issues.md)
 - [NPM CLI](Node.js/NPM_CLI.md)
-- [Node.js란?](Node.js/Node.js_란.md)
-- [Reactor 패턴을 통한 Non-blocking 처리](Node.js/Reactor_Pattern.md)
+- [Node.js 디자인 패턴 1장 - 1. Node.js란?](Node.js/Node.js_디자인패턴_1장_1_Node.js_란.md)
+- [Node.js 디자인 패턴 1장 - 2. ES2015(ES6 이후)에서 달라진 점](Node.js/Node.js_디자인패턴_1장_2_ES2015_JS.md)
+- [Node.js 디자인 패턴 1장 - 3. Reactor 패턴을 통한 Non-blocking 처리](Node.js/Node.js_디자인패턴_1장_3_Reactor_Pattern.md)
+- [Node.js 디자인 패턴 2장 - 1. Callback Pattern(콜백 패턴)](Node.js/Node.js_디자인패턴_2장_1_Callback_Pattern.md)
+- [Node.js 디자인 패턴 2장 - 2. 예측할 수 없는 함수](Node.js/Node.js_디자인패턴_2장_2_예측할수_없는_함수.md)
+- [Node.js 디자인 패턴 2장 - 4. Observer Pattern(옵저버 패턴)](Node.js/Node.js_디자인패턴_2장_4_Observer_Pattern.md)
 - [Sequelize에서 DB Migration하기](Node.js/Sequelize_DB_Migration.md)
 - [Sequelize 연관관계](Node.js/Sequelize_연관관계.md)
 - [Sync, Async, blocking, non-blocking](Node.js/동기_비동기_block_non-block.md)
 - [Event loop, 비동기 처리의 흐름](Node.js/이벤트루프_비동기.md)
-- [테스트 자동화와 Mocha](Node.js/테스트자동화_Mocha.md)
 
 ### [REST_API](#REST_API)
 - [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징_6가지_원칙.md)
