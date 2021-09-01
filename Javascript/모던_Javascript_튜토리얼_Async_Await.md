@@ -27,6 +27,17 @@ async function f() {
 ## Error handling
 * Promise가 정상 이행 시 `await promise`는 Promise의 `result`에 저장된 값을 반환. 거부 시 `throw` 문 처럼 Error 던져짐. → `try...catch` 이용해 에러 잡을 수 있음.
 
+* 아래처럼 catch를 추가하지 않거나, async함수에서 `try ... catch` 를 하지 않으면 **처리되지 못한 거부**가 발생
+
+  ```javascript
+  async function f() {
+    let response = await fetch('http://유효하지-않은-url');
+  }
+  
+  // f()는 거부 상태의 프라미스가 됩니다.
+  f().catch(alert); // TypeError: failed to fetch // (*)
+  ```
+
 <br><br>
 
 #### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info

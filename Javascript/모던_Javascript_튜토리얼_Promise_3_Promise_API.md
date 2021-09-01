@@ -1,4 +1,4 @@
-# 모던 JavaScript 튜토리얼 - Promise 3 - Promise API, MicroTask
+# 모던 JavaScript 튜토리얼 - Promise 3 - Promise API
 
 <br>
 
@@ -19,6 +19,8 @@ Promise.all([
 * 이 때 Promise 하나라도 거부되면 `Promise.all`은 거부됨
 	* 에러 발생 시 다른 promise 무시됨.
 * Iterable 객체 아닌 `[1, 2, 3]` 과 같은 ‘일반’ 값도 전달 가능. 이 때 요소가 그대로 결과 배열로 전달 됨.
+* `Promise.race` : `Promise.all`과 비슷하지만, 가장 먼저 처리되는 프라미스 결과만을 반환한다.
+  * 예측하기 어렵다.
 
 <br>
 
@@ -31,6 +33,26 @@ Promise.all([
 
 <br>
 
+### allSettled 폴리필(polyfill)
+
+* 브라우저가 `Promise.allSettled`를 지원하지 않는 버전이라면 아래와 같은 폴리필 구현(코드 이해하기)
+
+```javascript
+if(!Promise.allSettled) {
+  Promise.allSettled = function(promises) {
+    return Promise.all(promises.map(p => Promise.resolve(p).then(value => ({
+      status: 'fulfilled',
+      value
+    }), reason => ({
+      status: 'rejected',
+      reason
+    }))));
+  };
+}
+```
+
+<br>
+
 ## Promise.resolve/reject
 
 `async/await` 문법 후로 거의 사용하지 않음
@@ -38,36 +60,6 @@ Promise.all([
 * `Promise.resolve`: 결과가 `value`인 fulfilled Promise 생성
 
 * `Promise.resolve`: 결과 `error`인 rejected Promise 생성
-
-<br>
-
-## Microtask
-
-* Promise handler는 항상 비동기적으로 실행
-
-```typescript
-let promise = Promise.resolve();
-
-promise.then(() => alert("프라미스 성공!"));
-
-alert("코드 종료");
-```
-
-<br>
-
-*이 코드에서 “코드 종료”가 먼저 출력. 그 이유는?*
-
-- 현재 코드에서 자유로운 상태(**콜스택이 비었을 때**)가 되었을 때 JS engine은 queue(microtask queue)에서 작업을 꺼내 실행(이행된 Promise의 핸들러 `.then`부분)
-
-```typescript
-Promise.resolve()
-	.then(() => alert("프라미스 성공!"))
-	.then(() => alert("코드 종료"));
-```
-
-이와 같이 변경하면 의도대로 출력 가능.
-
-*c.f) 처리되지 못한 거부에서 `unhandledrejection` event는 microtask queue에 있는 모든 작업이 완료되고서도 error가 잡히지 않는다면 발생한다. 따라서 setTimeout으로 error를 잡아 처리해준다면 `unhandledrejection` 가 트리거 된다.*
 
 <br><br>
 

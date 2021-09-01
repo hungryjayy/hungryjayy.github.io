@@ -6,7 +6,7 @@
 
 : 클라이언트와 서버가 TCP 소켓 인터페이스를 사용해 상호작용하는 과정
 
-![socket_with_3way](/Users/joowon/dev/lab/TIL/HTTP/images/socket_with_3way.png) 
+![socket_with_3way](./images/socket_with_3way.png) 
 
 * **위쪽(S1~C2)**에서 소켓 열고, **가운데에서(C3, S5, C4)** TCP 핸드셰이크, 아랫쪽 실제 통신
 

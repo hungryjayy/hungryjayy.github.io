@@ -1,14 +1,13 @@
 # 모던 JavaScript 튜토리얼 - Promise 1 - Promise 기초
-: 처리 성공 여부에 따라 resolve or reject 호출(Promise는 성공 또는 실패만 함)
+: 처리 성공 여부에 따라 resolve or reject 호출
 
 <br>
 
 ## Basic
+* Promise는 **성공 또는 실패**만 한다. 이 때 변경된 상태는 더이상 변하지 않는다.
 * resolve(value): 일이 성공적으로 끝난 경우 `value`(하나 혹은 없음)와 함께 호출
-
 * reject(error): 에러 시 `error`(`Error` 객체 혹은 `Error` 상속받은 객체)와 함께 호출
-
-* 내부 property(개발자가 접근 불가, `try` `catch` `finally` 사용시 가능)
+* 내부 프로퍼티(개발자가 접근 불가)
 	* state: 초기 `pending`/ `resolve()` 시 `fulfilled`, `reject` 시 `rejected`
 	* result: 초기 `undefined` / `resolve()` 시 `value`, `reject` 시 `error`
 <img src = "./images/promise.png">
@@ -45,7 +44,7 @@ error => alert(error) // 실행되지 않음
 <br>
 
 ### finally
-* `.finally(f)`는 `.then(f, f)`와 유사. Promise가 처리(이행되건 거부되건)된다면 `f`가 항상 실행됨.
+* `.finally(f)`는 `.then(f, f)`와 유사. Promise가 처리(**이행되건 거부되건**)된다면 `f`가 항상 실행됨.
 * `finally` 핸들러에는 인수가 없음. Promise의 이행 여부도 알 수 없음(보편적인 동작 만을 수행)
 * `finally`는 자동으로 다음 handler에게 Promise의 결과, 에러 전달
 
