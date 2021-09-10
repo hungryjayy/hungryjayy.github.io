@@ -7,13 +7,13 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_174 TILs and counting..._
+_175 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Node.js 디자인 패턴 2장 - 4. Observer Pattern(옵저버 패턴)](Node.js/Node.js_디자인패턴_2장_4_Observer_Pattern.md) - Tue Aug 31 18:18:30 2021 +0900
+- [모던 JavaScript 튜토리얼 - Prototype](Javascript/모던_Javascript_튜토리얼_prototype.md) - Fri Sep 10 17:53:20 2021 +0900
 - [Node.js 디자인 패턴 2장 - 1. Callback Pattern(콜백 패턴)](Node.js/Node.js_디자인패턴_2장_1_Callback_Pattern.md) - Tue Aug 31 18:18:30 2021 +0900
 
 ### Categories
@@ -125,6 +125,7 @@ _174 TILs and counting..._
 - [모던 JavaScript 튜토리얼 - Promise 3 - Promise API](Javascript/모던_Javascript_튜토리얼_Promise_3_Promise_API.md)
 - [모던 JavaScript 튜토리얼 - Promise 4 - 프라미스화](Javascript/모던_Javascript_튜토리얼_Promise_4_프라미스화.md)
 - [모던 JavaScript 튜토리얼 - Promise 5 - MicroTask](Javascript/모던_Javascript_튜토리얼_Promise_5_MicroTask.md)
+- [모던 JavaScript 튜토리얼 - Prototype](Javascript/모던_Javascript_튜토리얼_prototype.md)
 - [모던 JavaScript 튜토리얼 - 'use strict'](Javascript/모던_Javascript_튜토리얼_use_strict.md)
 - [모던 JavaScript 튜토리얼 - 테스트 자동화와 Mocha](Javascript/모던_Javascript_튜토리얼_테스트자동화_Mocha.md)
 - [정규표현식(pattern matching)](Javascript/정규표현식(pattern_matching).md)
