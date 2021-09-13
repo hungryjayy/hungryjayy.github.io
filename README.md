@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_175 TILs and counting..._
+_176 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [HTTP 완벽가이드 5장 - 웹 서버가 하는 일](HTTP/HTTP_완벽가이드_5장_웹서버가_하는일.md) - Mon Sep 13 22:14:41 2021 +0900
 - [모던 JavaScript 튜토리얼 - Prototype](Javascript/모던_Javascript_튜토리얼_prototype.md) - Fri Sep 10 17:53:20 2021 +0900
-- [Node.js 디자인 패턴 2장 - 1. Callback Pattern(콜백 패턴)](Node.js/Node.js_디자인패턴_2장_1_Callback_Pattern.md) - Tue Aug 31 18:18:30 2021 +0900
 
 ### Categories
 
@@ -91,6 +91,7 @@ _175 TILs and counting..._
 - [HTTP 완벽가이드 3장 - 3. HTTP 상태코드](HTTP/HTTP_완벽가이드_3장_3_HTTP_상태코드.md)
 - [HTTP 완벽가이드 4장 - 1. TCP 커넥션](HTTP/HTTP_완벽가이드_4장_1_TCP_커넥션.md)
 - [HTTP 완벽가이드 4장 - 2. HTTP 커넥션](HTTP/HTTP_완벽가이드_4장_2_HTTP_커넥션.md)
+- [HTTP 완벽가이드 5장 - 웹 서버가 하는 일](HTTP/HTTP_완벽가이드_5장_웹서버가_하는일.md)
 - [HTTP란](HTTP/HTTP기초.md)
 - [Proxy란](HTTP/Proxy란.md)
 
