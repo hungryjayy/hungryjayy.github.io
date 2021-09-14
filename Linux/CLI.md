@@ -13,7 +13,19 @@
 * `grep` : 내가 원하는 키워드가 포함되어있는 행을 찾아주는 명령어
 * `tail -f aaa.log` : aaa.log를 계속 감시하고 있다가 바뀔때마다 리프레시해서 보여줌
   * 실시간 로그 볼때 편함
+  * `-f 5`와 같이 보여줄 라인을 설정 가능
 * `-u` : --unlock
+
+<br>
+
+### grep 사용하기
+
+* AND : `cat a.log | grep 2021-09-14 | grep error|` : 파이프라인을 이용해서 grep 두 조건에 만족하는 문장만
+* OR: `cat a.log | grep -e 2021-09-14 -e error` : 둘중 하나만
+  * 혹은 `cat a.log | grep -E "2021-09-14 | error"`
+* NOT: `cat a.log | grep -v error` : 해당 조건 포함 안하는 경우만
+* `cat a.log | grep -A 10 error` : 해당 줄 아래 10줄까지 보여줄 것
+* `cat a.log | grep -B 10 error` : 해당 줄 위로 10줄 보여줄 것
 
 <br>
 
@@ -39,6 +51,7 @@
     e.g) `find / -name *.log` 
 
 * `whereis`: 실행파일이 어디에 있는지?
+  
   * `whereis ls` : ls 명령어가 어디에있는지?
   * $PATH와 연관 : `echo $PATH` 명령어를 수행하면 bin 밑의 ls를 찾기 위해 PATH에 있는 경로를 전부 찾아다님.
     * 따라서, 어떤 경로에서 ls를 수행하던, 우리가 원하는 ls를 수행 할 수 있는 것
@@ -136,9 +149,7 @@
 * `iptables -I INPUT 1 -p tcp --dport 6379 -j ACCEPT`
 * <-> `ufw allow 2337`과 같은 ufw와 구별해서 사용
 
-<br>
-
-<br>
+<br><br>
 
 #### Reference)
 
