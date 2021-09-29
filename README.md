@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_178 TILs and counting..._
+_179 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [코드 리뷰하기](개발/코드_리뷰하기.md) - Wed Sep 29 16:20:10 2021 +0900
 - [코딩 인터뷰 완전분석 - 해시 테이블](자료구조/코딩_인터뷰_완전분석-해시테이블.md) - Sat Sep 18 16:26:31 2021 +0900
-- [코딩 인터뷰 완전분석 - 연결 리스트(Linked list)](자료구조/코딩_인터뷰_완전분석-연결_리스트.md) - Sat Sep 18 15:53:46 2021 +0900
 
 ### Categories
 
@@ -228,6 +228,7 @@ _178 TILs and counting..._
 - [Issues](개발/Issues.md)
 - [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](개발/도메인_로직패턴.md)
 - [코드 깔끔하게 작성하기](개발/코드_깔끔하게_작성하기.md)
+- [코드 리뷰하기](개발/코드_리뷰하기.md)
 - [파라미터의 역할](개발/파라미터의_역할.md)
 
 ### [객체지향](#객체지향)
