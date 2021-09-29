@@ -89,6 +89,8 @@
 * `who` : 누가 현재 접속해있는지
 *  `sudo useradd -m aaa`
   * `/home`에서 ls를 보면 aaa 사용자가 추가된 것을 보게된다.
+* `su` : switch user
+* `sudo -i` : super user로 login하기 (== `sudo --login`)
 
 <br>
 

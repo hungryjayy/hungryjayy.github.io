@@ -62,3 +62,12 @@ docker push {registry 경로}/{무슨 이름으로 올릴지}:{버전 명시}
 * `docker volume inspect ${volume name}` : 아래와같이 mount point 등등 확인 가능
 
   ![image-20210823131900574](./images/inspect.png)
+
+<br>
+
+## 도커 시스템, 이미지, 컨테이너, 볼륨 삭제
+
+* `docker system prune`
+  * `--volume`, `--images` 등 옵션 붙여줄 수 있음
+* `docker volume prune`
+* `docker images prune`
