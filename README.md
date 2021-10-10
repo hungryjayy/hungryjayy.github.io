@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_179 TILs and counting..._
+_180 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](자료구조/코딩_인터뷰_완전분석-트리_그래프.md) - Sun Oct 10 19:46:44 2021 +0900
 - [코드 리뷰하기](개발/코드_리뷰하기.md) - Wed Sep 29 16:20:10 2021 +0900
-- [코딩 인터뷰 완전분석 - 해시 테이블](자료구조/코딩_인터뷰_완전분석-해시테이블.md) - Sat Sep 18 16:26:31 2021 +0900
 
 ### Categories
 
@@ -280,6 +280,7 @@ _179 TILs and counting..._
 - [이진 탐색 트리(BST)](자료구조/이진탐색트리.md)
 - [이진트리(Binary Tree)](자료구조/이진트리.md)
 - [코딩 인터뷰 완전분석 - 연결 리스트(Linked list)](자료구조/코딩_인터뷰_완전분석-연결_리스트.md)
+- [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](자료구조/코딩_인터뷰_완전분석-트리_그래프.md)
 - [코딩 인터뷰 완전분석 - 해시 테이블](자료구조/코딩_인터뷰_완전분석-해시테이블.md)
 
 [1]: https://simonwillison.net/2020/Apr/20/self-rewriting-readme/
