@@ -2,12 +2,13 @@
 
 <br>
 
-## CORS란?, 특징
+## CORS란?
 
-* **HTTP 헤더**를 사용해 애플리케이션이 **다른 origin 리소스에 접근할 수 있게**, **다른 origin이 나의 resource에 함부로 접근하지 못하게** 하기 위해 사용하는 메커니즘
-  * HTTP 헤더의 Origin과 관련이 있음
+: **HTTP 헤더**를 사용해 애플리케이션이 **다른 origin 리소스에 접근할 수 있게**, **다른 origin이 나의 resource에 함부로 접근하지 못하게** 하기 위해 사용하는 메커니즘
+
+* 정확하게는 CORS란, SOP(Same origin policy, 동일 출처 정책)에 의해 원래는 허용이 안되는 Cross origin 접근을 허용해주는 정책
 * javascript로 만든 크로스 오리진 요청에는 기본적으로 쿠키나 HTTP 인증같은 자격 증명(Credential)이 함께 전송되지 않는다.
-  * credentail과 함께 전송되는 요청은 영향력이 강하기 때문에, javascript로 민감한 정보에 접근할 수 있기 때문
+  * credential과 함께 전송되는 요청은 영향력이 강하기 때문에, javascript로 민감한 정보에 접근할 수 있기 때문
 * 처음 전송되는(받는) Origin에 대한 요청은 **cross-origin HTTP**에 의해 처리됨.
 * **필요 이유: 보안상의 이유**
   * 서비스하고 있지 않은 브라우저에서 세션을 요청해 획득한다면 악의적인 행동을 할 수 있음
@@ -19,25 +20,23 @@
 
 #### Origin과 domain의 차이
 
-* domain: naver.com
+* domain: 도메인(naver.com)
 
-* origin: https://naver.com + 포트
+* origin:**스킴, 도메인, 포트** 
 
-  * 프로토콜 + 포트까지.
+  * e.g) https://naver.com:8080
 
 * 정확한 문법
 
-  ```
+  ```http
   Origin: <scheme> "://" <hostname> [ ":" <port> ]
-  
-  e.g) https://developer.mozilla.org
   ```
 
 <br>
 
 ## 동작 방식
 
-* 브라우저가 리소스 요청 시 헤더에 추가 정보를 담아 보냄
+* 브라우저(크롬이)가 리소스 요청 시 헤더에 추가 정보를 담아 보냄
   * 내 origin은 무엇이고, 어떤 메소드를 사용해서 요청을 할 것이고, 어떤 헤더들을 포함할 것인지
 * 서버는 서버가 응답할 수 있는 origin들을 헤더에 담아서 브라우저에게 보냄
   * 브라우저가 헤더를 보고 해당 origin에서 요청할 수 있다면 리소스 전송을 허용하고 만약 불가능하다면 에러를 발생
