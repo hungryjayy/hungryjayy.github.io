@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_180 TILs and counting..._
+_181 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Transaction과 격리수준](Database/Transaction_isolation.md) - Tue Oct 12 14:52:04 2021 +0900
 - [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](자료구조/코딩_인터뷰_완전분석-트리_그래프.md) - Sun Oct 10 19:46:44 2021 +0900
-- [코드 리뷰하기](개발/코드_리뷰하기.md) - Wed Sep 29 16:20:10 2021 +0900
 
 ### Categories
 
@@ -63,6 +63,7 @@ _180 TILs and counting..._
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
 - [SQL Injection](Database/SQL_injection과_prepared_statement.md)
+- [Transaction과 격리수준](Database/Transaction_isolation.md)
 - [Database 스키마](Database/스키마.md)
 - [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/정규화_1_2_3_BCNF.md)
 - [DB 정규화가 필요한 이유와 함수적 종속](Database/정규화가_필요한이유.md)
