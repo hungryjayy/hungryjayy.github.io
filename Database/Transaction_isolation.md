@@ -13,17 +13,37 @@
 
 <br>
 
-#### ACID를 엄격히 지키면 동시성이 떨어진다고 한다.
+#### ACID를 엄격히 지키면 동시성이 떨어진다.
 
-* 해결하기 위한 방법: transaction에 isolation 단계 설정
+* 동시성을 얻고 안정성을 해결하기 위한 방법: transaction에 isolation 단계 설정
 
 <br>
 
-## Row level Lock의 종류
+## Inno DB lock의 종류
 
-* **Shared lock** - 읽기 잠금. Read 가능, Write 불가. N개의 트랜잭션이 동시에 걸 수 있음. 이게 걸려있으면 다른 트랜잭션은 Exclusive lock을 걸지 못한다.
-* **Exclusive lock** - 쓰기 잠금. R,W 둘다 가능. 다만 한 개의 트랜잭션이 트랜잭션을 걸 수 있음
+***InnoDB이란? MySql을 위한 데이터베이스 엔진***
+
+<br>
+
+#### Lock의 종류
+
+* **Shared lock** - 읽기 잠금. Read 가능, Write 불가. **N개의 트랜잭션이 동시에** 걸 수 있음. 이게 걸려있으면 다른 트랜잭션은 Exclusive lock을 걸지 못한다.
+* **Exclusive lock** - 쓰기 잠금. R,W 둘다 가능. 다만 **한 개의 트랜잭션만이** 트랜잭션을 걸 수 있음
 * **Update lock** - 처음엔 Shared lock처럼 동작. Update할 준비가 되면(**본인 외의 다른 shared lock들이 할당 해제되면**) Exclusive lock으로 변하면서 해당 레코드에 update하게 된다.
+
+<Br>
+
+#### record lock (row lock)
+
+: index record에 락을 걸어버림. 다른 트랜잭션이 해당 row에 대한 변경을 하는 것을 방지
+
+<Br>
+
+#### gap lock
+
+: Where 절 등에 존재하는 조건을 만족하는 새로운 record 삽입을 방지
+
+* 경우에 따라서 테이블 전체가 될 수도 있다.
 
 <br>
 
@@ -32,12 +52,11 @@
 1. **Dirty read**:  **다른 트랜젝션에 의해 수정되어 값이 달라졌지만**, 아직 커밋은 되지 않은 데이터를 **읽는 것**
    * e.g) 트랜잭션 A가 어떤 값을 1에서 2로 변경하고 커밋이 안됐을 때 B가 해당 값을 읽으면 2가 조회 된다. 이 때 A가 롤백되면 B는 잘못된 값을 읽은게 됨
    * 다른 문제들에 비해 발생 확률이 높다.
-2. **Non-repeatable read**: 선행 트랜잭션이 읽은 데이터를 후행 트랜잭션이 **수정, 삭제**. 따라서, **한 트랜잭션에서 여러 스냅샷이 사용**되는 경우
-
-   * e.g) A가 값 1을 읽고 또 해당 쿼리를 실행하기 전에 B가 값을 2로 바꾸고 커밋하면 A의 쿼리 결과가 달라짐.
-
-   * Dirty read에 비해 확률 적다.
-3. **Phantom Read**: 한 트랜잭션 조회에서 다른 레코드를 **삽입**할 것 방지.
+2. **Non-repeatable read**: 커밋된 데이터를 읽긴 하지만, 선행 트랜잭션이 읽은 데이터를 후행 트랜잭션이 **수정, 삭제**. 이후 같은 쿼리를 날리면 값이 달라져 있는 것. 따라서, **한 트랜잭션에서 여러 스냅샷이 사용**되는 경우
+* e.g) A가 값 1을 읽고 또 해당 쿼리를 실행하기 전에 B가 값을 2로 바꾸고 커밋하면 A가 같은 쿼리를 요청했을 때 쿼리 결과가 달라짐.
+   
+* Dirty read에 비해 확률 적다.
+3. **Phantom Read**: 트랜잭션에서 쿼리를 두번 날리면 첫번째에 없던 데이터가 두번째에 생기는 것
    * e.g) 2번과 비슷한 상황. B가 테이블에 값을 추가하면 A의 두 쿼리는 결과가 달라짐
 
 <br>
@@ -52,23 +71,25 @@
 
 <br>
 
-### 종류
+### 격리 수준 레벨 - 발생하는 이상현상으로 이해하기
 
 * **level 0** - **read uncommited**
   * 찾고자 하는 데이터가 커밋되지 않아있어도 그냥 데이터를 읽어온다.
   * **Dirty read**, **non-repeatable read**, **phantom read** 발생
 * **level 1** - **read commited**
+  * shared lock이 사용되지 않은 것.
   * 변경사항이 커밋되어 확정된 데이터만 읽는다.(사실 DB에는 커밋되지 않은 데이터도 적용된 상태이다.)
   * Read 때마다 DB 스냅샷을 만든다.
   * **non-repeatable read**, **phantom read** 발생
   * 대부분의 DBMS가 이걸 디폴트로 한다고 한다.
 * **level 2** - **repeatable read**
+  * shared lock이 사용되는 것.
   * 한 트랜잭션 안에서는 처음 읽을 때 시간을 기록하고, 나중에 데이터를 다시 읽더라도 해당 시점의 데이터(스냅샷)를 읽어온다. - 이 때 로그를  사용
   * **phantom read** 발생
 * **level 3** - **serializable**
-  * `Select` 쿼리가 전부 `Select ... for share` 쿼리로 변환된다. - 테이블에 락을 걸어버린다.
+  * `Select` 쿼리가 전부 `Select ... for share` 쿼리로 변환된다. - **gap lock**을 걸어버린다.
   * 테이블에 걸다보니 데드락에 쉽게 걸릴 수 있다.
-  * 완전한 단계의 LOCK
+  * phantom read도 방지. 완전한 단계의 lock
 
 <br>
 
