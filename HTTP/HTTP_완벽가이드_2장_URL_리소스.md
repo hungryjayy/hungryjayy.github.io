@@ -2,9 +2,9 @@
 
 <br>
 
-## URL
+## URL(uniform resource locator)
 
-: 애플리케이션은 URL을 사용하여 정보에 쉽게 접근 가능
+: 인터넷 상에서의 리소스의 위치. 애플리케이션은 URL을 사용하여 정보에 쉽게 접근 가능.
 
 <br>
 
@@ -32,6 +32,8 @@ http://joowon_son:1234@192.168.0.1:8080/index.html;page=1?key=value#abc
 * 스킴: **어떤 프로토콜**을 사용할지(**http**, ftp, smtp 등)
 
 * 사용자 이름, 비밀번호: 몇몇 스킴에서는 이러한 credential을 사용
+
+  * `ssh -i ${key} ubuntu@${서버주소}` 이러한 ssh cli를 생각해보면, key의 자리에 credential
 
 * 호스트: IP 혹은 호스트명(**리소스가 어디에 호스팅 되어있는지**)
 
@@ -63,7 +65,7 @@ http://joowon_son:1234@192.168.0.1:8080/index.html;page=1?key=value#abc
 : 리소스 위치 전체를 사용하지 않음. 기저(Base) URL 필요
 
 * 상대 URL은 프래그먼트이거나 URL 일부
-* e.g) `http://127.0.0.1:8000/index.html` 에서 **상대 URL**로  `./main.html`을 가리키고 있다면, 절대 URL은 `http://127.0.0.1:8000/main.html`이 되는 것 
+* e.g) `http://127.0.0.1:8000/index.html` 에서 **상대 URL**로  `./main.html`을 가리키고 있다면, 절대 URL은 `http://127.0.0.1:8000/main.html`이 되는 것
 * **장점** : 리소스 집합 경로를 바꾸더라도, 새로운 **기저(base)** URL에 의해 해석되기 때문에 변경에 용이
 
 <br>
@@ -91,10 +93,11 @@ http://joowon_son:1234@192.168.0.1:8080/index.html;page=1?key=value#abc
 ### 스킴
 
 * http:하이퍼 텍스트 전송 프로토콜. 사용자 이름, 비밀번호가 없다
-* https: 양 끝단에서 암호화를 위해 SSL(secure socket layer)을 사용
+* https: 양 끝(client, server)에서 암호화와 복호화를 위해 SSL(secure socket layer)을 사용
 * ftp: FTP 서버에 있는 파일을 내려받거나 올리기 위한 파일전송 프로토콜
 * rtsp, rtspu: 실시간 스트리밍 프로토콜
 * telnet: 대화형 서비스
+* smtp: 이메일
 
 <br><br>
 
