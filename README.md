@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_181 TILs and counting..._
+_182 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [B-Tree](자료구조/B-Tree.md) - Wed Oct 13 12:30:48 2021 +0900
 - [Transaction과 격리수준](Database/Transaction_isolation.md) - Tue Oct 12 14:52:04 2021 +0900
-- [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](자료구조/코딩_인터뷰_완전분석-트리_그래프.md) - Sun Oct 10 19:46:44 2021 +0900
 
 ### Categories
 
@@ -277,6 +277,7 @@ _181 TILs and counting..._
 - [프로세스(Process)](운영체제/프로세스(Process).md)
 
 ### [자료구조](#자료구조)
+- [B-Tree](자료구조/B-Tree.md)
 - [Red Black Tree](자료구조/레드블랙트리.md)
 - [이진 탐색 트리(BST)](자료구조/이진탐색트리.md)
 - [이진트리(Binary Tree)](자료구조/이진트리.md)
