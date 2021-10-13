@@ -13,7 +13,13 @@
 
 <br>
 
-## Lock의 종류
+#### ACID를 엄격히 지키면 동시성이 떨어진다고 한다.
+
+* 해결하기 위한 방법: transaction에 isolation 단계 설정
+
+<br>
+
+## Row level Lock의 종류
 
 * **Shared lock** - 읽기 잠금. Read 가능, Write 불가. N개의 트랜잭션이 동시에 걸 수 있음. 이게 걸려있으면 다른 트랜잭션은 Exclusive lock을 걸지 못한다.
 * **Exclusive lock** - 쓰기 잠금. R,W 둘다 가능. 다만 한 개의 트랜잭션이 트랜잭션을 걸 수 있음
@@ -31,27 +37,43 @@
    * e.g) A가 값 1을 읽고 또 해당 쿼리를 실행하기 전에 B가 값을 2로 바꾸고 커밋하면 A의 쿼리 결과가 달라짐.
 
    * Dirty read에 비해 확률 적다.
-
 3. **Phantom Read**: 한 트랜잭션 조회에서 다른 레코드를 **삽입**할 것 방지.
-* e.g) 2번과 비슷한 상황. B가 테이블에 값을 추가하면 A의 두 쿼리는 결과가 달라짐
+   * e.g) 2번과 비슷한 상황. B가 테이블에 값을 추가하면 A의 두 쿼리는 결과가 달라짐
 
 <br>
 
-## 격리 수준의 종류
+## 격리 수준
+
+: 레벨이 올라갈 수록 동시성이 떨어진다. 문제가 발생할 확률도 떨어져 안정성은 증가한다.
+
+<br>
+
+* **Consistent Read**: 일반적으로 쿼리의 log를 저장하고, 어떠한 시점에 쿼리를 치면 이 log를 통해 스냅샷을 불러와 읽는다고 한다.
+
+<br>
+
+### 종류
 
 * **level 0** - **read uncommited**
-  * Shared lock이 걸리지 않아 데이터를 읽는 도중 다른 트랜잭션이 데이터를 변경할 수 있다.
+  * 찾고자 하는 데이터가 커밋되지 않아있어도 그냥 데이터를 읽어온다.
   * **Dirty read**, **non-repeatable read**, **phantom read** 발생
 * **level 1** - **read commited**
-  * Shared lock이 걸린 상태. 변경사항이 커밋되어 확정된 데이터만 읽는다.
+  * 변경사항이 커밋되어 확정된 데이터만 읽는다.(사실 DB에는 커밋되지 않은 데이터도 적용된 상태이다.)
+  * Read 때마다 DB 스냅샷을 만든다.
   * **non-repeatable read**, **phantom read** 발생
   * 대부분의 DBMS가 이걸 디폴트로 한다고 한다.
 * **level 2** - **repeatable read**
-  * **선행 트랜잭션이 읽는(select하는)** 모든 데이터에 **shared lock**. 다른 트랜잭션은 해당 영역 수정 및 삭제 불가해짐.
+  * 한 트랜잭션 안에서는 처음 읽을 때 시간을 기록하고, 나중에 데이터를 다시 읽더라도 해당 시점의 데이터(스냅샷)를 읽어온다. - 이 때 로그를  사용
   * **phantom read** 발생
 * **level 3** - **serializable**
-  * 선행 트랜잭션이 읽는 데이터에 새로운 레코드 **삽입**까지 불가능 - **update lock**
+  * `Select` 쿼리가 전부 `Select ... for share` 쿼리로 변환된다. - 테이블에 락을 걸어버린다.
+  * 테이블에 걸다보니 데드락에 쉽게 걸릴 수 있다.
   * 완전한 단계의 LOCK
 
+<br>
 
+#### Reference)
 
+#### https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+
+#### https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/
