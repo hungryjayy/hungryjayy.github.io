@@ -13,8 +13,8 @@ _182 TILs and counting..._
 
 ### 2 most recent TILs
 
+- [DBCP(DB 커넥션 풀)](Database/DB_커넥션풀.md) - Wed Oct 13 17:19:38 2021 +0900
 - [B-Tree](자료구조/B-Tree.md) - Wed Oct 13 12:30:48 2021 +0900
-- [Transaction과 격리수준](Database/Transaction_isolation.md) - Tue Oct 12 14:52:04 2021 +0900
 
 ### Categories
 
@@ -62,12 +62,12 @@ _182 TILs and counting..._
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
+- [DBCP(DB 커넥션 풀)](Database/DB_커넥션풀.md)
 - [SQL Injection](Database/SQL_injection과_prepared_statement.md)
 - [Transaction과 격리수준](Database/Transaction_isolation.md)
 - [Database 스키마](Database/스키마.md)
 - [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/정규화_1_2_3_BCNF.md)
 - [DB 정규화가 필요한 이유와 함수적 종속](Database/정규화가_필요한이유.md)
-- [DBCP(DB 커넥션 풀)](Database/커넥션풀.md)
 
 ### [Docker](#Docker)
 - [Docker CLI](Docker/Docker_CLI.md)
