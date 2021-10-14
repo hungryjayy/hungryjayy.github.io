@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_182 TILs and counting..._
+_183 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Data class](Kotlin/Data_Class.md) - Thu Oct 14 18:44:14 2021 +0900
 - [DBCP(DB 커넥션 풀)](Database/DB_커넥션풀.md) - Wed Oct 13 17:19:38 2021 +0900
-- [B-Tree](자료구조/B-Tree.md) - Wed Oct 13 12:30:48 2021 +0900
 
 ### Categories
 
@@ -141,6 +141,7 @@ _182 TILs and counting..._
 ### [Kotlin](#Kotlin)
 - [Coroutine](Kotlin/Coroutine.md)
 - [Coroutine lifecycle flow](Kotlin/Coroutine_lifecycle_flow.md)
+- [Data class](Kotlin/Data_Class.md)
 - [예외 처리](Kotlin/Exception_처리.md)
 - [Issues](Kotlin/Issue.md)
 - [Kotlin 특징(vs java)](Kotlin/Kotlin_특징.md)
