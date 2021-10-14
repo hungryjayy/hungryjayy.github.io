@@ -16,18 +16,18 @@
 * transaction에서 일관성 없는 데이터를 허용하는 수준.
 * 격리 수준이 올라갈수록 성능은 저하된다.(보다 엄격하게 수행하므로)
 * **격리 수준 종류**
-  * 0: `READ_UNCOMMITED`: 변경사항이 커밋되지 않는 데이터 읽기 허용
-  * 1: `READ_COMMITED`: 변경사항이 커밋되어 확정된 데이터만 읽음
-  * 2: `REPEATABLE_READ` : **선행 트랜잭션이 읽는(select하는)** 모든 데이터에 **shared lock**. 다른 트랜잭션은 해당 영역 수정 및 삭제 불가해짐.
-  * 3: `SERIALIZABLE`: 선행 트랜잭션이 읽는 데이터에 새로운 레코드 **삽입**까지 불가능 - **update lock**
+  * 0: `READ_UNCOMMITED`: 변경사항이 커밋되지 않는 데이터 읽기 허용 - 그냥 다 읽음
+  * 1: `READ_COMMITED`: 변경사항이 커밋되어 확정된 데이터만 읽음 - Shared Lock (X)
+  * 2: `REPEATABLE_READ` : 한 트랜잭션이 레코드를 읽고 있을 때 다른 트랜잭션은 해당 영역 수정 및 삭제 불가해짐. - Shared Lock (O)
+  * 3: `SERIALIZABLE`: 선행 트랜잭션이 읽는 데이터에 새로운 레코드 삽입까지 불가능 - Shared, Gap Lock (O)
 
 2. propagation
    * 트랜잭션 도중 다른 트랜잭션 호출시 선택 옵션
 3. readOnly 속성
-   * 트랜잭션 읽기 전용으로 설정
+   * 트랜잭션 읽기 전용으로 설정해 commit 시 영속성 컨텍스트에 flush 하지 않는다. -> 성능 최적화
      * insert, update, delete 등 발생 시 예외 발생 
-   * 성능 최적화를 위해
-   * e.g. ) `@Transactional(readOnly = true)`
+     
+     e.g. ) `@Transactional(readOnly = true)`
 4. 트랜잭션 롤백 예외
    * Runtime Exception (UnCheckedException) 발생시 롤백
      * 바꿔 말하면 CheckedException 발생 시에는 롤백되지 않음. 따라서 모든 예외에 대해서 모두 롤백하고 싶다면 아래와같이 명시해줘야 함
@@ -42,8 +42,7 @@
 
 ### JPA에서 디폴트 @Transactional
 
-* JPA에서 제공하는 기본 메서드는 디폴트로 @Transaction이 선언되어있어 atomic하게 수행됨
-* 따라서, 레포지토리의 여러 메서드를 사용하는 부분이 아니라면 굳이 다시 @Transactional 선언 해줄 필요는 없다.
+* JPA에서 제공하는 기본 메서드는 디폴트로 @Transaction이 선언되어있음
 * custom 메소드에 한해서는 모두 @Transactional 선언을 해줄 필요가 있다.
   * 이 때, 사용부인 service에서 일일히 하는 방법, **repository에서 미리 선언해주는 방법**.
 * 기본적으로 SingleJpaRepository (JPA interface 구현체부분)에 가보면 전체가 Transaction으로 감싸져있음.

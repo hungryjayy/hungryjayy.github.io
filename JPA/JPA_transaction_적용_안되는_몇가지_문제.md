@@ -5,34 +5,19 @@
   * 마찬가지로 final이 적용된 메서드도 불가능
     * Kotlin에서 allOpen을 통해, 혹은 Open을 통해 가능
 
-
+<br>
 
 * inner Method
-  * Transaction 적용되지 않은 메소드에서 @Transactional적용된 내부 메소드 호출 과정은 proxy 객체를 이용해 호출하는 것이 아니라, 내부 호출로 되기 때문에 transaction 적용 불가
-  * 이 때 savePost를 호출하는 메소드로 @Transactional 를 옮겨가면 해결
-    * 이 때 @Transactional 처리 된 메서드 내부에서 부르는 모든 곳은 atomic하게 처리 됨.(백기선님 블로그 참고)
+  * 같은 클래스 내의 Transaction 적용되지 않은 메소드에서 `@Transactional`적용된 메소드은 Transactional로 생성된 proxy 객체를 통해 호출하는 것이 아니라, 내부 호출로 되기 때문에 transaction 적용 불가
+  * **해결 방법**: `@Transactional` 을 Callee에서 Caller로 옮겨가면 된다.
 
-```java
-@Transactional
-public void savePost() {
-    Post post = new Post();
-    post.setTitle("keesun");
-
-    Post newPost = postRepository.save(post);
-    System.out.println(postRepository.findById(newPost.getId()));
-    System.out.println(entityManager.contains(newPost));
-}
-
-// 출처: https://www.whiteship.me/spring-transactional-and-spring-aop/
-```
-
-
+<br>
 
 * ReadOnly Method에서 Read-write method 호출
   * read-write 내부에서도 transaction은 readOnly로 동작하게 됨.
   * 반대의 경우도.. 라는데 확인할 필요가 있음
 
-
+<Br><br>
 
 #### Reference)
 
