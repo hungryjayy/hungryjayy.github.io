@@ -144,7 +144,7 @@ _183 TILs and counting..._
 - [Data class](Kotlin/Data_Class.md)
 - [예외 처리](Kotlin/Exception_처리.md)
 - [Issues](Kotlin/Issue.md)
-- [Kotlin 특징(vs java)](Kotlin/Kotlin_특징.md)
+- [](Kotlin/Kotlin_특징.md)
 - [Plugin](Kotlin/Plugin.md)
 - [Scope function(let, also, run, apply, with)](Kotlin/Scope_function.md)
 - [for-loop vs forEach vs Map](Kotlin/for-loop_forEach_map.md)
