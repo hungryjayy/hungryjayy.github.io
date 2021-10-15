@@ -1,122 +1,128 @@
-# Kotlin 특징(vs java)
+
+
+# Kotlin 특징
 
 ## 함수형 프로그래밍(함수가 일급 객체로서의 의미를 가짐)
 
-* 함수를 side effect 없도록 선언하고 사용하는 선언형 프로그래밍.
-  * 따라서 `forEach` vs `map` : `map`이 함수형에 가까움
-    * 원래의 배열을 바꾸지 않는다. -> side effect 방지
-* 가장 큰 두가지 특징
-  1. Immutable 
-     * 변경 불가능
-     * 일급 컬렉션과 비슷한 맥락. list에 하나를 추가하기 위해선 추가된 하나의 list를 새로 만들어 할당.
-     * Persistent data structure
-  2. 일급 객체
-     * 변수나 데이터에 함수를 담을 수 있다.
-     * 함수를 literal로 바로 정의할 수 있다.
-       * 리턴값으로 전달 가능
-       * 함수를 파라미터로 전달 가능
-* 연속 전달방식(Continuation-Passing Style): 결과를 계속 전달하는 방식
-  * stream: `filter().map()`과 같이 결과를 계속 전달
-  * 자바스크립트에서 결과를 계속 콜백으로 전달하는 것
+: 함수를 side effect 없도록 선언하고 사용하는 선언형 프로그래밍.
 
+e.g ) `forEach` vs `map` : `map`이 함수형에 가깝다. `forEach`는 원 배열에 side effect가 발생할 가능성이 있지만, `map`의 경우 원래의 배열을 바꾸지 않고 **새로운 배열을 만들어**버린다.
 
+<br>
+
+## 가장 큰 두가지 특징
+
+1. **Immutable**
+   
+   * 변경 불가능. 만약 변경이 필요하면 새로운 Immutable 변수 or 객체를 하나 만듦으로 해결.
+   * Persistent data structure
+2. **일급 객체**
+   
+   * 변수나 데이터에 함수를 담을 수 있다.
+   * 함수를 literal로(표현식) 바로 정의할 수 있다.
+     * 리턴값으로 전달 가능
+     * 함수를 파라미터로 전달 가능
+     
+     ```kotlin
+     val sum = fun Int.(other: Int): Int = this + other
+     ```
+
+<br>
+
+*연속 전달방식(Continuation-Passing Style): 결과를 계속 전달하는 방식*
+
+* stream: `filter().map()`과 같이 결과를 계속 전달
+* 자바스크립트에서 결과를 계속 콜백으로 전달하는 것
+
+<br>
 
 ## Java와 동일한 타입안정성 + 타입 추론(Inference) 제공.(Smartcasting)
 
 * `val name = "abced"` <- 이 경우 알아서 String으로 인식
 
+<br>
 
+## Null 체크 용이
 
-## Null 안정성 제공
+* Nullable
 
-* `var foo: String? = "Hello"` 물음표는 nullable을 의미
-
-* 위의 경우 `foo?.bar()`와 같이 쓰면 null이 아닐때 bar() 호출, null일 때 null 반환
+  ```kotlin
+  var foo: String? = "Hello"
+  
+  foo?.bar()
+  // foo != null ? foo.bat() : null
+  ```
 
 * Not-Null Assertion(!!)
 
 * Elvis operator `?:`
 
-  * ```kotlin
-    val foo: String? = getString()
-    
-    return foo?.length ?: 0
-    ```
-    
-  * 위의 경우 null 아닐 때 length, null일 때 0 반환
+  ```kotlin
+  val foo: String? = getString()
+  
+  return foo?.length ?: 0
+  // return foo != null ? foo.length : 0
+  ```
 
-
-
-## Delegation pattern(상속 대안)
-
-``` kotlin
-class CopyPrinter(copier: Copy, printer: Print)
- : Copy by copier, Print by printer
-
-interface Copy {
- fun copy(page: Page): Page
-}
-interface Print {
- fun print(page: Page)
-}
-```
-
-* 위 예제에서 copy로 copy를, print로 print를 그 자리에서 바로 선언하고 있다.
-
-
+<br>
 
 ## Extention
 
 ```Kotlin
-// StringExt.kt
 fun String.double(): String {
 	return this + this
 }
+
+println("Hello".double()) // HelloHello
 ```
 
-* 이 때 `"Hello".double()` 이처럼 사용 가능.
-
-
+<br>
 
 ## Companion object
 
 * 어떤 클래스의 모든 인스턴스가 공유하는 객체 만들 때.
-* 자바에서 static 변수 / 메서드 사용했을 때와 동일
-  * "객체 생성"도 전에 런타임시작하는 그 때 즉시 생성된다.
+* 자바에서 **static 변수** / 메서드 사용했을 때와 동일
+  * 객체가 생성되기 전에 런타임시작하는 그 때 즉시 생성된다(Data영역에 할당).
 
-
+<br>
 
 ## collection 함수
 
-* (*mutable과 immutable을 구분하여 지원한다는 점*)
-* List - remove, add, addAll, removeAt, removeIf 등
-* Set - `setOf<type>(items)` 
-* Map - Key, value쌍. `Pair(A, B) or A to B`와 같이 세팅
+* *mutable과 immutable을 구분하여 지원한다*
+* List: 기본적으로 immutable. <-> MutableList
+* 이외에도 Set, Map, Array 등 존재
 
+<br>
 
+#### 코틀린에서 Array vs List
+
+* Array에서는 Iterator를 내부적으로 지원하는데, List는 element가 불연속적인 메모리 공간으로 할당되어있다. Iterator는 구현에 의해 만들어진다.
+* 배열은 크기가 정해져있고, List가 동적으로 할당 가능.(c++의 백터처럼 add, remove 가능)
+
+<br>
 
 ## 표현식 vs 구문
 
 * 표현식은 값을 반환한다.
 
-  * 따라서, 값을 (반환)만든다는 의미
+  * 값을 (반환)만든다는 의미
   * 따라서, 대입 연산자 오른쪽에 명시할 수 있다.(값을 저장)
 
   `val foo = when { }`
 
 * 구문은 무언가가 실행되도록 명령을 지시하는 문장을 의미
 
-  * 따라서, 값을 만들지는 않는다.
+  * 값을 만들지는 않는다.
 
-* when 표현식에서는 항상 else를 필요로 한다.(값을 만들어야 하기 때문에)
+* when "표현식"에서는 항상 else를 필요로 한다.(값을 만들어야 하기 때문에)
 
-
+<br>
 
 ## object
 
-* 코틀린에서 싱글톤을 사용하는 방법
+* 코틀린에서 싱글톤 객체를 사용하는 방법
 
-
+<br>
 
 ## Inner class
 
@@ -129,7 +135,7 @@ fun String.double(): String {
   * inner를 쓰려면 명시를 해야함.
   * (TODO)차이점 명확하게 구분하기
 
-
+<br>
 
 ## enum class
 
@@ -138,7 +144,7 @@ fun String.double(): String {
 * java에서의 static 변수 효과
 * 이러한 상수 타입으로 어떠한 변수를 할당했을 때 그 변수를 수정함으로써 얻는 런타임에서의 에러를 방지할 수 있다.
 
-
+<br>
 
 ## Time 시간 관련 API
 
@@ -150,7 +156,7 @@ fun String.double(): String {
 * `ZonedDateTime` : 시간대 개념 추가
   * Local에서 시간대면 추가되면 Zoned. 반대도 가능
 
-
+<br><br>
 
 #### Reference)
 

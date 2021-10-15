@@ -4,6 +4,8 @@
 
 ## 연속 전달방식
 
+: 연산의 결과를 콜백으로 전달하는 방식
+
 ### 동기식 연속 전달 방식(Continuation-Passing Style)
 
 : 일반적으로 아는 전달방식. **직접 스타일**
@@ -36,6 +38,8 @@ function add(a, b, callback) {
 
 ```javascript
 array1.map(element => element - 1);
+
+// 따로 연산을 통해 callback으로 전달하는 것이 아니라, 그냥 배열의 인자를 전달
 ```
 
 * 콜백이라고 항상 **CPS**나 **비동기식**이 아니다.
@@ -55,7 +59,7 @@ array1.map(element => element - 1);
    })
    ```
 
-   * 가독성 측면에서 좋음. err가 있으면 첫번째 인자가 
+   * 가독성 측면에서 좋음. err가 있으면 첫번째 인자가 Error라고 판단
 
 2. 오류 전파
 

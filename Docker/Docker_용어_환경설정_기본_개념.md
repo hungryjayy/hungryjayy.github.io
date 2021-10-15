@@ -10,6 +10,12 @@
 
 <br>
 
+#### VM vs Docker
+
+: 격리 프로세스가 다르다. VM은 하드웨어 단위, Docker는 OS 단위. 따라서, VM 환경에서 OS를 따로 설치해주어야하는데, Docker에서는 호스트와 OS를 공유하기 때문에 상대적으로 빠르다.
+
+<br>
+
 ## 용어
 
 ![img](https://blog.kakaocdn.net/dn/cHvenO/btqCwXNywRD/gau1eJ5ShKmlWWEWgZUF2K/img.png)
