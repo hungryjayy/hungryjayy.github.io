@@ -6,17 +6,22 @@
 
 ## Memory Section
 
+![메모리 구조](./images/Memory.png)  
+
+출처: http://tcpschool.com/c/c_memory_structure
+
 * Data(BSS + DATA)
   * **전역 변수**(초기화 되지 않은 전역변수는 BSS영역에, 나머지는 DATA영역), **static 변수** 저장
   * 프로세스 생성 시점에 위의 변수들을 이 곳에 저장
 * Stack
   * **로컬 변수**, 함수의 **매개변수**, **복귀 주소** 등 임시자료 저장
   * 초기화 시점에는 메모리만 할당
-  * 윗 방향으로 할당(Heap과 반대로)
+  * 보통 높은 주소에서 낮은 주소로 할당(보통 Descending stack)
+    * Heap과 반대로
 * Heap
   * **동적 할당**을 위한 메모리 영역.
   * 초기화 시점에는 메모리만 할당
-  * 아래방향으로 할당(Stack과 반대로)
+  * 보통 낮은 주소에서 높은 주소로 할당(Stack과 반대로)
 * Code
   * 프로그램 실행 파일 내의 명령어들(소스코드) 저장
 
@@ -75,3 +80,5 @@
 #### https://velog.io/@hoo00nn/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C
 
 #### https://wooody92.github.io/os/%EB%A9%80%ED%8B%B0-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C/
+
+#### http://tcpschool.com/c/c_memory_structure
