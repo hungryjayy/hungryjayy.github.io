@@ -7,7 +7,7 @@
 * block 조건: 다른 작업 진행되는 동안 기다릴 것 (코드상 Return 하지않음)
 * non block 조건: 다른 작업 진행 동안 기다리지 말 것. (코드상 일단 Return)
 
-
+<br>
 
 <img src="https://media.vlpt.us/images/wonhee010/post/be726da1-3605-475c-b7ab-93fe89636a8e/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-08-16%20%EC%98%A4%ED%9B%84%205.04.49.png" alt="img" style="zoom: 50%;" />
 
@@ -15,21 +15,24 @@
 * 기본적인 mvc 패턴, application에서 I/O 요청한 후 완료되기 전까지 application block된다.
 * 메서드에서 다른 메서드를 호출해, 결과값 기다리는 것
 
-
+<br>
 
 ## Sync + non-blocking
 * 논 블로킹 IO에 접근하는 가장 기본적인 패턴
 * application에서 I/O 요청한 후 return하여 다른 작업 수행하다가 완료되었는지 틈틈히 확인해준다.
   * 이것이 **polling** 방식 (**busy-waiting**)
+  * long polling : 응답주는 쪽에서 기다렸다가 지연 응답을 주는 것
 * 작업 효율이 좋지 않다고 함
 
-
+<br>
 
 ## Async + blocking
 
 * 비효율적이다. Async + non-block 모델에서도 잘못된 코드로 인해 이와 같이 동작할 수 있다.
 
   e.g) Nodejs + Mysql. (mysql 드라이버는 blocking 방식이므로 이와 같은 문제 발생)
+
+* HTTP 커넥션 입출력하는 웹 서버에서의 **다중 I/O 서버**를 생각해보면 된다. 이 때 모든 커넥션들은 각각 본인의 작업만 끝나면 **client에게 응답메시지**로 전송되고 커넥션은 종료된다. 그러나, I/O를 처리해야하는 스레드는 같은 하나의 스레드이므로, 해당 스레드가 작업중일 때 다른 작업의 커넥션들은 Block된다.
 
 * ~~JS 프라미스 이행을 기다리거나, await해서 기다려주는 것~~
 
@@ -39,14 +42,15 @@
   
     출처: https://yorr.tistory.com/20
 
-
+<br>
 
 ## Async + non-blocking
 
 * I/O 요청 후 return해 다른 작업을 수행.
+* **이벤트 루프** 동작 방식
 * 완료시 **이벤트**가 발생하거나 미리 등록한 **callback**을 통해 이후 작업 진행.
 
-
+<br>
 
 #### Reference)
 
