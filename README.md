@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_183 TILs and counting..._
+_184 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [페이지 부재와 교체](운영체제/Page_fault.md) - Thu Oct 21 00:01:08 2021 +0900
 - [Data class](Kotlin/Data_Class.md) - Thu Oct 14 18:44:14 2021 +0900
-- [DBCP(DB 커넥션 풀)](Database/DB_커넥션풀.md) - Wed Oct 13 17:19:38 2021 +0900
 
 ### Categories
 
@@ -268,6 +268,7 @@ _183 TILs and counting..._
 - [힙 정렬(Heap sort)](알고리즘/힙_정렬.md)
 
 ### [운영체제](#운영체제)
+- [페이지 부재와 교체](운영체제/Page_fault.md)
 - [동기 vs 비동기(Sync vs Async)](운영체제/sync_async.md)
 - [가상 메모리](운영체제/가상_메모리.md)
 - [데드락(Deadlock)](운영체제/데드락(Deadlock).md)
