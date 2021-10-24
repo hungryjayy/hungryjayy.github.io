@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_184 TILs and counting..._
+_185 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [페이지 부재와 교체](운영체제/Page_fault.md) - Thu Oct 21 00:01:08 2021 +0900
-- [Data class](Kotlin/Data_Class.md) - Thu Oct 14 18:44:14 2021 +0900
+- [실제 사용되는 sort() 알고리즘](알고리즘/실제_사용되는_sort_알고리즘.md) - Sun Oct 24 23:51:05 2021 +0900
+- [TCP / IP 프로토콜의 4계층](네트워크/TCP_IP_4계층.md) - Sat Oct 23 18:36:51 2021 +0900
 
 ### Categories
 
@@ -243,7 +243,7 @@ _184 TILs and counting..._
 - [IDL](네트워크/IDL.md)
 - [OSI(Open System Interconnection) 7계층](네트워크/OSI_7계층.md)
 - [RPC 통신](네트워크/RPC_통신.md)
-- [TCP / IP 프로토콜의 4계층](네트워크/TCP:IP_4계층.md)
+- [TCP / IP 프로토콜의 4계층](네트워크/TCP_IP_4계층.md)
 - [TCP/IP vs UDP](네트워크/TCP_IP_UDP.md)
 - [Was vs Web Server](네트워크/Webserver_vs_WAS.md)
 - [gRPC](네트워크/gRPC.md)
@@ -263,6 +263,7 @@ _184 TILs and counting..._
 - [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md)
 - [삽입 정렬(Insert sort)](알고리즘/삽입_정렬.md)
 - [선택 정렬(Select sort)](알고리즘/선택_정렬.md)
+- [실제 사용되는 sort() 알고리즘](알고리즘/실제_사용되는_sort_알고리즘.md)
 - [퀵 정렬(Quick sort)](알고리즘/퀵_정렬.md)
 - [합병 정렬(Merge sort)](알고리즘/합병_정렬.md)
 - [힙 정렬(Heap sort)](알고리즘/힙_정렬.md)
