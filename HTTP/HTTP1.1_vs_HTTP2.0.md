@@ -60,6 +60,14 @@
 
 <br>
 
+#### 이 링크의 애니메이션을 통해 정확하게 이해하기
+
+#### https://freecontent.manning.com/animation-http-1-1-vs-http-2-vs-http-2-with-push/
+
+<br>
+
+#### 이해를 돕는 그림
+
 ![img](https://user-images.githubusercontent.com/31475037/89241056-d77c9480-d638-11ea-8ef4-7d9d475ac560.png)
 
 <br><br>
