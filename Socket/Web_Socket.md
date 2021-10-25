@@ -3,7 +3,10 @@
 : HTML 5 표준 기술로, 하나의 HTTP 접속을 통해 클라이언트, 서버 간 실시간 양방향 연결 채널을 구성.
 
 * **Web hook**: 양방향 통신이기 때문에 서버쪽이 업데이트 되는 상황에서도 client쪽 화면을 refresh해줄 수 있다.
-  * 기존에는 polling 방식의 AJAX(단방향) 사용했는데, socket을 통해 이 연결을 유지하는 방법으로 구현한 것이 웹 소켓
+* 기존 방식 (client가 server로 AJAX 요청. 단방향)
+  * polling: 주기적으로 client가 AJAX 요청해 결과를 확인한다.
+  * long polling: client가 AJAX 요청을 하면 server는 연결 안끊고 기다리다가 완료되면 response.
+  * stream: 연결 안끊고 그냥 server쪽에서 응답 발생할때마다 response. 연결에 대한 오버헤드 존재해서 이 방식도 주기적으로 끊기는 한다고 함.
 * Stateful protocol. 한번 연결되면 같은 라인을 사용해 통신. -> HTTP 연결 트래픽 감소하지만 연결을 유지해야한다.
 * **HTTP와 같은 포트** 사용한다. 연결 시 핸드쉐이크는 HTTP를 통해 이루어지고, 이후에는 WS 프로토콜로 통신. 일정 시간 뒤 HTTP 연결 disconnect
 * 일반적으로 문제 발생으로 연결이 끊길 때를 대비해 reconnect 매커니즘을 제공한다.
