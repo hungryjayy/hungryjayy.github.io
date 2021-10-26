@@ -57,7 +57,7 @@ _186 TILs and counting..._
 
 ### [Cloud](#Cloud)
 - [IaaS, PaaS, SaaS](Cloud/IaaS_PaaS_SaaS.md)
-- [온프레미스와 클라우드](Cloud/온프레미스_클라우드.md)
+- [온프레미스와 클라우드(Off-premise)](Cloud/온프레미스_클라우드.md)
 
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
