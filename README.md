@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_185 TILs and counting..._
+_186 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [실제 사용되는 sort() 알고리즘](알고리즘/실제_사용되는_sort_알고리즘.md) - Sun Oct 24 23:51:05 2021 +0900
-- [TCP / IP 프로토콜의 4계층](네트워크/TCP_IP_4계층.md) - Sat Oct 23 18:36:51 2021 +0900
+- [스케줄링과 스케줄러](운영체제/스케줄링_스케줄러.md) - Tue Oct 26 12:11:29 2021 +0900
+- [프로세스의 상태변화](운영체제/프로세스_상태변화.md) - Tue Oct 26 12:11:29 2021 +0900
 
 ### Categories
 
@@ -274,10 +274,11 @@ _185 TILs and counting..._
 - [가상 메모리](운영체제/가상_메모리.md)
 - [데드락(Deadlock)](운영체제/데드락(Deadlock).md)
 - [스레드(Thread)](운영체제/스레드(Thread).md)
-- [프로세스 상태변화와 스케줄러](운영체제/스케줄러_프로세스상태.md)
+- [스케줄링과 스케줄러](운영체제/스케줄링_스케줄러.md)
 - [스케줄링 알고리즘](운영체제/스케줄링_알고리즘.md)
 - [임계영역(Critical section)](운영체제/임계영역(Critical_section).md)
 - [프로세스(Process)](운영체제/프로세스(Process).md)
+- [프로세스의 상태변화](운영체제/프로세스_상태변화.md)
 
 ### [자료구조](#자료구조)
 - [B-Tree](자료구조/B-Tree.md)
