@@ -15,6 +15,16 @@
 * **Preflight ?**
   * 사전 전달 메시지, 이걸 통해 "허가"를 받게 되면 그때부터 실제 정보 요청
   * `OPTIONS` 메서드를 통해
+* **브라우저**에서는 Request가 허용된 도메인으로만 보내게 할 의무가 있다.
+* server to server에선 cors가 필요 없다. 서버에서 요청을 보낼 때 http 헤더에 origin을 명시할 의무도 없다.
+
+<br>
+
+### SOP(Same Origin Policy): 동일 출처 원칙
+
+: 모르는 출처의 스크립트에서 사용자가 서버로 요청할 경우, 어떤 스크립트가 실행될지 모른다(XSS). 따라서, 동일한 출처의 브라우저에 대해서만 요청을 허가한다.
+
+* 따라서, 브라우저에서는 Request가 허용된 도메인으로만 요청을 보내도록 할 의무가 있다.
 
 <br>
 
@@ -49,6 +59,7 @@
 
 * 일부 요청은 Preflight를 트리거하지 않는다. 다음의 조건들을 **모두** 만족하는 **Simple Request** 여야 한다.
   1. GET, HEAD, POST (데이터 변화시킬 위험 없는 **안전한 메서드**)
+     * POST의 경우 Origin 헤더를 포함해야 한다. GET, HEAD는 포함시킬 필요 없다.
   2. User Agent가 자동으로 설정한 헤더 + CORS-safelisted request 헤더
   3. Content-type 헤더는 아래의 세개만 가능
      * `application/x-www-form-urlencoded`, `multipart/form-data` , `text/plain` 
