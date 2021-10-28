@@ -36,8 +36,37 @@
 
 <br>
 
+### Adapter: Redis
 
-## Code level
+: Redis가 어댑터로써 **서버간 브로커 역할**을 수행한다.
+
+* 소켓서버의 특정 Room에 메시지를 보내면, Redis는 브로커가 되고 각 서버들에게 전달된다.
+* 여러 서버가 redis로 연결될 때 채널 개념이 발생하고 이 채널 정보는 socket server에서 들고 있는다. 각 socket server는 메시지를 받으면 서버에서 구독하고 있는 채널에 메시지가 해당하는지를 찾고 맞으면 메시지를 해당 Room에 준다.
+* Pub/Sub 매커니즘이 있다. 각 socket server는 n개의 채널을 subscribe할 수 있다.
+* **Adapter 역할**
+  * 일종의 cluster처럼 연결된 각 서버에 broadcast 하는 방식
+  * routing message의 역할을 수행하는 Interface
+
+<img src = "./images/redisadapter.png">
+
+```javascript
+const redisAdapter = require('socket.io-redis');
+
+const io = require('socket.io');
+```
+
+```javascript
+socketServer = io(baseServer)
+  .adapter(redisAdapter({
+    host: 'redis',
+    port: 6379
+}));
+```
+
+<br>
+
+
+## Code level example
 
 ```javascript
 const redis = require('redis');
@@ -77,6 +106,12 @@ public set(hash: string, key: string, value: string) {
 
 <br><br>
 
-#### Reference
+#### Reference)
+
+#### reference) <br>
+
+#### https://socket.io/docs/v3 <br>
+
+#### https://socket.io/docs/v3/using-multiple-nodes/
 
 #### Redis 로컬 설치: https://redis.io/topics/quickstart

@@ -1,0 +1,80 @@
+# 웹소켓과 socket.io
+
+<br>
+
+### 양 방향 통신?
+: 이전에는 Polling, Long polling, HTTP Streaming 방식 등 여러 방법을 통해 Client, server 양 방향 통신을 구현했었다.
+
+<br>
+
+* Traditional **Polling**: 주기적으로 client가 AJAX 요청해 결과를 확인한다. 너무 리소스 낭비가 크다.
+* **Long Polling**: client가 AJAX 요청을 하면 server는 연결 안끊고 기다리다가 완료되면 response. 이 방식이 가장 보편적이었다고 한다.
+* **HTTP Streaming**: 연결 안끊고 그냥 server쪽에서 응답 발생할때마다 response. 연결에 대한 오버헤드 존재해서 이 방식도 주기적으로 끊기는 한다. 많은 곳에서 **Polling 방식을 대체하는 기술**이라고 설명된다. 그러나, 모든 프록시나 방화벽에서 허용되는 것이 아니라서 보편적으로 사용되진 않는다.
+
+<br>
+
+## Web Socket
+* HTML5에서 소켓 연결을 통해 서버와 클라이언트간 양방향 통신환경 제공.
+* port: http 포트(80)를 통해 웹 서버 연결하므로 추가적인 방화벽 설정(인, 아웃바운드)이 필요하지 않는다.
+* 소켓을 이용해 데이터를 주고 받음.
+* http 연결 후에는 프로토콜을 변경해 통신한다. `http://` → `ws://`
+* 다양한 서버 구현체가 있다. Socket.io, stomp 등등
+
+<br>
+
+
+## Socket.io
+
+* Web socket 처럼 클라이언트, 서버간 양방향 통신을 가능하게 해주는 모듈
+* javascript 이용, 서버 Node.js가 지원
+* 정확하게는 통신을 시작할 때 각 브라우저에 대해 websocket, polling, streaming, flash socket 등에서 가장 적절한 방법을 찾아 보내줌
+* Socket Server는 소켓과 논리적 room의 관계 정보를 들고있다.
+
+<br>
+
+### API 구성
+
+ * Redis 어댑터(브로커): `const redisAdapter = require('socket.io-redis');`
+ * redis + socketIO(adapter): `const sockerServer = SocketIO().adapter(redisAdatper( ... ));`
+ * 소켓서버에 broadcast: `socketServer.emit(eventName, data);`
+ * Namespace지정: `socketServer.of(nameSpace),emit(eventName, data);`
+ * 특정 유저: `socketServer.to(socketID).emit(eventName, data);`
+ * 특정 Room(논리적 구별단위) 입장: `socket.join(roomID)`
+ * 특정 방 전체에 emit 1.: `socketServer.io(roomID).emit(eventName, data);`
+ * 특정 방 전체에 emit 2.:`socket.broadcast.to(roomID).emit(eventName, data);`
+
+<br>
+
+### Room?
+
+소켓이 `join` 과 `leave` 를 할 수 있는 논리적 단위(채널)이다. 소켓을 통해 client들에게 event를 broadcast할 수 있다.<br>
+
+  *이 때 client의 입장에선 room 들에 대한 정보를 모른다.(사실 서버쪽에서만 신경 쓸 일)*
+<br>
+
+<img src = "./images/room.png">
+
+<br>
+
+#### API 예시
+
+* `io.to(‘some room’).emit(‘some event’);``
+* ``io.to(‘room1’).to(‘room2’).to(‘room3’).emit(‘some event’);`
+* Room에 입장 후 방 전체에 emit
+
+```javascript
+io.on('connection', async (socket) => {
+  const userId = await fetchUserId(socket);
+  socket.join(userId);
+  // and then later
+  io.to(userId).emit('hi');
+});
+
+```
+<br><br>
+
+#### Reference) <br>
+
+#### https://socket.io/docs/v3 <br>
+
+#### https://socket.io/docs/v3/using-multiple-nodes/
