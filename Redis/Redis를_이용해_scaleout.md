@@ -16,26 +16,6 @@
 
 <br>
 
-## Redis
-
-- In memory data store
-    - Disk 참조 X → 작업량 향상, 속도 향상
-    - **RDB**: failover를 위해 특정 시점의 스냅샷을 디스크에 저장하긴 한다. 실제로 이 작업이 오래걸려서, redis 장애가 발생하는 경우가 많다고 한다.
-- Key value쌍의 다양한 Data structure: 문자열, 목록, 세트, 해시 비트맵 등
-- Socket.io 지원 -> Redis가 브로커 역할 수행
-- 확장성 및 가용성 - 클러스터링 가능. HA에 용이
-    - 싱글 스레드 기반이다. 따라서, I/O가 많아 의미있는 block이 발생할만한 작업을 조심해야한다. Redis 장애는 `getKeys()` , `flush()` 처럼 다건의 레코드 처리 커멘드때문에 발생하는 경우일 때가 꽤 있다고 한다.
-    - 다건의 문제를 해결하기 위해 cursor 매커니즘을 활용한다. scan을 이용해 일정 개수만큼만 조회하는 방식.
-
-<Br>
-
-#### Memcached와의 비교
-
-* 둘다 key-value이다
-* Memcached는 멀티스레드이다. global cache lock을 통해 thread safety를 가능하게 한다. 
-
-<br>
-
 ### Adapter: Redis
 
 : Redis가 어댑터로써 **서버간 브로커 역할**을 수행한다.
