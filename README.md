@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_186 TILs and counting..._
+_187 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [스케줄링과 스케줄러](운영체제/스케줄링_스케줄러.md) - Tue Oct 26 12:11:29 2021 +0900
-- [프로세스의 상태변화](운영체제/프로세스_상태변화.md) - Tue Oct 26 12:11:29 2021 +0900
+- [Redis](Redis/Redis란.md) - Thu Oct 28 20:40:32 2021 +0900
+- [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_이용해_scaleout.md) - Thu Oct 28 19:23:36 2021 +0900
 
 ### Categories
 
@@ -201,8 +201,9 @@ _186 TILs and counting..._
 - [HAProxy Config (Redis LB)](Redis/HAProxy_Config_(Redis_LB).md)
 - [Issues](Redis/Issues.md)
 - [Redis Replication / Cluster와 Sentinel](Redis/Redis_cluster_sentinel.md)
-- [Redis, 웹소켓(socket.io-redis)](Redis/Redis_socketIO.md)
-- [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_통해_scale_out.md)
+- [Redis](Redis/Redis란.md)
+- [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_이용해_scaleout.md)
+- [웹소켓과 socket.io](Redis/웹소켓_socketIO.md)
 
 ### [Socket](#Socket)
 - [Http 통신과 Socket 통신](Socket/Http_통신과_socket_통신.md)
