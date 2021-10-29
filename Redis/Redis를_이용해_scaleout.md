@@ -4,15 +4,22 @@
 
 : 서버의 수를 늘림. 복수의 서버를 구축해 Scale out
 
+* **수평 확장(horizontal scaling)**
 * 공유 자원에 대해 고려해야 한다.
 
 <br>
 
 ### Scale up: 서버 자체를 증강
 
-: 인스턴스를 더 좋은 인스턴스로 변경. e.g) EC2를 사용하다가 더 성능좋은것으로 이관하는 것
+: 인스턴스를 더 좋은 인스턴스로 변경.
 
-*c.f) 클라우드환경에서 Auto scaling 한다는 것은 트래픽에 따라 scale out / in 한다는 것*
+* **수직 확장(vertical scaling)**
+* 비용 부담이 크다.
+* e.g) EC2를 사용하다가 더 성능좋은것으로 이관하는 것.
+
+<br>
+
+##### c.f) 일반적으로 클라우드환경에서 **Auto scaling 한다는 것**은 트래픽에 따라 **scale out / in 한다**는 의미로 쓰인다.
 
 <br>
 
@@ -24,22 +31,22 @@
 * 여러 서버가 redis로 연결될 때 채널 개념이 발생하고 이 채널 정보는 socket server에서 들고 있는다. 각 socket server는 메시지를 받으면 서버에서 구독하고 있는 채널에 메시지가 해당하는지를 찾고 맞으면 메시지를 해당 Room에 준다.
 * Pub/Sub 매커니즘이 있다. 각 socket server는 n개의 채널을 subscribe할 수 있다.
 * **Adapter 역할**
-  * 일종의 cluster처럼 연결된 각 서버에 broadcast 하는 방식
+  * 일종의 cluster처럼 연결된 각 서버에 broadcast
   * routing message의 역할을 수행하는 Interface
 
 <img src = "./images/redisadapter.png">
+
+### Redis Adapter code example
 
 ```javascript
 const redisAdapter = require('socket.io-redis');
 
 const io = require('socket.io');
-```
 
-```javascript
 socketServer = io(baseServer)
   .adapter(redisAdapter({
     host: 'redis',
-    port: 6379
+    port: 6379 // default port
 }));
 ```
 
@@ -87,8 +94,6 @@ public set(hash: string, key: string, value: string) {
 <br><br>
 
 #### Reference)
-
-#### reference) <br>
 
 #### https://socket.io/docs/v3 <br>
 

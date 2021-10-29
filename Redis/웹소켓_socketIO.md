@@ -25,8 +25,7 @@
 
 ## Socket.io
 
-* Web socket 처럼 클라이언트, 서버간 양방향 통신을 가능하게 해주는 모듈
-* javascript 이용, 서버 Node.js가 지원
+* Web socket 처럼 클라이언트, 서버간 양방향 통신을 가능하게 해주는 **NPM 모듈**
 * 정확하게는 통신을 시작할 때 각 브라우저에 대해 websocket, polling, streaming, flash socket 등에서 가장 적절한 방법을 찾아 보내줌
 * Socket Server는 소켓과 논리적 room의 관계 정보를 들고있다.
 
@@ -58,8 +57,8 @@
 
 #### API 예시
 
-* `io.to(‘some room’).emit(‘some event’);``
-* ``io.to(‘room1’).to(‘room2’).to(‘room3’).emit(‘some event’);`
+* `io.to(‘some room’).emit(‘some event’);`
+* `io.to(‘room1’).to(‘room2’).to(‘room3’).emit(‘some event’);`
 * Room에 입장 후 방 전체에 emit
 
 ```javascript
