@@ -7,21 +7,24 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_187 TILs and counting..._
+_189 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
 - [Redis](Redis/Redis란.md) - Thu Oct 28 20:40:32 2021 +0900
-- [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_이용해_scaleout.md) - Thu Oct 28 19:23:36 2021 +0900
+- [웹소켓과 socket.io](Redis/웹소켓_socketIO.md) - Thu Oct 28 19:23:36 2021 +0900
 
 ### Categories
 
+- [Algorithm](#Algorithm)
 - [Back_end](#Back_end)
 - [C++](#C++)
 - [Cloud](#Cloud)
+- [Data_Structure](#Data_Structure)
 - [Database](#Database)
+- [Develop](#Develop)
 - [Docker](#Docker)
 - [Git](#Git)
 - [HTTP](#HTTP)
@@ -32,20 +35,28 @@ _187 TILs and counting..._
 - [Kotlin](#Kotlin)
 - [Kubernetes](#Kubernetes)
 - [Linux](#Linux)
+- [Network](#Network)
 - [Node.js](#Node.js)
+- [OOP](#OOP)
+- [OS](#OS)
 - [REST_API](#REST_API)
 - [RabbitMQ](#RabbitMQ)
 - [Redis](#Redis)
 - [Socket](#Socket)
+- [Software_Engineering](#Software_Engineering)
 - [Spring_Boot](#Spring_Boot)
 - [WebRTC](#WebRTC)
-- [개발](#개발)
-- [객체지향](#객체지향)
-- [네트워크](#네트워크)
-- [소프트웨어공학](#소프트웨어공학)
-- [알고리즘](#알고리즘)
-- [운영체제](#운영체제)
-- [자료구조](#자료구조)
+
+### [Algorithm](#Algorithm)
+- [MST(최소 스패닝 트리)와 Kruskal, Prim](Algorithm/MST_크루스칼_프림.md)
+- [버블 정렬(Bubble sort)](Algorithm/버블_정렬.md)
+- [삽입 정렬(Insert sort)](Algorithm/삽입_정렬.md)
+- [선택 정렬(Select sort)](Algorithm/선택_정렬.md)
+- [실제 사용되는 sort() 알고리즘](Algorithm/실제_사용되는_sort_알고리즘.md)
+- [외부 정렬](Algorithm/외부_정렬.md)
+- [퀵 정렬(Quick sort)](Algorithm/퀵_정렬.md)
+- [합병 정렬(Merge sort)](Algorithm/합병_정렬.md)
+- [힙 정렬(Heap sort)](Algorithm/힙_정렬.md)
 
 ### [Back_end](#Back_end)
 - [TDD(Test Driven Develop)](Back_end/TDD.md)
@@ -59,6 +70,15 @@ _187 TILs and counting..._
 - [IaaS, PaaS, SaaS](Cloud/IaaS_PaaS_SaaS.md)
 - [온프레미스와 클라우드(Off-premise)](Cloud/온프레미스_클라우드.md)
 
+### [Data_Structure](#Data_Structure)
+- [B-Tree](Data_Structure/B-Tree.md)
+- [Red Black Tree](Data_Structure/레드블랙트리.md)
+- [이진 탐색 트리(BST)](Data_Structure/이진탐색트리.md)
+- [이진트리(Binary Tree)](Data_Structure/이진트리.md)
+- [코딩 인터뷰 완전분석 - 연결 리스트(Linked list)](Data_Structure/코딩_인터뷰_완전분석-연결_리스트.md)
+- [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](Data_Structure/코딩_인터뷰_완전분석-트리_그래프.md)
+- [코딩 인터뷰 완전분석 - 해시 테이블](Data_Structure/코딩_인터뷰_완전분석-해시테이블.md)
+
 ### [Database](#Database)
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
@@ -68,6 +88,13 @@ _187 TILs and counting..._
 - [Database 스키마](Database/스키마.md)
 - [DB 정규화 - 1, 2, 3 정규형(NF - Normal Form)](Database/정규화_1_2_3_BCNF.md)
 - [DB 정규화가 필요한 이유와 함수적 종속](Database/정규화가_필요한이유.md)
+
+### [Develop](#Develop)
+- [Issues](Develop/Issues.md)
+- [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](Develop/도메인_로직패턴.md)
+- [코드 깔끔하게 작성하기](Develop/코드_깔끔하게_작성하기.md)
+- [코드 리뷰하기](Develop/코드_리뷰하기.md)
+- [파라미터의 역할](Develop/파라미터의_역할.md)
 
 ### [Docker](#Docker)
 - [Docker CLI](Docker/Docker_CLI.md)
@@ -167,6 +194,24 @@ _187 TILs and counting..._
 - [유닉스 디렉토리의 구조](Linux/유닉스_디렉토리구조.md)
 - [Port (포트)와 포트포워딩](Linux/포트_포트포워딩.md)
 
+### [Network](#Network)
+- [3 way, 4 way handshake](Network/3_way_4_way_handshake.md)
+- [CORS: Cross-Origin Resource Sharing](Network/CORS.md)
+- [IDL](Network/IDL.md)
+- [OSI(Open System Interconnection) 7계층](Network/OSI_7계층.md)
+- [RPC 통신](Network/RPC_통신.md)
+- [TCP / IP 프로토콜의 4계층](Network/TCP_IP_4계층.md)
+- [TCP/IP vs UDP](Network/TCP_IP_UDP.md)
+- [Was vs Web Server](Network/Webserver_vs_WAS.md)
+- [gRPC](Network/gRPC.md)
+- [공인 아이피, 사설 아이피, VPC](Network/공인사설_아이피_VPC.md)
+- [네트워크의 성능](Network/네트워크_성능.md)
+- [웹 스토리지(세션 스토리지, 로컬 스토리지)](Network/웹_스토리지(로컬_스토리지_세션_스토리지).md)
+- [웹 통신의 큰 흐름](Network/웹_통신의_흐름.md)
+- [쿠키(Cookie)](Network/쿠키_세션_1_쿠키.md)
+- [세션(Session)](Network/쿠키_세션_2_세션과_쿠키_차이.md)
+- [토큰 기반 인증 방식 - JWT(Json Web Token)](Network/쿠키_세션_3_토큰.md)
+
 ### [Node.js](#Node.js)
 - [Issues](Node.js/Issues.md)
 - [NPM CLI](Node.js/NPM_CLI.md)
@@ -180,6 +225,22 @@ _187 TILs and counting..._
 - [Sequelize 연관관계](Node.js/Sequelize_연관관계.md)
 - [Sync, Async, blocking, non-blocking](Node.js/동기_비동기_block_non-block.md)
 - [Event loop, 비동기 처리의 흐름](Node.js/이벤트루프_비동기.md)
+
+### [OOP](#OOP)
+- [객체지향적 설계 원칙 - SOLID 원칙](OOP/SOLID원칙.md)
+- [Spring에서의 객체지향(협력, 책임, 역할)](OOP/Spring_객체지향.md)
+
+### [OS](#OS)
+- [페이지 부재와 교체](OS/Page_fault.md)
+- [동기 vs 비동기(Sync vs Async)](OS/sync_async.md)
+- [가상 메모리](OS/가상_메모리.md)
+- [데드락(Deadlock)](OS/데드락(Deadlock).md)
+- [스레드(Thread)](OS/스레드(Thread).md)
+- [스케줄링과 스케줄러](OS/스케줄링_스케줄러.md)
+- [스케줄링 알고리즘](OS/스케줄링_알고리즘.md)
+- [임계영역(Critical section)](OS/임계영역(Critical_section).md)
+- [프로세스(Process)](OS/프로세스(Process).md)
+- [프로세스의 상태변화](OS/프로세스_상태변화.md)
 
 ### [REST_API](#REST_API)
 - [Rest api 특징과 6가지 원칙](REST_API/RESTAPI_특징_6가지_원칙.md)
@@ -209,6 +270,10 @@ _187 TILs and counting..._
 - [Http 통신과 Socket 통신](Socket/Http_통신과_socket_통신.md)
 - [Web Socket](Socket/Web_Socket.md)
 
+### [Software_Engineering](#Software_Engineering)
+- [디자인 패턴](Software_Engineering/디자인_패턴.md)
+- [Class diagram](Software_Engineering/클래스_다이어그램.md)
+
 ### [Spring_Boot](#Spring_Boot)
 - [DAO vs Repository](Spring_Boot/DAO_Repository.md)
 - [DTO(data transfer object)에 관해](Spring_Boot/DTO에_관해.md)
@@ -226,69 +291,6 @@ _187 TILs and counting..._
 - [OWT Stream publish, subscribe 코드 분석 및 시나리오](WebRTC/OWT_pub_sub_시나리오_분석.md)
 - [OWT server 토큰 생성 과정 분석](WebRTC/OWT_server_토큰_생성과정.md)
 - [WebRTC & OWT](WebRTC/webRTC_&_OWT.md)
-
-### [개발](#개발)
-- [Issues](개발/Issues.md)
-- [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](개발/도메인_로직패턴.md)
-- [코드 깔끔하게 작성하기](개발/코드_깔끔하게_작성하기.md)
-- [코드 리뷰하기](개발/코드_리뷰하기.md)
-- [파라미터의 역할](개발/파라미터의_역할.md)
-
-### [객체지향](#객체지향)
-- [객체지향적 설계 원칙 - SOLID 원칙](객체지향/SOLID원칙.md)
-- [Spring에서의 객체지향(협력, 책임, 역할)](객체지향/Spring_객체지향.md)
-
-### [네트워크](#네트워크)
-- [3 way, 4 way handshake](네트워크/3_way_4_way_handshake.md)
-- [CORS: Cross-Origin Resource Sharing](네트워크/CORS.md)
-- [IDL](네트워크/IDL.md)
-- [OSI(Open System Interconnection) 7계층](네트워크/OSI_7계층.md)
-- [RPC 통신](네트워크/RPC_통신.md)
-- [TCP / IP 프로토콜의 4계층](네트워크/TCP_IP_4계층.md)
-- [TCP/IP vs UDP](네트워크/TCP_IP_UDP.md)
-- [Was vs Web Server](네트워크/Webserver_vs_WAS.md)
-- [gRPC](네트워크/gRPC.md)
-- [공인 아이피, 사설 아이피, VPC](네트워크/공인사설_아이피_VPC.md)
-- [웹 스토리지(세션 스토리지, 로컬 스토리지)](네트워크/웹_스토리지(로컬_스토리지_세션_스토리지).md)
-- [웹 통신의 큰 흐름](네트워크/웹_통신의_흐름.md)
-- [쿠키(Cookie)](네트워크/쿠키_세션_1_쿠키.md)
-- [세션(Session)](네트워크/쿠키_세션_2_세션과_쿠키_차이.md)
-- [토큰 기반 인증 방식 - JWT(Json Web Token)](네트워크/쿠키_세션_3_토큰.md)
-
-### [소프트웨어공학](#소프트웨어공학)
-- [디자인 패턴](소프트웨어공학/디자인_패턴.md)
-- [Class diagram](소프트웨어공학/클래스_다이어그램.md)
-
-### [알고리즘](#알고리즘)
-- [MST(최소 스패닝 트리)와 Kruskal, Prim](알고리즘/MST_크루스칼_프림.md)
-- [버블 정렬(Bubble sort)](알고리즘/버블_정렬.md)
-- [삽입 정렬(Insert sort)](알고리즘/삽입_정렬.md)
-- [선택 정렬(Select sort)](알고리즘/선택_정렬.md)
-- [실제 사용되는 sort() 알고리즘](알고리즘/실제_사용되는_sort_알고리즘.md)
-- [퀵 정렬(Quick sort)](알고리즘/퀵_정렬.md)
-- [합병 정렬(Merge sort)](알고리즘/합병_정렬.md)
-- [힙 정렬(Heap sort)](알고리즘/힙_정렬.md)
-
-### [운영체제](#운영체제)
-- [페이지 부재와 교체](운영체제/Page_fault.md)
-- [동기 vs 비동기(Sync vs Async)](운영체제/sync_async.md)
-- [가상 메모리](운영체제/가상_메모리.md)
-- [데드락(Deadlock)](운영체제/데드락(Deadlock).md)
-- [스레드(Thread)](운영체제/스레드(Thread).md)
-- [스케줄링과 스케줄러](운영체제/스케줄링_스케줄러.md)
-- [스케줄링 알고리즘](운영체제/스케줄링_알고리즘.md)
-- [임계영역(Critical section)](운영체제/임계영역(Critical_section).md)
-- [프로세스(Process)](운영체제/프로세스(Process).md)
-- [프로세스의 상태변화](운영체제/프로세스_상태변화.md)
-
-### [자료구조](#자료구조)
-- [B-Tree](자료구조/B-Tree.md)
-- [Red Black Tree](자료구조/레드블랙트리.md)
-- [이진 탐색 트리(BST)](자료구조/이진탐색트리.md)
-- [이진트리(Binary Tree)](자료구조/이진트리.md)
-- [코딩 인터뷰 완전분석 - 연결 리스트(Linked list)](자료구조/코딩_인터뷰_완전분석-연결_리스트.md)
-- [코딩 인터뷰 완전분석 - 트리(Tree)와 그래프(Graph)](자료구조/코딩_인터뷰_완전분석-트리_그래프.md)
-- [코딩 인터뷰 완전분석 - 해시 테이블](자료구조/코딩_인터뷰_완전분석-해시테이블.md)
 
 [1]: https://simonwillison.net/2020/Apr/20/self-rewriting-readme/
 [2]: https://github.com/jbranchaud/til
