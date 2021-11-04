@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_189 TILs and counting..._
+_190 TILs and counting..._
 
 ---
 
@@ -239,6 +239,7 @@ _189 TILs and counting..._
 - [스케줄링과 스케줄러](OS/스케줄링_스케줄러.md)
 - [스케줄링 알고리즘](OS/스케줄링_알고리즘.md)
 - [임계영역(Critical section)](OS/임계영역(Critical_section).md)
+- [Kernel](OS/커널(Kernel).md)
 - [프로세스(Process)](OS/프로세스(Process).md)
 - [프로세스의 상태변화](OS/프로세스_상태변화.md)
 
