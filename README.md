@@ -53,7 +53,7 @@ _192 TILs and counting..._
 - [삽입 정렬(Insert sort)](Algorithm/삽입_정렬.md)
 - [선택 정렬(Select sort)](Algorithm/선택_정렬.md)
 - [실제 사용되는 sort() 알고리즘](Algorithm/실제_사용되는_sort_알고리즘.md)
-- [외부 정렬](Algorithm/외부_정렬.md)
+- [외부 정렬(External sort)](Algorithm/외부_정렬.md)
 - [퀵 정렬(Quick sort)](Algorithm/퀵_정렬.md)
 - [합병 정렬(Merge sort)](Algorithm/합병_정렬.md)
 - [힙 정렬(Heap sort)](Algorithm/힙_정렬.md)
