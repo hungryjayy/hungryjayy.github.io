@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_191 TILs and counting..._
+_192 TILs and counting..._
 
 ---
 
@@ -264,6 +264,7 @@ _191 TILs and counting..._
 - [HAProxy Config (Redis LB)](Redis/HAProxy_Config_(Redis_LB).md)
 - [Issues](Redis/Issues.md)
 - [Redis Replication / Cluster와 Sentinel](Redis/Redis_cluster_sentinel.md)
+- [Redis의 자료구조와 Full scan](Redis/Redis_자료구조와_풀스캔.md)
 - [Redis](Redis/Redis란.md)
 - [Redis를 통해 서버 Scale out에서 자원 공유](Redis/Redis를_이용해_scaleout.md)
 - [웹소켓과 socket.io](Redis/웹소켓_socketIO.md)
