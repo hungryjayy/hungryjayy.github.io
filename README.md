@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_192 TILs and counting..._
+_193 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Lazy Loading과 N + 1](JPA/LazyLoading_N+1.md) - Thu Nov 11 01:09:00 2021 +0900
 - [Redis](Redis/Redis란.md) - Thu Oct 28 20:40:32 2021 +0900
-- [웹소켓과 socket.io](Redis/웹소켓_socketIO.md) - Thu Oct 28 19:23:36 2021 +0900
 
 ### Categories
 
@@ -131,7 +131,8 @@ _192 TILs and counting..._
 - [JPA Transaction](JPA/JPA_Transaction.md)
 - [Transaction 적용이 안되는 몇가지 문제](JPA/JPA_transaction_적용_안되는_몇가지_문제.md)
 - [JPA 연관관계](JPA/JPA_연관관계.md)
-- [JPA의 Proxy](JPA/JPA와_Proxy.md)
+- [JPA와 Proxy](JPA/JPA와_Proxy.md)
+- [Lazy Loading과 N + 1](JPA/LazyLoading_N+1.md)
 - [JPA 벌크연산(update, delete)](JPA/벌크연산_Update_Delete.md)
 
 ### [Java](#Java)
