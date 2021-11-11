@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_193 TILs and counting..._
+_194 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [Lazy Loading과 N + 1](JPA/LazyLoading_N+1.md) - Thu Nov 11 01:09:00 2021 +0900
-- [Redis](Redis/Redis란.md) - Thu Oct 28 20:40:32 2021 +0900
+- [TCP/IP vs UDP - TCP](Network/TCP_UDP-TCP.md) - Thu Nov 11 02:02:54 2021 +0900
+- [TCP/IP vs UDP - UDP](Network/TCP_UDP-UDP.md) - Thu Nov 11 02:02:54 2021 +0900
 
 ### Categories
 
@@ -202,7 +202,8 @@ _193 TILs and counting..._
 - [OSI(Open System Interconnection) 7계층](Network/OSI_7계층.md)
 - [RPC 통신](Network/RPC_통신.md)
 - [TCP / IP 프로토콜의 4계층](Network/TCP_IP_4계층.md)
-- [TCP/IP vs UDP](Network/TCP_IP_UDP.md)
+- [TCP/IP vs UDP - TCP](Network/TCP_UDP-TCP.md)
+- [TCP/IP vs UDP - UDP](Network/TCP_UDP-UDP.md)
 - [Was vs Web Server](Network/Webserver_vs_WAS.md)
 - [gRPC](Network/gRPC.md)
 - [공인 아이피, 사설 아이피, VPC](Network/공인사설_아이피_VPC.md)
