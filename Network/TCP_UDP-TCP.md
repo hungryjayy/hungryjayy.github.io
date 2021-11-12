@@ -1,8 +1,6 @@
-# TCP/IP vs UDP
+# TCP/IP vs UDP - TCP
 
-### TCP / IP : Transfer Control Protocol / Internet Protocol
-
-### UDP : User Datagram Protocol
+: Transfer Control Protocol / Internet Protocol
 
  <br>
 
@@ -45,13 +43,12 @@
 ### 특징
 
 * **흐름 제어**: **데이터 송신하는 곳과 수신하는 곳의 데이터 처리 속도를 조절**
-
   * **buffer overflow 방지**
-
+  
   * **Stop and Wait**: 전송 패킷에 대한 ack를 받으면 다음 패킷 전송.
   * **슬라이딩 윈도우**: 수신자가 설정한 window 크기만큼에 대해서는, ack를 받지 않아도 전송을 하도록 한다. window에 포함된 패킷들이 전송되고 ack를 받으면, 그 만큼 윈도우를 **slide**하는 방식
     * window크기는 동적으로 변화 가능하다.
-
+  
 * **혼잡 제어** : 네트워크 내의 패킷 수가 너무 증가하지 않도록 방지.
 
   * **느린 시작**: 혼잡 윈도우를 연다. 처음에는 패킷 하나 전송, ack를 받으면 두개 전송, 네개 전송, ...
@@ -68,6 +65,17 @@
 
 * 점대점(P2P) : 연결은 2개의 엔드포인트가 있음
   * 따라서 multicasting이나 broadcasting 지원 x
+
+<br>
+
+### TCP 서버의 특징
+
+* 서버 소켓은 연결만을 담당
+* server client는 1:1 연결
+* 스트림 전송으로 전송 데이터 크기가 무제한
+* 패킷 응답 때문에 느리고, CPU소모가 크다
+* Streaming에 사용되지 않음
+  * 손실 시 재요청해 정확한 데이터를 주고받는 것보다 지연되지 않는 stream이 유리하기 때문
 
 <br>
 
@@ -90,45 +98,6 @@
   * line 1: 텔넷은 호스트명을 찾아 80번 포트로 대기중인 joes-hardware 웹 서버에 연결
   * line 2~4: 커넥션 수립을 알리는 텔넷의 출력
   * line 5~7: 사용자가 직접 HTTP 요청 입력 후 Host 헤더로 전송하고, 한줄 더 띄우면 해당 웹 서버에서 리소스(`/tools.html`) 반환
-
-<br>
-
-### TCP 서버의 특징
-
-* 서버 소켓은 연결만을 담당
-* server client는 1:1 연결
-* 스트림 전송으로 전송 데이터 크기가 무제한
-* 패킷 응답 때문에 느리고, CPU소모가 크다
-* Streaming에 사용되지 않음
-  * 손실 시 재요청해 정확한 데이터를 주고받는 것보다 지연되지 않는 stream이 유리하기 때문
-
-<br><br>
-
-## UDP
-
-<img src="https://github.com/WeareSoft/tech-interview/raw/master/contents/images/udp-datagram.png" alt="img" style="zoom:50%;" /> 
-
-* 데이터그램 단위로 처리하는 **비연결형 서비스**
-  * 연결을 위해 할당되는 논리적 경로 없음
-  * 패킷은 각각 독립적 관계(독립적으로 처리)
-* ACK와 같은 절차 없음
-  * 신뢰성 낮음
-  * 덕분에 빠르긴 함
-  * 메시지 크기도 TCP에 비해 엄청 작다. 송신, 수신 port, 패킷 length, checksum이 끝.
-* UDP 헤더의 **checksum**필드로 최소한의 오류만을 검출
-* 패킷 순서에 맞게 **조립**, **흐름제어**, **혼잡제어** **다 하지 않음.**
-* 신뢰성 없고, **연속성**이 중요한 서비스에 적합
-  * e.g. 실시간 스트리밍
-  * 그러나 개발자가 개발 레벨에서 어느정도 신뢰성을 줄 수는 있다고 함
-
-<br>
-
-### UDP 서버의 특징
-
-* 연결 자체가 없고 서버소켓 클라이언트소켓 구분 X
-* 소켓 대신 IP 기반 데이터 전송
-* 1:1, 1:n, n:n 다 가능. (**멀티캐스트**, **브로드캐스트** 다 가능). P2P 통신은 이러한 특징에서 peer간 1:1통신만을 가져가는 것.
-* 데이터그램 단위 전송 (65535 바이트 크기)
 
 <br><br>
 

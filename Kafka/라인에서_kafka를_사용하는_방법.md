@@ -10,4 +10,6 @@
    * 데이터가 하나의 클러스터에 집중.
      * 데이터를 사용하는 서비스가 해당 데이터를 쉽게 찾을 수 있음
 
+<br>
+
 #### reference) https://engineering.linecorp.com/ko/blog/how-to-use-kafka-in-line-1/
