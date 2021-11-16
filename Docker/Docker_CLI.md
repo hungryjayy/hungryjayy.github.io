@@ -18,12 +18,19 @@
 * `--build` : 도커 컨테이너 이미지 생성
   * 이미지는 불변이기 때문에 설정 변경 있을 때 이걸 해줘야 한다.
 
+<br>
 
+## 컨테이너 실행
+
+* `docker exec -it ${containerId} /bin/sh` 
+* `docker exec -ito 0 ${containerId} /bin/sh` : root 권한으로 bash shell을 실행. sudo 지원 안되는 경우 사용
+
+<br>
 
 ## 컨테이너 모두 삭제
 
 *  `docker rm $(docker ps -a -q)`
-  * 위와 같은 CLI 내부 $(CLI) 와 같은 형태는 내부 ps를 통해 전체에 대해 CLI를 주고자 할 때 좋음.
+  * sub CLI의 결과를 메인으로 전달
 
 * `sudo docker system prune --volumes`
   * 로컬에 있는 데이터 볼륨 완전 제거
@@ -67,6 +74,7 @@ docker push {registry 경로}/{무슨 이름으로 올릴지}:{버전 명시}
 
 ## 도커 시스템, 이미지, 컨테이너, 볼륨 삭제
 
+* `sudo docker system prune -af`: all, force 옵션, 시스템 전부삭제
 * `docker system prune`
   * `--volume`, `--images` 등 옵션 붙여줄 수 있음
 * `docker volume prune`
