@@ -23,17 +23,19 @@
 ## 컨테이너 실행
 
 * `docker exec -it ${containerId} /bin/sh` 
-* `docker exec -ito 0 ${containerId} /bin/sh` : root 권한으로 bash shell을 실행. sudo 지원 안되는 경우 사용
+* `docker exec -itu 0 ${containerId} /bin/sh` : root 권한으로 bash shell을 실행. sudo 지원 안되는 경우 사용
 
 <br>
 
-## 컨테이너 모두 삭제
+## 리소스 삭제
 
 *  `docker rm $(docker ps -a -q)`
   * sub CLI의 결과를 메인으로 전달
 
 * `sudo docker system prune --volumes`
   * 로컬에 있는 데이터 볼륨 완전 제거
+
+* `docker-compose down -v` : `-v` 옵션으로 볼륨까지 내리기
 
 <br>
 
