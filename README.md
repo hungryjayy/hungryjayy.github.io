@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_194 TILs and counting..._
+_195 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md) - Thu Nov 18 13:19:22 2021 +0900
 - [TCP/IP vs UDP - TCP](Network/TCP_UDP-TCP.md) - Thu Nov 11 02:02:54 2021 +0900
-- [TCP/IP vs UDP - UDP](Network/TCP_UDP-UDP.md) - Thu Nov 11 02:02:54 2021 +0900
 
 ### Categories
 
@@ -97,6 +97,7 @@ _194 TILs and counting..._
 - [파라미터의 역할](Develop/파라미터의_역할.md)
 
 ### [Docker](#Docker)
+- [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md)
 - [Docker CLI](Docker/Docker_CLI.md)
 - [Docker 볼륨과 바인드 마운트](Docker/Docker_볼륨과_bind_mount(volume_bind_mount).md)
 - [Docker 용어, 환경설정 기본 개념](Docker/Docker_용어_환경설정_기본_개념.md)
