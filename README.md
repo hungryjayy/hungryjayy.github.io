@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_195 TILs and counting..._
+_198 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
+- [취약점과 대응방안](Network/취약점_대응방안.md) - Tue Nov 30 17:57:51 2021 +0900
 - [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md) - Thu Nov 18 13:19:22 2021 +0900
-- [TCP/IP vs UDP - TCP](Network/TCP_UDP-TCP.md) - Thu Nov 11 02:02:54 2021 +0900
 
 ### Categories
 
@@ -91,6 +91,7 @@ _195 TILs and counting..._
 
 ### [Develop](#Develop)
 - [Issues](Develop/Issues.md)
+- [JIRA 기본 사용법](Develop/JIRA_사용법.md)
 - [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](Develop/도메인_로직패턴.md)
 - [코드 깔끔하게 작성하기](Develop/코드_깔끔하게_작성하기.md)
 - [코드 리뷰하기](Develop/코드_리뷰하기.md)
@@ -211,6 +212,7 @@ _195 TILs and counting..._
 - [네트워크의 성능](Network/네트워크_성능.md)
 - [웹 스토리지(세션 스토리지, 로컬 스토리지)](Network/웹_스토리지(로컬_스토리지_세션_스토리지).md)
 - [웹 통신의 큰 흐름](Network/웹_통신의_흐름.md)
+- [취약점과 대응방안](Network/취약점_대응방안.md)
 - [쿠키(Cookie)](Network/쿠키_세션_1_쿠키.md)
 - [세션(Session)](Network/쿠키_세션_2_세션과_쿠키_차이.md)
 - [토큰 기반 인증 방식 - JWT(Json Web Token)](Network/쿠키_세션_3_토큰.md)
@@ -289,6 +291,7 @@ _195 TILs and counting..._
 - [SpringBoot 용어 및 기본 개념](Spring_Boot/Spring_Boot_용어_및_기본_개념.md)
 - [Spring Reactive stream과 Webflux](Spring_Boot/Webflux와_Reactive.md)
 - [디렉토리 구성, 패키지 구조](Spring_Boot/디렉토리_구성_패키지_구조.md)
+- [스프링 인 액션 - 1. 스프링 기초 - 1. 스프링 시작하기](Spring_Boot/스프링인액션_1장_1_스프링시작하기.md)
 - [Annotation](Spring_Boot/어노테이션.md)
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
 
