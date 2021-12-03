@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_198 TILs and counting..._
+_204 TILs and counting..._
 
 ---
 
@@ -83,6 +83,7 @@ _198 TILs and counting..._
 - [DB Indexing](Database/DB_Indexing.md)
 - [DB Key](Database/DB_Key.md)
 - [DBCP(DB 커넥션 풀)](Database/DB_커넥션풀.md)
+- [DB 접근 통제와 작업 요청](Database/DB접근통제_작업요청.md)
 - [SQL Injection](Database/SQL_injection과_prepared_statement.md)
 - [Transaction과 격리수준](Database/Transaction_isolation.md)
 - [Database 스키마](Database/스키마.md)
@@ -99,6 +100,7 @@ _198 TILs and counting..._
 
 ### [Docker](#Docker)
 - [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md)
+- [사내 레지스트리 - D2hub](Docker/D2hub_레지스트리.md)
 - [Docker CLI](Docker/Docker_CLI.md)
 - [Docker 볼륨과 바인드 마운트](Docker/Docker_볼륨과_bind_mount(volume_bind_mount).md)
 - [Docker 용어, 환경설정 기본 개념](Docker/Docker_용어_환경설정_기본_개념.md)
@@ -174,13 +176,16 @@ _198 TILs and counting..._
 - [Data class](Kotlin/Data_Class.md)
 - [예외 처리](Kotlin/Exception_처리.md)
 - [Issues](Kotlin/Issue.md)
-- [](Kotlin/Kotlin_특징.md)
+- [Kotlin 특징](Kotlin/Kotlin_특징.md)
 - [Plugin](Kotlin/Plugin.md)
 - [Scope function(let, also, run, apply, with)](Kotlin/Scope_function.md)
 - [for-loop vs forEach vs Map](Kotlin/for-loop_forEach_map.md)
 
 ### [Kubernetes](#Kubernetes)
-- [Kubernetes 기초 용어](Kubernetes/Kubernetes_기초_용어.md)
+- [쿠버네티스 기반 DKOS](Kubernetes/쿠버네티스_기반_DKOS.md)
+- [쿠버네티스 배포와 서비스](Kubernetes/쿠버네티스_배포_서비스.md)
+- [쿠버네티스를 사용하는 이유](Kubernetes/쿠버네티스_사용이유.md)
+- [쿠버네티스의 아키텍처](Kubernetes/쿠버네티스_아키텍처.md)
 
 ### [Linux](#Linux)
 - [CLI](Linux/CLI.md)
@@ -292,6 +297,7 @@ _198 TILs and counting..._
 - [Spring Reactive stream과 Webflux](Spring_Boot/Webflux와_Reactive.md)
 - [디렉토리 구성, 패키지 구조](Spring_Boot/디렉토리_구성_패키지_구조.md)
 - [스프링 인 액션 - 1. 스프링 기초 - 1. 스프링 시작하기](Spring_Boot/스프링인액션_1장_1_스프링시작하기.md)
+- [스프링 인 액션 - 1. 스프링 기초 - 2. 웹 애플리케이션 개발하기](Spring_Boot/스프링인액션_1장_2_웹애플리케이션_개발.md)
 - [Annotation](Spring_Boot/어노테이션.md)
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
 
