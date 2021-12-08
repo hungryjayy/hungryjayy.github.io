@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_204 TILs and counting..._
+_213 TILs and counting..._
 
 ---
 
@@ -45,6 +45,7 @@ _204 TILs and counting..._
 - [Socket](#Socket)
 - [Software_Engineering](#Software_Engineering)
 - [Spring_Boot](#Spring_Boot)
+- [Tools](#Tools)
 - [WebRTC](#WebRTC)
 
 ### [Algorithm](#Algorithm)
@@ -92,15 +93,12 @@ _204 TILs and counting..._
 
 ### [Develop](#Develop)
 - [Issues](Develop/Issues.md)
-- [JIRA 기본 사용법](Develop/JIRA_사용법.md)
-- [비즈니스 처리(domain) 2가지 로직 패턴(transaction script & domain model)](Develop/도메인_로직패턴.md)
 - [코드 깔끔하게 작성하기](Develop/코드_깔끔하게_작성하기.md)
 - [코드 리뷰하기](Develop/코드_리뷰하기.md)
 - [파라미터의 역할](Develop/파라미터의_역할.md)
 
 ### [Docker](#Docker)
 - [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md)
-- [사내 레지스트리 - D2hub](Docker/D2hub_레지스트리.md)
 - [Docker CLI](Docker/Docker_CLI.md)
 - [Docker 볼륨과 바인드 마운트](Docker/Docker_볼륨과_bind_mount(volume_bind_mount).md)
 - [Docker 용어, 환경설정 기본 개념](Docker/Docker_용어_환경설정_기본_개념.md)
@@ -143,6 +141,10 @@ _204 TILs and counting..._
 - [Lazy Evaluation](Java/Lazy_Evaluation.md)
 - [Java Servlet](Java/Servlet.md)
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
+- [자바의정석 - 11장 컬렉션 프레임워크](Java/자바의정석_11_컬렉션_프레임워크.md)
+- [자바의정석 - 7장 다형성](Java/자바의정석_7_다형성.md)
+- [자바의정석 - 7장 추상클래스와 인터페이스](Java/자바의정석_7_추상클래스_인터페이스.md)
+- [자바의정석 - 8장 예외처리](Java/자바의정석_8_예외처리.md)
 
 ### [Javascript](#Javascript)
 - [Hoisting](Javascript/Hoisting.md)
@@ -174,7 +176,6 @@ _204 TILs and counting..._
 - [Coroutine](Kotlin/Coroutine.md)
 - [Coroutine lifecycle flow](Kotlin/Coroutine_lifecycle_flow.md)
 - [Data class](Kotlin/Data_Class.md)
-- [예외 처리](Kotlin/Exception_처리.md)
 - [Issues](Kotlin/Issue.md)
 - [Kotlin 특징](Kotlin/Kotlin_특징.md)
 - [Plugin](Kotlin/Plugin.md)
@@ -182,7 +183,6 @@ _204 TILs and counting..._
 - [for-loop vs forEach vs Map](Kotlin/for-loop_forEach_map.md)
 
 ### [Kubernetes](#Kubernetes)
-- [쿠버네티스 기반 DKOS](Kubernetes/쿠버네티스_기반_DKOS.md)
 - [쿠버네티스 배포와 서비스](Kubernetes/쿠버네티스_배포_서비스.md)
 - [쿠버네티스를 사용하는 이유](Kubernetes/쿠버네티스_사용이유.md)
 - [쿠버네티스의 아키텍처](Kubernetes/쿠버네티스_아키텍처.md)
@@ -238,7 +238,9 @@ _204 TILs and counting..._
 
 ### [OOP](#OOP)
 - [객체지향적 설계 원칙 - SOLID 원칙](OOP/SOLID원칙.md)
-- [Spring에서의 객체지향(협력, 책임, 역할)](OOP/Spring_객체지향.md)
+- [객체지향 개론 1. 메시지](OOP/객체지향_개론_1_메시지.md)
+- [객체지향 개론 2. 설계](OOP/객체지향_개론_2_설계.md)
+- [절차지향과 객체지향](OOP/절차지향_객체지향_비교.md)
 
 ### [OS](#OS)
 - [페이지 부재와 교체](OS/Page_fault.md)
@@ -300,6 +302,16 @@ _204 TILs and counting..._
 - [스프링 인 액션 - 1. 스프링 기초 - 2. 웹 애플리케이션 개발하기](Spring_Boot/스프링인액션_1장_2_웹애플리케이션_개발.md)
 - [Annotation](Spring_Boot/어노테이션.md)
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
+
+### [Tools](#Tools)
+- [사내 레지스트리 - D2hub](Tools/D2hub_레지스트리.md)
+- [JIRA 기본 사용법](Tools/JIRA_사용법.md)
+- [Matrix - 에러 모니터링 도구](Tools/Matrix_에러_모니터링_도구.md)
+- [Tenth2 인터페이스와 사용예시](Tools/Tenth2_인터페이스_사용예시.md)
+- [모니터링 도구: 모피어스(Morpheus)](Tools/모니터링도구_모피어스.md)
+- [분산 파일 시스템 Tenth2](Tools/분산파일시스템_Tenth2.md)
+- [사내 클라우드 시스템 Krane](Tools/사내_클라우드_Krane.md)
+- [쿠버네티스 기반 DKOS](Tools/쿠버네티스_기반_DKOS.md)
 
 ### [WebRTC](#WebRTC)
 - [OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리](WebRTC/OWT_WebSocket_분석.md)
