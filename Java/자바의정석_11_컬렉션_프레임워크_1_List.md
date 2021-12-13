@@ -2,7 +2,7 @@
 
 : **List**, **Set**, **Map**으로 구성된 컬렉션들을 사용하기 위해 표준화된 설계
 
-![java_collection_framework_hierarchy](/Users/joowon/dev/lab/TIL/Java/images/java_collection_framework_hierarchy.jpeg)
+![java_collection_framework_hierarchy](./images/java_collection_framework_hierarchy.jpeg)
 
 * java.util 패키지에 포함.
 * jdk 1.2부터 제공
