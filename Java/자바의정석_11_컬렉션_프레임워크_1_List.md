@@ -1,15 +1,19 @@
 # 자바의정석 - 11장 컬렉션 프레임워크 1. List
 
-: **List**, **Set**, **Map**으로 구성된 컬렉션들을 사용하기 위해 표준화된 설계
+<br>
 
 ![java_collection_framework_hierarchy](./images/java_collection_framework_hierarchy.jpeg)
+
+### 컬렉션 프레임워크
+
+: **List**, **Set**, **Map**으로 구성된 컬렉션들을 사용하기 위해 표준화된 설계
 
 * java.util 패키지에 포함.
 * jdk 1.2부터 제공
 
 <br>
 
-### java collection의 핵심 인터페이스 
+## java collection의 핵심 인터페이스 
 
 * List(리스트)
   * 중복 허용O, 저장순서 유지O
@@ -27,7 +31,7 @@
 
 <br>
 
-#### ArrayList
+## ArrayList
 
 : Vector 클래스의 신버전이고, vector는 하위호환을 위해 남겨둔 것이다. 기능적인 측면에서는 유사하고, List 상속받음을 나타내는 ArrayList가 권장된다.
 
@@ -39,7 +43,7 @@
 
 <br>
 
-#### LinkedList
+## LinkedList
 
 : ArrayList는 크기 변경이 불가능하고, 데이터 추가 삭제에 많은 시간이 걸린다. LinkedList는 배열의 단점을 보완하기 위한 것이다.
 
@@ -49,7 +53,7 @@
 
 <br>
 
-#### Stack, Queue
+## Stack, Queue
 
 * **Stack**: 리스트의 맨 뒤 원소를 제거하는 **스택**은 **ArrayList**가 더 빠르기도 하고 적합하다. Class로 구현되어있어, 생성자가 있다.
 
