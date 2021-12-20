@@ -1,4 +1,4 @@
-# 자바의정석 - 09장 java.lang패키지
+# 자바의정석 - 09장 java.lang 패키지와 유용한 클래스
 
 : 자바 프로그래밍에 **가장 기본이 되는 클래스들**이 모여있는 **패키지**. 별도로 import하지 않아도 사용 가능하다. (e.g. String, System, ..)
 
@@ -104,6 +104,58 @@
   * 숫자 관련 wrapper들은 조상으로 Number를 갖는다.
 * `Integer.parseInt()`, `Boolean.parseBoolean()` 등을 통해 문자열 -> 기본형으로 변환
 * `Integer.valueOf()`, `Byte.valueOf()` 등을 통해 문자열 -> 래퍼 클래스로 변환
+
+<br>
+
+## 그 외 유용한 클래스
+
+### Objects
+
+* 기본적으로 모두 static 메소드
+
+* `isNull` vs `requireNonNull` 아래의 두 문장은 같은 일을 한다.
+
+  ```java
+  if(Objects.isNull(obj)) throw NullPointException("Must not be null");
+  
+  // requireNonNull로 간단히 처리 가능 
+  Objects.requireNonNull(obj, "Must not be null");
+  ```
+
+* `Objects.equals()` -> 널체크까지 처리.
+
+  * 기존: `if(a != null && a.equals(b))`
+
+* `deepEquals()`: 깊은 비교(다차원)
+
+* 이외의 다양한 오버라이딩
+
+<br>
+
+### 기타
+
+* Random
+
+  * `Math.Random()` == `new Random().nextDouble()`
+
+  * Random으로 사용하면 seed값 설정 가능. 같은 seed로 난수생성시 항상 같다.
+
+* Regex: 정규표현식 관련
+
+* Scanner: 화면, 파일, 문자열과 같은 입력 소스로부터 문자 데이터를 읽어오는 것
+
+  ```java
+  Scanner s = new Scanner(System.in);
+  s.nextBoolean();
+  s.nextLine();
+  // 등등 여러가지 next~메소드 존재
+  ```
+
+* StringTokenizer: 구분자로 파싱해 토큰들을 얻어냄
+
+* BigInteger: Int 배열을 사용해 long보다 큰 값을 다룰 수 있도록
+
+<br>
 
 <br><br>
 
