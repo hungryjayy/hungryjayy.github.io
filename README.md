@@ -7,14 +7,14 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_213 TILs and counting..._
+_212 TILs and counting..._
 
 ---
 
 ### 2 most recent TILs
 
-- [취약점과 대응방안](Network/취약점_대응방안.md) - Tue Nov 30 17:57:51 2021 +0900
-- [Container 인스턴스 Locale 설정](Docker/Container_locale_설정(한글깨짐).md) - Thu Nov 18 13:19:22 2021 +0900
+- [자바의정석 - 09장 java.lang 패키지와 유용한 클래스](Java/자바의정석_09_java.lang_패키지_유용한클래스.md) - Mon Dec 20 15:06:09 2021 +0900
+- [자바의정석 - 11장 컬렉션 프레임워크 5. Properties, Collections](Java/자바의정석_11_컬렉션_프레임워크_5_Properties_Collections.md) - Fri Dec 17 14:58:53 2021 +0900
 
 ### Categories
 
@@ -141,10 +141,16 @@ _213 TILs and counting..._
 - [Lazy Evaluation](Java/Lazy_Evaluation.md)
 - [Java Servlet](Java/Servlet.md)
 - [JVM의 가비지 컬렉터](Java/가비지컬렉터.md)
-- [자바의정석 - 11장 컬렉션 프레임워크](Java/자바의정석_11_컬렉션_프레임워크.md)
-- [자바의정석 - 7장 다형성](Java/자바의정석_7_다형성.md)
-- [자바의정석 - 7장 추상클래스와 인터페이스](Java/자바의정석_7_추상클래스_인터페이스.md)
-- [자바의정석 - 8장 예외처리](Java/자바의정석_8_예외처리.md)
+- [자바의정석 - 07장 다형성](Java/자바의정석_07_다형성.md)
+- [자바의정석 - 07장 추상클래스와 인터페이스](Java/자바의정석_07_추상클래스_인터페이스.md)
+- [자바의정석 - 08장 예외처리](Java/자바의정석_08_예외처리.md)
+- [자바의정석 - 09장 java.lang 패키지와 유용한 클래스](Java/자바의정석_09_java.lang_패키지_유용한클래스.md)
+- [자바의정석 - 11장 컬렉션 프레임워크 1. List](Java/자바의정석_11_컬렉션_프레임워크_1_List.md)
+- [자바의정석 - 11장 컬렉션 프레임워크 2. Iterator, Arrays, Comparable](Java/자바의정석_11_컬렉션_프레임워크_2_Iterator_Arrays_Comparable.md)
+- [자바의정석 - 11장 컬렉션 프레임워크 3. Set](Java/자바의정석_11_컬렉션_프레임워크_3_Set.md)
+- [자바의정석 - 11장 컬렉션 프레임워크 4. Map](Java/자바의정석_11_컬렉션_프레임워크_4_map.md)
+- [자바의정석 - 11장 컬렉션 프레임워크 5. Properties, Collections](Java/자바의정석_11_컬렉션_프레임워크_5_Properties_Collections.md)
+- [자바의정석 - 12장 Generics](Java/자바의정석_12_Generics.md)
 
 ### [Javascript](#Javascript)
 - [Hoisting](Javascript/Hoisting.md)
@@ -304,14 +310,7 @@ _213 TILs and counting..._
 - [의존성 주입(Dependency injection)과 세가지 방법](Spring_Boot/의존성_주입과_세가지_방법.md)
 
 ### [Tools](#Tools)
-- [사내 레지스트리 - D2hub](Tools/D2hub_레지스트리.md)
 - [JIRA 기본 사용법](Tools/JIRA_사용법.md)
-- [Matrix - 에러 모니터링 도구](Tools/Matrix_에러_모니터링_도구.md)
-- [Tenth2 인터페이스와 사용예시](Tools/Tenth2_인터페이스_사용예시.md)
-- [모니터링 도구: 모피어스(Morpheus)](Tools/모니터링도구_모피어스.md)
-- [분산 파일 시스템 Tenth2](Tools/분산파일시스템_Tenth2.md)
-- [사내 클라우드 시스템 Krane](Tools/사내_클라우드_Krane.md)
-- [쿠버네티스 기반 DKOS](Tools/쿠버네티스_기반_DKOS.md)
 
 ### [WebRTC](#WebRTC)
 - [OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리](WebRTC/OWT_WebSocket_분석.md)
