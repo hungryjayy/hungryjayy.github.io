@@ -7,7 +7,7 @@ repository after reading Simon Wilson's [hacker new post][1], and he was
 apparently inspired by Josh Branchaud's [TIL collection][2].
 
 
-_212 TILs and counting..._
+_214 TILs and counting..._
 
 ---
 
@@ -111,6 +111,7 @@ _212 TILs and counting..._
 - [Git: 델타와 스냅샷](Git/Git_델타_스냅샷.md)
 - [Issues](Git/Issues.md)
 - [Squash로 commit 통합하기](Git/Squash_commit_통합.md)
+- [커밋과 상태, .git](Git/커밋_상태_.git.md)
 
 ### [HTTP](#HTTP)
 - [HTTP/1.1 vs HTTP/2.0](HTTP/HTTP1.1_vs_HTTP2.0.md)
@@ -151,6 +152,7 @@ _212 TILs and counting..._
 - [자바의정석 - 11장 컬렉션 프레임워크 4. Map](Java/자바의정석_11_컬렉션_프레임워크_4_map.md)
 - [자바의정석 - 11장 컬렉션 프레임워크 5. Properties, Collections](Java/자바의정석_11_컬렉션_프레임워크_5_Properties_Collections.md)
 - [자바의정석 - 12장 Generics](Java/자바의정석_12_Generics.md)
+- [자바의정석 - 14장 람다식](Java/자바의정석_14_람다식.md)
 
 ### [Javascript](#Javascript)
 - [Hoisting](Javascript/Hoisting.md)
