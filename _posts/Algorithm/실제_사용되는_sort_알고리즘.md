@@ -1,0 +1,59 @@
+# 실제 사용되는 sort() 알고리즘
+
+: 일반적으로 시간 복잡도를 기준으로 sort 알고리즘의 성능을 판단하지만, 실제로는 **지역성**이나 **실 데이터의 분포** 등 고려할 것들이 많다. 언어마다 default로 사용하는 sort들이 정해져있다.
+
+<br>
+
+## C++: Intro sort
+
+: c++의 `std::sort` 로 사용되는 Intro sort는 **퀵 정렬, 삽입 정렬, 힙 정렬**로 이루어져 있다.
+
+<br>
+
+### 특징
+
+* 기본적으로 **퀵 정렬**로 시작을 한다.
+  * 그런데, **정렬할 element**가 **Threshold**(일반적으로 **16**) 미만일 때는, **삽입 정렬로 수행된다**.
+  * 재귀 depth가 정렬되는 element 수(n)과 비교해 log N보다 많아지면 **힙 정렬로 수행된다.**
+
+* 퀵, 삽입 정렬은 **지역성**의 이점을 얻는 알고리즘(**배열의 경우**)으로 유명하다. 특히, 삽입 정렬은 참조 지역성을 아주 잘 만족한다고 한다.
+* 삽입 정렬의 경우 Best case(거의 다 정렬되어있는 상태일 경우)에 `O(n)` 의 performance를 기대 할 수 있다.
+
+<br>
+
+### 복잡도
+
+* **시간복잡도**: Best case `O(n)`, Average `O(n log n)` , Worst `O(n log n)`
+* 공간복잡도: 제자리 정렬 알고리즘이다. 따로 공간이 필요 없다.
+
+<Br>
+
+## Java: Tim sort()
+
+: java에서 디폴트로 사용하는 이 정렬은 **삽입 정렬**과 **합병 정렬**을 사용한다.
+
+<br>
+
+### 특징
+
+* **2^x개씩 잘라 각각을 Insertion sort로 정렬**하는 방식으로, 기존 Merge sort에서 덩어리별 x개의 병합과정을 생략할 수 있다.
+* **안정 정렬** 두개를 결합했기 때문에 안정적이고, **제자리 정렬이 아니지만** 기존 합병정렬보다 적은 추가 메모리를 사용한다.
+* 합병정렬의 경우 캐시의 Page가 계속 변경된다(지역성을 잃는다).
+* java 말고도 Python, Android, chrome(v8), swift 에서 이 sort를 사용한다고 한다.
+
+<br>
+
+### 복잡도
+
+* **시간복잡도**: Best case `O(n)`, Average `O(n log n)`, Worst `O (n log n)`
+* 공간복잡도: 최악의 경우 `O(n)`
+
+<br><br>
+
+#### Reference)
+
+#### https://d2.naver.com/helloworld/0315536
+
+#### https://docs.oracle.com/javase/9/docs/api/java/util/Arrays.html#sort-java.lang.Object:A-
+
+#### https://en.wikipedia.org/wiki/Introsort

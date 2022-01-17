@@ -1,0 +1,60 @@
+# Node.js 디자인 패턴 2장 - 4. Observer Pattern(옵저버 패턴)
+
+-----
+
+* 전통적인 Callback 스타일은 **Listener 하나**에게 전달하는데, 옵저버 패턴은 **여러 관찰자**(Listener)에게 전달
+* 상태변화가 일어날 때 **관찰자**에게 알릴 수 있는 **객체**(Subject)를 정의하는 것
+
+<br>
+
+## EventEmitter
+
+: 코어에 내장되어있고 해당 패턴을 이용할 수 있게 해주는 클래스
+
+* `on(event, listener)`: 리스너 등록, `once(event, listener)`: 첫 이벤트 후 제거되는 리스너 등록, `emit(event, [arg1], [...])`, `removeListener(event, listener)` 제공
+* 마찬가지로 동기, 비동기를 혼용해서 사용하지 않고, 그냥 비동기로 사용
+
+<br>
+
+### 오류 전파 
+
+* 콜백에서는 비동기적으로 발생할 경우 이벤트 루프에서 손실되는걸 방지하기 위해 바로 throw
+* `EventEmitter`에서는 `.on('error', err)` 처럼 직접 명시해 처리
+* 마찬가지로 캐치되지 않으면 프로그램 강제종료.
+* 마찬가지로 항상 에러 이벤트 리스너를 등록하는게 좋다.
+
+<br><br>
+
+### EventEmitter 클래스 확장
+
+* 일반적으로 제공하는 것 외에 `EventEmitter` 클래스를 확장해 더 다양하게 사용
+* 우리가 잘 아는 **HTTP 모듈인 Server 객체**도 `EventEmitter`를 확장해, `express.use('/api', someRouter);`와 같이 **Request 이벤트 핸들러**(정확히는 `ApplicationRequestHandler`)로 해당 URI를 등록해놓는다.
+* Open WebRTC 코드에서도 `QuicController`, `RtcController`로 EventEmitter를 확장해 사용
+
+<br>
+
+## EventEmitter vs Callback
+
+*둘 중 어느걸 사용할 것인가?*
+
+* 가독성, 의미 등을 고려 할 것
+  * **콜백**: 비동기의 방식으로 반환되어야 하는 경우
+  * **이벤트**: 일어난 일이 무슨 일인가를 전달할 필요가 있을 때
+* **이벤트가 더 적절한 경우**
+  * 동일한 이벤트가 여러번 발생할 수도, 전혀 발생하지 않을 수도 있는 경우(콜백은 단 한번)
+  * 여러 수신자가 수신해야 하는 경우
+
+#### c.f) 둘다 사용하는 예시
+
+```javascript
+const glob = require('glob');
+glob('data/*.txt', (error, files) => console.log(`All files found: ${JSON.stringify(files)}`))
+    .on('match', match => console.log(`Match found: ${match}`));
+```
+
+* 콜백과 동시에 match 이벤트를 등록(여러번 호출되어도 동작하도록)
+* 실제로는 많이 없을 것 같다.
+
+<br><br>
+
+#### Reference) Node.js 디자인패턴
