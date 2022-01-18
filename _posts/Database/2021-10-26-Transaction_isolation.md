@@ -1,4 +1,29 @@
-# Transaction과 격리수준
+---
+
+layout: post
+
+title: Transaction과 격리수준
+
+author: hungryjayy
+
+description: null
+
+tags: [database, db, 데이터베이스, isolation, 격리수준, acid, transaction, 트랜잭션]
+
+featuredImage: 
+
+img: 
+
+categories: [Database]
+
+date: '2021-10-26'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 : 데이터베이스에 접근해 로직을 처리하는 하나의 논리적 단위
 
@@ -90,10 +115,10 @@
   * 테이블에 걸다보니 데드락에 쉽게 걸릴 수 있다.
   * phantom read도 방지. 완전한 단계의 lock
 
-<br>
+<br><br>
 
 #### Reference)
 
-#### https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
 
-#### https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/
+https://suhwan.dev/2019/06/09/transaction-isolation-level-and-lock/

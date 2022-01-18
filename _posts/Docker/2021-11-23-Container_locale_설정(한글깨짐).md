@@ -1,4 +1,28 @@
-# Container 인스턴스 Locale 설정
+---
+
+layout: post
+
+title: Container 인스턴스 Locale 설정
+
+author: hungryjayy
+
+description: null
+
+tags: [docker, 도커, 컨테이너 설정, locale]
+
+featuredImage: 
+
+img: 
+
+categories: [Docker]
+
+date: '2021-11-23'
+
+extensions:
+
+  preset: gfm
+
+---
 
 : 한글이 마름모 + 물음표로 보인다면 locale 설정이 맞지 않는 것이다.
 
@@ -6,13 +30,13 @@
 
 * 컨테이너 내부에서 한글 문자를 보면 아래와같이 마름모 + 물음표 + 특수문자 형태로 보이게 된다.
 
-![no_locale](./images/no_locale.png) 
+![no_locale](https://hungryjayy.github.io/assets/img/Docker/no_locale.png) 
 
 <br>
 
 * `locale`을 통해 확인해보면 현재 컨테이너의 로케일 설정에서 `LC_ALL=` 이 값이 비어있고 나머지는 POSIX 라는 로케일로 설정되어있다.
 
-![locales](./images/locales.png) 
+![locales](https://hungryjayy.github.io/assets/img/Docker/locales.png) 
 
 <br>
 
@@ -30,7 +54,7 @@
 
 * 이후 실행환경(Dockerfile이나 컴포즈 설정)에도 env를 반영해 자동적으로 환경변수를 먹이면 된다.
 
-<br><br> 
+<br><br>
 
 #### Reference)
 

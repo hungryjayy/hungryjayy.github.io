@@ -1,4 +1,30 @@
-# Docker 볼륨과 바인드 마운트
+---
+
+layout: post
+
+title: Docker 볼륨과 바인드 마운트
+
+author: hungryjayy
+
+description: null
+
+tags: [docker, 도커, 도커 볼륨]
+
+featuredImage: 
+
+img: 
+
+categories: [Docker]
+
+date: '2021-08-23'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 * 도커 컨테이너의 데이터를 보존하기 위한 방법
   * 기본적으로 컨테이너가 삭제될 때 해당 컨테이너에 쓰여진 데이터는 함께 삭제
@@ -7,7 +33,7 @@
 
 * 그림에서 보듯, 약간 차이가 존재
 
-
+<br>
 
 ## 볼륨
 
@@ -23,7 +49,7 @@
   * *마운트: 하드웨어와 특정 디렉토리를 연결하는 것.*
   * 갖고있는 볼륨 확인 : `docker volume ls`
 
-
+<br>
 
 ## 바인드 마운트
 
@@ -43,22 +69,19 @@
   ```
   * 이 때 반대로 컨테이너에서 생성해도 **호스트의 경로에도 추가됨**
 
-
+<br>
 
 ## 볼륨, 바인드 마운트 차이점
 
 * 해당 마운트 포인트를 도커가 관리해주냐, 개발자가 관리해야하냐의 차이
-
 * 볼륨을 사용할 때는 개발자 스스로 볼륨을 관리해야 하지만, image, container와 비슷한 방식으로 관리되는 이점. 도커에서 볼륨을 권장
 
-  
-
-
+<br><br>
 
 #### Reference)
 
-#### https://docs.docker.com/storage/volumes/
+https://docs.docker.com/storage/volumes/
 
-#### https://boying-blog.tistory.com/31
+https://boying-blog.tistory.com/31
 
-#### https://www.daleseo.com/docker-volumes-bind-mounts/
+https://www.daleseo.com/docker-volumes-bind-mounts/

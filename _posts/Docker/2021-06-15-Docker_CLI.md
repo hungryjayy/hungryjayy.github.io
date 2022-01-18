@@ -1,4 +1,28 @@
-# Docker CLI
+---
+
+layout: post
+
+title: Docker CLI
+
+author: hungryjayy
+
+description: null
+
+tags: [docker, 도커, 도커 CLI]
+
+featuredImage: 
+
+img: 
+
+categories: [Docker]
+
+date: '2021-06-15'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -70,7 +94,7 @@ docker push {registry 경로}/{무슨 이름으로 올릴지}:{버전 명시}
 
 * `docker volume inspect ${volume name}` : 아래와같이 mount point 등등 확인 가능
 
-  ![image-20210823131900574](./images/inspect.png)
+  ![image-20210823131900574](https://hungryjayy.github.io/assets/img/Docker/inspect.png)
 
 <br>
 

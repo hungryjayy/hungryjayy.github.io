@@ -1,4 +1,29 @@
-# SQL Injection
+---
+
+layout: post
+
+title: SQL Injection
+
+author: hungryjayy
+
+description: null
+
+tags: [database, db, sql, sql injection, 보안]
+
+featuredImage: 
+
+img: 
+
+categories: [Database]
+
+date: '2021-07-25'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 <br>
 
@@ -23,15 +48,11 @@
 
 * SQL 구문에 주석을 삽입해 Where 구문 무력화
 
-  ```sql
-  SQL = "Select * From Users"
-  
-         + " Where UserID = '"+ UserID +"' And Password = '" + Password + "'"
-  
-  
-  출처: https://m.mkexdev.net/427 [박종명의 아름다운 개발 since 2010.06]
+  ```java
+  String query = "Select * From Users"
+         + " Where id = '"+ id +"' and Password = '" + Password + "'"
   ```
-
+  
 * SQL 서버 오류 시, 에러 메시지 감추기
 
   * 일반 사용자는 view를 통해서만 원본 데이터에 접근 할 수 있도록 막아두는 것
@@ -52,10 +73,10 @@
 
 #### Reference)
 
-#### https://github.com/WooVictory/Ready-For-Tech-Interview/blob/master/Database/SQL%20-%20Injection.md
+https://github.com/WooVictory/Ready-For-Tech-Interview/blob/master/Database/SQL%20-%20Injection.md
 
-#### https://m.mkexdev.net/427
+https://m.mkexdev.net/427
 
-#### https://medium.com/pocs/sql-injection%EC%9D%B4%EB%9E%80-3b57f2415ef4
+https://medium.com/pocs/sql-injection%EC%9D%B4%EB%9E%80-3b57f2415ef4
 
-#### https://devbox.tistory.com/entry/Comporison
+https://devbox.tistory.com/entry/Comporison

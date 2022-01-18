@@ -1,4 +1,28 @@
-# Issues
+---
+
+layout: post
+
+title: Docker 관련 겪은 이슈들, 간단한 메모
+
+author: hungryjayy
+
+description: null
+
+tags: [docker, 도커, trouble shooting]
+
+featuredImage: 
+
+img: 
+
+categories: [Docker]
+
+date: '2021-02-15'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -54,11 +78,11 @@
 
 * 도커 로그인시 (혹은 pull 땡겨올 때) 에러
 
-![certificate](./images/certificate.png) 
+![certificate](https://hungryjayy.github.io/assets/img/Docker/certificate.png) 
 
 * 로컬의 인증서문제인 줄 알았는데 사이트 들어가보니 CA에서 받아온  인증서가 만료된 것..
 
-![expired](./images/expired.png) 
+![expired](https://hungryjayy.github.io/assets/img/Docker/expired.png) 
 
-
+<br><br>
 
