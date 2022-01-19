@@ -4,7 +4,9 @@ layout: post
 
 title: Container 인스턴스 Locale 설정
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 

@@ -1,4 +1,30 @@
-# Squash로 commit 통합하기
+---
+layout: post
+
+title: Squash로 commit 통합하기
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [git, commit, squash]
+
+featuredImage: 
+
+img: 
+
+categories: [Git]
+
+date: '2021-08-23'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 <br>
 
@@ -16,7 +42,7 @@
 
 2. 일단 커밋 로그를 찍어보면 (`git log --oneline`) 이렇게 보이긴 하는데,내가 작업한 commit 중 아래의 보이는 32개의 commit을 합치려 한다.
 
-   ![image-20210823162357944](./images/commit_oneline.png) 
+   ![image-20210823162357944](https://hungryjayy.github.io/assets/img/Git/commit_oneline.png) 
 
    - 세어보면 32개
 
@@ -28,11 +54,10 @@
 
    * 나의 경우 하나만 빼고 다 통합이니까 가장 위에꺼(가장 오래된 것) 하나를 reword로 적절히 네이밍해주고, 나머지는 전부 squash
 
-     ![image-20210823163046093](./images/edit_message.png) 
+     ![image-20210823163046093](https://hungryjayy.github.io/assets/img/Git/edit_message.png) 
 
 4. 완료
 
-   ![image-20210823163213830](./images/squash_done.png) 
+   ![image-20210823163213830](https://hungryjayy.github.io/assets/img/Git/squash_done.png) 
 
-<br>
-
+<br><br>

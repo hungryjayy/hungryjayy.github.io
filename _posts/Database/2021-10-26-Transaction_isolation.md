@@ -4,7 +4,9 @@ layout: post
 
 title: Transaction과 격리수준
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 

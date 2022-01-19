@@ -1,18 +1,45 @@
-# Issues
+---
+layout: post
+
+title: Git과 관련해 겪은 이슈들, 간단한 메모
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [git]
+
+featuredImage: 
+
+img: 
+
+categories: [Git]
+
+date: '2021-01-20'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 ## 200301
 
 * `git config --list` 
   * author등 현재의 상태 볼 수 있음.
 
-
+<br>
 
 * `git config --global --user.name="hungryjay"`
   * author 변경
   * user.name 대신 다른 것(email 등)도 변경 가능
   * global option 없을 경우 현재의 디렉토리 한정
 
-
+<br>
 
 * commit 기록들에서 모두 author 변경하기
   * github과 다른 author일 경우 contribution 안찍힘.
@@ -20,7 +47,7 @@
   * pick을 edit으로 변경
   * 전부  `commit --amend --author="hungryjay <aaa@aaa.com>"`
 
-
+<br>
 
 ### Git 레포지토리 합치는 방법
 
@@ -31,6 +58,8 @@
 3. `git merge --allow-unrelated-histories sub/main(branch이름)`
 4. A에서 remote까지 지워주기
 
+<br>
 
+#### reference)
 
-#### reference) https://mansoo-sw.blogspot.com/2017/08/git-repository-merge.html
+https://mansoo-sw.blogspot.com/2017/08/git-repository-merge.html

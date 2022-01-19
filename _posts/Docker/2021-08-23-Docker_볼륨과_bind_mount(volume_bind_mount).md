@@ -4,7 +4,9 @@ layout: post
 
 title: Docker 볼륨과 바인드 마운트
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 

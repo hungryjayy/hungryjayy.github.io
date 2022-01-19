@@ -4,7 +4,9 @@ layout: post
 
 title: Docker 관련 겪은 이슈들, 간단한 메모
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 

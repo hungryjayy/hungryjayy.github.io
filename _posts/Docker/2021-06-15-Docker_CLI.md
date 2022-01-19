@@ -4,7 +4,9 @@ layout: post
 
 title: Docker CLI
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 

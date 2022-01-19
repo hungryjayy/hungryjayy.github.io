@@ -4,7 +4,9 @@ layout: post
 
 title: 도커 스웜(Docker Swarm)
 
-author: hungryjayy
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
 
 description: null
 
