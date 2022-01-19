@@ -1,4 +1,30 @@
-# 자바의정석 - 11장 컬렉션 프레임워크 2. Iterator, Arrays, Comparable
+---
+layout: post
+
+title: 자바의정석 - 11장 컬렉션 프레임워크 2. Iterator, Arrays, Comparable
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [java, iterator, arrays, comparable, collection]
+
+featuredImage: 
+
+img: 
+
+categories: [Java]
+
+date: '2021-12-13'
+
+extensions:
+
+  preset: gfm
+---
+
+<br>
 
 ## Iterator
 
@@ -12,14 +38,6 @@
 
   ```java
   public interface Collection<E> extends Iterable<E> {
-        /**
-       * Returns an iterator over the elements in this collection.  There are no
-       * guarantees concerning the order in which the elements are returned
-       * (unless this collection is an instance of some class that provides a
-       * guarantee).
-       *
-       * @return an {@code Iterator} over the elements in this collection
-       */
       Iterator<E> iterator();
   }
   
@@ -32,24 +50,13 @@
     System.out.println(it.next());
   }
   ```
-
-  * **list를 List타입으로 선언한 이유**: `ArrayList()` -> `LinkedList()`로 변경하게 되어도, 참조변수의 타입이 `List`이므로 List에 정의되지 않은 멤버는 사용하지 않았을 것이 보장된다. 만약 ArrayList를 참조변수로 선언했다면 List에 정의되지 않은 멤버를 호출했을 수 있기 때문에 선언문 이후의 모든 문장들을 검토해야한다.
+  
 
 <br>
 
-### Enumeration
+### 사용하지 않는 메소드에 에러 넣기
 
-: Iterator의 구버전. 하위 호환을 위해 남겨둔 경우가 많다.
-
-<Br>
-
-### ListIterator
-
-: Iterator를 상속받아 **양방향 탐색** 기능을 추가한 것.
-
-* List 인터페이스를 구현한 컬렉션에서만 사용 가능하다.
-
-* **선택적 기능**: Iterator 인터페이스의 모든 메소드를 구현(implement)하지는 않아도 된다. 이 때 호출하는 쪽에서 소스를 까보지 않고도 동작하는 이유를 파악할 수 있도록 **에러라도 throw하도록** 구현하는 것이 좋다.
+* **선택적 기능**: 상위 인터페이스의 모든 메소드를 구현하지 않아도 된다. 이 때 호출하는 쪽에서 소스를 까보지 않고도 동작하는 이유를 파악할 수 있도록 **에러라도 throw하도록** 구현하는 것이 좋다. 생성자를 막아놓는 클래스에서도 마찬가지.
 
   ```java
   public void remove() {
@@ -57,7 +64,7 @@
   }
   ```
 
-  java API 문서에 remove() 상세를 보면, 메소드가 지원 되지 않는 Iterator는 UnsupportedOperationException을 throw한다고 명세되어있다.
+* java API 문서에 `remove()` 상세를 보면, 메소드가 지원 되지 않는 하위 Iterator는 `UnsupportedOperationException` 을 throw한다고 적혀있다.
 
 <br>
 
@@ -115,4 +122,6 @@ class Descending implements Comparator {
 
 <br><br>
 
-#### Reference) 자바의 정석 3판
+#### Reference)
+
+자바의 정석 3판

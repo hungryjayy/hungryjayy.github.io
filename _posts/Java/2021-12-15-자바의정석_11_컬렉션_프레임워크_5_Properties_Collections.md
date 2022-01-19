@@ -1,4 +1,32 @@
-# 자바의정석 - 11장 컬렉션 프레임워크 5. Properties, Collections
+---
+layout: post
+
+title: 자바의정석 - 11장 컬렉션 프레임워크 5. Properties, Collections
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [java, collections, properties]
+
+featuredImage: 
+
+img: 
+
+categories: [Java]
+
+date: '2021-12-15'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
 
 ## Properties
 
@@ -75,4 +103,6 @@
 
 <br><br>
 
-#### Reference) 자바의 정석 3판
+#### Reference)
+
+자바의 정석 3판
