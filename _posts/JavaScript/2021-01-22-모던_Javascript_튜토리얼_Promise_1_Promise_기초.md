@@ -1,4 +1,30 @@
-# 모던 JavaScript 튜토리얼 - Promise 1 - Promise 기초
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Promise 1 - Promise 기초
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, promise]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-22'
+
+extensions:
+
+  preset: gfm
+
+---
+
 : 처리 성공 여부에 따라 resolve or reject 호출
 
 <br>
@@ -10,7 +36,7 @@
 * 내부 프로퍼티(개발자가 접근 불가)
 	* state: 초기 `pending`/ `resolve()` 시 `fulfilled`, `reject` 시 `rejected`
 	* result: 초기 `undefined` / `resolve()` 시 `value`, `reject` 시 `error`
-<img src = "./images/promise.png">
+	<img src = "./images/promise.png">
 
 <br>
 
@@ -63,5 +89,6 @@ error => alert(error) // 실행되지 않음
 
 <br><br>
 
+#### Reference)
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+모던 JavaScript 튜토리얼 https://ko.javascript.info

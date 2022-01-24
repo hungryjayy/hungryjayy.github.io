@@ -1,4 +1,29 @@
-# 모던 JavaScript 튜토리얼 - Promise 4 - 프라미스화
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Promise 4 - 프라미스화
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, promise]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-26'
+
+extensions:
+
+  preset: gfm
+
+---
 
 : 콜백만 지원해주는 API 등 **콜백 함수**를 **프라미스를 반환**하도록 프라미스로 감싸는 것
 
@@ -62,8 +87,10 @@
   f(...).then(arrayOfResults => ..., err => ...)
   ```
 
-  * 추가적인 Promisify 도구: https://github.com/mikehall314/es6-promisify
+  * 추가적인 Promisify 도구 참고: https://github.com/mikehall314/es6-promisify
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info

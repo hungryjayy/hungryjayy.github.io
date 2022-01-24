@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - Javascript란?
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Javascript란?
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-07-12'
+
+extensions:
+
+  preset: gfm
+---
 
 : html 안에 "스크립트"로 작성하고, **브라우저**에서 실행할 수 있는 언어.
 
@@ -47,4 +71,6 @@
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info/intro

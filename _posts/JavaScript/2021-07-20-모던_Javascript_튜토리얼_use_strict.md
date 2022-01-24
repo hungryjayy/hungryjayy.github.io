@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - 'use strict'
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - 'use strict'
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-07-20'
+
+extensions:
+
+  preset: gfm
+---
 
 : 엄격한 모드로, 기존에 무시해왔던 것들을 엄격하게 잡아낸다고 이해.
 
@@ -102,8 +126,8 @@
 
 #### Reference)
 
-#### 모던 JavaScript 튜토리얼 https://ko.javascript.info
+모던 JavaScript 튜토리얼 https://ko.javascript.info
 
-#### Node.js 디자인패턴
+Node.js 디자인패턴
 
-#### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode

@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - 테스트 자동화와 Mocha
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - 테스트 자동화와 Mocha
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-07-14'
+
+extensions:
+
+  preset: gfm
+---
 
 : 개발한 내용의 신뢰성을 높여 궁극적으로 코드 전반의 신뢰도를 높이는 작업
 
@@ -109,4 +133,6 @@ describe("foo", () => {
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info

@@ -1,4 +1,29 @@
-# 모던 JavaScript 튜토리얼 - Promise 3 - Promise API
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Promise 3 - Promise API
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, promise]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-23'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -63,4 +88,6 @@ if(!Promise.allSettled) {
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info

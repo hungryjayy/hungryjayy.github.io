@@ -1,4 +1,28 @@
-# 함수의 메서드 (call, apply, bind)
+---
+layout: post
+
+title: 함수의 메서드 (call, apply, bind)
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-06-03'
+
+extensions:
+
+  preset: gfm
+---
 
 : 함수에 존재하는 기본 **메소드**. 
 
@@ -14,7 +38,6 @@
 * 보통 함수와같이 **인자 목록**을 넣어서 전달
 
   * e.g) `func.call(this, a, b)`
-
 
 <br>
 
@@ -186,6 +209,6 @@
 
 #### Reference)
 
-#### https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call
 
-#### https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd
+https://www.zerocho.com/category/JavaScript/post/57433645a48729787807c3fd

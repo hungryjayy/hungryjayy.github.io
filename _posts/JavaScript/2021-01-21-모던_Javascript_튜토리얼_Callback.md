@@ -1,4 +1,29 @@
-# 모던 JavaScript 튜토리얼 - Callback
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Callback
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, callback, 콜백]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-21'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -32,4 +57,6 @@ script.onerror = () => callback(new Error(`${src}를 불러오는 도중에 에�
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info

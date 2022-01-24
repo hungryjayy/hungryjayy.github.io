@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - async / await
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - async / await
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, promise, async await]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-28'
+
+extensions:
+
+  preset: gfm
+---
 
 <br>
 
@@ -40,5 +64,7 @@ async function f() {
 
 <br><br>
 
-#### Reference) 모던 JavaScript 튜토리얼 https://ko.javascript.info
+#### Reference)
+
+모던 JavaScript 튜토리얼 https://ko.javascript.info
 

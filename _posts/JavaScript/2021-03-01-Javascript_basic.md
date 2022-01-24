@@ -1,4 +1,28 @@
-# Javascript 기초, 문법
+---
+layout: post
+
+title: Javascript 기초, 문법
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-03-01'
+
+extensions:
+
+  preset: gfm
+---
 
 <br>
 
@@ -158,12 +182,12 @@ https://hermeslog.tistory.com/279
 
 #### Reference)
 
-#### 모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
+모던 JavaScript 튜토리얼 https://ko.javascript.info/intro
 
-#### Node.js 디자인패턴
+Node.js 디자인패턴
 
-#### https://moollang.tistory.com/10
+https://moollang.tistory.com/10
 
-#### https://ifuwanna.tistory.com/278
+https://ifuwanna.tistory.com/278
 
-#### https://hermeslog.tistory.com/279
+https://hermeslog.tistory.com/279

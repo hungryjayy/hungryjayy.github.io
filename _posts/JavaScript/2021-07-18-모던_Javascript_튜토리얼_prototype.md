@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - Prototype
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Prototype
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-07-18'
+
+extensions:
+
+  preset: gfm
+---
 
 : 자바스크립트는 **프로토타입 기반 언어**이다. 모든 **객체들**이 **클래스로 정의해놓은 메소드와 속성**을 **상속**받기 위한 **템플릿**으로써 **프로토타입** 객체를 가진다.
 
@@ -193,7 +217,7 @@ alert( user2.name ); // undefined
 
 #### Reference)
 
-#### 모던 JavaScript 튜토리얼 https://ko.javascript.info
+모던 JavaScript 튜토리얼 https://ko.javascript.info
 
-#### Node.js 디자인패턴
+Node.js 디자인패턴
 

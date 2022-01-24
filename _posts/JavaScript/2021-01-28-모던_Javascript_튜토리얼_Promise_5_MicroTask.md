@@ -1,4 +1,28 @@
-# 모던 JavaScript 튜토리얼 - Promise 5 - MicroTask
+---
+layout: post
+
+title: 모던 JavaScript 튜토리얼 - Promise 5 - MicroTask
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [javascript, js, promise, microtask]
+
+featuredImage: 
+
+img: 
+
+categories: [JavaScript]
+
+date: '2021-01-28'
+
+extensions:
+
+  preset: gfm
+---
 
 <br>
 
