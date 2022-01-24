@@ -1,4 +1,30 @@
-# Data class
+---
+layout: post
+
+title: Data class
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [kotlin]
+
+featuredImage: 
+
+img: 
+
+categories: [Kotlin]
+
+date: '2021-09-03'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 : 보통 DTO 등 데이터를 보관하기 위한 목적으로 사용할 때 Kotlin에서는 Data class로 선언해 사용한다.
 
@@ -54,4 +80,6 @@
 
 <br><br>
 
-#### Reference) https://kotlinlang.org/docs/data-classes.html
+#### Reference)
+
+https://kotlinlang.org/docs/data-classes.html

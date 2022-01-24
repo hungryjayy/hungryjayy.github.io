@@ -1,4 +1,29 @@
-# Kafka 이해하기 (vs rabbitMQ)
+---
+layout: post
+
+title: Kafka 이해하기 (vs rabbitMQ)
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [kafka, infra]
+
+featuredImage: 
+
+img: 
+
+categories: [Kafka]
+
+date: '2021-02-22'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -61,4 +86,6 @@
 
 <br><br>
 
-#### Reference) https://www.popit.kr/kafka-%EC%9A%B4%EC%98%81%EC%9E%90%EA%B0%80-%EB%A7%90%ED%95%98%EB%8A%94-%EC%B2%98%EC%9D%8C-%EC%A0%91%ED%95%98%EB%8A%94-kafka/
+#### Reference)
+
+https://www.popit.kr/kafka-%EC%9A%B4%EC%98%81%EC%9E%90%EA%B0%80-%EB%A7%90%ED%95%98%EB%8A%94-%EC%B2%98%EC%9D%8C-%EC%A0%91%ED%95%98%EB%8A%94-kafka/

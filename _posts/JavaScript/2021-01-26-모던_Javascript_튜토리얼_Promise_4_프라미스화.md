@@ -39,7 +39,7 @@ extensions:
 
   e.g) redis api 프라미스화
 
-  ![redis_callback](./images/redis_callback.png) 
+  ![redis_callback](https://hungryjayy.github.io/assets/img/JavaScript/redis_callback.png) 
 
   * npm의 redis를 까보면 윗 이미지와 같이 Callback을 지원하도록 되어있다.
   * **Promisify**: 이러한 콜백기반 API를 Promise로 한번 더 감싸서 따로 메서드로 만들어 놓는 것. 사용할 때 훨씬 편하고 가독성이 좋다.

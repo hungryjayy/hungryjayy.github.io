@@ -1,6 +1,34 @@
-# Coroutine
+---
+layout: post
 
-## 특장점
+title: Coroutine
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [kotlin, coroutine]
+
+featuredImage: 
+
+img: 
+
+categories: [Kotlin]
+
+date: '2021-02-01'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
+
+## 특징
 
 - Task 단위가 Object이다. (= 경량 thread이다.)
 - 메모리 heap에 적재(multi thread의 경우 stack에 적재)하기 때문에 교체시 object만 교체하고, 그 object는 heap을 공유한다.
@@ -13,14 +41,14 @@
 
 ## Cancellation and Timeouts
 
-- job.cancel()을 통해 진행되던 coroutine이 취소될 수 있다.
-    - coroutine의 모든 suspend function은 취소 가능. cancellationException을 throw
+- `job.cancel()`을 통해 진행되던 coroutine이 취소될 수 있다.
+    - coroutine의 모든 suspend function은 취소 가능. `cancellationException`을 throw
     - 부모 scope에서 취소 → 자식 scope에서도 취소.
     - GlobalScope로 생성된 coroutine은 자신이 실행된 스코프가 취소되어도 영향을 받지 않음.
 
-![](./images/1.png)
+![](https://hungryjayy.github.io/assets/img/Kotlin/1.png)
 
-- withTimeout() { ... } → timeout거는 용도
+- withTimeout() { ... }` → timeout거는 용도
 - 위에서 delay(500L) : suspend 기능. 취소가 가능한 상태.
 
 
@@ -29,23 +57,23 @@
 
 - 순차적 처리
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf2eaf83-aaed-4858-a2c5-47e79a125e3b/Untitled.png](./images/2.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf2eaf83-aaed-4858-a2c5-47e79a125e3b/Untitled.png](https://hungryjayy.github.io/assets/img/Kotlin/2.png)
 
 - async 처리(위 방식보다 두배 빠름)
     - async를 통해 Defferd를 반환받음.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7675e7de-a663-43de-b081-5fec8bee6e2a/Untitled.png](./images/3.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7675e7de-a663-43de-b081-5fec8bee6e2a/Untitled.png](https://hungryjayy.github.io/assets/img/Kotlin/3.png)
 
 - 두 xxxxAsync()는 suspend가 아님에도 Defered<int>를 반환받는다. 즉, 외부에서 사용될 때 Async로 사용
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e87060-20ae-4a88-a807-1b4afb1aef73/Untitled.png](./images/4.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/07e87060-20ae-4a88-a807-1b4afb1aef73/Untitled.png](https://hungryjayy.github.io/assets/img/Kotlin/4.png)
 
 - 바로 위의 async를 사용한 예제
     - 아래와 같이 동시성을 부여하여 사용한다면 외부에서 사용하다가 예외 발생시 범위 내의 모든 코루틴 취소 가능해 보다 안정적.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/479acd71-1ca6-4a63-9a87-ba545b3e1a26/Untitled.png](./images/5.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/479acd71-1ca6-4a63-9a87-ba545b3e1a26/Untitled.png](https://hungryjayy.github.io/assets/img/Kotlin/5.png)
 
-
+<br>
 
 ## Coroutine Context and Dispatchers
 
@@ -90,14 +118,14 @@
     - 여기서는 delay(suspend기능)이 있을 때 취소가 됨.
     
 
-### 이후로는 자세한 문법적 부분이므로 더이상의 분석보다는 필요할때 링크 참조
+### 자세한 문법적 부분은 필요할때 링크 참조
 
-
+<br><br>
 
 #### Reference)
 
-#### Coroutine 공식문서 - [https://kotlinlang.org/docs/reference/coroutines/basics.html](https://kotlinlang.org/docs/reference/coroutines/basics.html)
+[https://kotlinlang.org/docs/reference/coroutines/basics.html](https://kotlinlang.org/docs/reference/coroutines/basics.html)
 
-#### Thread와 coroutine 비교 - [https://aaronryu.github.io/2019/05/27/coroutine-and-thread/](https://aaronryu.github.io/2019/05/27/coroutine-and-thread/)
+[https://aaronryu.github.io/2019/05/27/coroutine-and-thread/](https://aaronryu.github.io/2019/05/27/coroutine-and-thread/)
 
-#### [https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/](https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/)
+[https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/](https://www.letmecompile.com/kotlin-coroutine-vs-javascript-async-comparison/)

@@ -1,4 +1,31 @@
-# for-loop vs forEach vs Map
+---
+layout: post
+
+title: for-loop vs forEach vs map
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [kotlin]
+
+featuredImage: 
+
+img: 
+
+categories: [Kotlin]
+
+date: '2021-05-04'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 ## Map vs forEach
 
@@ -12,7 +39,7 @@
   * 각 요소에서 함수를 호출하고, 결과로 새로운 배열을 만들어냄.
   * 원래의 배열에 영향을 주지 않기 때문에 함수형 프로그래밍에 더 적합.
 
-
+<br>
 
 ## for vs forEach
 
@@ -34,16 +61,16 @@
     
     * 체인 형식(filter, map 등)으로 컬렉션 호출 시 list는 값을 저장하기 위해 tmp collection을 따로 만든 후 값을 저장하는 형를 띄우는데, 이는 오버헤드가 되며 퍼포먼스 저하.(java 8에서는 stream에 대응되는 lazy collection이 제공되면서 이를 해결했다고 함)
 
-
+<br><Br>
 
 #### Reference)
 
-#### https://hwan-shell.tistory.com/245
+https://hwan-shell.tistory.com/245
 
-#### https://medium.com/mobile-app-development-publication/kotlin-for-loop-vs-foreach-7eb594960333
+https://medium.com/mobile-app-development-publication/kotlin-for-loop-vs-foreach-7eb594960333
 
-#### https://coding-factory.tistory.com/694
+https://coding-factory.tistory.com/694
 
-#### https://codechacha.com/ko/kotlin-inline-functions/
+https://codechacha.com/ko/kotlin-inline-functions/
 
-#### https://boycoding.tistory.com/220
+https://boycoding.tistory.com/220

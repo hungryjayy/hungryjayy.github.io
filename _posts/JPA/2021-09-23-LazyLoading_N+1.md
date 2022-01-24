@@ -1,4 +1,29 @@
-# Lazy Loading과 N + 1
+---
+layout: post
+
+title: Lazy Loading과 N + 1
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-09-23'
+
+extensions:
+
+  preset: gfm
+
+---
 
 : JOIN 쿼리를 통해 두 엔티티를 조회할 때, 엔티티 로딩 시점이 달라, DB에 쿼리가 한번 더 나가게 된다.
 
@@ -41,5 +66,7 @@
 
 <br><br>
 
-#### Reference) 자바 ORM 표준 JPA 프로그래밍 
+#### Reference)
+
+자바 ORM 표준 JPA 프로그래밍 
 

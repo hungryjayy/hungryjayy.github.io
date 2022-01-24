@@ -36,7 +36,7 @@ extensions:
 * 내부 프로퍼티(개발자가 접근 불가)
 	* state: 초기 `pending`/ `resolve()` 시 `fulfilled`, `reject` 시 `rejected`
 	* result: 초기 `undefined` / `resolve()` 시 `value`, `reject` 시 `error`
-	<img src = "./images/promise.png">
+	<img src = "https://hungryjayy.github.io/assets/img/JavaScript/promise.png">
 
 <br>
 

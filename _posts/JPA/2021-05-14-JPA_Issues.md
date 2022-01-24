@@ -1,6 +1,36 @@
-# Issues
+---
+layout: post
 
-## JPA repository 사용시 Optional<T> 이슈
+title: JPA와 관련해 겪은 이슈들, 간단한 메모
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-05-14'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
+
+## 210514
+
+### JPA repository 사용시 Optional<T> 이슈
 
 * 기본적으로 자바에 맞춰져 있으므로 Optinal로 묶여있음
 
@@ -21,20 +51,16 @@
 * @JoinColumn 어노테이션의 옵션 name은 해당 엔티티 테이블에 어떤 컬럼명으로 저장할지를 지정
   * 실제로 FK가 맵핑되는 컬럼은 해당 타입(엔티티)의 PK이니까 자동으로 알아서 맵핑해줌.
 
+<br>
 
-
-## findAllBy~~ vs findBy~~~
+### findAllBy~~ vs findBy~~~
 
 * 둘은 이름만 다르지, 같은 쿼리를 만들어 냄.
 *  복수형을 만들어내는 곳에선 All, 아닌 곳에선 findBy를 사용해 코드의 가독성을 높이면 됨
 
+<br>
 
-
--------------
-
-
-
-## 200525
+## 210525
 
 ### MongoDB 도입해 개발 도중 발생 에러
 

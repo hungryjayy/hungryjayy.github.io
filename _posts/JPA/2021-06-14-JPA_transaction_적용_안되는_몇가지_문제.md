@@ -1,4 +1,30 @@
-# Transaction 적용이 안되는 몇가지 문제
+---
+layout: post
+
+title: Transaction 적용이 안되는 몇가지 문제
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-06-14'
+
+extensions:
+
+  preset: gfm
+---
+
+<br>
 
 * Private - 오버라이딩 문제
   * Transaction 처리 과정에서 프록시 객체로 등록하기 때문에 private 불가
@@ -21,12 +47,12 @@
 
 #### Reference)
 
-#### https://www.whiteship.me/spring-transactional-and-spring-aop/
+https://www.whiteship.me/spring-transactional-and-spring-aop/
 
-#### https://www.whiteship.me/jpa-entitymanager-contains/
+https://www.whiteship.me/jpa-entitymanager-contains/
 
-#### https://handr95.tistory.com/3
+https://handr95.tistory.com/3
 
-#### https://kapentaz.github.io/spring/Spring-Transaction-%EC%A0%81%EC%9A%A9-%EB%B2%94%EC%9C%84-%EC%A0%9C%EC%96%B4-%EB%B0%A9%EB%B2%95/#
+https://kapentaz.github.io/spring/Spring-Transaction-%EC%A0%81%EC%9A%A9-%EB%B2%94%EC%9C%84-%EC%A0%9C%EC%96%B4-%EB%B0%A9%EB%B2%95/#
 
-#### https://netframework.tistory.com/entry/Spring-Transactional%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC
+https://netframework.tistory.com/entry/Spring-Transactional%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC

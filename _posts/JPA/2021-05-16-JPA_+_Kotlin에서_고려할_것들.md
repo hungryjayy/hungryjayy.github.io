@@ -1,4 +1,32 @@
-# JPA + Kotlin에서 고려할 것들
+---
+layout: post
+
+title: JPA + Kotlin에서 고려할 것들
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa, kotlin]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-05-16'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
 
 * Entity는 public, protected의 매개변수가 없는 "기본 생성자(No-argument 생성자)"를 가지고 있어야 한다.
   * 클래스 상태를 초기화 할 때 기본 생성자를 이용하기 때문.
@@ -22,4 +50,4 @@
 
 #### Reference)
 
-#### https://blog.junu.dev/37
+https://blog.junu.dev/37

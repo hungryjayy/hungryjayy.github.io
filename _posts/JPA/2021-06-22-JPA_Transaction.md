@@ -1,4 +1,30 @@
-# JPA Transaction
+---
+layout: post
+
+title: JPA Transaction
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa, transaction]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-06-22'
+
+extensions:
+
+  preset: gfm
+---
+
+<br>
 
 ## @Transactional : 선언적 트랜잭션
 
@@ -65,12 +91,12 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 #### Reference)
 
-#### https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#transactional-query-methods
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#transactional-query-methods
 
-#### https://stackoverflow.com/questions/39827054/spring-jpa-repository-transactionality
+https://stackoverflow.com/questions/39827054/spring-jpa-repository-transactionality
 
-#### https://freedeveloper.tistory.com/159
+https://freedeveloper.tistory.com/159
 
-#### https://goddaehee.tistory.com/167
+https://goddaehee.tistory.com/167
 
-#### https://pjh3749.tistory.com/269
+https://pjh3749.tistory.com/269

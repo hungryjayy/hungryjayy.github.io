@@ -78,7 +78,7 @@ let rabbit = new Rabbit("white rabbit");
 
 * 위와같은 줄을 그림으로 표현하면 아래와 같다.
 
-![image-20210910172442530](./images/prototype.png) 
+![image-20210910172442530](https://hungryjayy.github.io/assets/img/JavaScript/prototype.png) 
 
 * Rabbit 함수에서는 `Rabbit.prototype`과 같이 Rabbit 프로토타입 객체로 접근 가능
 

@@ -1,4 +1,31 @@
-# Kafka 아키텍처
+---
+layout: post
+
+title: Kafka 아키텍처
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [kafka, infra]
+
+featuredImage: 
+
+img: 
+
+categories: [Kafka]
+
+date: '2021-06-01'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 ## Topic과 Partition
 
@@ -12,14 +39,14 @@
   * partition 내부의 데이터 순서대로 consumer가 받을 것을 보장
     * 그러나 각각의 partition간 순서는 보장하지 않음.
 
-
+<br>
 
 ### Partition 분산
 
 * Producer가 어떤 partition으로 메시지를 전송할지는 partition 분배 알고리즘에 의해
   * Round robin, 메시지 키를 통해 패턴 매핑, CRC32를 통해 modulo 연산 등
 
-
+<br>
 
 ### Partition replication?
 
@@ -34,7 +61,7 @@
   * follower는 leader를 복제
   * leader 장애시 follower가 leader로 승격
 
-
+<br>
 
 ## Messaging model
 
@@ -47,7 +74,7 @@
 
    * topic을 구독하는 모든 consumer에게 메시지 브로드캐스팅
 
-
+<br>
 
 ### Consumer Group?
 
@@ -66,7 +93,7 @@
   * 동일한 CG의 consumer는 동일한 partition 접근 불가
 * CG에 다수의 consumer가 할당되면 각 consumer마다 별도의 partition으로부터 메시지를 받아오기 때문에 CG는 큐 모델로 동작
 
-
+<Br>
 
 #### Consumer  Group과 파티션 수의 관계
 
@@ -75,10 +102,10 @@
   * 그러나 파티션을 무작정 늘리는 것은 좋지 않음
     * 파티션은 토픽 생성 후 언제든 늘릴수 있지만 줄일수는 없음
 
+<br><br>
 
+#### Refenence)
 
-#### Refenence) 
+https://epicdevs.com/17
 
-#### https://epicdevs.com/17
-
-#### https://www.popit.kr/kafka-consumer-group/
+https://www.popit.kr/kafka-consumer-group/

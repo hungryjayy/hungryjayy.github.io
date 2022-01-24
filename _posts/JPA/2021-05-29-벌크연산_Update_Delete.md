@@ -1,45 +1,39 @@
-# JPA 벌크연산(update, delete)
+---
+layout: post
 
+title: JPA 벌크연산(update, delete)
 
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-05-29'
+
+extensions:
+
+  preset: gfm
+---
+
+<br>
 
 ## 벌크연산
 
-* 벌크연산이란? 여러 건의 데이터를 한번에 변경(update or delete)
-* JPA에서는 기본적으로 Bulk DELETE를 지원하지 않는다고 함.
-* 따라서, @Query어노테이션을 통해 벌크연산을 수행해야 함.
+* 벌크연산이란? 여러 건의 데이터를 한번에 변경한다. **update, create, delete**
+  * ORM마다 지원하는 벌크연산이나 실제로 수행되는 방식이 다르다고한다. 각 orm을 사용할 때 예상하는 동작방식이 실제로 맞는지를 확인해야한다.
+  * e.g) JPA에서는 기본적으로 Bulk DELETE를 지원하지 않는다고 한다. 이 경우 @Query어노테이션을 통해 벌크연산을 수행해야 함.
 
 
-
-* UPDATE
-
-  ```sql
-  String sql = "UPDATE Product p " +
-      "SET p.prce = p.price * 1.1 " +
-      "WHERE p.stockAmount < :stockAmount";
-  
-  int resultCount = em.createQuery(sql)
-          .setParameter("stockAmount", 10)
-          .executeUpdate();
-  ```
-
-  출처: https://joont92.github.io/jpa/JPQL/
-
-
-
-* DELETE
-
-  ```sql
-  String sql = "DELETE FROM Product p " +
-      "WHERE p.price < :price";
-  
-  int resultCount = em.createQuery(sql)
-          .setParameter("price", 100)
-          .executeUpdate();
-  ```
-
-  출처: https://joont92.github.io/jpa/JPQL/
-
-
+<br>
 
 ### 벌크연산에 대해서는 영속성 컨텍스트를 건너뛰고, DB에 직접 쿼리
 
@@ -63,7 +57,7 @@
   * `Modifying(clearAutomatically = true)`
     * `flushAutomatically` : 영속성 컨텍스트에 쌓여있던 변경사항을 DB에 반영해주는 것
 
-
+<br>
 
 #### 영속성 컨텍스트의 범위
 
@@ -71,18 +65,18 @@
   * 따라서, 같은 트랜잭션은 같은 영속성 컨텍스트를, 다른 트랜잭션은 다른 영속성 컨텍스트를 사용
 * 따라서, 벌크 연산 수행 시 영속성 컨텍스트를 clear, flush할 지는 해당 트랜잭션 내부에서 조회연산을 또 수행할지를 보고 상황에 맞게 사용하면 될 듯.
 
-
+<br><br>
 
 #### Reference)
 
-#### https://velog.io/@roro/JPA-JPQL-update-%EC%BF%BC%EB%A6%AC%EB%B2%8C%ED%81%AC%EC%99%80-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8
+https://velog.io/@roro/JPA-JPQL-update-%EC%BF%BC%EB%A6%AC%EB%B2%8C%ED%81%AC%EC%99%80-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8
 
-#### https://jojoldu.tistory.com/536
+https://jojoldu.tistory.com/536
 
-#### https://data-make.tistory.com/617
+https://data-make.tistory.com/617
 
-#### https://freedeveloper.tistory.com/154
+https://freedeveloper.tistory.com/154
 
-#### https://joont92.github.io/jpa/JPQL/
+https://joont92.github.io/jpa/JPQL/
 
-#### https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.7.html
+https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.7.html

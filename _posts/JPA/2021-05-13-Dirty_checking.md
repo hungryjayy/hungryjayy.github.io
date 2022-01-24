@@ -1,7 +1,31 @@
-# Dirty checking
+---
+layout: post
 
-* Transaction을 commit하는 시점에 알아서  데이터베이스에 반영해주는 것
-  * **단건의 수정**에 대한 쿼리를 JPA에서는 지원하지 않는데, 해당 엔티티를 변경하고, 별도로 save하지 않아도, 변경사항이 반영됨
+title: Dirty checking
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [jpa, spring boot jpa, dirty checking]
+
+featuredImage: 
+
+img: 
+
+categories: [JPA]
+
+date: '2021-05-13'
+
+extensions:
+
+  preset: gfm
+---
+
+: Transaction을 commit하는 시점에 알아서  데이터베이스에 반영해주는 것
+* **단건의 수정**에 대한 쿼리를 JPA에서는 지원하지 않는데, 해당 엔티티를 변경하고, 별도로 save하지 않아도, 변경사항이 반영됨
 
 
 
@@ -23,10 +47,10 @@
 
 #### Reference)
 
-#### https://cheese10yun.github.io/jpa-bulk/
+https://cheese10yun.github.io/jpa-bulk/
 
-#### https://devhyogeon.tistory.com/4
+https://devhyogeon.tistory.com/4
 
-#### https://jojoldu.tistory.com/415
+https://jojoldu.tistory.com/415
 
-#### https://interconnection.tistory.com/121
+https://interconnection.tistory.com/121
