@@ -17,9 +17,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Hungryjayy                          # the main title
+title: hungryjayy                          # the main title
 
-tagline: 배우고 경험하는 것들을 기록합니다.   # it will display as the sub-title
+tagline: 배우고 경험하는 것을 기록합니다.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -32,8 +32,11 @@ url: 'https://hungryjayy.github.io'
 github:
   username: hungryjayy             # change to your github username
 
-twitter:
-  username: twitter_username            # change to your twitter username
+    #twitter:
+    #username: twitter_username            # change to your twitter username
+
+instagram:
+  username: loganprshut
 
 social:
   # Change to your full name.
@@ -42,8 +45,9 @@ social:
   email: juwon9331@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
+    # - https://twitter.com      # change to your twitter homepage
     - https://github.com/hungryjayy       # change to your github homepage
+    - https://instagram.com/loganprshut
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
