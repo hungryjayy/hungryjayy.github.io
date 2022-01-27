@@ -1,4 +1,28 @@
-# Permission
+---
+layout: post
+
+title: Permission
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [linux, 리눅스]
+
+featuredImage: 
+
+img: 
+
+categories: [Linux]
+
+date: '2021-04-11'
+
+extensions:
+
+  preset: gfm
+---
 
 : 어떠한 사용자가 **파일**, **디렉토리**에 대해 Read, Write, Execute를 할 수 있게 / 없게 하는 것
 
@@ -6,7 +30,9 @@
 
 ## Access mode
 
-```
+```shell
+$ ls -al
+
 -rw-rw-r-- 1 joowon joowon 0 Jul 12 12:34 example.txt
 ```
 
@@ -55,4 +81,4 @@
 
 #### Reference)
 
-#### https://opentutorials.org/course/2598/14190
+https://opentutorials.org/course/2598/14190

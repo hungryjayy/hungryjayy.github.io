@@ -1,4 +1,28 @@
-# Daemon, Service
+---
+layout: post
+
+title: Daemon, Service
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [linux, 리눅스]
+
+featuredImage: 
+
+img: 
+
+categories: [Linux]
+
+date: '2021-04-10'
+
+extensions:
+
+  preset: gfm
+---
 
 : 항상 켜져있어야 하는 것
 
@@ -19,10 +43,8 @@
   * GUI기준 `rc5.d`라고 함
 * 각 서비스에 대해 링크들이 걸려있음을 확인 가능 (->)
 
-
-
-
+<br><br>
 
 #### Reference)
 
-#### https://opentutorials.org/course/2598
+https://opentutorials.org/course/2598
