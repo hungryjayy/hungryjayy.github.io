@@ -1,4 +1,34 @@
-# OWT Stream publish, subscribe 코드 분석 및 시나리오
+---
+layout: post
+
+title: OWT Stream publish, subscribe 코드 분석 및 시나리오
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [webrtc]
+
+featuredImage: 
+
+img: 
+
+categories: [WebRTC]
+
+date: '2021-05-22'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+: 아래의 과정으로 코드 분석해보기
+
+<br>
 
 ## Publish 과정
 
@@ -91,7 +121,7 @@
    7. worker Agent, worker Node 정보가 등록되어있는 sessionInfo, session을 전달하며 `addStream`
    8. 참가자(participantId == client)에게 "progress" 메시지, sessionId와 status : ready를 함께 전송
 
-
+<br>
 
 ## Subscribe 과정
 
@@ -124,10 +154,10 @@
    3. getVideoStream
       1. mixed Stream이고, 매치되는 mixed stream이 없다면 해당하는 Stream을 생성 후 얻음
 
-
+<Br><br>
 
 #### Reference)
 
-#### Client - https://github.com/open-webrtc-toolkit/owt-client-javascript/blob/8fae8a8e1714109d0851391f8fd20ffe3775cb65/src/sdk/conference/channel.js#L146
+Client - https://github.com/open-webrtc-toolkit/owt-client-javascript/blob/8fae8a8e1714109d0851391f8fd20ffe3775cb65/src/sdk/conference/channel.js#L146
 
-#### Server - https://github.com/open-webrtc-toolkit/owt-server
+Server - https://github.com/open-webrtc-toolkit/owt-server

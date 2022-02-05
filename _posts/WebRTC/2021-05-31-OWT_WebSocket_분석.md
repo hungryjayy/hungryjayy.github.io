@@ -1,4 +1,35 @@
-# OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리
+---
+layout: post
+
+title: OWT Websocket (socketIOServer) 코드 분석 및 시나리오별 정리
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [webrtc]
+
+featuredImage: 
+
+img: 
+
+categories: [WebRTC]
+
+date: '2021-05-31'
+
+extensions:
+
+  preset: gfm
+
+
+
+---
+
+: 로직 흐름 이해할 때 아래의 과정 참고하기
+
+<br>
 
 1. `socket.on('login')` (V11Client에 대한 로직)
 2. protocol 버전에 따라 client를 ws 초기화된 portal에 LegacyClient / V11Client / V10 Client로 초기화 
@@ -40,7 +71,7 @@
    1. `observer.onJoin(client.tokenCode)` 호출, clusterWorker에서 tasks에 해당 **tokenCode** **등록**
    5. reconnectionTicket과 함께 결과 전송
 
-
+<br>
 
 2. `socket.on('relogin')`
    1. reconnection ticket 검사 후 티켓의 참가자Id를 통해 client 찾아옴
@@ -51,7 +82,7 @@
       * connection 새로 set, listenAt (새로운 connection의 socket에 대해 eventListener 등록)
    5. reconnectionTicket 생성, pending 상태의 메시지 다시 전송
 
-
+<br>
 
 3. `socket.on('disconnect')` - state에 따라 다르게 처리
 
@@ -71,7 +102,7 @@
      1. client id를 통해 client를 받아오고, 현재의 connection 정보 === that 이라면
      2. onClientLeft -> clusterWorker의 tasks에서 이 client의 tokenCode에 해당하는 task 제거
 
-
+<Br>
 
 ### State, reconnection 변화
 
@@ -88,13 +119,7 @@
 3. logout
    * connected -> initialized / reconnection 불가능
 
-
-
-
-
-
-
-
+<br>
 
 
 

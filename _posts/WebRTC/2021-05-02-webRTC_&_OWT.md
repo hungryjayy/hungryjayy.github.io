@@ -9,40 +9,30 @@ author:
 
 description: null
 
-tags: [웹소켓, web socket]
+tags: [webrtc]
 
 featuredImage: 
 
 img: 
 
-categories: [Web socket]
+categories: [WebRTC]
 
-date: '2021-02-15'
+date: '2021-05-02'
 
 extensions:
 
   preset: gfm
 
-
-
 ---
 
-
-
-
-
-# 
-
-: 웹 애플리케이션과 사이트가 중간자 없이 실시간으로 데이터를 교환, 영상이나 오디오를 스트림해주는 기술
+: web real-time communication. 웹 애플리케이션과 사이트가 중간자 없이 실시간으로 데이터를 교환, 영상이나 오디오를 스트림해주는 기술
 
 * **P2P 통신**: Third party software(서버와 같은 중간자) 없이 **P2P(Pear to Pear) 데이터 통신**을 통해 빠르게 전송해, 실시간 화상회의 등 가능하게 함.
-  
   * ~~서버를 거치지 않아 빠른 속도~~
   * **(210820) P2P 통신은 중간자가 없다는 것이 아니라, 멀티캐스트 없이 1:1로 통신한다는 의미라고 함**
   * 기본적으로 **udp 통신**은 **멀티캐스트**를 지원하고, **webRTC**는 **udp** 통신을 하는데 **멀티캐스트가 아닌 p2p 통신**을 하는 것.
   
 * **STUN 서버**에 의해 peer의 public IP주소와 Port를 알 수 있고, P2P 통신이 가능해진다. 그러나, 아래와 같은 문제가 있을 때 **TURN을 사용**
-  
   * Symmetric NAT의 경우 문제: 패킷을 보내는 외부 서버마다 NAT 맵핑을 다르게 가져가는 것
   * 두 Peer가 같은 NAT 환경에 있을 경우 동작 불가
   
@@ -53,21 +43,11 @@ extensions:
   * 직접 통신하지 않고 TURN이라는 중개서버를 통해 relay하는 방식. -> 엄격하게 말하면 P2P 통신을 포기하게 되는 것.
   * 불가피하게 오버헤드가 발생한다. -> 최후의 수단으로 사용해야 한다.
 
-
-
-#### Reference)
-
-#### https://wormwlrm.github.io/2021/01/24/Introducing-WebRTC.html
-
-#### https://developer.mozilla.org/ko/docs/Web/API/WebRTC_API
-
-#### https://jomuljomul.tistory.com/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B3%B5%EB%B6%80/WebRTC
-
-
+<br>
 
 ## OWT-server
 
-
+<br>
 
 | Name                 | Definition                                                   |
 | -------------------- | ------------------------------------------------------------ |
@@ -82,28 +62,20 @@ extensions:
 | Subscription         | The activity a participant consuming a stream, such as receiving a stream via a WebRTC PeerConnection, recording a stream to a MCU storage, pushing a stream to a live stream server. A unique identification **(SubscriptionID)** in the room scope must be assigned to the subscription once its request is accepted by MCU. Participants will use the identification to update/cancel/stop a specific subscription. |
 | Session              | The entity in which **a real-time audio/video communication** takes place. Typically, participants establish WebRTC sessions between a WebRTC client and MCU (accurately, the webrtc-agent) to publish or subscribe streams. Since **a stream ID will be assigned when publishing a stream into a room** and **a subscription ID will be assigned when subscribing a stream** (or a pair of stream if audio and video come from different source), the stream ID and subscription ID in these two cases are **re-used to identify the corresponding session**, and MCU must guarantee that the stream IDs and subscription IDs will not conflict within a room. |
 
-
-
-#### Reference)
-
-#### https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md
-
-
-
-
+<br>
 
 ## Socket.io signaling
 
 ### Format
 
-*Signaling message : 서로 다른 네트워크에 있는 2개의 디바이스를 위치시키기 위해서는 각 디바이스의 위치를 발견하는 방법, 미디어 포맷 협의 필요. 이 프로세스를 Signaling이라고 함. *
+*Signaling message : 서로 다른 네트워크에 있는 2개의 디바이스를 위치시키기 위해서는 각 디바이스의 위치를 발견하는 방법, 미디어 포맷 협의 필요. 이 프로세스를 Signaling이라고 함.*
 
 * Client -> Portal
   * Client가 Portal과 연결되어 send/recv 할 준비가 되면, Client는 socket객체의 `emit()` 을 통해 Portal에게 모든 signaling message를 보내야 한다.
 * Portal -> Client
   * Portal에 Client가 연결되어 socket 객체가 send/recv 할 준비가 되면, Portal은 `emit()`을 통해 Client에게 모든 signaling mesage를 보내야 한다.
 
-
+<Br>
 
 ### Connection Maintenance
 
@@ -123,8 +95,16 @@ extensions:
   * `RequestData` : ReconnectionTicket 객체
   * `ResponseData` : base64-encoded ReconnectionTicket 객체(ResponseStatus가 "ok" 일 때)
 
-
+<br><br>
 
 #### Reference)
 
-#### **https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md**
+https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md
+
+https://wormwlrm.github.io/2021/01/24/Introducing-WebRTC.html
+
+https://developer.mozilla.org/ko/docs/Web/API/WebRTC_API
+
+https://jomuljomul.tistory.com/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B3%B5%EB%B6%80/WebRTC
+
+https://github.com/duan-xiande/owt-server/blob/master/doc/Client-Portal%20Protocol.md

@@ -1,6 +1,33 @@
-# OWT server 토큰 생성 과정 분석
+---
+layout: post
 
-## 토큰 생성 과정
+title: OWT server 토큰 생성 과정 분석
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [webrtc]
+
+featuredImage: 
+
+img: 
+
+categories: [WebRTC]
+
+date: '2021-06-01'
+
+extensions:
+
+  preset: gfm
+
+---
+
+: 토큰 생성과정 이해되지 않을 때 아래의 과정 참조하기
+
+<br>
 
 1. Client
 
