@@ -1,4 +1,30 @@
-# Web Socket
+---
+layout: post
+
+title: Web Socket이란
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [웹소켓, web socket]
+
+featuredImage: 
+
+img: 
+
+categories: [Web socket]
+
+date: '2021-02-15'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 : HTML 5 표준 기술로, 하나의 HTTP 접속을 통해 클라이언트, 서버 간 실시간 양방향 연결 채널을 구성.
 
@@ -59,10 +85,10 @@
 
 #### Reference)
 
-#### https://edu.goorm.io/learn/lecture/557/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-node-js/lesson/174379/web-socket%EC%9D%B4%EB%9E%80
+https://edu.goorm.io/learn/lecture/557/%ED%95%9C-%EB%88%88%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-node-js/lesson/174379/web-socket%EC%9D%B4%EB%9E%80
 
-#### https://duckdevelope.tistory.com/19
+https://duckdevelope.tistory.com/19
 
-#### https://webclub.tistory.com/491
+https://webclub.tistory.com/491
 
-#### https://supawer0728.github.io/2018/03/30/spring-websocket/
+https://supawer0728.github.io/2018/03/30/spring-websocket/

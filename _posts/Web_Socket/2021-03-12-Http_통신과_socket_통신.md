@@ -1,8 +1,33 @@
-# Http 통신과 Socket 통신
+---
+layout: post
+
+title: Http 통신과 Socket 통신
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [웹소켓, web socket]
+
+featuredImage: 
+
+img: 
+
+categories: [Web socket]
+
+date: '2021-03-12'
+
+extensions:
+
+  preset: gfm
+
+---
 
 : Client, server간 데이터를 주고받기 위한 통신
 
-
+<br>
 
 ## Socket
 
@@ -22,7 +47,7 @@
   * 데이터가 유실되어도 알 방법이 없다.
   * 그냥 상대방 주소로 보내놓고 보냈다고 믿기
 
-
+<br>
 
 ## Http
 
@@ -46,16 +71,16 @@
 
   * HTTP통신에 적합한 것을 Socket통신을 통해 구현하면 연결을 게속 유지해 오버헤드
 
-
+<br><br>
 
 #### Reference)
 
-#### https://velog.io/@bmh8993/REST%EC%99%80-RPCgRPC%EA%B0%80-%EB%93%B1%EC%9E%A5%ED%95%98%EA%B8%B0%EA%B9%8C%EC%A7%80
+https://velog.io/@bmh8993/REST%EC%99%80-RPCgRPC%EA%B0%80-%EB%93%B1%EC%9E%A5%ED%95%98%EA%B8%B0%EA%B9%8C%EC%A7%80
 
-#### https://m.blog.naver.com/jevida/140189691025
+https://m.blog.naver.com/jevida/140189691025
 
-#### https://mangkyu.tistory.com/48
+https://mangkyu.tistory.com/48
 
-#### https://hwanine.github.io/network/Socket-Http/
+https://hwanine.github.io/network/Socket-Http/
 
-#### https://juyoung-1008.tistory.com/13
+https://juyoung-1008.tistory.com/13

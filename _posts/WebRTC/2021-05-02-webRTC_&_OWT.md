@@ -1,4 +1,37 @@
-# WebRTC & OWT
+---
+layout: post
+
+title: WebRTC & OWT
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [웹소켓, web socket]
+
+featuredImage: 
+
+img: 
+
+categories: [Web socket]
+
+date: '2021-02-15'
+
+extensions:
+
+  preset: gfm
+
+
+
+---
+
+
+
+
+
+# 
 
 : 웹 애플리케이션과 사이트가 중간자 없이 실시간으로 데이터를 교환, 영상이나 오디오를 스트림해주는 기술
 

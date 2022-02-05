@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: Permission
+title: 리눅스 Permission
 
 author: 
   name: hungryjayy
