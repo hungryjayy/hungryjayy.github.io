@@ -1,11 +1,36 @@
-# HAProxy Config (Redis LB)
+---
+layout: post
+
+title: HAProxy Config (Redis LB)
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [redis, 레디스]
+
+featuredImage: 
+
+img: 
+
+categories: [Redis]
+
+date: '2021-06-28'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
 ### HAProxy에서의 LB
 
-* 기본적으로 Reverse Proxy 방식
-* config 파일을 구성해 사용해야 함
+* 기본적으로 Reverse Proxy 방식으로 동작한다.
+* 별도 conf 파일을 구성해 사용해야 한다.
 
 <br>
 
@@ -113,4 +138,4 @@
 
 #### Reference)
 
-#### https://www.haproxy.com/blog/the-four-essential-sections-of-an-haproxy-configuration/
+https://www.haproxy.com/blog/the-four-essential-sections-of-an-haproxy-configuration/

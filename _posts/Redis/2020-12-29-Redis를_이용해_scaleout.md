@@ -1,4 +1,31 @@
-# Redis를 통해 서버 Scale out에서 자원 공유
+---
+layout: post
+
+title: Redis를 통해 서버 Scale out에서 자원 공유
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [redis, 레디스]
+
+featuredImage: 
+
+img: 
+
+categories: [Redis]
+
+date: '2020-12-29'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 ### Scale out : 접속한 서버의 대수를 늘려 처리 능력 향상 시키는 것
 
@@ -34,7 +61,7 @@
   * 일종의 cluster처럼 연결된 각 서버에 broadcast
   * routing message의 역할을 수행하는 Interface
 
-<img src = "./images/redisadapter.png">
+<img src = "https://hungryjayy.github.io/assets/img/Redis/redisadapter.png">
 
 ### Redis Adapter code example
 
@@ -80,7 +107,7 @@ client.hget(hash, key, (err, res) => {
 
 <br>
 
-* Promisify: 위 코드를 깔끔하게 Promise로 이용하기 위해 아래와 같이 구현(이와 같이 여러 method 구현해 놓고 필요에 따라 사용)
+* **Promisify**: 위 코드를 깔끔하게 Promise로 이용하기 위해 아래와 같이 구현(이와 같이 여러 method 구현해 놓고 필요에 따라 사용)
 ```javascript
 public set(hash: string, key: string, value: string) {
     return new Promise((resolve) => {
@@ -95,8 +122,8 @@ public set(hash: string, key: string, value: string) {
 
 #### Reference)
 
-#### https://socket.io/docs/v3 <br>
+https://socket.io/docs/v3 <br>
 
-#### https://socket.io/docs/v3/using-multiple-nodes/
+https://socket.io/docs/v3/using-multiple-nodes/
 
-#### Redis 로컬 설치: https://redis.io/topics/quickstart
+Redis 로컬 설치: https://redis.io/topics/quickstart

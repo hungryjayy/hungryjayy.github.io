@@ -1,4 +1,32 @@
-# Redis Replication / Cluster와 Sentinel
+---
+layout: post
+
+title: Redis Replication / Cluster와 Sentinel
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [redis, 레디스]
+
+featuredImage: 
+
+img: 
+
+categories: [Redis]
+
+date: '2021-07-03'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
 
 ## 배경
 
@@ -7,7 +35,7 @@
     - Failover를 통해 **HA**(high availability)를 보장해야 할 경우
 - Redis master-slave(using sentinel) vs Redis cluster
 
-
+<br>
 
 ## 1. Master Slave(Replication)
 
@@ -24,11 +52,11 @@
       - 살아날 때 까지 기다리면 성능 저하
     - 복구 불가 - Slave중 하나를 master로 승격, 기존의 master를 slave로 강등(**Sentinel** 방식)
 
-
+<br>
 
 ## 2. Sentinel
 
-<img src="./images/sentinel.png">
+<img src="https://hungryjayy.github.io/assets/img/Redis/sentinel.png">
 
 - 위의 Replication 방식에서 Master의 downtime은 redis cluster의 가용성을 저하(그 동안 write 동작 수행 불가하기 때문), sentinel방식은 이를 해결해줌.
 - 주로 Replication보다 더 효율적으로 HA를 얻고자 할 때 사용
@@ -41,7 +69,7 @@
     - 2개 이상으로 SPOF(Single point of failure) 방지
       - **SPOF**(단일 장애점): 한 노드로 구성되어있는 시스템에서 이 노드 오작동으로 전체 시스템 중단을 야기
 
-
+<br>
 
 ## HAProxy
 
@@ -49,17 +77,17 @@
 - 따라서 master 교체상황에서 client의 redis 설정 또한 변경. → 일일히 계속 바꾸는것은 쉬운 일이 아니기 때문에 **HAProxy** 이용.(HAProxy가 **tcp-check**로 주기적으로 master, slave 동작 파악)
 - HAproxy는 client에게 redis의 master, slave에 일정하게 접근 할 수 있는 end-point를 제공.
 
-
-
----
+<br>
 
 ---
 
+---
 
+<br>
 
 ## 3. Redis Cluster
 
-<img src="./images/cluster.png">
+<img src="https://hungryjayy.github.io/assets/img/Redis/cluster.png">
 
 - 주로 **대용량 트래픽을 감당해야 할때 데이터를 나누어 저장**
 
@@ -88,18 +116,16 @@
 - master 죽을 시 slave는 gossip Protocol을 통해 master의 죽음을 파악한 뒤 스스로 master로 승격. → 이 때 replication은 async이기 때문에 죽음으로 **data** **정합성**이 깨질 수 있다.
     - 깨진 정합성으로 인해 data 충돌이 발생할 경우 **무조건** 나중에 master가 된 data 기준으로 정합성을 맞춤.
 
-    
-
-    
+    <br><br>
 
     #### References
 
-    #### [https://redis.io/topics/cluster-tutorial](https://redis.io/topics/cluster-tutorial)
+    [https://redis.io/topics/cluster-tutorial](https://redis.io/topics/cluster-tutorial)
 
-    #### [https://www.letmecompile.com/redis-cluster-sentinel-overview/
+    https://www.letmecompile.com/redis-cluster-sentinel-overview/
+
+    [http://redisgate.kr/redis/configuration/replication.php#diskless_replication](https://www.letmecompile.com/redis-cluster-sentinel-overview/)
     
-    #### [http://redisgate.kr/redis/configuration/replication.php#diskless_replication](https://www.letmecompile.com/redis-cluster-sentinel-overview/)
+    [https://goodgid.github.io/Redis-Master-Slave-and-Cluster/](https://goodgid.github.io/Redis-Master-Slave-and-Cluster/)
     
-    #### [https://goodgid.github.io/Redis-Master-Slave-and-Cluster/](https://goodgid.github.io/Redis-Master-Slave-and-Cluster/)
-    
-    #### [https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63](https://medium.com/garimoo/redis-documentation-2-%EB%A0%88%EB%94%94%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-911ba145e63)
+    [https://medium.com/garimoo/redis-documentation-2-레디스-클러스터-튜토리얼-911ba145e63](https://medium.com/garimoo/redis-documentation-2-%EB%A0%88%EB%94%94%EC%8A%A4-%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-911ba145e63)
