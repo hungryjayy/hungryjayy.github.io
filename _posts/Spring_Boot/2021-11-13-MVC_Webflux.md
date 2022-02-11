@@ -1,8 +1,35 @@
-# Spring MVC vs Webflux
+---
+layout: post
+
+title: Spring MVC vs Webflux
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [spring, spring boot, 스프링, 스프링부트]
+
+featuredImage: 
+
+img: 
+
+categories: [Spring boot]
+
+date: '2021-11-13'
+
+extensions:
+
+  preset: gfm
+
+---
+
+<br>
 
 
 ## Spring MVC
-<img src = "./images/mvc.png" width = "50%"> 
+<img src = "https://hungryjayy.github.io/assets/img/Spring_Boot/mvc.png" width = "50%"> 
 
 * 동기식 처리방식. 멀티 스레드 환경 Spring boot에서의 일반적인 모습
 * 기본적으로 client로 부터 요청이 들어오면 queue를 통한다.(WAS의 대기열?)
@@ -13,13 +40,13 @@
 <br>
 
 ## Spring Webflux
-![](./images/webflux.png)
+![](https://hungryjayy.github.io/assets/img/Spring_Boot/webflux.png)
 
 ## 특징
 * client req 발생시 event loop을 통해 작업 처리. (서버의 코어 갯수 == thread 갯수). 따라서 적은 수의 thread로 동시성을 다룬다. concurrent user가 1000명 이상일 때 webflux를 사용하면 좋다.
 * 이벤트 루프기반 Non blocking을 지원한다. block이 생길 경우 성능이 저하되어 사용 의미가 없어진다.
   * thread를 줄였는데 blocking이 걸리는 API에 요청이 몰린다면 결국 I/O작업이 끝날 때까지 기다려야 하기 때문.
-* [reactive Programming](./reactive.md)이 가능해진다. -> event driven
+* reactive Programming이 가능해진다. -> event driven
 
 <br>
 
@@ -33,4 +60,4 @@
 
 #### Reference)
 
-#### https://velog.io/@dyllis/Spring-MVC-vs-WebFlux
+https://velog.io/@dyllis/Spring-MVC-vs-WebFlux
