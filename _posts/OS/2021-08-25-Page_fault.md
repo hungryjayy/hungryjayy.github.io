@@ -1,4 +1,29 @@
-# 페이지 부재와 교체
+---
+layout: post
+
+title: 페이지 부재와 교체
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [os, 운영체제]
+
+featuredImage: 
+
+img: 
+
+categories: [OS]
+
+date: '2021-08-25'
+
+extensions:
+
+  preset: gfm
+
+---
 
 <br>
 
@@ -6,9 +31,7 @@
 
 : MMU가 OS에게 제어권을 넘겨 Disk(보조기억장치)에서 가져오는 과정
 
-<img src="https://media.vlpt.us/images/gimtommang11/post/e517d830-bfb9-401e-98b5-2321fb0489ef/page_fault_process.png" alt="img" style="zoom:60%;" /> 
-
-* 출처: https://velog.io/@gimtommang11/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC
+<img src="https://hungryjayy.github.io/assets/img/OS/page_fault.jpeg" alt="img" style="zoom:60%;" /> 
 
 1. 실행되는 Process에서 필요한 프레임(페이지)를 가져오기 위해 Page Table을 봤는데, `i(invalid)`로 되어있으면, **OS**에게 페이지를 찾아올 것을 요청
 2. OS가 디스크에서 필요한 페이지의 위치 찾음
@@ -25,11 +48,7 @@
 
 #### 페이지 테이블
 
-<img src="https://media.vlpt.us/images/gimtommang11/post/2d82d84f-9878-4da4-b564-c78d9f47f838/demend_paging.png" alt="img" style="zoom: 50%;" /> 
-
-* 출처: https://velog.io/@gimtommang11/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC
-
-<br>
+<img src="https://hungryjayy.github.io/assets/img/OS/page_table.jpeg" alt="img" style="zoom: 50%;" /> 
 
 <br>
 
@@ -67,8 +86,8 @@
 
 #### Reference)
 
-#### https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS
 
-#### https://velog.io/@gimtommang11/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC
+https://velog.io/@gimtommang11/%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC
 
-#### https://frontalnh.github.io/2018/04/04/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/
+https://frontalnh.github.io/2018/04/04/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B0%80%EC%83%81-%EB%A9%94%EB%AA%A8%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/

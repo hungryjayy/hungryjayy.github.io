@@ -1,4 +1,29 @@
-# 임계영역(Critical section)
+---
+layout: post
+
+title: 임계영역(Critical section)
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [os, 운영체제]
+
+featuredImage: 
+
+img: 
+
+categories: [OS]
+
+date: '2021-03-12'
+
+extensions:
+
+  preset: gfm
+
+---
 
 : **멀티 스레드 환경**에서 고려해봐야 할 영역. **동일한 자원**에 접근할 때 해당 영역을 임계영역이라고 함.
 
@@ -39,7 +64,7 @@
 
 * **Busy waiting** : 진입 전까지 계속 루프를 돌면서 확인. polling 방식과 유사
 
-* context switch X : **짧은 시간 안에 진입할 수 있는 경우** context switch 비용이 절감되지만, 반대로 말하면 다른 스레드를 실행 불가(동시성 저하)
+* context switch 하지않음 : **짧은 시간 안에 진입할 수 있는 경우** context switch 비용이 절감되지만, 반대로 말하면 다른 스레드를 실행 불가(동시성 저하)
 
 * 하드웨어 기반으로 해결. 소프트웨어 알고리즘은 느려서 사용하지 않는다고 함.
 
@@ -47,47 +72,22 @@
 
   * 인터럽트를 disable -> enable하는 방법
 
-    ```c
-    int cnt;
-    bool flag[2] = { false, false };
-    int turn = 0;
-     
+    ```c++
     void func0() {
-        for (int i = 0; i < 10000; i++) {
-            flag[0] = true;
-            turn = 1;
-            while (flag[1] == true && turn == 1) {}
-     
-            cnt++;
-            printf("cnt1 :: %d\n", cnt);
-     
-            flag[0] = false;
-        }
+      flag[0] = true;
+      turn = 1;
+      while (flag[1] == true && turn == 1) {} // busy waiting
+    
+      flag[0] = false;
     }
     
     void func1() {
-        for (int i = 0; i < 10000; i++) {
-            flag[1] = true;
-            turn = 0;
-            while (flag[0] == true && turn == 0) {}
-     
-            cnt++;
-            printf("cnt2 :: %d\n", cnt);
-     
-            flag[1] = false;
-        }
-    }
-     
-    void main() {
-        thread t1(func0);
-        thread t2(func1);
-        t1.join();
-        t2.join();
-        cout << "cnt : :" << cnt << endl;
-    }
-     
+      flag[1] = true;
+      turn = 0;
+      while (flag[0] == true && turn == 0) {} // busy waiting
     
-    출처: https://www.crocus.co.kr/1371 [Crocus]
+      flag[1] = false;
+    }
     ```
 
 <br>
@@ -126,14 +126,14 @@
 
 #### Reference)
 
-#### https://brownbears.tistory.com/45
+https://brownbears.tistory.com/45
 
-#### https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/OS#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%8F%99%EA%B8%B0%ED%99%94
 
-#### https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/DeadLock.md
+https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Operating%20System/DeadLock.md
 
-#### https://gameproyyj.tistory.com/153
+https://gameproyyj.tistory.com/153
 
-#### https://thinkpro.tistory.com/124
+https://thinkpro.tistory.com/124
 
-#### https://www.crocus.co.kr/1371
+https://www.crocus.co.kr/1371
