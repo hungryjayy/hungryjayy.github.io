@@ -9,7 +9,7 @@ author:
 
 description: null
 
-tags: [regex, 정규표현식]
+tags: [regex]
 
 featuredImage: 
 
