@@ -1,4 +1,32 @@
-# Sequelize에서 DB Migration하기
+---
+layout: post
+
+title: Sequelize에서 DB Migration하기
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [node.js, sequelize]
+
+featuredImage: 
+
+img: 
+
+categories: [Node.js]
+
+date: '2021-09-12'
+
+extensions:
+
+  preset: gfm
+
+
+---
+
+<br>
 
 ## Query Interface
 
@@ -33,7 +61,7 @@ Module.exports = {
 * **down**: 'up' 실행되기 전의 상태로 DB 복원.
   * `$ sequelize db:migrate:undo` : down에 정의된 코드 실행
 
-.<br><br>
+<br><br>
 
 ## Trouble Shooting
 
@@ -52,6 +80,6 @@ Module.exports = {
 
 <br><br>
 
-#### Reference
+#### Reference)
 
-#### https://sequelize.org/master/manual/query-interface.html
+https://sequelize.org/master/manual/query-interface.html

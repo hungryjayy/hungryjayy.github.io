@@ -1,4 +1,30 @@
-# Sequelize 연관관계
+---
+layout: post
+
+title: Sequelize 연관관계
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [node.js, sequelize]
+
+featuredImage: 
+
+img: 
+
+categories: [Node.js]
+
+date: '2021-07-10'
+
+extensions:
+
+  preset: gfm
+
+
+---
 
 <br>
 
@@ -49,7 +75,7 @@
 
 * A 객체가 갖는 B의 필드값을 변경하고 UPDATE와 같은 쿼리를쳐도 B에 업데이트 되지 않고 B를 통해 업데이트해야한다.
 
-  ![image-20210818122333311](./images/query_error.png) 
+  ![image-20210818122333311](https://hungryjayy.github.io/assets/img/Node.js/query_error.png) 
 
 * join 쿼리로 조회는 되는 것 같다.
 
@@ -70,5 +96,7 @@
 
 <br><br>
 
-#### Reference) https://sequelize.org/master/manual/associations.html
+#### Reference)
+
+https://sequelize.org/master/manual/associations.html
 
