@@ -1,23 +1,51 @@
-# Was vs Web Server
+---
+layout: post
 
-* Was(Web application server)
-  * 사용자 요청에 맞게 **동적인 컨텐츠**를 전달
-  * Web server + Web container
-  * DB 서버가 같이 수행
-  * 비즈니스 로직 처리
-  * Node.js 서버, Spring boot 서버가 여기에 해당.
-    * 정확하게는 node의 express, 서블릿을 지원해주는 Tomcat
+title: Was vs Web Server(nginx, apache)
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [network, web server, was, nginx, apache]
+
+featuredImage: 
+
+img: 
+
+categories: [Network]
+
+date: '2021-11-11'
+
+extensions:
+
+  preset: gfm
+---
 
 <br>
 
-* Web server(e.g. nginx, apache)
-  * **정적인 컨텐츠**를 반환한다.(html, css 등)
-  * **리버스 프록시** 방식으로 동작한다. 클라이언트는 WAS의 위치, 존재 여부를 모른다.
-  * 한 Web server는 여러 WAS로 전달될 수 있다.
-  * 한 WAS가 scaled-out 되어있을 때 LB도 수행한다.
-    * 이건 Proxy서버 또한 마찬가지: HAProxy에서 Redis 마스터, 슬레이브에 적절히 요청을 보내는 것을 생각하면 된다.
-  * http 프로토콜 기반으로 클라이언트 요청을 서비스
-  * 클라이언트 요청에 대해 가장 앞에서 요청 처리
+## Was(Web application server)
+
+* 사용자 요청에 맞게 **동적인 컨텐츠**를 전달
+* Web server + Web container
+* DB 서버가 같이 수행
+* 비즈니스 로직 처리
+* Node.js 서버, Spring boot 서버가 여기에 해당.
+  * 정확하게는 node의 express, 서블릿을 지원해주는 Tomcat
+
+<br>
+
+## Web server(e.g. nginx, apache)
+
+* **정적인 컨텐츠**를 반환한다.(html, css 등)
+* **리버스 프록시** 방식으로 동작한다. 클라이언트는 WAS의 위치, 존재 여부를 모른다.
+* 한 Web server는 여러 WAS로 전달될 수 있다.
+* 한 WAS가 scaled-out 되어있을 때 LB도 수행한다.
+  * 이건 Proxy서버 또한 마찬가지: HAProxy에서 Redis 마스터, 슬레이브에 적절히 요청을 보내는 것을 생각하면 된다.
+* http 프로토콜 기반으로 클라이언트 요청을 서비스
+* 클라이언트 요청에 대해 가장 앞에서 요청 처리
 
 <br>
 
@@ -59,8 +87,8 @@
 
 #### Reference)
 
-#### https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
+https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html
 
-#### https://jeong-pro.tistory.com/84
+https://jeong-pro.tistory.com/84
 
-#### https://niklasjang.tistory.com/56
+https://niklasjang.tistory.com/56
