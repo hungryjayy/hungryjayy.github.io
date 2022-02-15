@@ -1,6 +1,30 @@
-# 3 way, 4 way handshake
+---
+layout: post
 
-: 이 과정을 통해 TCP 프로토콜의 **송 수신자 모두 준비가 되었다는 것을 보장**한다. UDP와 다르게 TCP 통신에서는 장치 사이에서 연결을 보장하고 명확한 전송을 하기 위해 conn을 맺고 끊을 때 3-way, 4-way handshake와 같은걸 한다.
+title: 3 way, 4 way handshake
+
+author: 
+  name: hungryjayy
+  link: https://github.com/hungryjayy
+
+description: null
+
+tags: [network, tcp/ip]
+
+featuredImage: 
+
+img: 
+
+categories: [Network]
+
+date: '2021-04-01'
+
+extensions:
+
+  preset: gfm
+---
+
+: 이 과정을 통해 TCP 프로토콜의 **송 수신자 모두 준비가 되었다는 것을 보장**한다. UDP와 다르게 TCP 통신에서는 장치 사이에서 연결을 보장하고 명확한 전송을 하기 위해 conn을 맺고 끊을 때 3-way, 4-way handshake를 한다.
 
 <br>
 
@@ -8,7 +32,7 @@
 
 : TCP 연결을 초기화 할 때 사용 
 
-![img](https://t1.daumcdn.net/cfile/tistory/225A964D52F1BB6917)
+![img](https://hungryjayy.github.io/assets/img/Network/tcpopen3way.png)
 
 1. SYN(n): 클라이언트가 서버에게 SYN 를 보낸다. 이 때 시퀀스넘버라는 난수를 생성해 SYN에 붙여서 보낸다.
    * 난수를 보내는 이유: 다른 SYN 요청과의 구분
@@ -27,7 +51,7 @@
 
 * Client -> Server 방향으로 요청하는 것으로 표현되어있지만, 일반적으로 요청을 보내는 쪽이 Client라고 이해하면 된다. 실제로 지속 커넥션이 아니라면, 웹서버 입장에서는 사용자의 요청 메시지에 대한 응답을 다 보내고나서 커넥션을 닫는다고 한다.
 
-![img](https://t1.daumcdn.net/cfile/tistory/2152353F52F1C02835)
+![img](https://hungryjayy.github.io/assets/img/Network/tcpclose.png)
 
 1. FIN: 클라이언트가 연결 종료 메시지 FIN플래그를 보낸다.
    * flag: 000001
@@ -62,19 +86,22 @@
 
 #### 연결 끊는 상황에서 3 way 아닌 4 way로 구성하는 이유
 
-* Client 데이터 전송이 끝났어도 **Server쪽에서 아직 보낼 데이터가 남아있을 수 있기 때문에**
-* 따라서, 받은 FIN에 대한 ACK만 보내고, **보낼 것이 있으면 다 보내고** 난 후 본인도 FIN을 보낸다.
+: Client 데이터 전송이 끝났어도 **Server쪽에서 아직 보낼 데이터가 남아있을 수 있기 때문에**이다. 따라서, 받은 FIN에 대한 ACK만 보내고, **보낼 것이 있으면 다 보내고 난 후** 서버도 FIN을 보낸다.
 
 <br>
 
 #### 시퀀스넘버를 난수로 날리는 이유
 
-* Port를 통해 연결하고 데이터를 교환하고 다시 끊고 나서, 시간이 지나고서 같은 포트를 다시 또 사용한다. 따라서, 과거에 사용된 포트번호 쌍을 사용할 가능성이 존재하기 때문에, 과거의 SYN을 현재의 SYN으로 인식할 수 있다.(오해가 생길 수 있다) ACK의 난수는 해당 응답의 요청이었던(SYN) 시퀀스넘버의 +1
+: Port를 통해 연결하고 데이터를 교환하고 다시 끊고 나서, 시간이 지나고서 같은 포트를 다시 또 사용한다. 따라서, 과거에 사용된 포트번호 쌍을 사용할 가능성이 존재하기 때문에, 과거의 SYN을 현재의 SYN으로 인식할 수 있다.(오해가 생길 수 있다) ACK의 난수는 해당 응답의 요청이었던(SYN) 시퀀스넘버의 +1
 
 <br><br>
 
 #### Reference)
 
-#### https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake
+코딩 인터뷰 완전분석
 
-#### https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md#tcp%EC%9D%98-3-way-handshake%EC%99%80-4-way-handshake
+http://www.tcpipguide.com
+
+https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake
+
+https://github.com/WeareSoft/tech-interview/blob/master/contents/network.md#tcp%EC%9D%98-3-way-handshake%EC%99%80-4-way-handshake
