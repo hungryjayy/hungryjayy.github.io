@@ -50,7 +50,7 @@ extensions:
   println(prop.getProperty("timeout"));
   println(prop.getProperty("language"));
   println(prop.getProperty("size"));
-  
+  ```
 
 <br>
 
@@ -100,6 +100,7 @@ extensions:
       void add(T item) { list.add(item); }
       // ...
     }
+    ```
 
 <br><br>
 
