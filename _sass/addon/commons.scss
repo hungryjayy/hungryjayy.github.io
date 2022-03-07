@@ -720,11 +720,13 @@ $sidebar-display: "sidebar-display";
 
     &.active {
       .nav-link {
+        font-weight: bold;
         color: var(--sidebar-active-color);
       }
     }
 
     &:not(.active) > a {
+      color: rgba(206, 206, 206, 99%);
       @extend %clickable-transition;
     }
   }
