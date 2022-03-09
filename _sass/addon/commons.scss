@@ -721,7 +721,8 @@ $sidebar-display: "sidebar-display";
     &.active {
       .nav-link {
         font-weight: bold;
-        color: var(--sidebar-active-color);
+        //color: var(--sidebar-active-color);
+        color: rgba(255, 255, 255, 99%);
       }
     }
 
