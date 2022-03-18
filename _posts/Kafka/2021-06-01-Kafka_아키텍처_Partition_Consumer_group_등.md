@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [Kafka]
+categories: [Study, Kafka]
 
 date: '2021-06-01'
 

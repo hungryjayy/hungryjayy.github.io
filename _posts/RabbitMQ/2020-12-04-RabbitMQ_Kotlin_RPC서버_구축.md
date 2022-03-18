@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [RabbitMQ]
+categories: [Study, RabbitMQ]
 
 date: '2020-12-04'
 

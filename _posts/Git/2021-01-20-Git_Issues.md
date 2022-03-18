@@ -9,13 +9,13 @@ author:
 
 description: null
 
-tags: [git]
+tags: [git, trouble shooting]
 
 featuredImage: 
 
 img: 
 
-categories: [Git]
+categories: [Study, Git]
 
 date: '2021-01-20'
 

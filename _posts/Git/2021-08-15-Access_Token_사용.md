@@ -9,13 +9,13 @@ author:
 
 description: null
 
-tags: [git, access token]
+tags: [git]
 
 featuredImage: 
 
 img: 
 
-categories: [Git]
+categories: [Study, Git]
 
 date: '2021-08-15'
 

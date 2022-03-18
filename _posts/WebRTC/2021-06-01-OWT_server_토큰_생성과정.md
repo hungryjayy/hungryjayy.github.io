@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [WebRTC]
+categories: [Study, WebRTC]
 
 date: '2021-06-01'
 

@@ -16,7 +16,7 @@ featuredImage:
 
 img: 
 
-categories: [Cloud]
+categories: [Study, Cloud]
 
 date: '2021-11-08'
 

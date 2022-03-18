@@ -10,13 +10,13 @@ author:
 
 description: null
 
-tags: [database, db, 데이터베이스, isolation, 격리수준, acid, transaction, 트랜잭션]
+tags: [database, db, 데이터베이스, acid, transaction, 트랜잭션]
 
 featuredImage: 
 
 img: 
 
-categories: [Database]
+categories: [Study, Database]
 
 date: '2021-10-26'
 

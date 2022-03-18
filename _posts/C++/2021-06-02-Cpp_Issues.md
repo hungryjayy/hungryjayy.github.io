@@ -16,7 +16,7 @@ featuredImage:
 
 img: 
 
-categories: [C++]
+categories: [Study, C++]
 
 date: '2021-06-02'
 

@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [Kotlin]
+categories: [Study, Kotlin]
 
 date: '2021-09-03'
 

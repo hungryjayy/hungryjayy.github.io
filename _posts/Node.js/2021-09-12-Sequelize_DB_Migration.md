@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [Node.js]
+categories: [Study, Node.js]
 
 date: '2021-09-12'
 

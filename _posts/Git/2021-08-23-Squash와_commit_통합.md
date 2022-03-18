@@ -9,13 +9,13 @@ author:
 
 description: null
 
-tags: [git, commit, squash]
+tags: [git, commit]
 
 featuredImage: 
 
 img: 
 
-categories: [Git]
+categories: [Study, Git]
 
 date: '2021-08-23'
 

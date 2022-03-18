@@ -16,7 +16,7 @@ featuredImage:
 
 img: 
 
-categories: [Docker]
+categories: [Study, Docker]
 
 date: '2021-06-15'
 

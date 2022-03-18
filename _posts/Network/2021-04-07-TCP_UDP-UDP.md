@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [Network]
+categories: [Study, Network]
 
 date: '2021-04-07'
 

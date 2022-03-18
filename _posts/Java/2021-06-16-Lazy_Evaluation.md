@@ -9,13 +9,13 @@ author:
 
 description: null
 
-tags: [java, 지연실행, 느긋한계산법]
+tags: [java, 지연실행, Lazy Evaluation]
 
 featuredImage: 
 
 img: 
 
-categories: [Java]
+categories: [Study, Java]
 
 date: '2021-06-16'
 

@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [Web socket]
+categories: [Study, Web socket]
 
 date: '2021-03-12'
 

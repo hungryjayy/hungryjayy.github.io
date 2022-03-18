@@ -15,7 +15,7 @@ featuredImage:
 
 img: 
 
-categories: [JavaScript]
+categories: [Study, JavaScript]
 
 date: '2021-07-12'
 
