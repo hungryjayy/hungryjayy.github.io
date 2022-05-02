@@ -9,6 +9,10 @@
   icon: 'fab fa-instagram'
 
 -
+  type: linkedin
+  icon: 'fab fa-linkedin'
+  url: 'https://www.linkedin.com/in/joowon-son-557206226/'
+-
   type: email
   icon: 'fas fa-envelope'
   noblank: true            # open link in current tab

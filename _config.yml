@@ -32,6 +32,8 @@ url: 'https://hungryjayy.github.io'
 github:
   username: hungryjayy             # change to your github username
 
+linkedin:
+  username: joowon-son-557206226
     #twitter:
     #username: twitter_username            # change to your twitter username
 
@@ -48,6 +50,7 @@ social:
     # - https://twitter.com      # change to your twitter homepage
     - https://github.com/hungryjayy       # change to your github homepage
     - https://instagram.com/loganprshut
+    - https://linkedin.com/in/joowon-son-557206226/
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
