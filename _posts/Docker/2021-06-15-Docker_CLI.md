@@ -107,3 +107,15 @@ docker push {registry 경로}/{무슨 이름으로 올릴지}:{버전 명시}
   * `--volume`, `--images` 등 옵션 붙여줄 수 있음
 * `docker volume prune`
 * `docker images prune`
+
+<br>
+
+### 스웜
+
+* 매니저노드 만들기 : `docker swarm init --advertise-addr {만들 호스트 IP}`
+* 워커 노드 만들기 : `docker swarm join --token {매니저노드가 만들때 발생한 Token} {매니저노드 IP}`
+* 스웜 환경 확인 : `docker node ls` 
+* 서비스 확인 : `docker service ls`
+* 서비스 생성 : `docker service create --name redis --replicas 2 -p 6379:6379 redis`  (2 레플리카)
+* 스택 확인 : `docker stack ls`
+* 스택 특정 노드 확인 : `docker stack ps {스택}`
