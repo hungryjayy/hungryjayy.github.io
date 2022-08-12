@@ -60,4 +60,4 @@ extensions:
 
 #### Reference)
 
-#### https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
+https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
