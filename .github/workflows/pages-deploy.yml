@@ -1,8 +1,8 @@
-name: 'Automatic build'
+name: Automatic build
 on:
   push:
     branches:
-      - 
+      -
     paths-ignore:
       - .gitignore
       - README.md
