@@ -71,7 +71,11 @@ extensions:
 
 <img src = "https://hungryjayy.github.io/assets/img/Redis/clusterhashtagtest.png">
 
-* mGet이 불가피할때 성능차이를 무시할수는 없을 것 같다. CPU가 올라간 원인은 redis client에서 mget 결과를 조합하는데 발생하는 비용때문인것으로 추정
+: 전자가 hashTag 없을 때, 후자가 hashTag 있을 때
+
+* mGet과 아닌것의 성능차이를 무시할수는 없을 것 같다. CPU가 올라간 원인은 redis client에서 mget 결과를 조합하는데 발생하는 비용때문인것으로 추정
+
+  
 
 <br>
 
@@ -85,5 +89,4 @@ extensions:
 
 - **카디널리티(Cardinality)가 낮은 데이터에 사용**: 태그 종류가 너무 많지 않고, 각 태그에 속한 데이터 크기가 예측 가능하고 거대해지지 않을 경우에 쓰는 게 안전하다. (속해있는 도메인에 대해 적절히 파악한 후 사용)
   - e.g. rooms:roomId:users:userId 와 같은 key를 가질 때 {rooms:roomId}users:userId 으로 묶으면 적어도 같은 room에 있는 키 끼리는 한 슬롯에 모이게 된다.
-
 
