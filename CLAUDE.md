@@ -47,11 +47,15 @@ bundle exec htmlproofer --disable-external --check-html --allow_hash_href _site
 ### 콘텐츠 구조
 
 **블로그 포스트**는 `_posts/` 하위 디렉토리에 주제별로 구성됩니다:
+
 - 각 카테고리는 자체 폴더를 가집니다 (예: `Algorithm/`, `Redis/`, `Docker/`)
 - 포스트 파일명 형식: `YYYY-MM-DD-제목.md`
-- 모든 포스트는 한글로 작성됩니다
+- 모든 포스트는 한글로 작성됩니다.
+- 기존 /_posts 하위의 글들을 참고해서, .md 형식과 어투를 그대로 글을 씁니다.
+2. 글의 길이 또한 기존 글들과 비슷해야 합니다.
 
 **포스트 frontmatter 형식**:
+
 ```yaml
 ---
 layout: post
