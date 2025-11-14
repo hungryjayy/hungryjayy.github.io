@@ -19,7 +19,7 @@ timezone: Asia/Seoul
 
 title: hungryjayy                          # the main title
 
-tagline: 배우고 경험하는 것을 기록합니다.   # it will display as the sub-title
+tagline: 기억하려고 기록하기   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -37,8 +37,8 @@ linkedin:
     #twitter:
     #username: twitter_username            # change to your twitter username
 
-instagram:
-  username: loganprshut
+  #instagram:
+  #  username: loganprshut
 
 social:
   # Change to your full name.
@@ -49,7 +49,7 @@ social:
     # The first element serves as the copyright owner's link
     # - https://twitter.com      # change to your twitter homepage
     - https://github.com/hungryjayy       # change to your github homepage
-    - https://instagram.com/loganprshut
+    # - https://instagram.com/loganprshut
     - https://linkedin.com/in/joowon-son-557206226/
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -96,7 +96,7 @@ toc: true
 comments:
   active:         # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
-  # disqus: 
+  # disqus:
   #   shortname:    # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
