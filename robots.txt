@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://hungryjayy.github.io/sitemap.xml
+
